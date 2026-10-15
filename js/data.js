@@ -6405,13310 +6405,13198 @@ const WH40K_DATA = {
 
   // CATÁLOGO COMPLETO DE DATASHEETS (49+ UNIDADES WAHAPEDIA 11ED / ÁNGELES OSCUROS)
   datasheets: [
-    {
-          "id": "da_lion",
-          "name": "Lion El'Jonson",
-          "originalName": "Lion El'jonson",
-          "aliases": [
-                "Lion El’jonson",
-                "Lion El Jonson",
-                "El León"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Ala de Muerte",
-          "isEpicHero": true,
-          "keywords": [
-                "MONSTRUO",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "PRIMARCA",
-                "ALA DE MUERTE",
-                "IMPERIUM",
-                "LION EL'JONSON",
-                "MONSTER",
-                "CHARACTER",
-                "EPIC HERO",
-                "PRIMARCH",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 10,
-                "sv": "2+",
-                "inv": "3++",
-                "h": 16,
-                "l": "5+",
-                "co": 4
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 415
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Arma Luminis - Plasma",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Arma Luminis - Bolt",
-                      "range": "18\"",
-                      "a": 4,
-                      "bs": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Fealty - Sweep",
-                      "range": "Combate",
-                      "a": 12,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "CLEAVE 2"
-                      ]
-                },
-                {
-                      "name": "Fealty - Strike",
-                      "range": "Combate",
-                      "a": 8,
-                      "ws": "2+",
-                      "f": 12,
-                      "ap": -4,
-                      "d": 4,
-                      "keywords": [
-                            "Lethal Hits"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Despliegue Rápido, Ataca Primero",
-                "Regla de Facción: Juramento del Momento",
-                "Mist-wreathed Shadow Realms: In your Command phase , if this unit is unengaged , you can use this ability. If you do: Place this unit in strategic reserves . This unit can make an ingress move in your next Movement phase (including in your first turn).",
-                "Martial Exemplar: While a friendly DARK ANGELS unit is within 6\" of this unit, that unit’s melee attacks can: Re-roll hit rolls of 1. Re-roll wound rolls of 1.",
-                "No Hiding from the Watchers: While a friendly DARK ANGELS unit is within 6\" of this unit, that unit has Feel No Pain 5+ against psychic attacks and mortal wounds .",
-                "If this model is in your army, it must be your WARLORD .",
-                "Dark Angels Bodyguard: While this unit is within 3\" of a friendly DARK ANGELS INFANTRY unit, this unit has Lone Operative .",
-                "The Emperor's Shield: Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls .",
-                "Primarch of the First Legion: At the start of your Command phase , you can select up to two of the abilities in the Primarch of the First Legion section. Until the start of your next Command phase, this model has those abilities.",
-                "The Watchers: This unit has Feel No Pain 4+ against psychic attacks and mortal wounds .",
-                "Master Strategist: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase, in addition to any other combat doctrine .",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Señor Primarca de la Primera Legión. Porta la colosal espada Fealty y el Escudo del Emperador."
+  {
+    "id": "da_lion",
+    "name": "Lion El'Jonson",
+    "originalName": "Lion El'jonson",
+    "aliases": [
+      "Lion El’jonson",
+      "Lion El Jonson",
+      "El León"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Ala de Muerte",
+    "isEpicHero": true,
+    "keywords": [
+      "MONSTRUO",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "PRIMARCA",
+      "ALA DE MUERTE",
+      "IMPERIUM",
+      "LION EL'JONSON",
+      "MONSTER",
+      "CHARACTER",
+      "EPIC HERO",
+      "PRIMARCH",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 10,
+      "sv": "2+",
+      "inv": "3++",
+      "h": 16,
+      "l": "5+",
+      "co": 4
     },
-
-    {
-          "id": "da_azrael",
-          "name": "Comandante Supremo Azrael",
-          "originalName": "Supreme Grand Master Azrael",
-          "aliases": [
-                "Azrael",
-                "Gran Maestre Supremo Azrael"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Ala de Muerte",
-          "isEpicHero": true,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "GRAN MAESTRE",
-                "ALA DE MUERTE",
-                "AZRAEL",
-                "INFANTRY",
-                "CHARACTER",
-                "EPIC HERO",
-                "CHAPTER MASTER",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "TACTICUS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 6,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 150
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Ira del León (Lion's Wrath)",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Devastating Wounds",
-                            "anti-infantry 4+"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "La Espada de los Secretos (The Sword of Secrets)",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -4,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Masterful Tactician: In your Movement phase , select up to one visible friendly ADEPTUS ASTARTES unit within 9\" of this model, and select one combat doctrine . That combat doctrine is active for that unit until the start of your next Command phase .",
-                "Supreme Grand Master: This unit’s attacks have [SUSTAINED HITS 1] .",
-                "Watcher in the Dark (Once per battle, per unit): In any phase, when this unit suffers a mortal wound , this unit can summon a Watcher in the Dark. If it does, this unit has Feel No Pain 4+ against mortal wounds .",
-                "Codex Discipline"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "COMPANY HEROES",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS"
-          ],
-          "notes": "Líder indiscutible del Capítulo de los Ángeles Oscuros, portador del Yelmo del León y la Espada de los Secretos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 415
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Arma Luminis – Plasma (Arma Luminis - Plasma)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 10,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Arma Luminis – Bólter (Arma Luminis - Bolt)",
+        "range": "18\"",
+        "a": 4,
+        "bs": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Fealty – Barrido Devastador (Sweep)",
+        "range": "Combate",
+        "a": 12,
+        "ws": "2+",
+        "f": 6,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Hendedura 2 (Cleave 2)"
+        ]
+      },
+      {
+        "name": "Fealty – Golpe Demoledor (Strike)",
+        "range": "Combate",
+        "a": 8,
+        "ws": "2+",
+        "f": 12,
+        "ap": -4,
+        "d": 4,
+        "keywords": [
+          "Impactos Letales (Lethal Hits)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Despliegue Rápido, Ataca Primero",
+      "Regla de Facción: Juramento del Momento",
+      "Reinos Sombríos Envolventes: En tu fase de Mando, si esta unidad no está trabada, puede retirarse a Reservas Estratégicas y desplegarse mediante Ingress Rápido en tu siguiente fase de Movimiento (incluso en el primer turno).",
+      "Ejemplar Marcial (Aura): Mientras una unidad amigable de ÁNGELES OSCUROS esté a 6\" o menos de esta miniatura, sus ataques cuerpo a cuerpo pueden repetir tiradas de impacto de 1 y tiradas para herir de 1.",
+      "No Hay Escape de los Vigilantes (Aura): Mientras una unidad amigable de ÁNGELES OSCUROS esté a 6\" o menos de esta miniatura, tiene No Hay Dolor 5+ contra ataques psíquicos y heridas mortales.",
+      "Señor de la Guerra: Si esta miniatura está incluida en tu ejército, debe ser tu SEÑOR DE LA GUERRA.",
+      "Guardaespaldas de los Ángeles Oscuros: Mientras esta unidad esté a 3\" o menos de una o más unidades amigables de INFANTERÍA ÁNGELES OSCUROS, tiene la habilidad [Agente Solitario].",
+      "El Escudo del Emperador: Salvación invulnerable 3++. Los ataques enemigos con una Fuerza superior a la Resistencia de esta unidad sufren -1 a la tirada para herir.",
+      "Primarca de la Primera Legión: Al inicio de tu fase de Mando, selecciona hasta dos habilidades de la sección Primarca de la Primera Legión para que estén activas hasta tu próxima fase de Mando.",
+      "Los Vigilantes en la Oscuridad: Esta unidad tiene No Hay Dolor 4+ contra ataques psíquicos y heridas mortales.",
+      "Maestro Estratega: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa en esta unidad hasta tu siguiente fase de Mando, además de cualquier otra doctrina activa.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Señor Primarca de la Primera Legión. Porta la colosal espada Fealty y el Escudo del Emperador."
+  },
+  {
+    "id": "da_azrael",
+    "name": "Comandante Supremo Azrael",
+    "originalName": "Supreme Grand Master Azrael",
+    "aliases": [
+      "Azrael",
+      "Gran Maestre Supremo Azrael"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Ala de Muerte",
+    "isEpicHero": true,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "GRAN MAESTRE",
+      "ALA DE MUERTE",
+      "AZRAEL",
+      "INFANTRY",
+      "CHARACTER",
+      "EPIC HERO",
+      "CHAPTER MASTER",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "TACTICUS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 6,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "da_belial",
-          "name": "Belial",
-          "originalName": "Grand Master Belial",
-          "aliases": [
-                "Gran Maestre Belial",
-                "Belial"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Ala de Muerte",
-          "isEpicHero": true,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "EXTERMINADOR",
-                "GRAN MAESTRE",
-                "ALA DE MUERTE",
-                "BELIAL",
-                "INFANTRY",
-                "CHARACTER",
-                "EPIC HERO",
-                "TERMINATOR",
-                "CAPTAIN",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 6,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 100
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Master-crafted Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Precision"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "La Espada del Silencio (The Sword of Silence)",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Despliegue Rápido, Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Grand Master of the Deathwing: This unit’s attacks that target an enemy CHARACTER unit have +1 to wound rolls .",
-                "Strikes of Retribution: In the fight phase , when this model is destroyed , if this unit has not been selected to fight this phase, roll one D6: On a 2+, do not remove this model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [
-                "TERMINATOR SQUAD",
-                "DEATHWING KNIGHTS",
-                "DEATHWING TERMINATOR SQUAD"
-          ],
-          "notes": "Comandante supremo de la 1ª Compañía (Ala de Muerte). Letal duelista equipado con armadura de Exterminador."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 150
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Ira del León (Lion's Wrath)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Anti-Infantería 4+"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "La Espada de los Secretos (The Sword of Secrets)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -4,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Táctico Magistral: En tu fase de Movimiento, selecciona una unidad amigable visible de ADEPTUS ASTARTES a 9\" o menos y elige una doctrina de combate; dicha doctrina estará activa para esa unidad hasta tu próxima fase de Mando.",
+      "Gran Maestre Supremo: Los ataques de esta unidad tienen la habilidad [Impactos Sostenidos 1].",
+      "Vigilante en la Oscuridad (1 vez por batalla): Cuando esta unidad sufra una herida mortal, puede invocar al Vigilante para obtener No Hay Dolor 4+ contra heridas mortales durante esa fase.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Héroes de la Compañía (Company Heroes)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)"
+    ],
+    "notes": "Líder indiscutible del Capítulo de los Ángeles Oscuros, portador del Yelmo del León y la Espada de los Secretos."
+  },
+  {
+    "id": "da_belial",
+    "name": "Belial",
+    "originalName": "Grand Master Belial",
+    "aliases": [
+      "Gran Maestre Belial",
+      "Belial"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Ala de Muerte",
+    "isEpicHero": true,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "EXTERMINADOR",
+      "GRAN MAESTRE",
+      "ALA DE MUERTE",
+      "BELIAL",
+      "INFANTRY",
+      "CHARACTER",
+      "EPIC HERO",
+      "TERMINATOR",
+      "CAPTAIN",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 6,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "da_sammael",
-          "name": "Sammael",
-          "originalName": "Grand Master Sammael",
-          "aliases": [
-                "Gran Maestre Sammael",
-                "Sammael"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": true,
-          "keywords": [
-                "MONTADO",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "SAMMAEL",
-                "MOUNTED",
-                "CHARACTER",
-                "EPIC HERO",
-                "FLY",
-                "CAPTAIN",
-                "RAVENWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 7,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 120
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Master-crafted Plasma Cannon",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "2+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Twin Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "La Espada del Cuervo (The Raven Sword)",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 2"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Cut Off Their Escape: When an enemy unit engaged with this unit (excluding MONSTER / VEHICLE units) makes a fall-back move , that enemy unit must use the desperate escape mode. If that enemy unit is battle-shocked , -1 from those hazard rolls .",
-                "Grand Master of the Ravenwing: This unit has MOBILE . In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [
-                "OUTRIDER SQUAD",
-                "RAVENWING BLACK KNIGHTS"
-          ],
-          "notes": "Comandante supremo de la 2ª Compañía (Ala de Cuervo) a lomos de su moto a reacción relicaria Corvex."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 100
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Tormenta Magistral (Master-crafted)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "La Espada del Silencio (The Sword of Silence)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -3,
+        "d": 2,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Despliegue Rápido, Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Gran Maestre del Ala de Muerte: Los ataques de esta unidad contra una unidad PERSONAJE enemiga tienen +1 a la tirada para herir.",
+      "Golpes de Represalia: En la fase de Combate, si esta miniatura es destruida antes de haber sido seleccionada para combatir, puede atacar antes de ser retirada.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [
+      "Escuadra de Exterminadores (Terminator Squad)",
+      "Caballeros del Ala de Muerte (Deathwing Knights)",
+      "Escuadra de Exterminadores del Ala de Muerte"
+    ],
+    "notes": "Comandante supremo de la 1ª Compañía (Ala de Muerte). Letal duelista equipado con armadura de Exterminador."
+  },
+  {
+    "id": "da_sammael",
+    "name": "Sammael",
+    "originalName": "Grand Master Sammael",
+    "aliases": [
+      "Gran Maestre Sammael",
+      "Sammael"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": true,
+    "keywords": [
+      "MONTADO",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "SAMMAEL",
+      "MOUNTED",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "CAPTAIN",
+      "RAVENWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 7,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "da_asmodai",
-          "name": "Asmodai",
-          "originalName": "Master of Repentance Asmodai",
-          "aliases": [
-                "Asmodai",
-                "Maestre Asmodai"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Ala de Muerte",
-          "isEpicHero": true,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "CAPELLÁN",
-                "ALA DE MUERTE",
-                "ASMODAI",
-                "INFANTRY",
-                "CHARACTER",
-                "EPIC HERO",
-                "CHAPLAIN",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "TACTICUS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 4,
-                "l": "5+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 80
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Crozius Arcanum and Power Weapon - Strike",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Precision"
-                      ]
-                },
-                {
-                      "name": "Crozius Arcanum and Power Weapon - Sweep",
-                      "range": "Combate",
-                      "a": 8,
-                      "ws": "2+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLEAVE 1"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Exemplar of Hate: This unit’s melee attacks can re-roll hit rolls .",
-                "Feared Interrogator: At the start of the Fight phase , each enemy CHARACTER unit within 6\" of this model makes a battle-shock roll , with -1 to that battle-shock roll .",
-                "Codex Discipline"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS"
-          ],
-          "notes": "El más antiguo y temido de los Capellanes Interrogadores de los Ángeles Oscuros."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 120
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Magistral (Master-crafted)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "2+",
+        "f": 8,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta Acoplado (Twin Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "La Espada del Cuervo (The Raven Sword)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 2"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Cortar la Retirada: Cuando una unidad enemiga trabada con esta miniatura (excepto MONSTRUOS o VEHÍCULOS) intente destrabarse, tira 1D6: con 4+ no puede retirarse y permanece trabada.",
+      "Gran Maestre del Ala de Cuervo: Esta unidad tiene la habilidad MÓVIL. En tu fase de Mando, selecciona una doctrina de combate adicional activa para unidades Ala de Cuervo a 6\".",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [
+      "Escuadra de Batidores (Outriders)",
+      "Caballeros Negros del Ala de Cuervo"
+    ],
+    "notes": "Comandante supremo de la 2ª Compañía (Ala de Cuervo) a lomos de su moto a reacción relicaria Corvex."
+  },
+  {
+    "id": "da_asmodai",
+    "name": "Asmodai",
+    "originalName": "Master of Repentance Asmodai",
+    "aliases": [
+      "Asmodai",
+      "Maestre Asmodai"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Ala de Muerte",
+    "isEpicHero": true,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "CAPELLÁN",
+      "ALA DE MUERTE",
+      "ASMODAI",
+      "INFANTRY",
+      "CHARACTER",
+      "EPIC HERO",
+      "CHAPLAIN",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "TACTICUS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 4,
+      "l": "5+",
+      "co": 1
     },
-
-    {
-          "id": "da_ezekiel",
-          "name": "Ezekiel",
-          "originalName": "Grand Master of Librarians Ezekiel",
-          "aliases": [
-                "Ezekiel",
-                "Gran Bibliotecario Ezekiel"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Ala de Muerte",
-          "isEpicHero": true,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "PSÍQUICO",
-                "BIBLIOTECARIO",
-                "ALA DE MUERTE",
-                "EZEKIEL",
-                "INFANTRY",
-                "CHARACTER",
-                "EPIC HERO",
-                "PSYKER",
-                "LIBRARIAN",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 110
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Mind Wipe - Focused Witchfire",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Devastating Wounds",
-                            "Hazardous",
-                            "Precision",
-                            "PSYCHIC",
-                            "Anti-Character 4+",
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Mind Wipe - Witchfire",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": "D6",
-                      "keywords": [
-                            "Devastating Wounds",
-                            "Precision",
-                            "CLOSE-QUARTERS",
-                            "PSYCHIC"
-                      ]
-                },
-                {
-                      "name": "El Salvador (The Deliverer)",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Precision",
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Perdición del Traidor (Traitor's Bane)",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Precision",
-                            "PSYCHIC"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Engulfing Fear (psychic level 1): In your Shooting phase , if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . Select one enemy unit within 12\" of this model. That unit makes a battle-shock roll with -1 to that battle-shock roll .",
-                "Whispers of the Shadow Forest (psychic level 1): When an enemy unit targets this unit, if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . Attacks that target this unit have -1 to hit rolls until the end of the phase.",
-                "Book of Salvation: This unit’s melee attacks have +1 A .",
-                "Chief Librarian (psyker level 3): This model has the psychic abilities listed in the Psychic Abilities section.",
-                "Psychic Hood: This unit has Feel No Pain 4+ against psychic attacks and mortal wounds .",
-                "Codex Discipline"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS"
-          ],
-          "notes": "Poseedor del Libro de la Salvación y Guardián de las Llaves del Librarium de la Roca."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 80
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Crozius Arcanum y Arma de Energía – Golpe",
+        "range": "Combate",
+        "a": 5,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)"
+        ]
+      },
+      {
+        "name": "Crozius Arcanum y Arma de Energía – Barrido",
+        "range": "Combate",
+        "a": 8,
+        "ws": "2+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Hendedura 1 (Cleave 1)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Ejemplar del Odio: Los ataques cuerpo a cuerpo de esta unidad pueden repetir las tiradas para impactar.",
+      "Interrogador Temido: Al inicio de la fase de Combate, cada unidad PERSONAJE enemiga a 6\" o menos de esta miniatura debe realizar un chequeo de Acobardamiento, sufriendo un modificador de -1 si esta miniatura está a distancia de combate de dicha unidad enemiga.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)"
+    ],
+    "notes": "El más antiguo y temido de los Capellanes Interrogadores de los Ángeles Oscuros."
+  },
+  {
+    "id": "da_ezekiel",
+    "name": "Ezekiel",
+    "originalName": "Grand Master of Librarians Ezekiel",
+    "aliases": [
+      "Ezekiel",
+      "Gran Bibliotecario Ezekiel"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Ala de Muerte",
+    "isEpicHero": true,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "PSÍQUICO",
+      "BIBLIOTECARIO",
+      "ALA DE MUERTE",
+      "EZEKIEL",
+      "INFANTRY",
+      "CHARACTER",
+      "EPIC HERO",
+      "PSYKER",
+      "LIBRARIAN",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "da_lazarus",
-          "name": "Maestre Lazarus",
-          "originalName": "Master Lazarus",
-          "aliases": [
-                "Lazarus",
-                "Capitán Lazarus"
-          ],
-          "role": "Héroe Épico",
-          "wing": "Línea General / Círculo Interior",
-          "isEpicHero": true,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "HÉROE ÉPICO",
-                "CAPITÁN",
-                "LAZARUS",
-                "INFANTRY",
-                "CHARACTER",
-                "EPIC HERO",
-                "CAPTAIN",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "TACTICUS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 80
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Filo de la Enemistad (Enmity's Edge)",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Psyker 2+"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Intractable Will: In the Fight phase , when a model in this unit is destroyed , if this unit has not been selected to fight this phase, roll one D6: On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",
-                "The Spiritshield Helm: This unit has Feel No Pain 3+ against psychic attacks and mortal wounds .",
-                "Codex Discipline"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "COMPANY HEROES",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS"
-          ],
-          "notes": "Capitán de la 5ª Compañía de los Ángeles Oscuros, primer Primaris en cruzar el Rubicón dentro de la Orden."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 110
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Borrado Mental – Fuego Brujo Concentrado",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Peligrosa (Hazardous)",
+          "Precisión (Precision)",
+          "Psíquica (Psychic)",
+          "Anti-Character 4+",
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Borrado Mental – Fuego Brujo",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": "D6",
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Precisión (Precision)",
+          "Combate Cerrado (Close-Quarters)",
+          "Psíquica (Psychic)"
+        ]
+      },
+      {
+        "name": "El Salvador (The Deliverer)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)",
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Perdición del Traidor (Traitor's Bane)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "2+",
+        "f": 6,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)",
+          "Psíquica (Psychic)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Miedo Envolvente (Psíquico Nivel 1): En tu fase de Disparo, si la unidad no está acobardada, realiza un chequeo psíquico; si lo supera, una unidad enemiga visible a 18\" sufre Acobardamiento y -1 a su Liderazgo.",
+      "Susurros del Bosque Sombrío (Psíquico Nivel 1): Cuando una unidad enemiga designe a esta unidad como objetivo, si no está acobardada, resta 1 a las tiradas de impacto del atacante.",
+      "Libro de la Salvación: Mientras esta miniatura lidere una unidad, las miniaturas de dicha unidad tienen +1 Ataque en combate cuerpo a cuerpo.",
+      "Bibliotecario Jefe (Psíquico Nivel 3): Esta miniatura domina los poderes psíquicos ancestrales del Círculo Interior.",
+      "Capucha Psíquica: Esta unidad tiene No Hay Dolor 4+ contra ataques psíquicos y heridas mortales.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)"
+    ],
+    "notes": "Poseedor del Libro de la Salvación y Guardián de las Llaves del Librarium de la Roca."
+  },
+  {
+    "id": "da_lazarus",
+    "name": "Maestre Lazarus",
+    "originalName": "Master Lazarus",
+    "aliases": [
+      "Lazarus",
+      "Capitán Lazarus"
+    ],
+    "role": "Héroe Épico",
+    "wing": "Línea General / Círculo Interior",
+    "isEpicHero": true,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "HÉROE ÉPICO",
+      "CAPITÁN",
+      "LAZARUS",
+      "INFANTRY",
+      "CHARACTER",
+      "EPIC HERO",
+      "CAPTAIN",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "TACTICUS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "da_deathwing_knights",
-          "name": "Caballeros del Ala de Muerte",
-          "originalName": "Deathwing Knights",
-          "role": "Élite / Infantería Pesada",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "EXTERMINADOR",
-                "ALA DE MUERTE",
-                "CABALLEROS",
-                "INFANTRY",
-                "TERMINATOR",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 255
-                }
-          ],
-          "rangedWeapons": [],
-          "meleeWeapons": [
-                {
-                      "name": "Great Weapon of the Unforgiven",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds",
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Mace of Absolution",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "ANTI-MONSTER/VEHICLE 4+"
-                      ]
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Relic Weapon",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Lethal Hits"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Inner Circle: Attacks that target this unit have -1 D . This unit cannot be targeted with the Tactical Dreadnought Fortitude stratagem .",
-                "Teleport Homer (Once per battle, per unit): At the start of the battle, you can set up one Teleport Homer token for this unit on the battlefield. If you do: When you target this unit with the Rapid Ingress stratagem , you can use that Teleport Homer token. If you do, that use is -1 CP, but when resolving that stratagem , this unit must be set up within 3\" of that Teleport Homer token and not within 8\" of an enemy unit. That Teleport Homer token is then removed from the battlefield. If an enemy unit ends a move within 1\" of that Teleport Homer token, that Teleport Homer token is removed from the battlefield.",
-                "This unit can be supported by the following unit: ANCIENT IN TERMINATOR ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "La élite suprema de combate cuerpo a cuerpo del Ala de Muerte con Mazas de Absolución."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 80
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Filo de la Enemistad (Enmity's Edge)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Anti-Psyker 2+"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Voluntad Inquebrantable: En la fase de Combate, cuando una miniatura de esta unidad sea destruida, si aún no ha combatido en esta fase, tira 1D6: con un resultado de 3+, no la retires del juego. La miniatura destruida puede luchar tras finalizar los ataques de la unidad atacante y luego es retirada.",
+      "El Yelmo EscudoEspiritual: Esta unidad tiene No Hay Dolor 3+ contra ataques psíquicos y heridas mortales.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Héroes de la Compañía (Company Heroes)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)"
+    ],
+    "notes": "Capitán de la 5ª Compañía de los Ángeles Oscuros, primer Primaris en cruzar el Rubicón dentro de la Orden."
+  },
+  {
+    "id": "da_deathwing_knights",
+    "name": "Caballeros del Ala de Muerte",
+    "originalName": "Deathwing Knights",
+    "role": "Élite / Infantería Pesada",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "EXTERMINADOR",
+      "ALA DE MUERTE",
+      "CABALLEROS",
+      "INFANTRY",
+      "TERMINATOR",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "da_deathwing_terminator_squad",
-          "name": "Escuadra de Exterminadores del Ala de Muerte",
-          "originalName": "Deathwing Terminator Squad",
-          "role": "Infantería Pesada",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "EXTERMINADOR",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "TERMINATOR",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 190
-                },
-                {
-                      "models": 10,
-                      "points": 380
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Cyclone Missile Launcher - Frag",
-                      "range": "36\"",
-                      "a": 8,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Cyclone Missile Launcher - Krak",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Plasma Cannon - Standard",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Plasma Cannon - Supercharge",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "Hazardous",
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainfist",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 12,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Deathwing: This unit’s attacks can ignore modifiers to: BS and WS . Hit rolls .",
-                "This unit can be supported by the following unit: ANCIENT IN TERMINATOR ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Veteranos de la 1ª Compañía equipados con cañones de plasma exclusivos de Caliban."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 255
+      }
+    ],
+    "rangedWeapons": [],
+    "meleeWeapons": [
+      {
+        "name": "Gran Arma de los No Perdonados",
+        "range": "Combate",
+        "a": 5,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Maza de Absolución (Mace of Absolution)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Anti-Monstruo/Vehículo 4+"
+        ]
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma Reliquia (Relic Weapon)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Impactos Letales (Lethal Hits)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Círculo Interior: Los ataques dirigidos contra esta unidad sufren -1 al Daño infligido. No puede ser objetivo de la estratagema Fortaleza Dreadnought.",
+      "Baliza de Teletransporte (1 vez por batalla): Puedes desplegar una baliza al inicio de la batalla; permite realizar Despliegue Rápido o Ingress Rápido con coste de -1 CP a 3\" de la baliza.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano con Armadura de Exterminador.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "La élite suprema de combate cuerpo a cuerpo del Ala de Muerte con Mazas de Absolución."
+  },
+  {
+    "id": "da_deathwing_terminator_squad",
+    "name": "Escuadra de Exterminadores del Ala de Muerte",
+    "originalName": "Deathwing Terminator Squad",
+    "role": "Infantería Pesada",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "EXTERMINADOR",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "TERMINATOR",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "da_inner_circle_companions",
-          "name": "Camaradas del Círculo Interior",
-          "originalName": "Inner Circle Companions",
-          "role": "Élite / Guardia de Honor",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "ALA DE MUERTE",
-                "CÍRCULO INTERIOR",
-                "GUARDIA",
-                "INFANTRY",
-                "DEATHWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "TACTICUS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 90
-                },
-                {
-                      "models": 6,
-                      "points": 180
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Calibanite Greatsword - Sweep",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 2"
-                      ]
-                },
-                {
-                      "name": "Calibanite Greatsword - Strike",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Lethal Hits"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Braziers of Judgement: This unit has Stealth . Melee attacks that target this unit have -1 to hit rolls .",
-                "Emnity for the Unworthy: This unit’s attacks that target a CHARACTER unit have +1 to hit rolls .",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY JUDICIAR LIEUTENANT",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Misteriosos guerreros encapuchados que custodian a los más altos dignatarios de la Orden."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 190
+      },
+      {
+        "models": 10,
+        "points": 380
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asalto (Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Cyclone – Fragmentación",
+        "range": "36\"",
+        "a": 8,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Cyclone – Perforante",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma – Estándar",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma – Sobrecarga",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puño Sierra (Chainfist)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 12,
+        "ap": -2,
+        "d": 3,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Ala de Muerte: Los ataques de esta unidad ignoran todos los modificadores negativos a su HP, HA y tiradas de impacto.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano con Armadura de Exterminador.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Veteranos de la 1ª Compañía equipados con cañones de plasma exclusivos de Caliban."
+  },
+  {
+    "id": "da_inner_circle_companions",
+    "name": "Camaradas del Círculo Interior",
+    "originalName": "Inner Circle Companions",
+    "role": "Élite / Guardia de Honor",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "ALA DE MUERTE",
+      "CÍRCULO INTERIOR",
+      "GUARDIA",
+      "INFANTRY",
+      "DEATHWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "TACTICUS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "da_ravenwing_black_knights",
-          "name": "Caballero Negro del Ala de Cuervo",
-          "originalName": "Ravenwing Black Knights",
-          "role": "Ataque Rápido / Montado",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "ALA DE CUERVO",
-                "CABALLEROS NEGROS",
-                "MOUNTED",
-                "RAVENWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "5++",
-                "h": 3,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 85
-                },
-                {
-                      "models": 6,
-                      "points": 170
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Frag",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Krak",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Plasma Talon - Standard",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Plasma Talon - Supercharge",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Hazardous"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Corvus Hammers",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Knights of Caliban: If this unit made a charge move this turn, this unit’s melee attacks have [ANTI-MONSTER/VEHICLE 4+] .",
-                "This unit can be supported by the following unit: RAVENWING COMMAND SQUAD",
-                "Codex Discipline",
-                "Supercharged Engines"
-          ],
-          "leaderOf": [],
-          "notes": "Élite montada de la 2ª Compañía armados con martillos Corvus y garras de plasma."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 90
+      },
+      {
+        "models": 6,
+        "points": 180
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Mandoble Calibanita – Barrido (Sweep)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 2"
+        ]
+      },
+      {
+        "name": "Mandoble Calibanita – Golpe (Strike)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Impactos Letales (Lethal Hits)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Brebajes del Juicio: Esta unidad tiene la regla Sigilo [Stealth]. Los ataques cuerpo a cuerpo enemigos sufren -1 a la tirada para impactar.",
+      "Enemistad hacia los Indignos: Los ataques de esta unidad contra unidades enemigas de PERSONAJE tienen +1 a la tirada para impactar.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Misteriosos guerreros encapuchados que custodian a los más altos dignatarios de la Orden."
+  },
+  {
+    "id": "da_ravenwing_black_knights",
+    "name": "Caballero Negro del Ala de Cuervo",
+    "originalName": "Ravenwing Black Knights",
+    "role": "Ataque Rápido / Montado",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "ALA DE CUERVO",
+      "CABALLEROS NEGROS",
+      "MOUNTED",
+      "RAVENWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "5++",
+      "h": 3,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "da_ravenwing_command_squad",
-          "name": "Escuadra de Mando del Ala de Cuervo",
-          "originalName": "Ravenwing Command Squad",
-          "role": "Montado / Mando",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "ALA DE CUERVO",
-                "MANDO",
-                "PERSONAJE",
-                "MOUNTED",
-                "RAVENWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "CHARACTER"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "5++",
-                "h": 4,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 115
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Frag",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Krak",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Plasma Talon - Standard",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Plasma Talon - Supercharge",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Hazardous"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Corvus Hammers",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                },
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Astartes Banner: While this unit contains a RAVENWING ANCIENT , this unit has +1 OC .",
-                "Honour or Death: While this unit contains a Ravenwing Champion: This unit has +1 to advance rolls and charge rolls . When you target this unit with the Heroic Intervention stratagem , that use is -1CP.",
-                "Narthecium: While this unit contains a Ravenwing Apothecary, in your Command phase , this unit heals D3+1 wounds.",
-                "Codex Discipline",
-                "Supercharged Engines"
-          ],
-          "leaderOf": [
-                "OUTRIDER SQUAD",
-                "RAVENWING BLACK KNIGHTS"
-          ],
-          "notes": "Compuesta por el Campeón, el Boticario y el Portaestandarte del Ala de Cuervo."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 85
+      },
+      {
+        "models": 6,
+        "points": 170
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Fragmentación",
+        "range": "24\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Perforante",
+        "range": "24\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Garras de Plasma – Estándar (Plasma Talon)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Garras de Plasma – Sobrecarga (Plasma Talon)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Peligrosa (Hazardous)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Martillos Corvus (Corvus Hammers)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Caballeros de Caliban: Si esta unidad realizó un movimiento de carga este turno, las armas de combate cuerpo a cuerpo de esta unidad obtienen un bonificador de +1 al Daño y la habilidad [Lanza].",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Escuadra de Mando del Ala de Cuervo.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Motores Sobrealimentados: Otorga mayor velocidad de avance y maniobrabilidad."
+    ],
+    "leaderOf": [],
+    "notes": "Élite montada de la 2ª Compañía armados con martillos Corvus y garras de plasma."
+  },
+  {
+    "id": "da_ravenwing_command_squad",
+    "name": "Escuadra de Mando del Ala de Cuervo",
+    "originalName": "Ravenwing Command Squad",
+    "role": "Montado / Mando",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "ALA DE CUERVO",
+      "MANDO",
+      "PERSONAJE",
+      "MOUNTED",
+      "RAVENWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "CHARACTER"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "5++",
+      "h": 4,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "da_ravenwing_darkshroud",
-          "name": "Mortaja del Ala de Cuervo",
-          "originalName": "Ravenwing Darkshroud",
-          "role": "Vehículo de Apoyo",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "DESLIZADOR",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "HUMO",
-                "VEHICLE",
-                "SPEEDER",
-                "FLY",
-                "RAVENWING",
-                "SMOKE",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 8,
-                "sv": "3+",
-                "inv": "5++",
-                "h": 10,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 80
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Icon of Old Caliban: While a friendly DARK ANGELS unit is within 6\" of this unit, that unit has Stealth .",
-                "Codex Discipline",
-                "Auspex Triangulation Shrines"
-          ],
-          "leaderOf": [],
-          "notes": "Porta una antigua piedra reliquia de Caliban que emite un campo impenetrable de sombras protectoras."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 115
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Fragmentación",
+        "range": "24\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Perforante",
+        "range": "24\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Garras de Plasma – Estándar (Plasma Talon)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Garras de Plasma – Sobrecarga (Plasma Talon)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Peligrosa (Hazardous)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Martillos Corvus (Corvus Hammers)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      },
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Estandarte Astartes: Suma 1 al Control de Objetivo (CO) de cada miniatura de la unidad liderada.",
+      "Honor o Muerte: Mientras contenga un Campeón del Ala de Cuervo, esta unidad tiene +1 a las tiradas para avanzar y cargar.",
+      "Narthecium: En tu fase de Mando, esta unidad cura D3+1 heridas a una miniatura herida de la escuadra.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Motores Sobrealimentados: Otorga mayor velocidad de avance y maniobrabilidad."
+    ],
+    "leaderOf": [
+      "Escuadra de Batidores (Outriders)",
+      "Caballeros Negros del Ala de Cuervo"
+    ],
+    "notes": "Compuesta por el Campeón, el Boticario y el Portaestandarte del Ala de Cuervo."
+  },
+  {
+    "id": "da_ravenwing_darkshroud",
+    "name": "Mortaja del Ala de Cuervo",
+    "originalName": "Ravenwing Darkshroud",
+    "role": "Vehículo de Apoyo",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "DESLIZADOR",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "HUMO",
+      "VEHICLE",
+      "SPEEDER",
+      "FLY",
+      "RAVENWING",
+      "SMOKE",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 8,
+      "sv": "3+",
+      "inv": "5++",
+      "h": 10,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "da_land_speeder_vengeance",
-          "name": "Land Speeder Venganza",
-          "originalName": "Land Speeder Vengeance",
-          "role": "Vehículo Pesado / Artillería Móvil",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "DESLIZADOR",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "VEHICLE",
-                "SPEEDER",
-                "FLY",
-                "RAVENWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "5++",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 150
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Plasma Storm Battery - Supercharge",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "Hazardous",
-                            "BLAST 1",
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Plasma Storm Battery - Standard",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "BLAST 1"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Storm of Vengeance (Once per turn, per unit): In your opponent’s Shooting phase , when an enemy unit has shot, if those attacks destroyed a friendly DARK ANGELS unit within 6\" of this unit, you can use this ability. If you do, this unit shoots using normal shooting but while doing so this unit can only target that enemy unit.",
-                "Codex Discipline",
-                "Auspex Triangulation Shrines"
-          ],
-          "leaderOf": [],
-          "notes": "El mayor deslizador de combate del Ala de Cuervo dotado de devastadora potencia de plasma."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 80
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asalto (Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Icono del Antiguo Caliban: Mientras una unidad amigable de ÁNGELES OSCUROS esté a 6\" o menos de este vehículo, tiene la regla Sigilo [Stealth].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Santuarios de Triangulación de Auspex: Red de sensores avanzados que anulan las ventajas de cobertura del enemigo."
+    ],
+    "leaderOf": [],
+    "notes": "Porta una antigua piedra reliquia de Caliban que emite un campo impenetrable de sombras protectoras."
+  },
+  {
+    "id": "da_land_speeder_vengeance",
+    "name": "Land Speeder Venganza",
+    "originalName": "Land Speeder Vengeance",
+    "role": "Vehículo Pesado / Artillería Móvil",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "DESLIZADOR",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "VEHICLE",
+      "SPEEDER",
+      "FLY",
+      "RAVENWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "5++",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "da_nephilim_jetfighter",
-          "name": "Caza Nephilim",
-          "originalName": "Nephilim Jetfighter",
-          "role": "Aeronave / Interceptor",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "AERONAVE",
-                "VEHÍCULO",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "AIRCRAFT",
-                "VEHICLE",
-                "FLY",
-                "RAVENWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 8,
-                "sv": "3+",
-                "inv": "5++",
-                "h": 11,
-                "l": "6+",
-                "co": "-"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 200
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Avenger Mega Bolter",
-                      "range": "36\"",
-                      "a": 10,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Blacksword Missiles",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Anti-Fly 2+"
-                      ]
-                },
-                {
-                      "name": "Nephilim Lascannons",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Blindaje de Combate (Armoured hull)",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Lightning-fast Manoeuvres: Ranged attacks that target this unit have -1 to wound rolls .",
-                "Codex Discipline",
-                "Thundercowl Turbines"
-          ],
-          "leaderOf": [],
-          "notes": "Caza interceptor de alta velocidad para erradicar amenazas aéreas enemigas."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 150
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asalto (Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Batería Tormenta de Plasma – Sobrecarga",
+        "range": "36\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Explosión 1",
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Batería Tormenta de Plasma – Estándar",
+        "range": "36\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 9,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Explosión 1"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Tormenta de Venganza (1 vez por turno): En la fase de Disparo enemiga, cuando una unidad enemiga dispare a un aliado cercano, este deslizador puede disparar en respuesta.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Santuarios de Triangulación de Auspex: Red de sensores avanzados que anulan las ventajas de cobertura del enemigo."
+    ],
+    "leaderOf": [],
+    "notes": "El mayor deslizador de combate del Ala de Cuervo dotado de devastadora potencia de plasma."
+  },
+  {
+    "id": "da_nephilim_jetfighter",
+    "name": "Caza Nephilim",
+    "originalName": "Nephilim Jetfighter",
+    "role": "Aeronave / Interceptor",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "AERONAVE",
+      "VEHÍCULO",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "AIRCRAFT",
+      "VEHICLE",
+      "FLY",
+      "RAVENWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 8,
+      "sv": "3+",
+      "inv": "5++",
+      "h": 11,
+      "l": "6+",
+      "co": "-"
     },
-
-    {
-          "id": "da_dark_talon",
-          "name": "Espolón del Ala de Cuervo (Dark Talon)",
-          "originalName": "Ravenwing Dark Talon",
-          "role": "Aeronave / Bombardero",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "AERONAVE",
-                "VEHÍCULO",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "AIRCRAFT",
-                "VEHICLE",
-                "FLY",
-                "RAVENWING",
-                "DARK ANGELS",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 8,
-                "sv": "3+",
-                "inv": "5++",
-                "h": 11,
-                "l": "6+",
-                "co": "-"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 190
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Cañón Rift del Vacío (Rift Cannon)",
-                      "range": "18\"",
-                      "a": "D3+1",
-                      "bs": "3+",
-                      "f": 16,
-                      "ap": -4,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds",
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Hurricane Bolter",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 6",
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Stasis Bomb: At the end of your opponent’s Fight phase , select one visible enemy unit (excluding AIRCRAFT / Lone Operative units) within 24\" of this unit. That enemy unit is slowed until the end of your opponent’s next Movement phase : While a unit is slowed, in your opponent’s Movement phase, when that unit is selected to move , unless that unit remains stationary , roll one D6: On a 1-4, that unit suffers D3 mortal wounds and that unit has -2\" M . On a 5-6, that unit suffers 2D3 mortal wounds and that unit has -3\" M .",
-                "Codex Discipline",
-                "Thundercowl Turbines"
-          ],
-          "leaderOf": [],
-          "notes": "Aeronave equipada con el Cañón Rift, capaz de abrir microfisuras en la disformidad."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 200
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Megabólter Vengador (Avenger Mega Bolter)",
+        "range": "36\"",
+        "a": 10,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Misiles Espada Negra (Blacksword Missiles)",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": "D3+2",
+        "keywords": [
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ]
+      },
+      {
+        "name": "Cañones Láser Nephilim",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Blindaje de Combate (Armoured hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Maniobras Ultrarrápidas: Los ataques a distancia que tengan como objetivo a esta unidad tienen un modificador de -1 a las tiradas para herir.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Turbinas Atronadoras: Propulsión de alta potencia que otorga gran movilidad sobre el campo de batalla."
+    ],
+    "leaderOf": [],
+    "notes": "Caza interceptor de alta velocidad para erradicar amenazas aéreas enemigas."
+  },
+  {
+    "id": "da_dark_talon",
+    "name": "Espolón del Ala de Cuervo (Dark Talon)",
+    "originalName": "Ravenwing Dark Talon",
+    "role": "Aeronave / Bombardero",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "AERONAVE",
+      "VEHÍCULO",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "AIRCRAFT",
+      "VEHICLE",
+      "FLY",
+      "RAVENWING",
+      "DARK ANGELS",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 8,
+      "sv": "3+",
+      "inv": "5++",
+      "h": 11,
+      "l": "6+",
+      "co": "-"
     },
-
-    {
-          "id": "sm_terminator_squad",
-          "name": "Escuadra de Exterminadores",
-          "originalName": "Terminator Squad",
-          "role": "Infantería Pesada",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "EXTERMINADOR",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "TERMINATOR",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 190
-                },
-                {
-                      "models": 10,
-                      "points": 380
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Cyclone Missile Launcher - Frag",
-                      "range": "36\"",
-                      "a": 8,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Cyclone Missile Launcher - Krak",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainfist - Standard",
-                      "range": "Combate",
-                      "a": 2,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Chainfist - Hunter",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 12,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Teleport Homer (Once per battle, per unit): At the start of the battle, you can set up one Teleport Homer token for this unit on the battlefield. If you do: When you target this unit with the Rapid Ingress stratagem , you can use that Teleport Homer token. If you do, that use is -1 CP, but when resolving that stratagem , this unit must be set up within 3\" of that Teleport Homer token and not within 8\" of an enemy unit. That Teleport Homer token is then removed from the battlefield. If an enemy unit ends a move within 1\" of that Teleport Homer token, that Teleport Homer token is removed from the battlefield.",
-                "Fury of the First: This unit’s attacks that target a unit within 9\" of this unit have +1 AP .",
-                "This unit can be supported by the following unit: ANCIENT IN TERMINATOR ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Escuadra estándar de Exterminadores de la 1.ª Compañía del Ala de Muerte."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 190
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Rift del Vacío (Rift Cannon)",
+        "range": "18\"",
+        "a": "D3+1",
+        "bs": "3+",
+        "f": 16,
+        "ap": -4,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Bólter Huracán (Hurricane Bolter)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 6 (Rapid Fire 6)",
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Bomba de Estasis: Al final de la fase de Combate enemiga, selecciona una unidad enemiga visible; dicha unidad sufre heridas mortales y queda trabada en un campo de estasis temporal.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Turbinas Atronadoras: Propulsión de alta potencia que otorga gran movilidad sobre el campo de batalla."
+    ],
+    "leaderOf": [],
+    "notes": "Aeronave equipada con el Cañón Rift, capaz de abrir microfisuras en la disformidad."
+  },
+  {
+    "id": "sm_terminator_squad",
+    "name": "Escuadra de Exterminadores",
+    "originalName": "Terminator Squad",
+    "role": "Infantería Pesada",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "EXTERMINADOR",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "TERMINATOR",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_terminator_assault_squad",
-          "name": "Escuadra de Exterminadores de Asalto",
-          "originalName": "Terminator Assault Squad",
-          "role": "Infantería Pesada / Asalto",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "EXTERMINADOR",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "TERMINATOR",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 170
-                },
-                {
-                      "models": 10,
-                      "points": 340
-                }
-          ],
-          "rangedWeapons": [],
-          "meleeWeapons": [
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                },
-                {
-                      "name": "Twin Lightning Claws",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Teleport Homer (Once per battle, per unit): At the start of the battle, you can set up one Teleport Homer token for this unit on the battlefield. If you do: When you target this unit with the Rapid Ingress stratagem , you can use that Teleport Homer token. If you do, that use is -1 CP, but when resolving that stratagem , this unit must be set up within 3\" of that Teleport Homer token and not within 8\" of an enemy unit. That Teleport Homer token is then removed from the battlefield. If an enemy unit ends a move within 1\" of that Teleport Homer token, that Teleport Homer token is removed from the battlefield.",
-                "Terminatus Assault: If this unit made a charge move this turn, this unit’s: Lightning Claws weapons have [Sustained Hits 1: non- Monster/Vehicle] . Thunder Hammer weapons have [Sustained Hits 1: Monster/Vehicle] .",
-                "This unit can be supported by the following unit: ANCIENT IN TERMINATOR ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Especialistas de choque cuerpo a cuerpo con martillos de trueno y escudos de asedio."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 190
+      },
+      {
+        "models": 10,
+        "points": 380
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asalto (Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Cyclone – Fragmentación",
+        "range": "36\"",
+        "a": 8,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Cyclone – Perforante",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puño Sierra – Estándar (Chainfist - Standard)",
+        "range": "Combate",
+        "a": 2,
+        "ws": "4+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Puño Sierra – Cazador (Chainfist - Hunter)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 12,
+        "ap": -2,
+        "d": 3,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Baliza de Teletransporte (1 vez por batalla): Puedes desplegar una baliza al inicio de la batalla; permite realizar Despliegue Rápido o Ingress Rápido con coste de -1 CP a 3\" de la baliza.",
+      "Furia de los Primeros: Los ataques de esta unidad dirigidos a un objetivo situado a 9\" o menos tienen +1 al FP.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano con Armadura de Exterminador.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Escuadra estándar de Exterminadores de la 1.ª Compañía del Ala de Muerte."
+  },
+  {
+    "id": "sm_terminator_assault_squad",
+    "name": "Escuadra de Exterminadores de Asalto",
+    "originalName": "Terminator Assault Squad",
+    "role": "Infantería Pesada / Asalto",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "EXTERMINADOR",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "TERMINATOR",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_captain_terminator",
-          "name": "Capitán con Armadura de Exterminador",
-          "originalName": "Captain in Terminator Armour",
-          "role": "Cuartel General / Personaje",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "EXTERMINADOR",
-                "CAPITÁN",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "CHARACTER",
-                "TERMINATOR",
-                "CAPTAIN",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 6,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 90
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Combi-weapon - Infernus",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Combi-weapon - Purgatus",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Combi-weapon - Damnatus",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Relic Fist",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "2+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Relic Weapon",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Despliegue Rápido, Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Strategic Acumen: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Unstoppable Valour: You can re-roll charge rolls for this unit.",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "TERMINATOR ASSAULT SQUAD",
-                "TERMINATOR SQUAD",
-                "DEATHWING KNIGHTS",
-                "DEATHWING TERMINATOR SQUAD",
-                "DEATHWATCH TERMINATOR SQUAD",
-                "WOLF GUARD TERMINATORS"
-          ],
-          "notes": "Veterano oficial protegido por armadura táctica Dreadnought con halo de hierro integrado."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 170
+      },
+      {
+        "models": 10,
+        "points": 340
+      }
+    ],
+    "rangedWeapons": [],
+    "meleeWeapons": [
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      },
+      {
+        "name": "Garras Relámpago Acopladas (Twin Lightning Claws)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Baliza de Teletransporte (1 vez por batalla): Puedes desplegar una baliza al inicio de la batalla; permite realizar Despliegue Rápido o Ingress Rápido con coste de -1 CP a 3\" de la baliza.",
+      "Asalto Terminatus: Si esta unidad realizó un movimiento de carga este turno, sus Garras Relámpago obtienen la regla [Acoplada] y sus Martillos de Trueno obtienen [Heridas Devastadoras].",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano con Armadura de Exterminador.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Especialistas de choque cuerpo a cuerpo con martillos de trueno y escudos de asedio."
+  },
+  {
+    "id": "sm_captain_terminator",
+    "name": "Capitán con Armadura de Exterminador",
+    "originalName": "Captain in Terminator Armour",
+    "role": "Cuartel General / Personaje",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "EXTERMINADOR",
+      "CAPITÁN",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "CHARACTER",
+      "TERMINATOR",
+      "CAPTAIN",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 6,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_chaplain_terminator",
-          "name": "Capellán con Armadura de Exterminador",
-          "originalName": "Chaplain in Terminator Armour",
-          "role": "Cuartel General / Personaje",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "EXTERMINADOR",
-                "CAPELLÁN",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "CHARACTER",
-                "TERMINATOR",
-                "CHAPLAIN",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 5,
-                "l": "5+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Crozius Arcanum",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "CLEAVE 1"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Despliegue Rápido, Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Litany of Hate: This unit’s melee attacks have [Lance] .",
-                "Zealous Fortitude: This unit has Feel No Pain 4+ against mortal wounds .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "TERMINATOR ASSAULT SQUAD",
-                "TERMINATOR SQUAD",
-                "DEATHWING KNIGHTS",
-                "DEATHWING TERMINATOR SQUAD",
-                "DEATHWATCH TERMINATOR SQUAD",
-                "WOLF GUARD TERMINATORS"
-          ],
-          "notes": "Líder espiritual y guerrero implacable que inspira a sus hermanos exterminadores al combate sagrado."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 90
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Combiarma – Infernus",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Combiarma – Purgatus",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Combiarma – Damnatus",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puño Reliquia (Relic Fist)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "2+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma Reliquia (Relic Weapon)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Despliegue Rápido, Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Perspicacia Estratégica: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa para esta unidad hasta tu próxima fase de Mando.",
+      "Valor Imparable: Puedes repetir las tiradas de carga realizadas para esta unidad.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Exterminadores de Asalto (Terminator Assault)",
+      "Escuadra de Exterminadores (Terminator Squad)",
+      "Caballeros del Ala de Muerte (Deathwing Knights)",
+      "Escuadra de Exterminadores del Ala de Muerte",
+      "Escuadra de Exterminadores de los Guardianes de la Muerte (Deathwatch)",
+      "Exterminadores de la Guardia del Lobo (Wolf Guard)"
+    ],
+    "notes": "Veterano oficial protegido por armadura táctica Dreadnought con halo de hierro integrado."
+  },
+  {
+    "id": "sm_chaplain_terminator",
+    "name": "Capellán con Armadura de Exterminador",
+    "originalName": "Chaplain in Terminator Armour",
+    "role": "Cuartel General / Personaje",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "EXTERMINADOR",
+      "CAPELLÁN",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "CHARACTER",
+      "TERMINATOR",
+      "CHAPLAIN",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 5,
+      "l": "5+",
+      "co": 1
     },
-
-    {
-          "id": "sm_librarian_terminator",
-          "name": "Bibliotecario con Armadura de Exterminador",
-          "originalName": "Librarian in Terminator Armour",
-          "role": "Cuartel General / Psíquico",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "EXTERMINADOR",
-                "PSÍQUICO",
-                "BIBLIOTECARIO",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "CHARACTER",
-                "TERMINATOR",
-                "PSYKER",
-                "LIBRARIAN",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 80
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Smite - Focused Witchfire",
-                      "range": "24\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds",
-                            "PSYCHIC",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Castigo – Fuego Brujo (Smite – witchfire)",
-                      "range": "24\"",
-                      "a": "D6",
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "PSYCHIC"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Force Weapon",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "PSYCHIC"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Despliegue Rápido, Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Might of Heroes (psychic level 1): In the Fight phase , if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . This unit’s melee attacks have +2 S .",
-                "Thunderous Force (psychic level 1): In your Shooting phase , if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . This unit’s ranged attacks have +6\" R .",
-                "Librarian (psyker level 1): This model has the psychic abilities listed in the Psychic Abilities section.",
-                "Psychic Hood (Psychic): This unit has Feel No Pain 4+ against psychic attacks .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "TERMINATOR ASSAULT SQUAD",
-                "TERMINATOR SQUAD",
-                "DEATHWING KNIGHTS",
-                "DEATHWING TERMINATOR SQUAD",
-                "DEATHWATCH TERMINATOR SQUAD",
-                "WOLF GUARD TERMINATORS"
-          ],
-          "notes": "Canaliza las tormentas del Immaterium protegido por su servoarmadura blindada y capucha psíquica."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Crozius Arcanum (Crozius Arcanum)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "2+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Hendedura 1 (Cleave 1)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Despliegue Rápido, Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Letanía de Odio: Los ataques cuerpo a cuerpo de esta unidad tienen la habilidad [Lanza / Lance].",
+      "Fortaleza Celosa: Esta unidad tiene No Hay Dolor 4+ contra heridas mortales.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Exterminadores de Asalto (Terminator Assault)",
+      "Escuadra de Exterminadores (Terminator Squad)",
+      "Caballeros del Ala de Muerte (Deathwing Knights)",
+      "Escuadra de Exterminadores del Ala de Muerte",
+      "Escuadra de Exterminadores de los Guardianes de la Muerte (Deathwatch)",
+      "Exterminadores de la Guardia del Lobo (Wolf Guard)"
+    ],
+    "notes": "Líder espiritual y guerrero implacable que inspira a sus hermanos exterminadores al combate sagrado."
+  },
+  {
+    "id": "sm_librarian_terminator",
+    "name": "Bibliotecario con Armadura de Exterminador",
+    "originalName": "Librarian in Terminator Armour",
+    "role": "Cuartel General / Psíquico",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "EXTERMINADOR",
+      "PSÍQUICO",
+      "BIBLIOTECARIO",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "CHARACTER",
+      "TERMINATOR",
+      "PSYKER",
+      "LIBRARIAN",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_ancient_terminator",
-          "name": "Anciano con Armadura de Exterminador",
-          "originalName": "Ancient in Terminator Armour",
-          "role": "Personaje / Soporte",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "EXTERMINADOR",
-                "PORTAESTANDARTE",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "CHARACTER",
-                "TERMINATOR",
-                "ANCIENT",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Despliegue Rápido, Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Raise the Banner: At the end of your Movement phase , if this unit is controlling an objective , that objective is secured .",
-                "Never Shall the Standard Fall: While this unit is within range of an objective , attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "TERMINATOR ASSAULT SQUAD",
-                "TERMINATOR SQUAD",
-                "DEATHWING KNIGHTS",
-                "DEATHWING TERMINATOR SQUAD",
-                "DEATHWATCH TERMINATOR SQUAD",
-                "WOLF GUARD TERMINATORS"
-          ],
-          "notes": "Guardián de las sagradas enseñas del Ala de Muerte. Eleva la moral de los veteranos en los puntos críticos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 80
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Castigo Divino (Smite) – Fuego Brujo Concentrado",
+        "range": "24\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Psíquica (Psychic)",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Castigo – Fuego Brujo (Smite – witchfire)",
+        "range": "24\"",
+        "a": "D6",
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Psíquica (Psychic)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma Psíquica / de Fuerza (Force Weapon)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Psíquica (Psychic)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Despliegue Rápido, Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Poder de los Héroes (Psíquico Nivel 1): En la fase de Combate, si no está acobardada, realiza un chequeo psíquico; si lo supera, añade +1 a la Fuerza y Ataques de las armas de combate de la unidad.",
+      "Fuerza Atronadora (Psíquico Nivel 1): En tu fase de Disparo, desata una onda de choque psíquica que inflige heridas mortales a unidades enemigas cercanas.",
+      "Bibliotecario (Psíquico Nivel 1): Esta miniatura domina las disciplinas psíquicas de combate de los Adeptus Astartes.",
+      "Capucha Psíquica: Esta unidad tiene No Hay Dolor 4+ contra ataques psíquicos y heridas mortales.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Exterminadores de Asalto (Terminator Assault)",
+      "Escuadra de Exterminadores (Terminator Squad)",
+      "Caballeros del Ala de Muerte (Deathwing Knights)",
+      "Escuadra de Exterminadores del Ala de Muerte",
+      "Escuadra de Exterminadores de los Guardianes de la Muerte (Deathwatch)",
+      "Exterminadores de la Guardia del Lobo (Wolf Guard)"
+    ],
+    "notes": "Canaliza las tormentas del Immaterium protegido por su servoarmadura blindada y capucha psíquica."
+  },
+  {
+    "id": "sm_ancient_terminator",
+    "name": "Anciano con Armadura de Exterminador",
+    "originalName": "Ancient in Terminator Armour",
+    "role": "Personaje / Soporte",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "EXTERMINADOR",
+      "PORTAESTANDARTE",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "CHARACTER",
+      "TERMINATOR",
+      "ANCIENT",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_bladeguard_ancient",
-          "name": "Anciano de Ferreaguardia",
-          "originalName": "Bladeguard Ancient",
-          "role": "Personaje / Soporte",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "PERSONAJE",
-                "PORTAESTANDARTE",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "CHARACTER",
-                "ANCIENT",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "TACTICUS",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 4,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 70
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Relics of Battle",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Raise the Banner: At the end of your Movement phase , if this unit is controlling an objective , that objective is secured .",
-                "Deeds of Legend: While this unit is within range of an objective , this unit’s melee attacks have +1 A .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "BLADEGUARD VETERAN SQUAD"
-          ],
-          "notes": "Veterano del Círculo Interior que porta un estandarte de batalla glorioso para alentar a la Ferreaguardia."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Despliegue Rápido, Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Alzad el Estandarte: Al final de tu fase de Movimiento, si esta unidad controla un marcador de objetivo, dicho objetivo queda asegurado hasta que una unidad enemiga lo controle, incluso si abandonas el marcador.",
+      "¡El Estandarte Jamás Caerá!: Mientras esta unidad esté a alcance de un marcador de objetivo, las miniaturas de esta unidad obtienen la habilidad No Hay Dolor 5+ (Feel No Pain 5+).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Exterminadores de Asalto (Terminator Assault)",
+      "Escuadra de Exterminadores (Terminator Squad)",
+      "Caballeros del Ala de Muerte (Deathwing Knights)",
+      "Escuadra de Exterminadores del Ala de Muerte",
+      "Escuadra de Exterminadores de los Guardianes de la Muerte (Deathwatch)",
+      "Exterminadores de la Guardia del Lobo (Wolf Guard)"
+    ],
+    "notes": "Guardián de las sagradas enseñas del Ala de Muerte. Eleva la moral de los veteranos en los puntos críticos."
+  },
+  {
+    "id": "sm_bladeguard_ancient",
+    "name": "Anciano de Ferreaguardia",
+    "originalName": "Bladeguard Ancient",
+    "role": "Personaje / Soporte",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "PERSONAJE",
+      "PORTAESTANDARTE",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "CHARACTER",
+      "ANCIENT",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "TACTICUS",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 4,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_bladeguard_veterans",
-          "name": "Escuadra de Veteranos de Ferreaguardia",
-          "originalName": "Bladeguard Veteran Squad",
-          "role": "Élite / Infantería",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "ALA DE MUERTE",
-                "FERREAGUARDIA",
-                "INFANTRY",
-                "DEATHWING",
-                "BLADEGUARD",
-                "ADEPTUS ASTARTES",
-                "TACTICUS",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 90
-                },
-                {
-                      "models": 6,
-                      "points": 180
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Neo-volkite Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Devastating Wounds"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Hazardous",
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Master-crafted Power Sword",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Bladeguard (Once per turn, per unit): In the Fight phase , when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following: This unit’s melee attacks have +1 to hit rolls . Or: Attacks that target this unit have -1 to hit rolls .",
-                "This unit can be supported by the following units: APOTHECARY BLADEGUARD ANCIENT JUDICIAR LIEUTENANT CASTELLAN SANGUINARY PRIEST KAIUS KONORIUS WARDENS OF ULTRAMAR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Veteranos con espadas maestras y escudos tormenta incorporados a la 1ª Compañía."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 70
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Reliquias de Batalla",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Alzad el Estandarte: Al final de tu fase de Movimiento, si esta unidad controla un marcador de objetivo, dicho objetivo queda asegurado hasta que una unidad enemiga lo controle, incluso si abandonas el marcador.",
+      "Hazañas Legendarias: Mientras esta unidad esté a alcance de un marcador de objetivo, los ataques cuerpo a cuerpo de esta unidad obtienen la regla [Impactos Letales].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)"
+    ],
+    "notes": "Veterano del Círculo Interior que porta un estandarte de batalla glorioso para alentar a la Ferreaguardia."
+  },
+  {
+    "id": "sm_bladeguard_veterans",
+    "name": "Escuadra de Veteranos de Ferreaguardia",
+    "originalName": "Bladeguard Veteran Squad",
+    "role": "Élite / Infantería",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "ALA DE MUERTE",
+      "FERREAGUARDIA",
+      "INFANTRY",
+      "DEATHWING",
+      "BLADEGUARD",
+      "ADEPTUS ASTARTES",
+      "TACTICUS",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_sternguard_veterans",
-          "name": "Escuadra de Veteranos de Retaguardia (Sternguard)",
-          "originalName": "Sternguard Veteran Squad",
-          "role": "Infantería / Disparo",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "ALA DE MUERTE",
-                "RETAGUARDIA",
-                "INFANTRY",
-                "DEATHWING",
-                "STERNGUARD",
-                "ADEPTUS ASTARTES",
-                "TACTICUS",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 105
-                },
-                {
-                      "models": 10,
-                      "points": 210
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Artificer Firearm - Infernus",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "ASSAULT",
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Artificer Firearm - Purgatus",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "ASSAULT",
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Artificer Firearm - Damnatus",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "ASSAULT",
-                            "Melta 2"
-                      ]
-                },
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Heavy",
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Pyrecannon",
-                      "range": "12\"",
-                      "a": 4,
-                      "bs": "-",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Chainsword",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Veteran Marksmen: This unit’s ranged attacks can re-roll hit rolls of 1.",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY JUDICIAR LIEUTENANT CASTELLAN SANGUINARY PRIEST KAIUS KONORIUS WARDENS OF ULTRAMAR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Especialistas de tiro con munición artesanal integrada en la 1ª Compañía."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 90
+      },
+      {
+        "models": 6,
+        "points": 180
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola Neo-volkite",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada de Energía Magistral (Master-crafted)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Ferreaguardia (1 vez por turno): En la fase de Combate, al ser seleccionada para combatir o al recibir ataques, puede repetir tiradas de salvación invulnerable de 1 o tiradas de impacto de 1.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Apotecario, Anciano de Ferreaguardia, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Veteranos con espadas maestras y escudos tormenta incorporados a la 1ª Compañía."
+  },
+  {
+    "id": "sm_sternguard_veterans",
+    "name": "Escuadra de Veteranos de Retaguardia (Sternguard)",
+    "originalName": "Sternguard Veteran Squad",
+    "role": "Infantería / Disparo",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "ALA DE MUERTE",
+      "RETAGUARDIA",
+      "INFANTRY",
+      "DEATHWING",
+      "STERNGUARD",
+      "ADEPTUS ASTARTES",
+      "TACTICUS",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_vanguard_veterans_jump",
-          "name": "Escuadra de Veteranos de Vanguardia con Propulsores",
-          "originalName": "Vanguard Veteran Squad With Jump Packs",
-          "role": "Infantería Rápida / Asalto",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "VOLAR",
-                "PROPULSOR DE SALTO",
-                "ALA DE MUERTE",
-                "INFANTRY",
-                "FLY",
-                "JUMP PACK",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 110
-                },
-                {
-                      "models": 10,
-                      "points": 220
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Hazardous",
-                            "CLOSE-QUARTERS"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Relic Blade",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLEAVE 1",
-                            "LETHAL HITS: non- MONSTER/VEHICLE"
-                      ]
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Vanguard Assault: If this unit made a charge move this turn, this unit’s melee attacks have +1 A .",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Veteranos aerotransportados con retrocohetes y escudos."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 105
+      },
+      {
+        "models": 10,
+        "points": 210
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Arma de Fuego Artesanal – Infernus",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Asalto (Assault)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Arma de Fuego Artesanal – Purgatus",
+        "range": "24\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Asalto (Assault)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Arma de Fuego Artesanal – Damnatus",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Asalto (Assault)",
+          "Fusión 2 (Melta 2)"
+        ]
+      },
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Cañón Ígneo (Pyrecannon)",
+        "range": "12\"",
+        "a": 4,
+        "bs": "-",
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Tiradores Veteranos: Los ataques a distancia de esta unidad pueden repetir las tiradas de impacto de 1.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Especialistas de tiro con munición artesanal integrada en la 1ª Compañía."
+  },
+  {
+    "id": "sm_vanguard_veterans_jump",
+    "name": "Escuadra de Veteranos de Vanguardia con Propulsores",
+    "originalName": "Vanguard Veteran Squad With Jump Packs",
+    "role": "Infantería Rápida / Asalto",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "VOLAR",
+      "PROPULSOR DE SALTO",
+      "ALA DE MUERTE",
+      "INFANTRY",
+      "FLY",
+      "JUMP PACK",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_captain_bike",
-          "name": "Capitán en Moto",
-          "originalName": "Captain on Bike",
-          "role": "Cuartel General / Montado (Legends)",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "PERSONAJE",
-                "CAPITÁN",
-                "ALA DE CUERVO",
-                "LEGENDS",
-                "MOUNTED",
-                "CHARACTER",
-                "CAPTAIN",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 6,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 110
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Twin Bolt Rifle",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "ASSAULT",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Strategic Acumen: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Into the Fray: If this unit made a charge move this turn, this unit’s melee attacks have [cleave 1] .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "OUTRIDER SQUAD",
-                "RAVENWING BLACK KNIGHTS"
-          ],
-          "notes": "Comandante de vanguardia montado del Ala de Cuervo (Ficha de reglas oficiales Legends)."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 110
+      },
+      {
+        "models": 10,
+        "points": 220
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Hoja Reliquia (Relic Blade)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Hendedura 1 (Cleave 1)",
+          "Impactos Letales: No Monstruos/Vehículos"
+        ]
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Asalto de Vanguardia: Si esta unidad realizó un movimiento de carga este turno, sus ataques cuerpo a cuerpo obtienen [Impactos Letales].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Veteranos aerotransportados con retrocohetes y escudos."
+  },
+  {
+    "id": "sm_captain_bike",
+    "name": "Capitán en Moto",
+    "originalName": "Captain on Bike",
+    "role": "Cuartel General / Montado (Legends)",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "PERSONAJE",
+      "CAPITÁN",
+      "ALA DE CUERVO",
+      "LEGENDS",
+      "MOUNTED",
+      "CHARACTER",
+      "CAPTAIN",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 6,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_chaplain_bike",
-          "name": "Capellán en Moto",
-          "originalName": "Chaplain on Bike",
-          "role": "Cuartel General / Montado",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "PERSONAJE",
-                "CAPELLÁN",
-                "ALA DE CUERVO",
-                "MOUNTED",
-                "CHARACTER",
-                "CHAPLAIN",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 5,
-                "l": "5+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Absolvor Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Twin Bolt Rifle",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Crozius Arcanum",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "2+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "CLEAVE 1"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Reglas Básicas: Líder",
-                "Regla de Facción: Juramento del Momento",
-                "Litany of Hate: This unit’s melee attacks have [Lance] .",
-                "Catechism of Fire: In your Shooting phase , when this unit is selected to shoot , you can select one visible enemy unit. This unit’s ranged attacks that target that unit have [Devastating Wounds] .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "OUTRIDER SQUAD",
-                "RAVENWING BLACK KNIGHTS"
-          ],
-          "notes": "Capellán montado en moto todoterreno Raider, liderando a las fuerzas móviles del Ala de Cuervo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 110
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Rifle Bólter Acoplado (Twin Bolt Rifle)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Asalto (Assault)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "2+",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Perspicacia Estratégica: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa para esta unidad hasta tu próxima fase de Mando.",
+      "Al Combate: Si esta unidad realizó un movimiento de carga este turno, sus ataques cuerpo a cuerpo obtienen la habilidad [Hendedura 1 / Cleave 1].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Batidores (Outriders)",
+      "Caballeros Negros del Ala de Cuervo"
+    ],
+    "notes": "Comandante de vanguardia montado del Ala de Cuervo (Ficha de reglas oficiales Legends)."
+  },
+  {
+    "id": "sm_chaplain_bike",
+    "name": "Capellán en Moto",
+    "originalName": "Chaplain on Bike",
+    "role": "Cuartel General / Montado",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "PERSONAJE",
+      "CAPELLÁN",
+      "ALA DE CUERVO",
+      "MOUNTED",
+      "CHARACTER",
+      "CHAPLAIN",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 5,
+      "l": "5+",
+      "co": 2
     },
-
-    {
-          "id": "sm_outriders",
-          "name": "Escuadra de Batidores (Outriders)",
-          "originalName": "Outrider Squad",
-          "role": "Ataque Rápido / Montado",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "ALA DE CUERVO",
-                "LÍNEA",
-                "MOUNTED",
-                "RAVENWING",
-                "BATTLELINE",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 80
-                },
-                {
-                      "models": 6,
-                      "points": 160
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Twin Bolt Rifle",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "ASSAULT",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainsword",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Full-throttle Assault: If this unit made a charge move this turn, this unit’s: Thunder Hammer weapons have +1 to hit rolls and [Sustained Hits 1] . Other melee weapons have +1 D and [Sustained Hits 1] .",
-                "This unit can be supported by the following unit: RAVENWING COMMAND SQUAD",
-                "Codex Discipline",
-                "Supercharged Engines"
-          ],
-          "leaderOf": [],
-          "notes": "Motos de intercepción veloz del Ala de Cuervo (Línea de Batalla en destacamentos de Alas)."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Absolvor (Absolvor Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Rifle Bólter Acoplado (Twin Bolt Rifle)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Crozius Arcanum (Crozius Arcanum)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "2+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Hendedura 1 (Cleave 1)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Reglas Básicas: Líder",
+      "Regla de Facción: Juramento del Momento",
+      "Letanía de Odio: Los ataques cuerpo a cuerpo de esta unidad tienen la habilidad [Lanza / Lance].",
+      "Catecismo de Fuego: En tu fase de Disparo, selecciona una unidad enemiga visible a 12\"; los ataques a distancia de esta unidad contra ella obtienen [Impactos Devastadores].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Batidores (Outriders)",
+      "Caballeros Negros del Ala de Cuervo"
+    ],
+    "notes": "Capellán montado en moto todoterreno Raider, liderando a las fuerzas móviles del Ala de Cuervo."
+  },
+  {
+    "id": "sm_outriders",
+    "name": "Escuadra de Batidores (Outriders)",
+    "originalName": "Outrider Squad",
+    "role": "Ataque Rápido / Montado",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "ALA DE CUERVO",
+      "LÍNEA",
+      "MOUNTED",
+      "RAVENWING",
+      "BATTLELINE",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_invader_atv",
-          "name": "Quads Invader (ATV)",
-          "originalName": "Invader ATVs",
-          "role": "Montado / Apoyo Ligero",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "ALA DE CUERVO",
-                "MOUNTED",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 8,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 65
-                },
-                {
-                      "models": 2,
-                      "points": 130
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 8,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE"
-                      ]
-                },
-                {
-                      "name": "Twin Bolt Rifle",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "2+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "ASSAULT",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Impact",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Aggressive Reconnaissance: In your Shooting phase , this unit’s ranged attacks that target an enemy unit that is not within 6\" of any other enemy units have +1 to wound rolls .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Vehículo todoterreno de fuego de apoyo del Ala de Cuervo."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 80
+      },
+      {
+        "models": 6,
+        "points": 160
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Rifle Bólter Acoplado (Twin Bolt Rifle)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Asalto (Assault)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Asalto a Todo Gas: Si esta unidad realizó un movimiento de carga este turno, sus Rifles Bólter Acoplados obtienen la regla [Lanza] y sus Espadas Sierra Astartes aumentan su Daño en +1.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Escuadra de Mando del Ala de Cuervo.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Motores Sobrealimentados: Otorga mayor velocidad de avance y maniobrabilidad."
+    ],
+    "leaderOf": [],
+    "notes": "Motos de intercepción veloz del Ala de Cuervo (Línea de Batalla en destacamentos de Alas)."
+  },
+  {
+    "id": "sm_invader_atv",
+    "name": "Quads Invader (ATV)",
+    "originalName": "Invader ATVs",
+    "role": "Montado / Apoyo Ligero",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "ALA DE CUERVO",
+      "MOUNTED",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 8,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_scout_bikes",
-          "name": "Escuadra de Batidores en Moto",
-          "originalName": "Scout Bike Squad",
-          "role": "Montado / Explorador",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "MONTADO",
-                "ALA DE CUERVO",
-                "EXPLORADOR",
-                "MOUNTED",
-                "RAVENWING",
-                "SCOUT",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 5,
-                "sv": "4+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 75
-                },
-                {
-                      "models": 6,
-                      "points": 150
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Boltgun",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Combi-weapon - Damnatus",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ]
-                },
-                {
-                      "name": "Combi-weapon - Infernus",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Combi-weapon - Purgatus",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Grav-pistol",
-                      "range": "12\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 2,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Anti-Vehicle 2+",
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Frag",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "4+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Krak",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "4+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Hand Flamer",
-                      "range": "9\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Inferno Pistol",
-                      "range": "9\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Melta 2"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Hazardous",
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Shotgun",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "ASSAULT",
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Boltgun",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Combat Knife",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 2,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 4,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                },
-                {
-                      "name": "Chainsword",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Outflank: When this unit makes an ingress move , it can be set up within your opponent’s deployment zone.",
-                "Codex Discipline",
-                "Supercharged Engines"
-          ],
-          "leaderOf": [],
-          "notes": "Pioneros del Ala de Cuervo en reconocimiento avanzado."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 65
+      },
+      {
+        "models": 2,
+        "points": 130
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Cañón Gatling Onslaught (Onslaught Gatling)",
+        "range": "24\"",
+        "a": 8,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras: No Monstruos/Vehículos"
+        ]
+      },
+      {
+        "name": "Rifle Bólter Acoplado (Twin Bolt Rifle)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "2+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Asalto (Assault)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Impacto Blindado (Armoured Impact)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Reconocimiento Agresivo: En tu fase de Disparo, los ataques a distancia de esta unidad contra un enemigo visible obtienen +1 para impactar si se encuentra a corta distancia.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Vehículo todoterreno de fuego de apoyo del Ala de Cuervo."
+  },
+  {
+    "id": "sm_scout_bikes",
+    "name": "Escuadra de Batidores en Moto",
+    "originalName": "Scout Bike Squad",
+    "role": "Montado / Explorador",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "MONTADO",
+      "ALA DE CUERVO",
+      "EXPLORADOR",
+      "MOUNTED",
+      "RAVENWING",
+      "SCOUT",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 5,
+      "sv": "4+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_storm_speeder_thunderstrike",
-          "name": "Storm Speeder Atronador",
-          "originalName": "Storm Speeder Thunderstrike",
-          "role": "Vehículo / Cazador de Blindados",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "DESLIZADOR",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "VEHICLE",
-                "SPEEDER",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 140
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Stormfury Missile Launcher",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Thunderstrike Icarus Rocket Pod",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Fly 2+"
-                      ]
-                },
-                {
-                      "name": "Thunderstrike Las-talon",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Impact",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Thunderstrike: This unit’s ranged attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls .",
-                "Shattered Defences: In your Shooting phase , when this unit has shot, select one enemy MONSTER / VEHICLE unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have +1 AP .",
-                "Codex Discipline",
-                "Auspex Triangulation Shrines"
-          ],
-          "leaderOf": [],
-          "notes": "Deslizador pesado con láser de alto calibre del Ala de Cuervo."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 75
+      },
+      {
+        "models": 6,
+        "points": 150
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Bólter (Boltgun)",
+        "range": "24\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Combiarma – Damnatus",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ]
+      },
+      {
+        "name": "Combiarma – Infernus",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Combiarma – Purgatus",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Pistola Gravitatoria (Grav-pistol)",
+        "range": "12\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 2,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Anti-Vehicle 2+",
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Fragmentación",
+        "range": "24\"",
+        "a": 4,
+        "bs": "4+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Perforante",
+        "range": "24\"",
+        "a": 1,
+        "bs": "4+",
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Lanzallamas de Mano (Hand Flamer)",
+        "range": "9\"",
+        "a": 3,
+        "bs": "-",
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Pistola Infernal (Inferno Pistol)",
+        "range": "9\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Fusión 2 (Melta 2)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Escopeta Astartes (Astartes Shotgun)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Asalto (Assault)",
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Bólter Acoplado (Twin Boltgun)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillo de Combate (Combat Knife)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 2,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 4,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      },
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Flanquear: Cuando esta unidad realiza un movimiento de despliegue por reservas, puede desplegarse a 6\" o menos de cualquier borde del campo de batalla en lugar de a más de 9\" de miniaturas enemigas.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Motores Sobrealimentados: Otorga mayor velocidad de avance y maniobrabilidad."
+    ],
+    "leaderOf": [],
+    "notes": "Pioneros del Ala de Cuervo en reconocimiento avanzado."
+  },
+  {
+    "id": "sm_storm_speeder_thunderstrike",
+    "name": "Storm Speeder Atronador",
+    "originalName": "Storm Speeder Thunderstrike",
+    "role": "Vehículo / Cazador de Blindados",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "DESLIZADOR",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "VEHICLE",
+      "SPEEDER",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_storm_speeder_hailstrike",
-          "name": "Storm Speeder Granizador",
-          "originalName": "Storm Speeder Hailstrike",
-          "role": "Vehículo / Supresión Ligera",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "DESLIZADOR",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "VEHICLE",
-                "SPEEDER",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 110
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Fragstorm Grenade Launchers",
-                      "range": "18\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Ignores Cover"
-                      ]
-                },
-                {
-                      "name": "Ironhail Heavy Stubber Array",
-                      "range": "36\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 6",
-                            "Ignores Cover"
-                      ]
-                },
-                {
-                      "name": "Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 8,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE",
-                            "Ignores Cover"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Impact",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Hailstrike: In your Shooting phase , when this unit has shot, select one enemy unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have [IGNORES COVER] .",
-                "Codex Discipline",
-                "Auspex Triangulation Shrines"
-          ],
-          "leaderOf": [],
-          "notes": "Deslizador de saturación de infantería."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 140
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzamisiles Stormfury",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Módulo de Cohetes Icarus Thunderstrike",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ]
+      },
+      {
+        "name": "Garras Láser Atronadoras (Las-talon)",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Impacto Blindado (Armoured Impact)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Atronador: Los ataques a distancia contra unidades de MONSTRUO o VEHÍCULO tienen +1 a la tirada para herir.",
+      "Defensas Destrozadas: Tras disparar contra un MONSTRUO o VEHÍCULO enemigo, los ataques posteriores de aliados contra ese blanco tienen +1 a la tirada para herir.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Santuarios de Triangulación de Auspex: Red de sensores avanzados que anulan las ventajas de cobertura del enemigo."
+    ],
+    "leaderOf": [],
+    "notes": "Deslizador pesado con láser de alto calibre del Ala de Cuervo."
+  },
+  {
+    "id": "sm_storm_speeder_hailstrike",
+    "name": "Storm Speeder Granizador",
+    "originalName": "Storm Speeder Hailstrike",
+    "role": "Vehículo / Supresión Ligera",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "DESLIZADOR",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "VEHICLE",
+      "SPEEDER",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_storm_speeder_hammerstrike",
-          "name": "Storm Speeder Martillador",
-          "originalName": "Storm Speeder Hammerstrike",
-          "role": "Vehículo / Destructor de Búnkeres",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "DESLIZADOR",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "VEHICLE",
-                "SPEEDER",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 140
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hammerstrike Missile Launcher",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": []
-                },
-                {
-                      "name": "Krakstorm Grenade Launchers",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Melta Destroyer",
-                      "range": "18\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Impact",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Hammerstrike: This unit’s ranged attacks that target an enemy unit within a terrain area have [Sustained Hits 1] .",
-                "Codex Discipline",
-                "Auspex Triangulation Shrines"
-          ],
-          "leaderOf": [],
-          "notes": "Deslizador de demolición a corta distancia."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 110
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzagranadas Fragstorm (Fragstorm)",
+        "range": "18\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Ignora Cobertura (Ignores Cover)"
+        ]
+      },
+      {
+        "name": "Batería de Ametralladoras Pesadas Ironhail",
+        "range": "36\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 6 (Rapid Fire 6)",
+          "Ignora Cobertura (Ignores Cover)"
+        ]
+      },
+      {
+        "name": "Cañón Gatling Onslaught (Onslaught Gatling)",
+        "range": "24\"",
+        "a": 8,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras: No Monstruos/Vehículos",
+          "Ignora Cobertura (Ignores Cover)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Impacto Blindado (Armoured Impact)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Granizador: Tras disparar contra una unidad enemiga, los ataques a distancia de otros aliados contra ese objetivo ganan +1 al FP hasta el final de la fase.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Santuarios de Triangulación de Auspex: Red de sensores avanzados que anulan las ventajas de cobertura del enemigo."
+    ],
+    "leaderOf": [],
+    "notes": "Deslizador de saturación de infantería."
+  },
+  {
+    "id": "sm_storm_speeder_hammerstrike",
+    "name": "Storm Speeder Martillador",
+    "originalName": "Storm Speeder Hammerstrike",
+    "role": "Vehículo / Destructor de Búnkeres",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "DESLIZADOR",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "VEHICLE",
+      "SPEEDER",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_brutalis_dreadnought",
-          "name": "Dreadnought Brutalis",
-          "originalName": "Brutalis Dreadnought",
-          "role": "Bípode / Choque Frontal",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "BÍPODE",
-                "DREADNOUGHT",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "WALKER",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "2+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 4
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 160
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Rifles",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Icarus Ironhail Heavy Stubber",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Anti-Fly 3+",
-                            "Rapid Fire 3",
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Twin-linked",
-                            "Melta 3"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Brutalis Fists",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Brutalis Talons",
-                      "range": "Combate",
-                      "a": 8,
-                      "ws": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "SUSTAINED HITS 1: non- MONSTER/VEHICLE",
-                            "Twin-linked",
-                            "CLEAVE 2"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Brutalis Charge (Once per phase, per unit): You can target this unit with the Crushing Impact stratagem , regardless of any other uses of that stratagem this phase. If you do: That use is -1 CP. That use does not prevent any uses of that stratagem on other units this phase.",
-                "Codex Discipline",
-                "Venerable Champion (Aura)"
-          ],
-          "leaderOf": [],
-          "notes": "El temible Dreadnought de asalto de corta distancia de la 1ª Compañía."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 140
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzamisiles Hammerstrike",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": []
+      },
+      {
+        "name": "Lanzagranadas Krakstorm",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 9,
+        "ap": -1,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Destructor de Fusión (Melta Destroyer)",
+        "range": "18\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Impacto Blindado (Armoured Impact)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Martillador: Los ataques a distancia contra enemigos en cobertura o dentro de escenografía obtienen [Impactos Sostenidos 1].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Santuarios de Triangulación de Auspex: Red de sensores avanzados que anulan las ventajas de cobertura del enemigo."
+    ],
+    "leaderOf": [],
+    "notes": "Deslizador de demolición a corta distancia."
+  },
+  {
+    "id": "sm_brutalis_dreadnought",
+    "name": "Dreadnought Brutalis",
+    "originalName": "Brutalis Dreadnought",
+    "role": "Bípode / Choque Frontal",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "BÍPODE",
+      "DREADNOUGHT",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "WALKER",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "2+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 4
     },
-
-    {
-          "id": "sm_ballistus_dreadnought",
-          "name": "Dreadnought Ballistus",
-          "originalName": "Ballistus Dreadnought",
-          "role": "Bípode / Apoyo Pesado",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "BÍPODE",
-                "DREADNOUGHT",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "WALKER",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 10,
-                "sv": "2+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 4
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 150
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Ballistus Lascannon",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Ballistus Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": "D6+6",
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Ballistus Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Storm Bolters",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 4"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Feet",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 7,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Ballistus Strike: This unit’s ranged attacks that target an enemy unit within 24\" of this unit have [Sustained Hits 1] .",
-                "Codex Discipline",
-                "Venerable Champion (Aura)"
-          ],
-          "leaderOf": [],
-          "notes": "Plataforma de artillería andante de largo alcance del Ala de Muerte."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 160
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Rifles Bólter (Bolt Rifles)",
+        "range": "24\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Ametralladora Pesada Ironhail Icarus Acoplada",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Anti-Fly 3+",
+          "Disparo Rápido 3 (Rapid Fire 3)",
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Multifusión Acoplada (Twin Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Fusión 3 (Melta 3)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños Brutalis (Brutalis Fists)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Garras Brutalis (Brutalis Talons)",
+        "range": "Combate",
+        "a": 8,
+        "ws": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1: No Monstruos/Vehículos",
+          "Acoplada (Twin-linked)",
+          "Hendedura 2 (Cleave 2)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Carga Brutalis (1 vez por fase): Puedes seleccionar a esta unidad como blanco de la estratagema Impacto Aplastante, independientemente de cualquier otro uso de dicha estratagema en esta fase.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Campeón Venerable (Aura): Inspira a los hermanos de batalla cercanos con siglos de experiencia bélica."
+    ],
+    "leaderOf": [],
+    "notes": "El temible Dreadnought de asalto de corta distancia de la 1ª Compañía."
+  },
+  {
+    "id": "sm_ballistus_dreadnought",
+    "name": "Dreadnought Ballistus",
+    "originalName": "Ballistus Dreadnought",
+    "role": "Bípode / Apoyo Pesado",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "BÍPODE",
+      "DREADNOUGHT",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "WALKER",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 10,
+      "sv": "2+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 4
     },
-
-    {
-          "id": "sm_redemptor_dreadnought",
-          "name": "Dreadnought Redentor",
-          "originalName": "Redemptor Dreadnought",
-          "role": "Bípode / Asedio",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "BÍPODE",
-                "DREADNOUGHT",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "WALKER",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 10,
-                "sv": "2+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 4
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 170
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Fragstorm Grenade Launchers",
-                      "range": "18\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Heavy Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 12,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE",
-                            "SUSTAINED HITS 2: non- MONSTER/VEHICLE"
-                      ]
-                },
-                {
-                      "name": "Icarus Rocket Pod",
-                      "range": "24\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Fly 2+"
-                      ]
-                },
-                {
-                      "name": "Macro Plasma Incinerator - Standard",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Macro Plasma Incinerator - Supercharge",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -4,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 1",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 8,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE"
-                      ]
-                },
-                {
-                      "name": "Storm Bolters",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 4"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Redemptor Fist",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Duty Eternal: Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls .",
-                "Codex Discipline",
-                "Venerable Champion (Aura)"
-          ],
-          "leaderOf": [],
-          "notes": "El dreadnought multipropósito por excelencia, veterano de la 1ª Compañía."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 150
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Láser Ballistus (Ballistus Lascannon)",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Lanzamisiles Ballistus – Fragmentación",
+        "range": "48\"",
+        "a": "D6+6",
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Ballistus – Perforante",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Bólteres Tormenta (Storm Bolters)",
+        "range": "24\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 4 (Rapid Fire 4)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Pies Blindados (Armoured Feet)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 7,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Ataque Ballistus: Los ataques a distancia contra unidades enemigas a más de 24\" pueden repetir las tiradas de impacto de 1.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Campeón Venerable (Aura): Inspira a los hermanos de batalla cercanos con siglos de experiencia bélica."
+    ],
+    "leaderOf": [],
+    "notes": "Plataforma de artillería andante de largo alcance del Ala de Muerte."
+  },
+  {
+    "id": "sm_redemptor_dreadnought",
+    "name": "Dreadnought Redentor",
+    "originalName": "Redemptor Dreadnought",
+    "role": "Bípode / Asedio",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "BÍPODE",
+      "DREADNOUGHT",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "WALKER",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 10,
+      "sv": "2+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 4
     },
-
-    {
-          "id": "sm_dreadnought",
-          "name": "Dreadnought Clásico / Venerable",
-          "originalName": "Dreadnought",
-          "role": "Bípode / Soporte",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "BÍPODE",
-                "DREADNOUGHT",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "WALKER",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 9,
-                "sv": "2+",
-                "inv": "-",
-                "h": 8,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 135
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Heavy Plasma Cannon - Standard",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 1",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Heavy Plasma Cannon - Supercharge",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "Hazardous",
-                            "BLAST 1",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Crushing Feet",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Dreadnought Fist",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 12,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Wisdom of the Ancients: While a friendly ADEPTUS ASTARTES INFANTRY unit is within 6\" of this model, that unit’s attacks can re-roll hit rolls of 1.",
-                "Codex Discipline",
-                "Venerable Champion (Aura)"
-          ],
-          "leaderOf": [],
-          "notes": "Casta venerable de antiguos héroes del Capítulo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 170
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzagranadas Fragstorm (Fragstorm)",
+        "range": "18\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Megacañón Gatling Onslaught Pesado",
+        "range": "24\"",
+        "a": 12,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras: No Monstruos/Vehículos",
+          "Impactos Sostenidos 2: No Monstruos/Vehículos"
+        ]
+      },
+      {
+        "name": "Módulo de Cohetes Icarus (Icarus Rocket Pod)",
+        "range": "24\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ]
+      },
+      {
+        "name": "Macroincinerador de Plasma – Estándar",
+        "range": "36\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 9,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Macroincinerador de Plasma – Sobrecarga",
+        "range": "36\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 10,
+        "ap": -4,
+        "d": 3,
+        "keywords": [
+          "Explosión 1",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Cañón Gatling Onslaught (Onslaught Gatling)",
+        "range": "24\"",
+        "a": 8,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras: No Monstruos/Vehículos"
+        ]
+      },
+      {
+        "name": "Bólteres Tormenta (Storm Bolters)",
+        "range": "24\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 4 (Rapid Fire 4)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puño Redemptor (Redemptor Fist)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Deber Eterno: Los ataques enemigos dirigidos contra esta unidad cuya Fuerza sea superior a su Resistencia sufren -1 a la tirada para herir.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Campeón Venerable (Aura): Inspira a los hermanos de batalla cercanos con siglos de experiencia bélica."
+    ],
+    "leaderOf": [],
+    "notes": "El dreadnought multipropósito por excelencia, veterano de la 1ª Compañía."
+  },
+  {
+    "id": "sm_dreadnought",
+    "name": "Dreadnought Clásico / Venerable",
+    "originalName": "Dreadnought",
+    "role": "Bípode / Soporte",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "BÍPODE",
+      "DREADNOUGHT",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "WALKER",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 9,
+      "sv": "2+",
+      "inv": "-",
+      "h": 8,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_venerable_dreadnought",
-          "name": "Dreadnought Venerable",
-          "originalName": "Venerable Dreadnought",
-          "role": "Bípode / Soporte Veterano",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "BÍPODE",
-                "DREADNOUGHT",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "WALKER",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 9,
-                "sv": "2+",
-                "inv": "-",
-                "h": 8,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 165
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Dreadnought Inferno Cannon",
-                      "range": "12\"",
-                      "a": 7,
-                      "bs": "-",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Heavy Plasma Cannon - Standard",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 1",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Heavy Plasma Cannon - Supercharge",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "Hazardous",
-                            "BLAST 1",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Autocannon",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2",
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Twin-linked",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Feet",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Dreadnought Fist",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 12,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Wisdom of the Ancients: While a friendly ADEPTUS ASTARTES INFANTRY unit is within 6\" of this unit, this unit’s attacks can re-roll hit rolls of 1.",
-                "Codex Discipline",
-                "Venerable Champion (Aura)"
-          ],
-          "leaderOf": [],
-          "notes": "Casta venerable de antiguos héroes del Capítulo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 135
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asalto (Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Pesado – Estándar",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 9,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Pesado – Sobrecarga",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Lanzamisiles – Fragmentación (Frag)",
+        "range": "48\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Lanzamisiles – Perforante (Krak)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Pies Aplastantes (Crushing Feet)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Puño Dreadnought (Dreadnought Fist)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 12,
+        "ap": -2,
+        "d": 3,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Sabiduría de los Ancestros (Aura): Mientras una unidad amiga de INFANTERÍA ADEPTUS ASTARTES esté a 6\" o menos de esta miniatura, los ataques de dicha unidad pueden repetir las tiradas de impactar de 1.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Campeón Venerable (Aura): Inspira a los hermanos de batalla cercanos con siglos de experiencia bélica."
+    ],
+    "leaderOf": [],
+    "notes": "Casta venerable de antiguos héroes del Capítulo."
+  },
+  {
+    "id": "sm_venerable_dreadnought",
+    "name": "Dreadnought Venerable",
+    "originalName": "Venerable Dreadnought",
+    "role": "Bípode / Soporte Veterano",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "BÍPODE",
+      "DREADNOUGHT",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "WALKER",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 9,
+      "sv": "2+",
+      "inv": "-",
+      "h": 8,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_thunderhawk_gunship",
-          "name": "Cañonera Thunderhawk",
-          "originalName": "Thunderhawk Gunship",
-          "role": "Titánico / Aeronave Pesada",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "TITÁNICO",
-                "AERONAVE",
-                "VEHÍCULO",
-                "TRANSPORTE",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "TITANIC",
-                "AIRCRAFT",
-                "VEHICLE",
-                "TRANSPORT",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 30,
-                "l": "6+",
-                "co": "0"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 850
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Hellstrike Missile Battery",
-                      "range": "72\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Anti-Fly 4+"
-                      ]
-                },
-                {
-                      "name": "Thunderhawk Heavy Cannon",
-                      "range": "48\"",
-                      "a": 10,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Turbo-laser Destructor",
-                      "range": "96\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 20,
-                      "ap": -4,
-                      "d": "D6+6",
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Aerial Assault: In your Movement phase , when this unit ends a normal move , units embarked within this unit can make an assault disembark move , provided every model in the embarked unit has Deep Strike .",
-                "Thunderhawk Cluster Bombs: In your Movement phase , when this unit ends a normal / advance move , you can select one enemy unit this unit moved over during that move and roll six D6: For each 3+, that enemy unit suffers 1 mortal wound .",
-                "This model has a transport capacity of 30 ADEPTUS ASTARTES INFANTRY models. Or ADEPTUS ASTARTES MOUNTED models. Each JUMP PACK , GRAVIS , TERMINATOR model takes up the space of 2 models. Each ADEPTUS ASTARTES MOUNTED model takes up the space of 4 models.",
-                "Codex Discipline",
-                "Thundercowl Turbines"
-          ],
-          "leaderOf": [],
-          "notes": "Superpesado titánico aerotransportado del Capítulo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 165
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asalto (Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Cañón Infernal Dreadnought",
+        "range": "12\"",
+        "a": 7,
+        "bs": "-",
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Pesado – Estándar",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 9,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Pesado – Sobrecarga",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Lanzamisiles – Fragmentación (Frag)",
+        "range": "48\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Lanzamisiles – Perforante (Krak)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Cañón Automático Acoplado (Twin Autocannon)",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 9,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Lanzallamas Pesado Acoplado (Twin Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Acoplada (Twin-linked)",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Pies Blindados (Armoured Feet)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Puño Dreadnought (Dreadnought Fist)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 12,
+        "ap": -2,
+        "d": 3,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Sabiduría de los Ancestros (Aura): Mientras una unidad amiga de INFANTERÍA ADEPTUS ASTARTES esté a 6\" o menos de esta miniatura, los ataques de dicha unidad pueden repetir las tiradas de impactar de 1.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Campeón Venerable (Aura): Inspira a los hermanos de batalla cercanos con siglos de experiencia bélica."
+    ],
+    "leaderOf": [],
+    "notes": "Casta venerable de antiguos héroes del Capítulo."
+  },
+  {
+    "id": "sm_thunderhawk_gunship",
+    "name": "Cañonera Thunderhawk",
+    "originalName": "Thunderhawk Gunship",
+    "role": "Titánico / Aeronave Pesada",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "TITÁNICO",
+      "AERONAVE",
+      "VEHÍCULO",
+      "TRANSPORTE",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "TITANIC",
+      "AIRCRAFT",
+      "VEHICLE",
+      "TRANSPORT",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 30,
+      "l": "6+",
+      "co": "0"
     },
-
-    {
-          "id": "sm_land_raider_standard",
-          "name": "Land Raider",
-          "originalName": "Land Raider",
-          "role": "Vehículo / Transporte Blindado",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "HUMO",
-                "TRANSPORTE",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "SMOKE",
-                "TRANSPORT",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 16,
-                "l": "6+",
-                "co": 5
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 245
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Godhammer Lascannon",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ]
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Assault Ramp: In your Movement phase , when this unit ends a normal move , units embarked within this unit can make an assault disembark move .",
-                "Power of the Machine Spirit: This unit’s ranged attacks can: Re-roll one hit roll . Re-roll one wound roll .",
-                "This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK models. Each GRAVIS / TERMINATOR model takes up the space of 2 models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "El vehículo de asedio y transporte definitivo del Ala de Muerte con cañones láser Godhammer."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 850
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Batería de Misiles Hellstrike",
+        "range": "72\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Anti-Fly 4+"
+        ]
+      },
+      {
+        "name": "Cañón Pesado Thunderhawk",
+        "range": "48\"",
+        "a": 10,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Destructor Turboláser (Turbo-laser Destructor)",
+        "range": "96\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 20,
+        "ap": -4,
+        "d": "D6+6",
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Asalto Aéreo: En tu fase de Movimiento, cuando esta unidad termine un movimiento normal, las unidades embarcadas en su interior pueden realizar un desembarco de asalto.",
+      "Bombas de Racimo Thunderhawk: En tu fase de Movimiento, cuando esta unidad termine un movimiento normal o de avance, puedes seleccionar una unidad enemiga sobre la que haya sobrevolado y tirar 6D6: por cada 4+, esa unidad sufre 1 herida mortal.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 30 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Turbinas Atronadoras: Propulsión de alta potencia que otorga gran movilidad sobre el campo de batalla."
+    ],
+    "leaderOf": [],
+    "notes": "Superpesado titánico aerotransportado del Capítulo."
+  },
+  {
+    "id": "sm_land_raider_standard",
+    "name": "Land Raider",
+    "originalName": "Land Raider",
+    "role": "Vehículo / Transporte Blindado",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "HUMO",
+      "TRANSPORTE",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "SMOKE",
+      "TRANSPORT",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 16,
+      "l": "6+",
+      "co": 5
     },
-
-    {
-          "id": "sm_land_raider_crusader",
-          "name": "Land Raider Cruzado",
-          "originalName": "Land Raider Crusader",
-          "role": "Vehículo / Transporte de Asalto",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "HUMO",
-                "TRANSPORTE",
-                "ALA DE MUERTE",
-                "EXPLOSIVOS",
-                "VEHICLE",
-                "SMOKE",
-                "TRANSPORT",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 16,
-                "l": "6+",
-                "co": 5
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 230
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ]
-                },
-                {
-                      "name": "Hurricane Bolter",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 6"
-                      ]
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Assault Ramp: In your Movement phase , when this unit ends a normal move , units embarked within this unit can make an assault disembark move .",
-                "Fury of the Machine Spirit: This unit’s ranged attacks that target a unit within 12\" of this unit have [Lethal Hits] .",
-                "This model has a transport capacity of 16 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK models. Each GRAVIS / TERMINATOR model takes up the space of 2 models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Variante creada expresamente para asaltar con escuadras masivas de Exterminadores."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 245
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Láser Godhammer (Godhammer Lascannon)",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ]
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Rampa de Asalto: En tu fase de Movimiento, tras realizar un movimiento normal, las unidades embarcadas pueden desembarcar y declarar una carga este mismo turno.",
+      "Poder del Espíritu Máquina: En cada fase de disparo, los ataques a distancia de esta unidad pueden: Repetir una tirada de impactar y Repetir una tirada de herir.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 14 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "El vehículo de asedio y transporte definitivo del Ala de Muerte con cañones láser Godhammer."
+  },
+  {
+    "id": "sm_land_raider_crusader",
+    "name": "Land Raider Cruzado",
+    "originalName": "Land Raider Crusader",
+    "role": "Vehículo / Transporte de Asalto",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "HUMO",
+      "TRANSPORTE",
+      "ALA DE MUERTE",
+      "EXPLOSIVOS",
+      "VEHICLE",
+      "SMOKE",
+      "TRANSPORT",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 16,
+      "l": "6+",
+      "co": 5
     },
-
-    {
-          "id": "sm_land_raider_redeemer",
-          "name": "Land Raider Redentor",
-          "originalName": "Land Raider Redeemer",
-          "role": "Vehículo / Transporte Flamígero",
-          "wing": "Ala de Muerte",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "HUMO",
-                "TRANSPORTE",
-                "ALA DE MUERTE",
-                "VEHICLE",
-                "SMOKE",
-                "TRANSPORT",
-                "DEATHWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 16,
-                "l": "6+",
-                "co": 5
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 245
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Flamestorm Cannon",
-                      "range": "12\"",
-                      "a": 4,
-                      "bs": "-",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ]
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Assault Ramp: In your Movement phase , when this unit ends a normal move , units embarked within this unit can make an assault disembark move .",
-                "Wrath of the Machine Spirit: This unit’s ranged attacks that target a unit within 12\" of this unit have [Devastating Wounds: non- Monster/vehicle] .",
-                "This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK models. Each GRAVIS / TERMINATOR model takes up the space of 2 models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "El destructor de trincheras definitivo con lanzallamas de plasma pesado."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 230
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ]
+      },
+      {
+        "name": "Bólter Huracán (Hurricane Bolter)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 6 (Rapid Fire 6)"
+        ]
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Cañón de Asalto Acoplado (Twin Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Rampa de Asalto: En tu fase de Movimiento, tras realizar un movimiento normal, las unidades embarcadas pueden desembarcar y declarar una carga este mismo turno.",
+      "Furia del Espíritu Máquina: Los ataques a distancia de esta unidad dirigidos contra un objetivo a 12\" o menos obtienen la regla [Impactos Letales].",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 16 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Variante creada expresamente para asaltar con escuadras masivas de Exterminadores."
+  },
+  {
+    "id": "sm_land_raider_redeemer",
+    "name": "Land Raider Redentor",
+    "originalName": "Land Raider Redeemer",
+    "role": "Vehículo / Transporte Flamígero",
+    "wing": "Ala de Muerte",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "HUMO",
+      "TRANSPORTE",
+      "ALA DE MUERTE",
+      "VEHICLE",
+      "SMOKE",
+      "TRANSPORT",
+      "DEATHWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 16,
+      "l": "6+",
+      "co": 5
     },
-
-    {
-          "id": "sm_repulsor",
-          "name": "Tanque Repulsor",
-          "originalName": "Repulsor",
-          "role": "Vehículo / Transporte Pesado",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "TRANSPORTE",
-                "DESLIZADOR",
-                "VEHICLE",
-                "TRANSPORT",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "3+",
-                "inv": "-",
-                "h": 16,
-                "l": "6+",
-                "co": 5
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 190
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Defensive Array",
-                      "range": "24\"",
-                      "a": 18,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Heavy Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 12,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE",
-                            "SUSTAINED HITS 2: non- MONSTER/VEHICLE"
-                      ]
-                },
-                {
-                      "name": "Hunter-slayer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "2+",
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Indirect Fire",
-                            "ONE SHOT"
-                      ]
-                },
-                {
-                      "name": "Las-talon",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1",
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Combat Embarkation: In your opponent’s Charge phase , when an enemy unit has selected charge targets , you can select one friendly unengaged ADEPTUS ASTARTES unit that was one of those charge targets and is eligible to embark within this TRANSPORT . If every model in that unit is within 3\" of this TRANSPORT , that unit can embark within this TRANSPORT . That enemy unit can then select new charge targets for that charge move .",
-                "This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. Each TERMINATOR , GRAVIS , JUMP PACK , WULFEN model takes up the space of 2 models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Transporte gravítico blindado multipropósito."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 245
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Tormenta Ígnea (Flamestorm Cannon)",
+        "range": "12\"",
+        "a": 4,
+        "bs": "-",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ]
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Cañón de Asalto Acoplado (Twin Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Rampa de Asalto: En tu fase de Movimiento, tras realizar un movimiento normal, las unidades embarcadas pueden desembarcar y declarar una carga este mismo turno.",
+      "Cólera del Espíritu Máquina: Los ataques a distancia de esta unidad dirigidos contra un objetivo a 12\" o menos obtienen la regla [Heridas Devastadoras: No Monstruos/Vehículos].",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 14 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "El destructor de trincheras definitivo con lanzallamas de plasma pesado."
+  },
+  {
+    "id": "sm_repulsor",
+    "name": "Tanque Repulsor",
+    "originalName": "Repulsor",
+    "role": "Vehículo / Transporte Pesado",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "TRANSPORTE",
+      "DESLIZADOR",
+      "VEHICLE",
+      "TRANSPORT",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "3+",
+      "inv": "-",
+      "h": 16,
+      "l": "6+",
+      "co": 5
     },
-
-    {
-          "id": "sm_repulsor_executioner",
-          "name": "Repulsor Ejecutor",
-          "originalName": "Repulsor Executioner",
-          "role": "Vehículo / Cazador de Tanques Pesado",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "TRANSPORTE",
-                "DESLIZADOR",
-                "VEHICLE",
-                "TRANSPORT",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "3+",
-                "inv": "-",
-                "h": 16,
-                "l": "6+",
-                "co": 5
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 265
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Defensive Array",
-                      "range": "24\"",
-                      "a": 18,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Heavy Laser Destroyer",
-                      "range": "72\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 16,
-                      "ap": -4,
-                      "d": "D6+4",
-                      "keywords": [
-                            "Devastating Wounds",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Heavy Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 12,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "SUSTAINED HITS 2: non- MONSTER/VEHICLE",
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE"
-                      ]
-                },
-                {
-                      "name": "Macro Plasma Incinerator - Standard",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Macro Plasma Incinerator - Supercharge",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -4,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 1",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2",
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Executioner: This unit’s ranged attacks that target a unit not below half-strength have +1 to hit rolls .",
-                "This model has a transport capacity of 7 ADEPTUS ASTARTES INFANTRY models. Each TERMINATOR , GRAVIS , JUMP PACK , WULFEN model takes up the space of 2 models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "El destructor acorazado más potente de los Marines Espaciales."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 190
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Batería Defensiva (Defensive Array)",
+        "range": "24\"",
+        "a": 18,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Megacañón Gatling Onslaught Pesado",
+        "range": "24\"",
+        "a": 12,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras: No Monstruos/Vehículos",
+          "Impactos Sostenidos 2: No Monstruos/Vehículos"
+        ]
+      },
+      {
+        "name": "Misil Cazador-Exterminador (Hunter-slayer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "2+",
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Fuego Indirecto (Indirect Fire)",
+          "Un Solo Uso (One Shot)"
+        ]
+      },
+      {
+        "name": "Garras Láser (Las-talon)",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1",
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Embarque de Combate: En la fase de Carga del oponente, cuando una unidad enemiga declare sus objetivos de carga, puedes seleccionar una unidad amiga no trabada a 6\" o menos de este transporte: esa unidad amiga puede embarcar inmediatamente en él.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 14 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Transporte gravítico blindado multipropósito."
+  },
+  {
+    "id": "sm_repulsor_executioner",
+    "name": "Repulsor Ejecutor",
+    "originalName": "Repulsor Executioner",
+    "role": "Vehículo / Cazador de Tanques Pesado",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "TRANSPORTE",
+      "DESLIZADOR",
+      "VEHICLE",
+      "TRANSPORT",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "3+",
+      "inv": "-",
+      "h": 16,
+      "l": "6+",
+      "co": 5
     },
-
-    {
-          "id": "sm_gladiator_lancer",
-          "name": "Gladiator Lancero",
-          "originalName": "Gladiator Lancer",
-          "role": "Vehículo / Antitanque",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "VEHÍCULO",
-                "DESLIZADOR",
-                "VEHICLE",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 165
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Laser Destroyer",
-                      "range": "72\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D6+3",
-                      "keywords": [
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Defensive Array",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 6"
-                      ]
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Aquilon Optics: This unit’s ranged attacks that target a MONSTER / VEHICLE unit can: Re-roll one hit roll . Re-roll one wound roll . Re-roll one damage roll .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Cazatanques de larga distancia."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 265
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Batería Defensiva (Defensive Array)",
+        "range": "24\"",
+        "a": 18,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Destructor Láser Pesado (Heavy Laser Destroyer)",
+        "range": "72\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 16,
+        "ap": -4,
+        "d": "D6+4",
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Megacañón Gatling Onslaught Pesado",
+        "range": "24\"",
+        "a": 12,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 2: No Monstruos/Vehículos",
+          "Heridas Devastadoras: No Monstruos/Vehículos"
+        ]
+      },
+      {
+        "name": "Macroincinerador de Plasma – Estándar",
+        "range": "36\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 9,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Macroincinerador de Plasma – Sobrecarga",
+        "range": "36\"",
+        "a": "D3+3",
+        "bs": "3+",
+        "f": 10,
+        "ap": -4,
+        "d": 3,
+        "keywords": [
+          "Explosión 1",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Ejecutor: Los ataques a distancia de esta unidad que tengan como objetivo una unidad que no esté por debajo de la mitad de sus efectivos tienen un modificador de +1 a las tiradas de impactar.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 7 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "El destructor acorazado más potente de los Marines Espaciales."
+  },
+  {
+    "id": "sm_gladiator_lancer",
+    "name": "Gladiator Lancero",
+    "originalName": "Gladiator Lancer",
+    "role": "Vehículo / Antitanque",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "VEHÍCULO",
+      "DESLIZADOR",
+      "VEHICLE",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_stormraven_gunship",
-          "name": "Cañonera Stormraven",
-          "originalName": "Stormraven Gunship",
-          "role": "Aeronave / Transporte Pesado",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "AERONAVE",
-                "VEHÍCULO",
-                "TRANSPORTE",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "AIRCRAFT",
-                "VEHICLE",
-                "TRANSPORT",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 14,
-                "l": "6+",
-                "co": "0"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 280
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hurricane Bolter",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 6"
-                      ]
-                },
-                {
-                      "name": "Stormstrike Missile Launcher",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": []
-                },
-                {
-                      "name": "Typhoon Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Typhoon Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Twin Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Twin Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Twin-linked",
-                            "Melta 3"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Plasma Cannon - Standard",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 9,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Heavy",
-                            "BLAST 1",
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Plasma Cannon - Supercharge",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "Heavy",
-                            "Twin-linked",
-                            "BLAST 1",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 6,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Armoured Resilience: Attacks that target this unit have -1 D .",
-                "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY models. And 1 DREADNOUGHT models. Each JUMP PACK , WULFEN , GRAVIS , TERMINATOR model takes up the space of 2 models. Each CENTURION model takes up the space of 3 models.",
-                "Codex Discipline",
-                "Thundercowl Turbines"
-          ],
-          "leaderOf": [],
-          "notes": "Transporte aéreo de asalto acorazado."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 165
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Destructor Láser (Laser Destroyer)",
+        "range": "72\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 14,
+        "ap": -3,
+        "d": "D6+3",
+        "keywords": [
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Batería Defensiva (Defensive Array)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 6 (Rapid Fire 6)"
+        ]
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Ópticas Aquilon: Los ataques a distancia de esta unidad dirigidos contra una unidad MONSTRUO o VEHÍCULO pueden: Repetir una tirada para impactar, Repetir una tirada para herir y Repetir una tirada de daño.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Cazatanques de larga distancia."
+  },
+  {
+    "id": "sm_stormraven_gunship",
+    "name": "Cañonera Stormraven",
+    "originalName": "Stormraven Gunship",
+    "role": "Aeronave / Transporte Pesado",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "AERONAVE",
+      "VEHÍCULO",
+      "TRANSPORTE",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "AIRCRAFT",
+      "VEHICLE",
+      "TRANSPORT",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 14,
+      "l": "6+",
+      "co": "0"
     },
-
-    {
-          "id": "sm_stormtalon_gunship",
-          "name": "Cañonera Stormtalon",
-          "originalName": "Stormtalon Gunship",
-          "role": "Aeronave / Escolta",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "AERONAVE",
-                "VEHÍCULO",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "AIRCRAFT",
-                "VEHICLE",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 8,
-                "sv": "3+",
-                "inv": "-",
-                "h": 10,
-                "l": "6+",
-                "co": "-"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 165
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Skyhammer Missile Launcher",
-                      "range": "48\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Anti-Fly 2+"
-                      ]
-                },
-                {
-                      "name": "Twin Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Typhoon Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                },
-                {
-                      "name": "Typhoon Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Strafing Run: This unit’s ranged attacks that target a non- FLY unit have +1 to hit rolls .",
-                "Codex Discipline",
-                "Thundercowl Turbines"
-          ],
-          "leaderOf": [],
-          "notes": "Caza de apoyo aéreo cercano."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 280
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Huracán (Hurricane Bolter)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 6 (Rapid Fire 6)"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Stormstrike",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": []
+      },
+      {
+        "name": "Lanzamisiles Typhoon – Fragmentación",
+        "range": "48\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Typhoon – Perforante",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Cañón de Asalto Acoplado (Twin Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Multifusión Acoplada (Twin Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Fusión 3 (Melta 3)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Pesado Acoplado – Estándar",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 9,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Explosión 1",
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Cañón de Plasma Pesado Acoplado – Sobrecarga",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Acoplada (Twin-linked)",
+          "Explosión 1",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 6,
+        "ws": "4+",
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Resistencia Blindada: Los ataques dirigidos contra esta unidad reducen la característica de Daño sufrida en 1 (hasta un mínimo de 1).",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 12 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Turbinas Atronadoras: Propulsión de alta potencia que otorga gran movilidad sobre el campo de batalla."
+    ],
+    "leaderOf": [],
+    "notes": "Transporte aéreo de asalto acorazado."
+  },
+  {
+    "id": "sm_stormtalon_gunship",
+    "name": "Cañonera Stormtalon",
+    "originalName": "Stormtalon Gunship",
+    "role": "Aeronave / Escolta",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "AERONAVE",
+      "VEHÍCULO",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "AIRCRAFT",
+      "VEHICLE",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 8,
+      "sv": "3+",
+      "inv": "-",
+      "h": 10,
+      "l": "6+",
+      "co": "-"
     },
-
-    {
-          "id": "sm_stormhawk_interceptor",
-          "name": "Interceptor Stormhawk",
-          "originalName": "Stormhawk Interceptor",
-          "role": "Aeronave / Superioridad Aérea",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "AERONAVE",
-                "VEHÍCULO",
-                "VOLAR",
-                "ALA DE CUERVO",
-                "AIRCRAFT",
-                "VEHICLE",
-                "FLY",
-                "RAVENWING",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 10,
-                "l": "6+",
-                "co": "-"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 155
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Icarus Stormcannon",
-                      "range": "48\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Fly 2+"
-                      ]
-                },
-                {
-                      "name": "Las-talon",
-                      "range": "36\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Skyhammer Missile Launcher",
-                      "range": "48\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Fly 2+"
-                      ]
-                },
-                {
-                      "name": "Twin Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Twin-linked"
-                      ]
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ]
-                },
-                {
-                      "name": "Typhoon Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": []
-                },
-                {
-                      "name": "Typhoon Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": 6,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Interceptor: This unit’s ranged attacks that target a FLY unit have +1 to hit rolls .",
-                "Codex Discipline",
-                "Thundercowl Turbines"
-          ],
-          "leaderOf": [],
-          "notes": "Caza de combate para derribar aeronaves rivales."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 165
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzamisiles Skyhammer",
+        "range": "48\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 8,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ]
+      },
+      {
+        "name": "Cañón de Asalto Acoplado (Twin Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Typhoon – Fragmentación",
+        "range": "48\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Typhoon – Perforante",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Pasada de Ametrallamiento: Los ataques a distancia de esta unidad dirigidos contra unidades que no tengan la clave VOLAR tienen un bonificador de +1 a las tiradas de impactar.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Turbinas Atronadoras: Propulsión de alta potencia que otorga gran movilidad sobre el campo de batalla."
+    ],
+    "leaderOf": [],
+    "notes": "Caza de apoyo aéreo cercano."
+  },
+  {
+    "id": "sm_stormhawk_interceptor",
+    "name": "Interceptor Stormhawk",
+    "originalName": "Stormhawk Interceptor",
+    "role": "Aeronave / Superioridad Aérea",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "AERONAVE",
+      "VEHÍCULO",
+      "VOLAR",
+      "ALA DE CUERVO",
+      "AIRCRAFT",
+      "VEHICLE",
+      "FLY",
+      "RAVENWING",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 10,
+      "l": "6+",
+      "co": "-"
     },
-
-    {
-          "id": "sm_intercessors",
-          "name": "Escuadra de Intercesores",
-          "originalName": "Intercessor Squad",
-          "role": "Línea / Infantería",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "LÍNEA",
-                "TACTICUS",
-                "INFANTRY",
-                "BATTLELINE",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 85
-                },
-                {
-                      "models": 10,
-                      "points": 170
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Bolt Rifle - Focused Fire",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Heavy"
-                      ]
-                },
-                {
-                      "name": "Bolt Rifle - Saturation",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "ASSAULT",
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Frag",
-                      "range": "24\"",
-                      "a": 4,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ]
-                },
-                {
-                      "name": "Grenade Launcher - Krak",
-                      "range": "24\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ]
-                },
-                {
-                      "name": "Hand Flamer",
-                      "range": "9\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainsword",
-                      "range": "Combate",
-                      "a": 5,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Knives and Fists",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Bolter Discipline: In your Shooting phase , if any of the following apply, this unit’s ranged attacks have +1 to hit rolls : This unit is within range of an objective . The target of that attack is within range of an objective .",
-                "Tactical Mainstay: Being engaged / battle-shocked does not prevent this unit from being eligible to start an action . When this unit starts an action , that action does not prevent this unit from being eligible to shoot .",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY JUDICIAR LIEUTENANT CASTELLAN SANGUINARY PRIEST WARDENS OF ULTRAMAR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Núcleo versátil de la infantería del Capítulo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 155
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Tormenta Icarus (Icarus Stormcannon)",
+        "range": "48\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 7,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ]
+      },
+      {
+        "name": "Garras Láser (Las-talon)",
+        "range": "36\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Lanzamisiles Skyhammer",
+        "range": "48\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 8,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ]
+      },
+      {
+        "name": "Cañón de Asalto Acoplado (Twin Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Acoplada (Twin-linked)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ]
+      },
+      {
+        "name": "Lanzamisiles Typhoon – Perforante",
+        "range": "48\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": []
+      },
+      {
+        "name": "Lanzamisiles Typhoon – Fragmentación",
+        "range": "48\"",
+        "a": 6,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Interceptor: Los ataques a distancia de esta unidad dirigidos contra unidades con la clave VOLAR tienen un bonificador de +1 a las tiradas de impactar.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Turbinas Atronadoras: Propulsión de alta potencia que otorga gran movilidad sobre el campo de batalla."
+    ],
+    "leaderOf": [],
+    "notes": "Caza de combate para derribar aeronaves rivales."
+  },
+  {
+    "id": "sm_intercessors",
+    "name": "Escuadra de Intercesores",
+    "originalName": "Intercessor Squad",
+    "role": "Línea / Infantería",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "LÍNEA",
+      "TACTICUS",
+      "INFANTRY",
+      "BATTLELINE",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_assault_intercessors",
-          "name": "Escuadra de Intercesores de Asalto",
-          "originalName": "Assault Intercessor Squad",
-          "role": "Línea / Combate",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "LÍNEA",
-                "TACTICUS",
-                "ASALTO",
-                "INFANTRY",
-                "BATTLELINE",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 85
-                },
-                {
-                      "models": 10,
-                      "points": 170
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hand Flamer",
-                      "range": "9\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Torrent"
-                      ]
-                },
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainsword",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": []
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Combate",
-                      "a": 4,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": []
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "4+",
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ]
-                }
-          ],
-          "abilities": [
-                "Targeted Intercession: If this unit made a charge move this turn, this unit’s melee attacks have +1 S and AP .",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY JUDICIAR LIEUTENANT CASTELLAN SANGUINARY PRIEST KAIUS KONORIUS WARDENS OF ULTRAMAR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Infantería de choque cuerpo a cuerpo."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 85
+      },
+      {
+        "models": 10,
+        "points": 170
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Rifle Bólter – Fuego Concentrado (Focused Fire)",
+        "range": "24\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Pesada (Heavy)"
+        ]
+      },
+      {
+        "name": "Rifle Bólter – Saturación (Saturation)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Asalto (Assault)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Fragmentación",
+        "range": "24\"",
+        "a": 4,
+        "bs": "3+",
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ]
+      },
+      {
+        "name": "Lanzagranadas – Perforante",
+        "range": "24\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ]
+      },
+      {
+        "name": "Lanzallamas de Mano (Hand Flamer)",
+        "range": "9\"",
+        "a": 3,
+        "bs": "-",
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Combate",
+        "a": 5,
+        "ws": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Cuchillos y Puños de Combate",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Disciplina de Bólter: En tu fase de Disparo, si la unidad o su objetivo están en alcance de un objetivo, sus ataques a distancia tienen +1 a la tirada para impactar.",
+      "Pilar Táctico: Estar trabado en combate o acobardado no impide que esta unidad sea elegible para iniciar acciones tácticas secundarias.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Núcleo versátil de la infantería del Capítulo."
+  },
+  {
+    "id": "sm_assault_intercessors",
+    "name": "Escuadra de Intercesores de Asalto",
+    "originalName": "Assault Intercessor Squad",
+    "role": "Línea / Combate",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "LÍNEA",
+      "TACTICUS",
+      "ASALTO",
+      "INFANTRY",
+      "BATTLELINE",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_hellblasters",
-          "name": "Escuadra de Revientainfiernos (Hellblasters)",
-          "originalName": "Hellblaster Squad",
-          "role": "Infantería / Plasma",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "TACTICUS",
-                "PLASMA",
-                "INFANTRY",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 115
-                },
-                {
-                      "models": 10,
-                      "points": 230
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Incinerator - Standard",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "ASSAULT"
-                      ]
-                },
-                {
-                      "name": "Plasma Incinerator - Supercharge",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "ASSAULT",
-                            "Rapid Fire 1",
-                            "Hazardous"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Rites of Thermal Appeasement: This unit has +1 to hazard rolls made for its Plasma Incinerator and Plasma Pistol weapons.",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY LIEUTENANT SANGUINARY PRIEST",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Especialistas devotos del plasma, en perfecta sinergia con el Capítulo."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 85
+      },
+      {
+        "models": 10,
+        "points": 170
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzallamas de Mano (Hand Flamer)",
+        "range": "9\"",
+        "a": 3,
+        "bs": "-",
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Torrente (Torrent)"
+        ]
+      },
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": []
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Combate",
+        "a": 4,
+        "ws": "3+",
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": []
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "4+",
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ]
+      }
+    ],
+    "abilities": [
+      "Intercesión Selectiva: Si esta unidad realizó un movimiento de carga este turno, las armas de combate cuerpo a cuerpo de sus miniaturas obtienen la regla [Lanza].",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Infantería de choque cuerpo a cuerpo."
+  },
+  {
+    "id": "sm_hellblasters",
+    "name": "Escuadra de Revientainfiernos (Hellblasters)",
+    "originalName": "Hellblaster Squad",
+    "role": "Infantería / Plasma",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "TACTICUS",
+      "PLASMA",
+      "INFANTRY",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_infernus",
-          "name": "Escuadra Infernus",
-          "originalName": "Infernus Squad",
-          "role": "Infantería / Lanzallamas",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "TACTICUS",
-                "LANZALLAMAS",
-                "INFANTRY",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 95
-                },
-                {
-                      "models": 10,
-                      "points": 190
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Pirólisis (Pyreblaster)",
-                      "range": "12\"",
-                      "a": 3,
-                      "bs": "-",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Torrent"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Driven from Cover: In your Shooting phase , when this unit has shot, select one enemy unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have [IGNORES COVER] .",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY JUDICIAR LIEUTENANT CASTELLAN SANGUINARY PRIEST",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Purificadores con lanzallamas de alta presión."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 115
+      },
+      {
+        "models": 10,
+        "points": 230
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Incinerador de Plasma – Estándar",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Asalto (Assault)"
+        ]
+      },
+      {
+        "name": "Incinerador de Plasma – Sobrecarga",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Asalto (Assault)",
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Peligrosa (Hazardous)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Ritos de Apaciguamiento Térmico: Esta unidad tiene un bonificador de +1 a las tiradas de armas Peligrosas (Hazardous) realizadas para sus Incineradores de Plasma y Pistolas de Plasma.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Especialistas devotos del plasma, en perfecta sinergia con el Capítulo."
+  },
+  {
+    "id": "sm_infernus",
+    "name": "Escuadra Infernus",
+    "originalName": "Infernus Squad",
+    "role": "Infantería / Lanzallamas",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "TACTICUS",
+      "LANZALLAMAS",
+      "INFANTRY",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_infiltrators",
-          "name": "Escuadra de Infiltradores",
-          "originalName": "Infiltrator Squad",
-          "role": "Infantería / Sigilo",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "PHOBOS",
-                "INFILTRADOR",
-                "HUMO",
-                "INFANTRY",
-                "SMOKE",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 85
-                },
-                {
-                      "models": 10,
-                      "points": 150
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Marksman Bolt Carbine",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Precision"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Omni-scramblers: In your Shooting phase , you can select one visible enemy unit within 18\" of this unit. That unit is detected : While a unit is detected , that unit has +3\" detection range .",
-                "This unit can be supported by the following unit: LIEUTENANT IN PHOBOS ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "La mejor unidad para denegar el despliegue rápido enemigo."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 95
+      },
+      {
+        "models": 10,
+        "points": 190
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Pirólisis (Pyreblaster)",
+        "range": "12\"",
+        "a": 3,
+        "bs": "-",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Torrente (Torrent)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Expulsados de la Cobertura: En tu fase de Disparo, tras disparar con esta unidad, selecciona una unidad enemiga alcanzada por sus ataques. Las unidades amigas ADEPTUS ASTARTES ignoran cobertura al atacar a esa unidad enemiga hasta el final del turno.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Purificadores con lanzallamas de alta presión."
+  },
+  {
+    "id": "sm_infiltrators",
+    "name": "Escuadra de Infiltradores",
+    "originalName": "Infiltrator Squad",
+    "role": "Infantería / Sigilo",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "PHOBOS",
+      "INFILTRADOR",
+      "HUMO",
+      "INFANTRY",
+      "SMOKE",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_eradicators",
-          "name": "Escuadra de Erradicadores",
-          "originalName": "Eradicator Squad",
-          "role": "Infantería Pesada / Fusión",
-          "wing": "Compañía Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "INFANTERÍA",
-                "GRAVIS",
-                "FUSIÓN",
-                "INFANTRY",
-                "ADEPTUS ASTARTES",
-                "IMPERIUM"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 100
-                },
-                {
-                      "models": 6,
-                      "points": 215
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "bs": "3+",
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ]
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "bs": "3+",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2",
-                            "Heavy"
-                      ]
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Combate",
-                      "a": 3,
-                      "ws": "3+",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": []
-                }
-          ],
-          "abilities": [
-                "Overlapping Destruction: In your Shooting phase , you can select one enemy unit. This unit’s Heavy Bolter weapons that target that enemy unit have [BLAST 1] .",
-                "This unit can be supported by the following unit: APOTHECARY BIOLOGIS",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Cazadores acorazados en servoarmadura Gravis."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 85
+      },
+      {
+        "models": 10,
+        "points": 150
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Carabina Bólter de Tirador (Marksman Bolt Carbine)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Precisión (Precision)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Omni-interferidores (Omni-scramblers): En tu fase de Disparo, puedes seleccionar una unidad enemiga visible a 18\" o menos de esta unidad. Dicha unidad queda detectada: mientras esté detectada, su rango de detección aumenta en +3\" (y las unidades enemigas no pueden ser desplegadas como refuerzos o reservas a 12\" o menos de esta unidad).",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Teniente con Armadura Phobos.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "La mejor unidad para denegar el despliegue rápido enemigo."
+  },
+  {
+    "id": "sm_eradicators",
+    "name": "Escuadra de Erradicadores",
+    "originalName": "Eradicator Squad",
+    "role": "Infantería Pesada / Fusión",
+    "wing": "Compañía Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "INFANTERÍA",
+      "GRAVIS",
+      "FUSIÓN",
+      "INFANTRY",
+      "ADEPTUS ASTARTES",
+      "IMPERIUM"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_ancient",
-          "name": "Anciano de Batalla (Astartes)",
-          "originalName": "Ancient",
-          "aliases": [
-                "Ancient",
-                "Anciano de Batalla (Astartes)",
-                "Anciano de Batalla",
-                "Ancient"
-          ],
-          "role": "Líder / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 40
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Bolt Rifle - Focused Fire",
-                      "range": "24\"",
-                      "a": 1,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Bolt Rifle - Saturation",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "ASSAULT"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Raise the Banner: At the end of your Movement phase , if this unit is controlling an objective , that objective is secured .",
-                "Honour of the Company: This unit has +1 OC .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "DESOLATION SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS",
-                "VANGUARD VETERAN SQUAD"
-          ],
-          "notes": "Portador del Estandarte del Capítulo que inspira a las líneas a resistir hasta el final."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 100
+      },
+      {
+        "models": 6,
+        "points": 215
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "bs": "3+",
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ]
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "bs": "3+",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Pesada (Heavy)"
+        ]
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Combate",
+        "a": 3,
+        "ws": "3+",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": []
+      }
+    ],
+    "abilities": [
+      "Destrucción Superpuesta: En tu fase de Disparo, selecciona una unidad enemiga. Las armas Bólter Pesado de esta unidad dirigidas contra ese objetivo obtienen [Impactos Sostenidos 1].",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Apotecario Biologis.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Cazadores acorazados en servoarmadura Gravis."
+  },
+  {
+    "id": "sm_ancient",
+    "name": "Anciano de Batalla (Astartes)",
+    "originalName": "Ancient",
+    "aliases": [
+      "Ancient",
+      "Anciano de Batalla (Astartes)",
+      "Anciano de Batalla",
+      "Ancient"
+    ],
+    "role": "Líder / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_apothecary",
-          "name": "Apotecario",
-          "originalName": "Apothecary",
-          "aliases": [
-                "Apothecary",
-                "Apotecario",
-                "Apotecario",
-                "Apothecary"
-          ],
-          "role": "Líder / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 45
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Absolvor Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Reductor Pistol",
-                      "range": "Melee",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -4,
-                      "d": 2,
-                      "keywords": [
-                            "Extra Attacks"
-                      ],
-                      "ws": "3+"
-                },
-                {
-                      "name": "Servo-armature",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Narthecium: In your Command phase , this unit heals D3+1 wounds.",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "COMPANY HEROES",
-                "DESOLATION SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS"
-          ],
-          "notes": "Médico de combate encargado de recuperar la semilla genética y curar a los hermanos heridos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 40
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Rifle Bólter – Fuego Concentrado (Focused Fire)",
+        "range": "24\"",
+        "a": 1,
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Rifle Bólter – Saturación (Saturation)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Asalto (Assault)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Melee",
+        "a": 5,
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Alzad el Estandarte: Al final de tu fase de Movimiento, si esta unidad controla un marcador de objetivo, dicho objetivo queda asegurado hasta que una unidad enemiga lo controle, incluso si abandonas el marcador.",
+      "Honor de la Compañía: Esta unidad tiene un bonificador de +1 a su Control de Objetivo (OC).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra Desolación (Desolation Squad)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)",
+      "Escuadra de Veteranos de Vanguardia (Vanguard Veterans)"
+    ],
+    "notes": "Portador del Estandarte del Capítulo que inspira a las líneas a resistir hasta el final."
+  },
+  {
+    "id": "sm_apothecary",
+    "name": "Apotecario",
+    "originalName": "Apothecary",
+    "aliases": [
+      "Apothecary",
+      "Apotecario",
+      "Apotecario",
+      "Apothecary"
+    ],
+    "role": "Líder / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_apothecary_biologis",
-          "name": "Apotecario Biologis",
-          "originalName": "Apothecary Biologis",
-          "aliases": [
-                "Apothecary Biologis",
-                "Apotecario Biologis",
-                "Apotecario Biologis",
-                "Apothecary Biologis"
-          ],
-          "role": "Líder / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 60
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Absolvor Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Servo-armature",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Vivispectral Analysis Targeting: This unit’s attacks have [Lethal Hits: non- Vehicle] .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "AGGRESSOR SQUAD",
-                "ERADICATOR SQUAD WITH HEAVY BOLTERS",
-                "ERADICATOR SQUAD WITH MELTA RIFLES",
-                "HEAVY INTERCESSOR SQUAD"
-          ],
-          "notes": "Especialista en bio-análisis en servoarmadura Gravis, analiza las debilidades del enemigo en tiempo real."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 45
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Absolvor (Absolvor Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Pistola Reductora (Reductor Pistol)",
+        "range": "Melee",
+        "a": 1,
+        "f": 5,
+        "ap": -4,
+        "d": 2,
+        "keywords": [
+          "Ataques Adicionales (Extra Attacks)"
+        ],
+        "ws": "3+"
+      },
+      {
+        "name": "Brazo Servoarmadura (Servo-armature)",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Narthecium: En tu fase de Mando, esta unidad cura D3+1 heridas a una miniatura herida de la escuadra.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Héroes de la Compañía (Company Heroes)",
+      "Escuadra Desolación (Desolation Squad)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)"
+    ],
+    "notes": "Médico de combate encargado de recuperar la semilla genética y curar a los hermanos heridos."
+  },
+  {
+    "id": "sm_apothecary_biologis",
+    "name": "Apotecario Biologis",
+    "originalName": "Apothecary Biologis",
+    "aliases": [
+      "Apothecary Biologis",
+      "Apotecario Biologis",
+      "Apotecario Biologis",
+      "Apothecary Biologis"
+    ],
+    "role": "Líder / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_captain",
-          "name": "Capitán",
-          "originalName": "Captain",
-          "aliases": [
-                "Captain",
-                "Capitán",
-                "Capitán",
-                "Captain"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 90
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Master-crafted Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "ASSAULT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Neo-volkite Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Devastating Wounds"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Hazardous",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Strategic Acumen: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Finest Hour (Once per battle, per unit): In the Fight phase , when this unit is selected to fight , you can use this ability. If you do, this model’s melee attacks have: +3 A . [Devastating Wounds] .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "COMPANY HEROES",
-                "DESOLATION SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS",
-                "VICTRIX HONOUR GUARD",
-                "VANGUARD VETERAN SQUAD"
-          ],
-          "notes": "Comandante de compañía veterano con armamento personalizable y gran maestría táctica."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 60
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Absolvor (Absolvor Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Brazo Servoarmadura (Servo-armature)",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Análisis Viviespectral de Objetivos: Los ataques de la unidad liderada tienen la habilidad [Impactos Letales: no vehículos].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Agresores (Aggressors)",
+      "Escuadra de Erradicadores (Bólteres Pesados)",
+      "Escuadra de Erradicadores (Rifles de Fusión)",
+      "Escuadra de Intercesores Pesados (Heavy Intercessors)"
+    ],
+    "notes": "Especialista en bio-análisis en servoarmadura Gravis, analiza las debilidades del enemigo en tiempo real."
+  },
+  {
+    "id": "sm_captain",
+    "name": "Capitán",
+    "originalName": "Captain",
+    "aliases": [
+      "Captain",
+      "Capitán",
+      "Capitán",
+      "Captain"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_captain_in_gravis_armour",
-          "name": "Capitán con Armadura Gravis",
-          "originalName": "Captain In Gravis Armour",
-          "aliases": [
-                "Captain In Gravis Armour",
-                "Capitán con Armadura Gravis",
-                "Capitán con Armadura Gravis",
-                "Captain In Gravis Armour"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 6,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 90
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Boltstorm Gauntlet",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Master-crafted Heavy Bolt Rifle",
-                      "range": "30\"",
-                      "a": 2,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Heavy",
-                            "ASSAULT",
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Boltstorm Gauntlet",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Relic Blade",
-                      "range": "Melee",
-                      "a": 2,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Extra Attacks"
-                      ],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Relic Chainsword",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Extra Attacks"
-                      ],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Relic Power Fist",
-                      "range": "Melee",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Extra Attacks"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Strategic Acumen: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Refuse to Yield: Attacks allocated to this model have -1 D .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "AGGRESSOR SQUAD",
-                "ERADICATOR SQUAD WITH HEAVY BOLTERS",
-                "ERADICATOR SQUAD WITH MELTA RIFLES",
-                "HEAVY INTERCESSOR SQUAD"
-          ],
-          "notes": "Líder blindado casi inamovible diseñado para encabezar asaltos pesados."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 90
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Bólter Magistral (Master-crafted Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Asalto (Assault)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola Neo-volkite",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Melee",
+        "a": 6,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Melee",
+        "a": 5,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Perspicacia Estratégica: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa para esta unidad hasta tu próxima fase de Mando.",
+      "Momento Cumbre (1 vez por batalla): En la fase de Combate, cuando esta unidad sea elegida para combatir, puedes activar esta habilidad. Si lo haces, hasta el final de la fase, los ataques cuerpo a cuerpo de esta miniatura aumentan sus Ataques en +3 y obtienen la regla [Heridas Devastadoras].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Héroes de la Compañía (Company Heroes)",
+      "Escuadra Desolación (Desolation Squad)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)",
+      "Guardia de Honor Victrix (Victrix Honour Guard)",
+      "Escuadra de Veteranos de Vanguardia (Vanguard Veterans)"
+    ],
+    "notes": "Comandante de compañía veterano con armamento personalizable y gran maestría táctica."
+  },
+  {
+    "id": "sm_captain_in_gravis_armour",
+    "name": "Capitán con Armadura Gravis",
+    "originalName": "Captain In Gravis Armour",
+    "aliases": [
+      "Captain In Gravis Armour",
+      "Capitán con Armadura Gravis",
+      "Capitán con Armadura Gravis",
+      "Captain In Gravis Armour"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 6,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_captain_in_phobos_armour",
-          "name": "Capitán con Armadura Phobos",
-          "originalName": "Captain In Phobos Armour",
-          "aliases": [
-                "Captain In Phobos Armour",
-                "Capitán con Armadura Phobos",
-                "Capitán con Armadura Phobos",
-                "Captain In Phobos Armour"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Instigator bolt carbine",
-                      "range": "24\"",
-                      "a": 1,
-                      "f": 4,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Precision"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Combat Knife",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Precision",
-                            "Sustained Hits 1"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Strategic Acumen: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Tactical Fluidity (Once per battle round, per unit): In your Shooting phase , when this unit has shot, if this unit is unengaged , this unit can make a normal move of up to D6\". Or: At the end of your opponent’s Fight phase if this unit is engaged, this unit can make a fall-back move of up to 6\".",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ELIMINATOR SQUAD",
-                "INCURSOR SQUAD",
-                "INFILTRATOR SQUAD",
-                "REIVER SQUAD",
-                "SCOUT SQUAD"
-          ],
-          "notes": "Comandante de infiltración y guerra de guerrillas con capa de camuflaje."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 90
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Guantelete Bólter Tormenta (Boltstorm Gauntlet)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Master-crafted Heavy Bolt Rifle",
+        "range": "30\"",
+        "a": 2,
+        "f": 6,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Asalto (Assault)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Guantelete Bólter Tormenta (Boltstorm Gauntlet)",
+        "range": "Melee",
+        "a": 5,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Melee",
+        "a": 6,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Hoja Reliquia (Relic Blade)",
+        "range": "Melee",
+        "a": 2,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Ataques Adicionales (Extra Attacks)"
+        ],
+        "ws": "2+"
+      },
+      {
+        "name": "Espada Sierra Reliquia",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Ataques Adicionales (Extra Attacks)"
+        ],
+        "ws": "2+"
+      },
+      {
+        "name": "Puño de Combate Reliquia",
+        "range": "Melee",
+        "a": 1,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Ataques Adicionales (Extra Attacks)"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Perspicacia Estratégica: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa para esta unidad hasta tu próxima fase de Mando.",
+      "Negativa a Ceder: Cada vez que se asigne un ataque a esta miniatura, reduce el Daño recibido en 1 (hasta un mínimo de 1).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Agresores (Aggressors)",
+      "Escuadra de Erradicadores (Bólteres Pesados)",
+      "Escuadra de Erradicadores (Rifles de Fusión)",
+      "Escuadra de Intercesores Pesados (Heavy Intercessors)"
+    ],
+    "notes": "Líder blindado casi inamovible diseñado para encabezar asaltos pesados."
+  },
+  {
+    "id": "sm_captain_in_phobos_armour",
+    "name": "Capitán con Armadura Phobos",
+    "originalName": "Captain In Phobos Armour",
+    "aliases": [
+      "Captain In Phobos Armour",
+      "Capitán con Armadura Phobos",
+      "Capitán con Armadura Phobos",
+      "Captain In Phobos Armour"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_captain_with_jump_pack",
-          "name": "Capitán con Retropropulsor",
-          "originalName": "Captain With Jump Pack",
-          "aliases": [
-                "Captain With Jump Pack",
-                "Capitán con Retropropulsor",
-                "Capitán con Retropropulsor",
-                "Captain With Jump Pack"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 5,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 90
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hand Flamer",
-                      "range": "9\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Hazardous",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainsword",
-                      "range": "Melee",
-                      "a": 8,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Relic Weapon",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Thunder Hammer",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Strategic Acumen: In your Command phase , you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",
-                "Angel’s Wrath: This unit has +1 to advance rolls and charge rolls .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSORS WITH JUMP PACKS",
-                "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
-          ],
-          "notes": "Comandante aéreo de asalto relámpago con alta movilidad."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Carabina Bólter Instigadora",
+        "range": "24\"",
+        "a": 1,
+        "f": 4,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillo de Combate (Combat Knife)",
+        "range": "Melee",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Precisión (Precision)",
+          "Impactos Sostenidos 1"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Perspicacia Estratégica: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa para esta unidad hasta tu próxima fase de Mando.",
+      "Fluidez Táctica (1 vez por ronda de batalla): En tu fase de Disparo, tras haber disparado, si esta unidad no está trabada en combate puede realizar un movimiento normal de hasta 6\".",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Eliminadores (Eliminators)",
+      "Escuadra de Incursores (Incursors)",
+      "Escuadra de Infiltradores (Infiltrators)",
+      "Escuadra de Reivers",
+      "Escuadra de Exploradores (Scouts)"
+    ],
+    "notes": "Comandante de infiltración y guerra de guerrillas con capa de camuflaje."
+  },
+  {
+    "id": "sm_captain_with_jump_pack",
+    "name": "Capitán con Retropropulsor",
+    "originalName": "Captain With Jump Pack",
+    "aliases": [
+      "Captain With Jump Pack",
+      "Capitán con Retropropulsor",
+      "Capitán con Retropropulsor",
+      "Captain With Jump Pack"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 5,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_chaplain",
-          "name": "Capellán",
-          "originalName": "Chaplain",
-          "aliases": [
-                "Chaplain",
-                "Capellán",
-                "Capellán",
-                "Chaplain"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 4,
-                "l": "5+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 60
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Absolvor Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Crozius Arcanum",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "CLEAVE 1"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Litany of Hate: This unit’s melee attacks have [Lance] .",
-                "Spiritual Leader (Once per battle round, per unit): At the start of any phase, you can select one friendly battle-shocked ADEPTUS ASTARTES unit within 6\" of this model. That unit is no longer battle-shocked .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS",
-                "VANGUARD VETERAN SQUAD"
-          ],
-          "notes": "Líder espiritual y guardián del celo de batalla de los Ángeles Oscuros."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 90
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzallamas de Mano (Hand Flamer)",
+        "range": "9\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Melee",
+        "a": 8,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ],
+        "ws": "2+"
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Melee",
+        "a": 5,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Arma Reliquia (Relic Weapon)",
+        "range": "Melee",
+        "a": 6,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Martillo de Trueno (Thunder Hammer)",
+        "range": "Melee",
+        "a": 5,
+        "f": 8,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Perspicacia Estratégica: En tu fase de Mando, puedes seleccionar una doctrina de combate para que esté activa para esta unidad hasta tu próxima fase de Mando.",
+      "Ira del Ángel: Esta unidad tiene un bonificador de +1 a las tiradas de avance y tiradas de carga.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Intercesores de Asalto con Retropropulsor",
+      "Veteranos de Vanguardia con Retropropulsor"
+    ],
+    "notes": "Comandante aéreo de asalto relámpago con alta movilidad."
+  },
+  {
+    "id": "sm_chaplain",
+    "name": "Capellán",
+    "originalName": "Chaplain",
+    "aliases": [
+      "Chaplain",
+      "Capellán",
+      "Capellán",
+      "Chaplain"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 4,
+      "l": "5+",
+      "co": 1
     },
-
-    {
-          "id": "sm_chaplain_with_jump_pack",
-          "name": "Capellán con Retropropulsor",
-          "originalName": "Chaplain With Jump Pack",
-          "aliases": [
-                "Chaplain With Jump Pack",
-                "Capellán con Retropropulsor",
-                "Capellán con Retropropulsor",
-                "Chaplain With Jump Pack"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 4,
-                "l": "5+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Absolvor Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Crozius Arcanum",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "CLEAVE 1"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Litany of Hate: This unit’s melee attacks have [Lance] .",
-                "Exhortation of Rage: While this unit is at or below half-strength , this unit’s melee attacks can re-roll wound rolls .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSORS WITH JUMP PACKS",
-                "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
-          ],
-          "notes": "Capellán aerotransportado que lidera asaltos aéreos infundiendo fervor fanático."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 60
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Absolvor (Absolvor Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Crozius Arcanum (Crozius Arcanum)",
+        "range": "Melee",
+        "a": 5,
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Hendedura 1 (Cleave 1)"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Letanía de Odio: Los ataques cuerpo a cuerpo de esta unidad tienen la habilidad [Lanza / Lance].",
+      "Líder Espiritual (1 vez por ronda de batalla): Al inicio de cualquier fase, selecciona una unidad amigable de ADEPTUS ASTARTES a 6\" que esté acobardada; dicha unidad deja de estar acobardada inmediatamente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)",
+      "Escuadra de Veteranos de Vanguardia (Vanguard Veterans)"
+    ],
+    "notes": "Líder espiritual y guardián del celo de batalla de los Ángeles Oscuros."
+  },
+  {
+    "id": "sm_chaplain_with_jump_pack",
+    "name": "Capellán con Retropropulsor",
+    "originalName": "Chaplain With Jump Pack",
+    "aliases": [
+      "Chaplain With Jump Pack",
+      "Capellán con Retropropulsor",
+      "Capellán con Retropropulsor",
+      "Chaplain With Jump Pack"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 4,
+      "l": "5+",
+      "co": 1
     },
-
-    {
-          "id": "sm_judiciar",
-          "name": "Judiciar",
-          "originalName": "Judiciar",
-          "aliases": [
-                "Judiciar",
-                "Judiciar",
-                "Judiciar",
-                "Judiciar"
-          ],
-          "role": "Líder / Combate",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "4++",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 50
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Absolvor Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Executioner Relic Blade",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Precision",
-                            "Devastating Wounds"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Tempormortis: This unit has Fights First .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS",
-                "VANGUARD VETERAN SQUAD"
-          ],
-          "notes": "Verdugo silencioso armado con la Hoja de la Ejecución y el Tempormortis para forzar al enemigo a atacar último."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Absolvor (Absolvor Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Crozius Arcanum (Crozius Arcanum)",
+        "range": "Melee",
+        "a": 5,
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Hendedura 1 (Cleave 1)"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Letanía de Odio: Los ataques cuerpo a cuerpo de esta unidad tienen la habilidad [Lanza / Lance].",
+      "Exhortación a la Rabia: Mientras esta unidad esté en su mitad de efectivos o menos, los ataques cuerpo a cuerpo de sus miniaturas obtienen la regla [Impactos Sostenidos 1].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Intercesores de Asalto con Retropropulsor",
+      "Veteranos de Vanguardia con Retropropulsor"
+    ],
+    "notes": "Capellán aerotransportado que lidera asaltos aéreos infundiendo fervor fanático."
+  },
+  {
+    "id": "sm_judiciar",
+    "name": "Judiciar",
+    "originalName": "Judiciar",
+    "aliases": [
+      "Judiciar",
+      "Judiciar",
+      "Judiciar",
+      "Judiciar"
+    ],
+    "role": "Líder / Combate",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "4++",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_librarian",
-          "name": "Bibliotecario",
-          "originalName": "Librarian",
-          "aliases": [
-                "Librarian",
-                "Bibliotecario",
-                "Bibliotecario",
-                "Librarian"
-          ],
-          "role": "Líder / Psíquico",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Smite - Focused Witchfire",
-                      "range": "24\"",
-                      "a": "D3+3",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds",
-                            "PSYCHIC",
-                            "Hazardous"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Smite - Witchfire",
-                      "range": "24\"",
-                      "a": "D6",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "PSYCHIC"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Force Weapon",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "PSYCHIC"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Veil of Time (psychic level 1): When this unit is selected to make an advance move , if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . This unit can change that advance roll to a 6.",
-                "Force Dome (psychic level 1): In your Movement phase , if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . This unit has 4+ InSv until the start of your next turn.",
-                "Librarian (psyker level 1): This model has the psychic abilities listed in the Psychic Abilities section.",
-                "Psychic Hood (Psychic): This unit has Feel No Pain 4+ against psychic attacks .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "DESOLATION SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS",
-                "VANGUARD VETERAN SQUAD"
-          ],
-          "notes": "Psíquico de batalla que desata los poderes de la Disformidad y proyecta campos de fuerza protectores."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 50
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Absolvor (Absolvor Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Hoja Reliquia Ejecutora (Executioner Relic Blade)",
+        "range": "Melee",
+        "a": 5,
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)",
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Tempormortis: Las miniaturas de esta unidad tienen la habilidad Ataca Primero (Fights First).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)",
+      "Escuadra de Veteranos de Vanguardia (Vanguard Veterans)"
+    ],
+    "notes": "Verdugo silencioso armado con la Hoja de la Ejecución y el Tempormortis para forzar al enemigo a atacar último."
+  },
+  {
+    "id": "sm_librarian",
+    "name": "Bibliotecario",
+    "originalName": "Librarian",
+    "aliases": [
+      "Librarian",
+      "Bibliotecario",
+      "Bibliotecario",
+      "Librarian"
+    ],
+    "role": "Líder / Psíquico",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_librarian_in_phobos_armour",
-          "name": "Bibliotecario con Armadura Phobos",
-          "originalName": "Librarian In Phobos Armour",
-          "aliases": [
-                "Librarian In Phobos Armour",
-                "Bibliotecario con Armadura Phobos",
-                "Bibliotecario con Armadura Phobos",
-                "Librarian In Phobos Armour"
-          ],
-          "role": "Líder / Psíquico",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 75
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Smite - Focused Witchfire",
-                      "range": "24\"",
-                      "a": "D3+3",
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds",
-                            "PSYCHIC",
-                            "Hazardous"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Smite - Witchfire",
-                      "range": "24\"",
-                      "a": "D6",
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "PSYCHIC"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Force Weapon",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "PSYCHIC"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Shrouding (psychic level 1): When an enemy unit targets this unit, if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . Attacks that target this unit have -1 to hit rolls until the end of the phase.",
-                "Soul Sight (psychic level 1): In your Shooting phase , if this unit is not battle-shocked , you can make a psychic roll for this unit by rolling one D6. If you do: On a 1, this unit is battle-shocked . Select one visible enemy unit. Ranged attacks that target that enemy unit have [IGNORES COVER] .",
-                "Librarian (psyker level 1): This model has the psychic abilities listed in the Psychic Abilities section.",
-                "Psychic Hood (Psychic): This unit has Feel No Pain 4+ against psychic attacks .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ELIMINATOR SQUAD",
-                "INCURSOR SQUAD",
-                "INFILTRATOR SQUAD",
-                "REIVER SQUAD",
-                "SCOUT SQUAD"
-          ],
-          "notes": "Maestro de las sombras que oculta a las tropas de infiltración de los escáneres y ojos enemigos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Castigo Divino (Smite) – Fuego Brujo Concentrado",
+        "range": "24\"",
+        "a": "D3+3",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Psíquica (Psychic)",
+          "Peligrosa (Hazardous)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Castigo Divino (Smite) – Fuego Brujo",
+        "range": "24\"",
+        "a": "D6",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Psíquica (Psychic)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma Psíquica / de Fuerza (Force Weapon)",
+        "range": "Melee",
+        "a": 4,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Psíquica (Psychic)"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Velo del Tiempo (Psíquico Nivel 1): Cuando esta unidad sea elegida para avanzar, si no está Acobardada, puedes realizar un chequeo psíquico con 1D6: con 2+, añade +3\" a su tirada de avance y las armas de esta unidad obtienen la regla [Asalto].",
+      "Cúpula de Fuerza (Psíquico Nivel 1): En tu fase de Movimiento, si esta unidad no está Acobardada, puedes realizar un chequeo psíquico con 1D6: con 2+, las miniaturas de esta unidad obtienen salvación invulnerable de 4+ hasta tu siguiente fase de Movimiento.",
+      "Bibliotecario (Psíquico Nivel 1): Esta miniatura domina las disciplinas psíquicas de combate de los Adeptus Astartes.",
+      "Capucha Psíquica: Esta unidad tiene No Hay Dolor 4+ contra ataques psíquicos y heridas mortales.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra Desolación (Desolation Squad)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)",
+      "Escuadra de Veteranos de Vanguardia (Vanguard Veterans)"
+    ],
+    "notes": "Psíquico de batalla que desata los poderes de la Disformidad y proyecta campos de fuerza protectores."
+  },
+  {
+    "id": "sm_librarian_in_phobos_armour",
+    "name": "Bibliotecario con Armadura Phobos",
+    "originalName": "Librarian In Phobos Armour",
+    "aliases": [
+      "Librarian In Phobos Armour",
+      "Bibliotecario con Armadura Phobos",
+      "Bibliotecario con Armadura Phobos",
+      "Librarian In Phobos Armour"
+    ],
+    "role": "Líder / Psíquico",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_lieutenant",
-          "name": "Teniente",
-          "originalName": "Lieutenant",
-          "aliases": [
-                "Lieutenant",
-                "Teniente",
-                "Teniente",
-                "Lieutenant"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 50
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Master-crafted Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Neo-volkite Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Devastating Wounds"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Demi-company Commander (Once per turn, per unit): When a friendly CAPTAIN unit uses its Strategic Acumen ability, you can use this ability. If you do, the selected combat doctrine is active for this unit until the start of your next Command phase .",
-                "Tactical Precision: This unit’s attacks have [Lethal Hits: non- MONSTER/VEHICLE] .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "BLADEGUARD VETERAN SQUAD",
-                "COMPANY HEROES",
-                "DESOLATION SQUAD",
-                "HELLBLASTER SQUAD",
-                "INFERNUS SQUAD",
-                "INTERCESSOR SQUAD",
-                "STERNGUARD VETERAN SQUAD",
-                "INNER CIRCLE COMPANIONS",
-                "VANGUARD VETERAN SQUAD"
-          ],
-          "notes": "Oficial táctico que otorga impactos letales a la escuadra y permite disparar y cargar tras retirarse."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 75
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Castigo Divino (Smite) – Fuego Brujo Concentrado",
+        "range": "24\"",
+        "a": "D3+3",
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)",
+          "Psíquica (Psychic)",
+          "Peligrosa (Hazardous)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Castigo Divino (Smite) – Fuego Brujo",
+        "range": "24\"",
+        "a": "D6",
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Psíquica (Psychic)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma Psíquica / de Fuerza (Force Weapon)",
+        "range": "Melee",
+        "a": 4,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Psíquica (Psychic)"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Mortaja Ilusoria (Psíquico Nivel 1): Cuando una unidad enemiga elija a esta unidad como blanco, si no está Acobardada, puedes realizar un chequeo psíquico con 1D6: con 2+, esta unidad solo puede ser objetivo de ataques a distancia a 12\" o menos.",
+      "Visión del Alma (Psíquico Nivel 1): En tu fase de Disparo, si esta unidad no está Acobardada, puedes realizar un chequeo psíquico con 1D6: con 2+, las armas a distancia de esta unidad obtienen la regla [Ignora Cobertura] y repiten tiradas de impactar de 1.",
+      "Bibliotecario (Psíquico Nivel 1): Esta miniatura domina las disciplinas psíquicas de combate de los Adeptus Astartes.",
+      "Capucha Psíquica: Esta unidad tiene No Hay Dolor 4+ contra ataques psíquicos y heridas mortales.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Eliminadores (Eliminators)",
+      "Escuadra de Incursores (Incursors)",
+      "Escuadra de Infiltradores (Infiltrators)",
+      "Escuadra de Reivers",
+      "Escuadra de Exploradores (Scouts)"
+    ],
+    "notes": "Maestro de las sombras que oculta a las tropas de infiltración de los escáneres y ojos enemigos."
+  },
+  {
+    "id": "sm_lieutenant",
+    "name": "Teniente",
+    "originalName": "Lieutenant",
+    "aliases": [
+      "Lieutenant",
+      "Teniente",
+      "Teniente",
+      "Lieutenant"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_lieutenant_in_phobos_armour",
-          "name": "Teniente con Armadura Phobos",
-          "originalName": "Lieutenant In Phobos Armour",
-          "aliases": [
-                "Lieutenant In Phobos Armour",
-                "Teniente con Armadura Phobos",
-                "Teniente con Armadura Phobos",
-                "Lieutenant In Phobos Armour"
-          ],
-          "role": "Líder",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 40
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Master-crafted bolt carbine",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Special-issue Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Precision",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Monomolecular Combat Blades",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Precision"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Demi-company Commander (Once per turn, per unit): When a friendly CAPTAIN unit uses its Strategic Acumen ability, you can use this ability. If you do, the selected combat doctrine is active for this unit until the start of your next Command phase .",
-                "Tactical Precision: This unit’s attacks have [Lethal Hits: non- MONSTER/VEHICLE] .",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ELIMINATOR SQUAD",
-                "INCURSOR SQUAD",
-                "INFILTRATOR SQUAD",
-                "REIVER SQUAD"
-          ],
-          "notes": "Líder ágil de exploración que permite disparar y recolocarse de inmediato."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 50
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Bólter Magistral (Master-crafted Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola Neo-volkite",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 5,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Melee",
+        "a": 5,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Melee",
+        "a": 4,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Comandante de Semicompañía (1 vez por turno): Cuando una unidad CAPITÁN amiga active su habilidad Perspicacia Estratégica, puedes usar esta habilidad. Si lo haces, la unidad liderada por este Teniente también se beneficia de dicha habilidad.",
+      "Precisión Táctica: Los ataques de las miniaturas de esta unidad obtienen la regla [Impactos Letales: No Monstruos/Vehículos].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra de Veteranos de Ferreaguardia (Bladeguard)",
+      "Héroes de la Compañía (Company Heroes)",
+      "Escuadra Desolación (Desolation Squad)",
+      "Escuadra de Revientainfiernos (Hellblasters)",
+      "Escuadra Infernus (Infernus Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)",
+      "Escuadra de Veteranos de Retaguardia (Sternguard)",
+      "Camaradas del Círculo Interior (Inner Circle Companions)",
+      "Escuadra de Veteranos de Vanguardia (Vanguard Veterans)"
+    ],
+    "notes": "Oficial táctico que otorga impactos letales a la escuadra y permite disparar y cargar tras retirarse."
+  },
+  {
+    "id": "sm_lieutenant_in_phobos_armour",
+    "name": "Teniente con Armadura Phobos",
+    "originalName": "Lieutenant In Phobos Armour",
+    "aliases": [
+      "Lieutenant In Phobos Armour",
+      "Teniente con Armadura Phobos",
+      "Teniente con Armadura Phobos",
+      "Lieutenant In Phobos Armour"
+    ],
+    "role": "Líder",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_lieutenant_with_combi_weapon",
-          "name": "Teniente con Arma Combinada",
-          "originalName": "Lieutenant With Combi-weapon",
-          "aliases": [
-                "Lieutenant With Combi-weapon",
-                "Teniente con Arma Combinada",
-                "Teniente con Arma Combinada",
-                "Lieutenant With Combi-weapon"
-          ],
-          "role": "Agente Solitario",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 85
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Combi-weapon - Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "ASSAULT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Combi-weapon - Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "ASSAULT",
-                            "BLAST 1"
-                      ],
-                      "bs": "-"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Paired Combat Blades",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Priority Target Identified (Once per battle, per unit): In your Command phase , you can use this ability. If you do, select one visible terrain feature . That terrain feature is identified until the end of the turn. While an enemy unit is within an identified terrain feature, that enemy unit has +3\" detection range .",
-                "Evade and Survive (Once per phase, per unit): In your opponent’s Movement phase , when an enemy unit ends a move within 8\" of this unit, if this unit is unengaged , this unit can make a normal move of up to D3+3\".",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [],
-          "notes": "Operativo solitario experto en emboscadas contra enemigos prioritarios."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 40
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Carabina Bólter Magistral",
+        "range": "24\"",
+        "a": 2,
+        "f": 4,
+        "ap": 0,
+        "d": 2,
+        "keywords": [],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola Bólter de Fabricación Especial",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillas Monomoleculares de Combate",
+        "range": "Melee",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Precisión (Precision)"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Comandante de Semicompañía (1 vez por turno): Cuando una unidad CAPITÁN amiga active su habilidad Perspicacia Estratégica, puedes usar esta habilidad. Si lo haces, la unidad liderada por este Teniente también se beneficia de dicha habilidad.",
+      "Precisión Táctica: Los ataques de las miniaturas de esta unidad obtienen la regla [Impactos Letales: No Monstruos/Vehículos].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Eliminadores (Eliminators)",
+      "Escuadra de Incursores (Incursors)",
+      "Escuadra de Infiltradores (Infiltrators)",
+      "Escuadra de Reivers"
+    ],
+    "notes": "Líder ágil de exploración que permite disparar y recolocarse de inmediato."
+  },
+  {
+    "id": "sm_lieutenant_with_combi_weapon",
+    "name": "Teniente con Arma Combinada",
+    "originalName": "Lieutenant With Combi-weapon",
+    "aliases": [
+      "Lieutenant With Combi-weapon",
+      "Teniente con Arma Combinada",
+      "Teniente con Arma Combinada",
+      "Lieutenant With Combi-weapon"
+    ],
+    "role": "Agente Solitario",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_techmarine",
-          "name": "Tecnomarine",
-          "originalName": "Techmarine",
-          "aliases": [
-                "Techmarine",
-                "Tecnomarine",
-                "Tecnomarine",
-                "Techmarine"
-          ],
-          "role": "Líder / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "2+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 55
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Forge Bolter",
-                      "range": "24\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Grav-pistol",
-                      "range": "12\"",
-                      "a": 2,
-                      "f": 2,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Anti-Vehicle 2+",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Omnissian Power Axe and Servo-arm",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Techmarine: While this model is within 3\" of a friendly ADEPTUS ASTARTES VEHICLE unit, this model has Lone Operative .",
-                "Blessings of the Omnissiah: In your Movement phase , at the start or end of this unit’s move, you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3\" of this model: That VEHICLE model heals D3 wounds. That VEHICLE model’s attacks can ignore modifiers to hit rolls and wound rolls until the start of your next Movement phase.",
-                "Codex Discipline",
-                "Artificer Armour"
-          ],
-          "leaderOf": [
-                "ASSAULT INTERCESSOR SQUAD",
-                "DESOLATION SQUAD",
-                "INTERCESSOR SQUAD"
-          ],
-          "notes": "Sacerdote del Mechanicus que repara tanques y dreadnoughts y potencia su puntería."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 85
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Combiarma – Bólter (Combi-weapon - Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Asalto (Assault)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Combiarma – Lanzallamas",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Asalto (Assault)",
+          "Explosión 1"
+        ],
+        "bs": "-"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillas Gemelas de Combate",
+        "range": "Melee",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Objetivo Prioritario Identificado (1 vez por batalla): En tu fase de Mando, puedes activar esta habilidad. Si lo haces, selecciona un elemento de escenografía visible: las unidades amigas ADEPTUS ASTARTES repiten las tiradas para herir de 1 contra enemigos en dicho elemento (o repiten todas las tiradas de herir si el enemigo está en su mitad de efectivos o menos).",
+      "Evadir y Sobrevivir (1 vez por fase): En la fase de Movimiento del enemigo, cuando una unidad enemiga termine un movimiento a 8\" o menos de esta unidad, si no está trabada en combate, esta unidad puede realizar un movimiento normal de hasta 6\".",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [],
+    "notes": "Operativo solitario experto en emboscadas contra enemigos prioritarios."
+  },
+  {
+    "id": "sm_techmarine",
+    "name": "Tecnomarine",
+    "originalName": "Techmarine",
+    "aliases": [
+      "Techmarine",
+      "Tecnomarine",
+      "Tecnomarine",
+      "Techmarine"
+    ],
+    "role": "Líder / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "2+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_heavy_intercessor_squad",
-          "name": "Escuadra de Intercesores Pesados",
-          "originalName": "Heavy Intercessor Squad",
-          "aliases": [
-                "Heavy Intercessor Squad",
-                "Escuadra de Intercesores Pesados",
-                "Escuadra de Intercesores Pesados",
-                "Heavy Intercessor Squad"
-          ],
-          "role": "Línea / Resistencia",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 115
-                },
-                {
-                      "models": 10,
-                      "points": 230
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolt Rifle",
-                      "range": "30\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Heavy",
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Heavy",
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Unyielding in the Face of the Foe: While this unit is controlling an objective , this unit has +1 to save rolls .",
-                "This unit can be supported by the following unit: APOTHECARY BIOLOGIS",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Infantería de línea pesada en servoarmadura Gravis para asegurar objetivos bajo fuego intenso."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 55
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter de la Forja (Forge Bolter)",
+        "range": "24\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Pistola Gravitatoria (Grav-pistol)",
+        "range": "12\"",
+        "a": 2,
+        "f": 2,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Anti-Vehicle 2+",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Hacha de Energía del Omnissiah y Servobrazo",
+        "range": "Melee",
+        "a": 5,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Tecnomarine: Mientras esta miniatura esté a 3\" o menos de una unidad VEHÍCULO ADEPTUS ASTARTES amiga, esta miniatura obtiene la habilidad Agente Solitario (Lone Operative).",
+      "Bendiciones del Omnissiah: En tu fase de Movimiento, al inicio o final del movimiento de esta unidad, puedes seleccionar una unidad VEHÍCULO ADEPTUS ASTARTES amiga a 3\" o menos: ese vehículo recupera 1D3 heridas perdidas y sus armas obtienen un bonificador de +1 a las tiradas de impactar hasta tu siguiente fase de Movimiento.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Armadura Artesanal: Armadura magistral forjada por los maestros artífices del Capítulo que otorga Salvación 2+."
+    ],
+    "leaderOf": [
+      "Escuadra de Intercesores de Asalto (Assault Intercessors)",
+      "Escuadra Desolación (Desolation Squad)",
+      "Escuadra de Intercesores (Intercessor Squad)"
+    ],
+    "notes": "Sacerdote del Mechanicus que repara tanques y dreadnoughts y potencia su puntería."
+  },
+  {
+    "id": "sm_heavy_intercessor_squad",
+    "name": "Escuadra de Intercesores Pesados",
+    "originalName": "Heavy Intercessor Squad",
+    "aliases": [
+      "Heavy Intercessor Squad",
+      "Escuadra de Intercesores Pesados",
+      "Escuadra de Intercesores Pesados",
+      "Heavy Intercessor Squad"
+    ],
+    "role": "Línea / Resistencia",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_drop_pod",
-          "name": "Cápsula de Desembarco (Drop Pod)",
-          "originalName": "Drop Pod",
-          "aliases": [
-                "Drop Pod",
-                "Cápsula de Desembarco (Drop Pod)",
-                "Cápsula de Desembarco",
-                "Drop Pod"
-          ],
-          "role": "Transporte Dedicado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 7,
-                "sv": "3+",
-                "inv": "-",
-                "h": 8,
-                "l": "6+",
-                "co": "-"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 60
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bólter Tormenta (Storm Bolter)",
-                      "range": "24\"",
-                      "a": 2,
-                      "bs": "3+",
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Disparo Rápido 2",
-                            "Rapid Fire 2"
-                      ]
-                }
-          ],
-          "meleeWeapons": [],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Drop Pod Assault: This unit must start the battle in strategic reserves . In your first Movement phase , this unit can make an ingress move . When this unit is set up, all units embarked within this unit must make a disembark / assault disembark move , and those units must be set up more than 8\" away from all enemy units.",
-                "Deployment Complete: When this unit is set up and all units embarked within it have disembarked, units cannot embark within this unit.",
-                "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY models. It cannot transport GRAVIS / JUMP PACK / TERMINATOR models.",
-                "1 Drop Pod model",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Cápsula de descenso orbital que despliega tropas en el turno 1 sin restricciones de reservas."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 115
+      },
+      {
+        "models": 10,
+        "points": 230
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Rifle Bólter Pesado (Heavy Bolt Rifle)",
+        "range": "30\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Inquebrantables ante el Enemigo: Mientras controle un marcador de objetivo, esta unidad tiene +1 a sus tiradas de salvación.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Apotecario Biologis.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Infantería de línea pesada en servoarmadura Gravis para asegurar objetivos bajo fuego intenso."
+  },
+  {
+    "id": "sm_drop_pod",
+    "name": "Cápsula de Desembarco (Drop Pod)",
+    "originalName": "Drop Pod",
+    "aliases": [
+      "Drop Pod",
+      "Cápsula de Desembarco (Drop Pod)",
+      "Cápsula de Desembarco",
+      "Drop Pod"
+    ],
+    "role": "Transporte Dedicado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 7,
+      "sv": "3+",
+      "inv": "-",
+      "h": 8,
+      "l": "6+",
+      "co": "-"
     },
-
-    {
-          "id": "sm_impulsor",
-          "name": "Transporte Ligero Impulsor",
-          "originalName": "Impulsor",
-          "aliases": [
-                "Impulsor",
-                "Transporte Ligero Impulsor",
-                "Transporte Ligero Impulsor",
-                "Impulsor"
-          ],
-          "role": "Transporte Dedicado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 70
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bellicatus Missile Array - Frag",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Bellicatus Missile Array - Icarus",
-                      "range": "48\"",
-                      "a": 3,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Fly 2+"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Bellicatus Missile Array - Krak",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Fragstorm Grenade Launchers",
-                      "range": "18\"",
-                      "a": 6,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Ironhail Heavy Stubber",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolters",
-                      "range": "24\"",
-                      "a": 4,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 4"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Rapid Disembarkation: In your Movement phase , when this unit ends an advance move , units embarked within this unit can make a shock disembark move .",
-                "This model has a transport capacity of 7 ADEPTUS ASTARTES INFANTRY models. It cannot transport TERMINATOR or JUMP PACK models. Each GRAVIS model takes up the space of 2 models.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Transporte gravítico rápido que permite desembarcar a la infantería tras avanzar."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 60
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "bs": "3+",
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ]
+      }
+    ],
+    "meleeWeapons": [],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Asalto en Cápsula de Desembarco: Debe comenzar en Reservas Estratégicas. Puede descender en el primer turno mediante Ingress y desembarcar a sus tropas a más de 8\" del enemigo.",
+      "Desembarco Completado: Una vez hayan desembarcado las tropas tras el impacto orbital, las unidades no pueden volver a embarcar en la cápsula.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 12 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Cápsula de Desembarco: Esta unidad se compone de 1 miniatura de Cápsula de Desembarco Astartes.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Cápsula de descenso orbital que despliega tropas en el turno 1 sin restricciones de reservas."
+  },
+  {
+    "id": "sm_impulsor",
+    "name": "Transporte Ligero Impulsor",
+    "originalName": "Impulsor",
+    "aliases": [
+      "Impulsor",
+      "Transporte Ligero Impulsor",
+      "Transporte Ligero Impulsor",
+      "Impulsor"
+    ],
+    "role": "Transporte Dedicado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_rhino",
-          "name": "Transporte Oruga Rhino",
-          "originalName": "Rhino",
-          "aliases": [
-                "Rhino",
-                "Transporte Oruga Rhino",
-                "Transporte Oruga Rhino",
-                "Rhino"
-          ],
-          "role": "Transporte Dedicado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 10,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 70
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Veiling Smoke (Once per phase, per unit): You can target this unit with the Smokescreen stratagem , regardless of any other uses of that stratagem this phase. If you do: That use is -1 CP. That use does not prevent any uses of that stratagem on other units this phase.",
-                "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY models. It cannot transport GRAVIS / JUMP PACK / TERMINATOR models.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "El icónico vehículo de transporte blindado de los Marines Espaciales."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 70
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Batería de Misiles Bellicatus – Frag",
+        "range": "48\"",
+        "a": 4,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Batería de Misiles Bellicatus – Icarus",
+        "range": "48\"",
+        "a": 3,
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Batería de Misiles Bellicatus – Krak",
+        "range": "48\"",
+        "a": 1,
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzagranadas Fragstorm (Fragstorm)",
+        "range": "18\"",
+        "a": 6,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Ametralladora Pesada Ironhail",
+        "range": "36\"",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 3 (Rapid Fire 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólteres Tormenta (Storm Bolters)",
+        "range": "24\"",
+        "a": 4,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 4 (Rapid Fire 4)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Desembarco Rápido: En tu fase de Movimiento, tras finalizar un movimiento de avance, las tropas embarcadas pueden realizar un desembarco de choque.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 7 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Transporte gravítico rápido que permite desembarcar a la infantería tras avanzar."
+  },
+  {
+    "id": "sm_rhino",
+    "name": "Transporte Oruga Rhino",
+    "originalName": "Rhino",
+    "aliases": [
+      "Rhino",
+      "Transporte Oruga Rhino",
+      "Transporte Oruga Rhino",
+      "Rhino"
+    ],
+    "role": "Transporte Dedicado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 10,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_razorback",
-          "name": "Transporte Blindado Razorback",
-          "originalName": "Razorback",
-          "aliases": [
-                "Razorback",
-                "Transporte Blindado Razorback",
-                "Transporte Blindado Razorback",
-                "Razorback"
-          ],
-          "role": "Transporte Dedicado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 10,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 95
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Fire Support: In your Shooting phase , when this unit has shot, select one enemy unit hit by those attacks. Attacks that target that unit made by friendly ADEPTUS ASTARTES units that Disembarked from this TRANSPORT this turn can re-roll wound rolls .",
-                "This model has a transport capacity of 6 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK , TERMINATOR , CENTURION or GRAVIS models.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Transporte armado con cañones láser pesados o bólteres pesados acoplados de apoyo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 70
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Humo Envolvente (1 vez por fase): Puedes designar a este transporte con la estratagema Descarga de Humo con coste de -1 CP sin bloquear otros usos de la misma.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 12 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "El icónico vehículo de transporte blindado de los Marines Espaciales."
+  },
+  {
+    "id": "sm_razorback",
+    "name": "Transporte Blindado Razorback",
+    "originalName": "Razorback",
+    "aliases": [
+      "Razorback",
+      "Transporte Blindado Razorback",
+      "Transporte Blindado Razorback",
+      "Razorback"
+    ],
+    "role": "Transporte Dedicado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 10,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_relic_razorback",
-          "name": "Razorback Reliquia",
-          "originalName": "Relic Razorback",
-          "aliases": [
-                "Relic Razorback",
-                "Razorback Reliquia",
-                "Razorback Reliquia",
-                "Relic Razorback"
-          ],
-          "role": "Transporte / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 10,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 105
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Assault Cannon",
-                      "range": "24\"",
-                      "a": 6,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Fire Supprt: In your Shooting phase , when this unit has shot, select one enemy unit hit by those attacks. Attacks that target that unit made by friendly ADEPTUS ASTARTES units that Disembarked from this TRANSPORT this turn can re-roll wound rolls .",
-                "This model has a transport capacity of 6 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK , GRAVIS , CENTURION or TERMINATOR models.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Antigua variante venerada equipada con armamento arcaico."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 95
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Fuego de Apoyo: Tras disparar este transporte, los aliados que desembarcaron de él este turno pueden repetir las tiradas para herir contra la misma presa.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 6 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Transporte armado con cañones láser pesados o bólteres pesados acoplados de apoyo."
+  },
+  {
+    "id": "sm_relic_razorback",
+    "name": "Razorback Reliquia",
+    "originalName": "Relic Razorback",
+    "aliases": [
+      "Relic Razorback",
+      "Razorback Reliquia",
+      "Razorback Reliquia",
+      "Relic Razorback"
+    ],
+    "role": "Transporte / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 10,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_terrax_pattern_termite",
-          "name": "Termita Patrón Terrax",
-          "originalName": "Terrax-pattern Termite",
-          "aliases": [
-                "Terrax-pattern Termite",
-                "Termita Patrón Terrax",
-                "Termita Patrón Terrax",
-                "Terrax-pattern Termite"
-          ],
-          "role": "Transporte de Asalto",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 14,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 200
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Combi-weapon - Damnatus",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Combi-weapon - Infernus",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Combi-weapon - Purgatus",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Terrax Melta Cutter",
-                      "range": "12\"",
-                      "a": 5,
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Volkite Charger",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Devastating Wounds"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Termite Drill",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 14,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Termite Assault: This unit must start the battle in strategic reserves . In your first Movement phase , this unit can make an ingress move . When this unit is set up, all units embarked within this unit must make a disembark / assault disembark move , and those units must be set up more than 8\" away from all enemy units.",
-                "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY models. It cannot transport GRAVIS , JUMP PACK , TERMINATOR or CENTURION models.",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Taladradora subterránea que surge de las profundidades de la tierra tras las líneas enemigas."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 105
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón de Asalto Acoplado (Twin Assault Cannon)",
+        "range": "24\"",
+        "a": 6,
+        "f": 6,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Fuego de Apoyo: Tras disparar este transporte, los aliados que desembarcaron de él este turno pueden repetir las tiradas para herir contra la misma presa.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 6 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Antigua variante venerada equipada con armamento arcaico."
+  },
+  {
+    "id": "sm_terrax_pattern_termite",
+    "name": "Termita Patrón Terrax",
+    "originalName": "Terrax-pattern Termite",
+    "aliases": [
+      "Terrax-pattern Termite",
+      "Termita Patrón Terrax",
+      "Termita Patrón Terrax",
+      "Terrax-pattern Termite"
+    ],
+    "role": "Transporte de Asalto",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 14,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_firestrike_servo_turrets",
-          "name": "Servotorretas Firestrike",
-          "originalName": "Firestrike Servo-turrets",
-          "aliases": [
-                "Firestrike Servo-turrets",
-                "Servotorretas Firestrike",
-                "Servotorretas Firestrike",
-                "Firestrike Servo-turrets"
-          ],
-          "role": "Apoyo de Fuego",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "-",
-                "h": 6,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 80
-                },
-                {
-                      "models": 2,
-                      "points": 160
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Twin Firestrike Autocannon",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 9,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Twin Firestrike Las-talon",
-                      "range": "36\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Hovering Bulk",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Sentinel Protocols (Once per phase, per unit): You can target this unit with the Fire Overwatch stratagem , regardless of any other uses of that stratagem this phase. If you do: This unit’s snap shooting attacks hit on unmodified hit rolls of 4+ until that stratagem is resolved. That use does not prevent any uses of that stratagem on other units this phase.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Plataformas de defensa fija automatizadas con cañones automáticos o láser gemelos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 200
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Combiarma – Damnatus",
+        "range": "12\"",
+        "a": 1,
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Combiarma – Infernus",
+        "range": "12\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Combiarma – Purgatus",
+        "range": "24\"",
+        "a": 2,
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Cortador de Fusión Terrax",
+        "range": "12\"",
+        "a": 5,
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cargador Volkite Acoplado",
+        "range": "18\"",
+        "a": 2,
+        "f": 5,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Taladro Térmita (Termite Drill)",
+        "range": "Melee",
+        "a": 6,
+        "f": 14,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Asalto Subterráneo Termita: Inicia la batalla en reservas y emerge de las profundidades del suelo a más de 8\" del enemigo para desembarcar a su escuadra.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 12 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Taladradora subterránea que surge de las profundidades de la tierra tras las líneas enemigas."
+  },
+  {
+    "id": "sm_firestrike_servo_turrets",
+    "name": "Servotorretas Firestrike",
+    "originalName": "Firestrike Servo-turrets",
+    "aliases": [
+      "Firestrike Servo-turrets",
+      "Servotorretas Firestrike",
+      "Servotorretas Firestrike",
+      "Firestrike Servo-turrets"
+    ],
+    "role": "Apoyo de Fuego",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "-",
+      "h": 6,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_rapier_carrier",
-          "name": "Plataforma de Armas Rapier",
-          "originalName": "Rapier Carrier",
-          "aliases": [
-                "Rapier Carrier",
-                "Plataforma de Armas Rapier",
-                "Plataforma de Armas Rapier",
-                "Rapier Carrier"
-          ],
-          "role": "Artillería Ligera",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "3\"",
-                "r": 6,
-                "sv": "2+",
-                "inv": "-",
-                "h": 6,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 90
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Boltgun",
-                      "range": "24\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Graviton Cannon",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 2",
-                            "Anti-Vehicle 2+",
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Laser Destroyer",
-                      "range": "72\"",
-                      "a": 2,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D6+3",
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Quad Heavy Bolter",
-                      "range": "36\"",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2",
-                            "Twin-linked",
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Quad Launcher - Shatter Shells",
-                      "range": "24\"",
-                      "a": 4,
-                      "f": 9,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Quad Launcher - Thunderfire Shells",
-                      "range": "60\"",
-                      "a": "D3+6",
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Indirect Fire",
-                            "Heavy",
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 2,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Powerful Volley: In a turn this unit remained stationary , ranged attacks that have [HEAVY] also have [LETHAL HITS] .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Vehículo oruga ligero de artillería móvil de precisión."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 80
+      },
+      {
+        "models": 2,
+        "points": 160
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Automático Firestrike Acoplado",
+        "range": "48\"",
+        "a": 4,
+        "f": 9,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Garras Láser Firestrike Acopladas",
+        "range": "36\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Masa Gravítica (Hovering Bulk)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Protocolos Centinela (1 vez por fase): Al disparar Fuego de Fuga (Overwatch), sus ataques de disparo rápido impactan con un resultado no modificado de 4+.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Plataformas de defensa fija automatizadas con cañones automáticos o láser gemelos."
+  },
+  {
+    "id": "sm_rapier_carrier",
+    "name": "Plataforma de Armas Rapier",
+    "originalName": "Rapier Carrier",
+    "aliases": [
+      "Rapier Carrier",
+      "Plataforma de Armas Rapier",
+      "Plataforma de Armas Rapier",
+      "Rapier Carrier"
+    ],
+    "role": "Artillería Ligera",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "3\"",
+      "r": 6,
+      "sv": "2+",
+      "inv": "-",
+      "h": 6,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_tarantula_sentry_battery",
-          "name": "Batería Centinela Tarantula",
-          "originalName": "Tarantula Sentry Battery",
-          "aliases": [
-                "Tarantula Sentry Battery",
-                "Batería Centinela Tarantula",
-                "Batería Centinela Tarantula",
-                "Tarantula Sentry Battery"
-          ],
-          "role": "Defensa Automatizada",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 30
-                },
-                {
-                      "models": 2,
-                      "points": 60
-                },
-                {
-                      "models": 3,
-                      "points": 90
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 1,
-                      "f": 3,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "6+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Sentinel Protocols (Once per phase, per unit): When you target this unit with the Fire Overwatch stratagem , this unit’s snap shooting attacks hit on unmodified hit rolls of 4+ until that stratagem is resolved.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Torreta defensiva automatizada para negar corredores de avance."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 90
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter (Boltgun)",
+        "range": "24\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Gravitón (Graviton Cannon)",
+        "range": "36\"",
+        "a": 3,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Explosión 2",
+          "Anti-Vehicle 2+",
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Destructor Láser (Laser Destroyer)",
+        "range": "72\"",
+        "a": 2,
+        "f": 14,
+        "ap": -3,
+        "d": "D6+3",
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Cuádruple (Quad Heavy Bolter)",
+        "range": "36\"",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)",
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzador Cuádruple – Proyectiles Fragmentadores",
+        "range": "24\"",
+        "a": 4,
+        "f": 9,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzador Cuádruple – Proyectiles Thunderfire",
+        "range": "60\"",
+        "a": "D3+6",
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Fuego Indirecto (Indirect Fire)",
+          "Pesada (Heavy)",
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 2,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Salva Potente: Si esta unidad permanece estacionaria, sus armas con la regla [Pesada] obtienen además la regla [Impactos Letales].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Vehículo oruga ligero de artillería móvil de precisión."
+  },
+  {
+    "id": "sm_tarantula_sentry_battery",
+    "name": "Batería Centinela Tarantula",
+    "originalName": "Tarantula Sentry Battery",
+    "aliases": [
+      "Tarantula Sentry Battery",
+      "Batería Centinela Tarantula",
+      "Batería Centinela Tarantula",
+      "Tarantula Sentry Battery"
+    ],
+    "role": "Defensa Automatizada",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_aggressor_squad",
-          "name": "Escuadra de Agresores (Aggressors)",
-          "originalName": "Aggressor Squad",
-          "aliases": [
-                "Aggressor Squad",
-                "Escuadra de Agresores (Aggressors)",
-                "Escuadra de Agresores",
-                "Aggressor Squad"
-          ],
-          "role": "Infantería Pesada / Asalto",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 90
-                },
-                {
-                      "models": 6,
-                      "points": 180
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Auto Boltstorm Gauntlets",
-                      "range": "18\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Flamestorm Gauntlets - Close Quarters",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Torrent",
-                            "Twin-linked"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Flamestorm Gauntlets - Ranged",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Torrent",
-                            "BLAST 2"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Fragstorm Grenade Launcher",
-                      "range": "18\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Twin Power Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Close-quarters Firestorm: This unit’s attacks that target an enemy unit within 9\" of this unit have +1 S .",
-                "This unit can be supported by the following unit: APOTHECARY BIOLOGIS",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Tropas Gravis armadas con guanteletes lanzallamas o bólteres tormenta para despejar hordas."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 30
+      },
+      {
+        "models": 2,
+        "points": 60
+      },
+      {
+        "models": 3,
+        "points": 90
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 1,
+        "f": 3,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "6+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Protocolos Centinela (1 vez por fase): Al disparar Fuego de Fuga (Overwatch), sus ataques de disparo rápido impactan con un resultado no modificado de 4+.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Torreta defensiva automatizada para negar corredores de avance."
+  },
+  {
+    "id": "sm_aggressor_squad",
+    "name": "Escuadra de Agresores (Aggressors)",
+    "originalName": "Aggressor Squad",
+    "aliases": [
+      "Aggressor Squad",
+      "Escuadra de Agresores (Aggressors)",
+      "Escuadra de Agresores",
+      "Aggressor Squad"
+    ],
+    "role": "Infantería Pesada / Asalto",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_assault_intercessors_with_jump_packs",
-          "name": "Intercesores de Asalto con Retropropulsor",
-          "originalName": "Assault Intercessors With Jump Packs",
-          "aliases": [
-                "Assault Intercessors With Jump Packs",
-                "Intercesores de Asalto con Retropropulsor",
-                "Intercesores de Asalto con Retropropulsor",
-                "Assault Intercessors With Jump Packs"
-          ],
-          "role": "Asalto Rápido",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 95
-                },
-                {
-                      "models": 10,
-                      "points": 190
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hand Flamer",
-                      "range": "9\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Heavy Bolt Pistol",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainsword",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                },
-                {
-                      "name": "Power Fist",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "3+"
-                },
-                {
-                      "name": "Power Weapon",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Hammer of Wrath: When this unit ends a charge move , you can select one enemy unit engaged with this unit. For each model in this unit engaged with that enemy unit, roll one D6: On a 4+, that enemy unit suffers 1 mortal wound .",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Infantería de salto que impacta a alta velocidad causando heridas mortales al cargar."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 90
+      },
+      {
+        "models": 6,
+        "points": 180
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Guanteletes Bólter Tormenta Automáticos",
+        "range": "18\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Guanteletes Tormenta Ígnea – Combate Cerrado",
+        "range": "12\"",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Torrente (Torrent)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Guanteletes Tormenta Ígnea – Disparo",
+        "range": "12\"",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Lanzagranadas Fragstorm",
+        "range": "18\"",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Combate Acoplados",
+        "range": "Melee",
+        "a": 3,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Tormenta a Quemarropa: Los ataques contra enemigos a 9\" o menos de esta unidad obtienen +1 a la Fuerza (F).",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Apotecario Biologis.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Tropas Gravis armadas con guanteletes lanzallamas o bólteres tormenta para despejar hordas."
+  },
+  {
+    "id": "sm_assault_intercessors_with_jump_packs",
+    "name": "Intercesores de Asalto con Retropropulsor",
+    "originalName": "Assault Intercessors With Jump Packs",
+    "aliases": [
+      "Assault Intercessors With Jump Packs",
+      "Intercesores de Asalto con Retropropulsor",
+      "Intercesores de Asalto con Retropropulsor",
+      "Assault Intercessors With Jump Packs"
+    ],
+    "role": "Asalto Rápido",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_company_heroes",
-          "name": "Héroes de la Compañía (Company Heroes)",
-          "originalName": "Company Heroes",
-          "aliases": [
-                "Company Heroes",
-                "Héroes de la Compañía (Company Heroes)",
-                "Héroes de la Compañía",
-                "Company Heroes"
-          ],
-          "role": "Guardia de Honor",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 4,
-                      "points": 125
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Master-crafted Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Master-crafted Bolt Rifle",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "ASSAULT",
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Master-crafted Heavy Bolter",
-                      "range": "36\"",
-                      "a": 4,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "ASSAULT",
-                            "Rapid Fire 2",
-                            "Heavy",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Combat Knife",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                },
-                {
-                      "name": "Master-crafted Power Weapon",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Precision"
-                      ],
-                      "ws": "2+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Raise the Banner: At the end of your Movement phase , if this unit is controlling an objective , that objective is secured .",
-                "Command Squad: Attacks that target this unit have -1 to wound rolls .",
-                "This unit can be supported by the following units: APOTHECARY LIEUTENANT CASTELLAN SANGUINARY PRIEST",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Escuadra de élite de veteranos selectos que escolta y protege al Capitán del Capítulo."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 95
+      },
+      {
+        "models": 10,
+        "points": 190
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzallamas de Mano (Hand Flamer)",
+        "range": "9\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Pistola Bólter Pesada (Heavy Bolt Pistol)",
+        "range": "18\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      },
+      {
+        "name": "Puño de Combate (Power Fist)",
+        "range": "Melee",
+        "a": 3,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "ws": "3+"
+      },
+      {
+        "name": "Arma de Energía (Power Weapon)",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Martillo de Furia: Tras finalizar una carga, cada miniatura en combate tira 1D6: con 4+ inflige 1 herida mortal al enemigo.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Infantería de salto que impacta a alta velocidad causando heridas mortales al cargar."
+  },
+  {
+    "id": "sm_company_heroes",
+    "name": "Héroes de la Compañía (Company Heroes)",
+    "originalName": "Company Heroes",
+    "aliases": [
+      "Company Heroes",
+      "Héroes de la Compañía (Company Heroes)",
+      "Héroes de la Compañía",
+      "Company Heroes"
+    ],
+    "role": "Guardia de Honor",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_desolation_squad",
-          "name": "Escuadra Desolación (Desolation)",
-          "originalName": "Desolation Squad",
-          "aliases": [
-                "Desolation Squad",
-                "Escuadra Desolación (Desolation)",
-                "Escuadra Desolación",
-                "Desolation Squad"
-          ],
-          "role": "Fuego Indirecto / Pesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 140
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Castellan Launcher",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Superfrag Rocket Launcher",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Superkrak Rocket Launcher",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Vengor Launcher",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 7,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 1",
-                            "Indirect Fire",
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Targeter Optics: This unit’s ranged attacks that target a visible enemy unit have [Ignores Cover] .",
-                "This unit can be supported by the following units: ANCIENT APOTHECARY LIEUTENANT SANGUINARY PRIEST",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Especialistas armados con lanzacohetes Superfrag/Superkrak y misiles guiados Castellan."
+    "pointsOptions": [
+      {
+        "models": 4,
+        "points": 125
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter Magistral (Master-crafted)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Rifle Bólter Magistral (Master-crafted)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Asalto (Assault)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Magistral (Master-crafted)",
+        "range": "36\"",
+        "a": 4,
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Asalto (Assault)",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Pesada (Heavy)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillo de Combate (Combat Knife)",
+        "range": "Melee",
+        "a": 5,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      },
+      {
+        "name": "Arma de Energía Magistral (Master-crafted)",
+        "range": "Melee",
+        "a": 6,
+        "f": 6,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Precisión (Precision)"
+        ],
+        "ws": "2+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Alzad el Estandarte: Al final de tu fase de Movimiento, si esta unidad controla un marcador de objetivo, dicho objetivo queda asegurado hasta que una unidad enemiga lo controle, incluso si abandonas el marcador.",
+      "Escuadra de Mando: Los ataques dirigidos contra esta unidad sufren un penalizador de -1 a la tirada para herir.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Apotecario o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Escuadra de élite de veteranos selectos que escolta y protege al Capitán del Capítulo."
+  },
+  {
+    "id": "sm_desolation_squad",
+    "name": "Escuadra Desolación (Desolation)",
+    "originalName": "Desolation Squad",
+    "aliases": [
+      "Desolation Squad",
+      "Escuadra Desolación (Desolation)",
+      "Escuadra Desolación",
+      "Desolation Squad"
+    ],
+    "role": "Fuego Indirecto / Pesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_eliminator_squad",
-          "name": "Escuadra de Eliminadores (Eliminators)",
-          "originalName": "Eliminator Squad",
-          "aliases": [
-                "Eliminator Squad",
-                "Escuadra de Eliminadores (Eliminators)",
-                "Escuadra de Eliminadores",
-                "Eliminator Squad"
-          ],
-          "role": "Tiradores / Francotiradores",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 85
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Bolt Sniper Rifle",
-                      "range": "36\"",
-                      "a": 1,
-                      "f": 6,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Heavy",
-                            "Precision"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Instigator Bolt Carbine",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "LETHAL HITS: non- MONSTER/VEHICLE",
-                            "Rapid Fire 2",
-                            "Precision"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Las Fusil",
-                      "range": "36\"",
-                      "a": 1,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Chameleoline Cloaks: This unit has -3\" detection range .",
-                "Special-issue Optics and Ammunition: In your Shooting phase , when this unit is selected to shoot , you can select one of the following: This unit’s ranged attacks have [Ignores Cover] . Or: Select one enemy unit within 24\" of this unit. That enemy unit has +6\" detection range until this unit has shot.",
-                "This unit can be supported by the following unit: LIEUTENANT IN PHOBOS ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Francotiradores de sigilo en armadura Phobos armados con rifles bólter de precisión o cañones láser fusil."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 140
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzador Castellan (Castellan Launcher)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzacohetes Superfrag",
+        "range": "48\"",
+        "a": 4,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzacohetes Superkrak",
+        "range": "48\"",
+        "a": 1,
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzador Vengor (Vengor Launcher)",
+        "range": "48\"",
+        "a": 4,
+        "f": 7,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Explosión 1",
+          "Fuego Indirecto (Indirect Fire)",
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Ópticas de Puntería: Los ataques a distancia de esta unidad dirigidos contra un objetivo visible tienen la habilidad [Ignora Cobertura].",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Apotecario o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Especialistas armados con lanzacohetes Superfrag/Superkrak y misiles guiados Castellan."
+  },
+  {
+    "id": "sm_eliminator_squad",
+    "name": "Escuadra de Eliminadores (Eliminators)",
+    "originalName": "Eliminator Squad",
+    "aliases": [
+      "Eliminator Squad",
+      "Escuadra de Eliminadores (Eliminators)",
+      "Escuadra de Eliminadores",
+      "Eliminator Squad"
+    ],
+    "role": "Tiradores / Francotiradores",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_eradicator_squad_with_melta_rifles",
-          "name": "Escuadra de Erradicadores (Rifles de Fusión)",
-          "originalName": "Eradicator Squad with Melta Rifles",
-          "aliases": [
-                "Eradicator Squad with Melta Rifles",
-                "Escuadra de Erradicadores (Rifles de Fusión)",
-                "Escuadra de Erradicadores",
-                "Eradicator Squad with Melta Rifles"
-          ],
-          "role": "Antitanque / Pesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "5\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 100
-                },
-                {
-                      "models": 6,
-                      "points": 200
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Melta Rifle",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Melta Rifle - Hunter",
-                      "range": "18\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta - Hunter",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "2+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Total Obliteration: This unit’s ranged attacks can re-roll damage rolls .",
-                "This unit can be supported by the following unit: APOTHECARY BIOLOGIS",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Variante especializada en fusiles de fusión de asalto térmico masivo contra blindajes pesados."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 85
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Rifle Bólter de Francotirador (Bolt Sniper Rifle)",
+        "range": "36\"",
+        "a": 1,
+        "f": 6,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Precisión (Precision)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Carabina Bólter Instigadora (Instigator Bolt Carbine)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Impactos Letales: No Monstruos/Vehículos",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Precisión (Precision)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Fusil Láser (Las Fusil)",
+        "range": "36\"",
+        "a": 1,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Capas de Camaleonina: Esta unidad reduce en 3\" el rango de detección del enemigo (dificulta ser detectada a distancia).",
+      "Ópticas y Munición Especial: Al disparar, elige entre ignorar la cobertura enemiga o aumentar en +6\" el rango de detección de un objetivo enemigo a 24\".",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Teniente con Armadura Phobos.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Francotiradores de sigilo en armadura Phobos armados con rifles bólter de precisión o cañones láser fusil."
+  },
+  {
+    "id": "sm_eradicator_squad_with_melta_rifles",
+    "name": "Escuadra de Erradicadores (Rifles de Fusión)",
+    "originalName": "Eradicator Squad with Melta Rifles",
+    "aliases": [
+      "Eradicator Squad with Melta Rifles",
+      "Escuadra de Erradicadores (Rifles de Fusión)",
+      "Escuadra de Erradicadores",
+      "Eradicator Squad with Melta Rifles"
+    ],
+    "role": "Antitanque / Pesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "5\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_inceptor_squad",
-          "name": "Escuadra de Inceptores (Inceptors)",
-          "originalName": "Inceptor Squad",
-          "aliases": [
-                "Inceptor Squad",
-                "Escuadra de Inceptores (Inceptors)",
-                "Escuadra de Inceptores",
-                "Inceptor Squad"
-          ],
-          "role": "Asalto Rápido / Salto",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 6,
-                "sv": "3+",
-                "inv": "-",
-                "h": 3,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 130
-                },
-                {
-                      "models": 6,
-                      "points": 260
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Assault Bolters",
-                      "range": "18\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "ASSAULT",
-                            "Twin-linked",
-                            "Sustained Hits 2",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Exterminators - Standard",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "ASSAULT",
-                            "CLOSE-QUARTERS",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Exterminators - Supercharge",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Hazardous",
-                            "ASSAULT",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Ceramite Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Meteoric Descent: If this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls .",
-                "Parabolic Jetleap: At the end of your opponent’s Fight phase , if this unit is unengaged , you can place this unit in strategic reserves .",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Tropas Gravis con retropropulsores pesados que caen en picado disparando bólteres de asalto o exterminadores de plasma."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 100
+      },
+      {
+        "models": 6,
+        "points": 200
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Fusil de Fusión (Melta Rifle)",
+        "range": "18\"",
+        "a": 1,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Melta Rifle - Hunter",
+        "range": "18\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión – Cazador (Hunter)",
+        "range": "18\"",
+        "a": 2,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "2+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Aniquilación Total: Los ataques a distancia de esta unidad pueden repetir las tiradas de daño.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Apotecario Biologis.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Variante especializada en fusiles de fusión de asalto térmico masivo contra blindajes pesados."
+  },
+  {
+    "id": "sm_inceptor_squad",
+    "name": "Escuadra de Inceptores (Inceptors)",
+    "originalName": "Inceptor Squad",
+    "aliases": [
+      "Inceptor Squad",
+      "Escuadra de Inceptores (Inceptors)",
+      "Escuadra de Inceptores",
+      "Inceptor Squad"
+    ],
+    "role": "Asalto Rápido / Salto",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 6,
+      "sv": "3+",
+      "inv": "-",
+      "h": 3,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_incursor_squad",
-          "name": "Escuadra de Incursores (Incursors)",
-          "originalName": "Incursor Squad",
-          "aliases": [
-                "Incursor Squad",
-                "Escuadra de Incursores (Incursors)",
-                "Escuadra de Incursores",
-                "Incursor Squad"
-          ],
-          "role": "Exploración / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 90
-                },
-                {
-                      "models": 10,
-                      "points": 170
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Occulus Bolt Carbine",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Ignores Cover",
-                            "ASSAULT"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Paired Combat Blades",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Sustained Hits 1"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Divinator-class Auspexes (Once per phase, per unit): In your Shooting phase , when a friendly ADEPTUS ASTARTES unit is selected to shoot , you can use this ability. If you do, select one visible enemy unit within 18\" of this unit. That unit is scanned : While a unit is scanned , ranged attacks that target that unit can re-roll hit rolls of 1.",
-                "Haywire Mine (Once per battle, per unit): In your Shooting phase , you can select one visible enemy unit within 6\" of this unit and roll one D6. On a 2+: That enemy unit suffers D3 mortal wounds . Or: If that enemy unit is a VEHICLE unit, that enemy unit suffers 2D3 mortal wounds .",
-                "This unit can be supported by the following unit: LIEUTENANT IN PHOBOS ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Puntería designadora mediante visores ópticos que otorgan bonificadores de impacto al resto del ejército."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 130
+      },
+      {
+        "models": 6,
+        "points": 260
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólteres de Asalto (Assault Bolters)",
+        "range": "18\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Asalto (Assault)",
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 2",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Exterminadores de Plasma – Estándar",
+        "range": "18\"",
+        "a": 2,
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Asalto (Assault)",
+          "Combate Cerrado (Close-Quarters)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Exterminadores de Plasma – Sobrecarga",
+        "range": "18\"",
+        "a": 2,
+        "f": 8,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Peligrosa (Hazardous)",
+          "Asalto (Assault)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Ceramita (Ceramite Fists)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Descenso Meteórico: Si esta unidad realizó un movimiento de despliegue o Ingress este turno, sus ataques a distancia tienen +1 a la tirada para impactar.",
+      "Salto Gravítico Parabólico: Al final de la fase de Combate enemiga, si esta unidad no está trabada, puede retirarse a Reservas Estratégicas.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Tropas Gravis con retropropulsores pesados que caen en picado disparando bólteres de asalto o exterminadores de plasma."
+  },
+  {
+    "id": "sm_incursor_squad",
+    "name": "Escuadra de Incursores (Incursors)",
+    "originalName": "Incursor Squad",
+    "aliases": [
+      "Incursor Squad",
+      "Escuadra de Incursores (Incursors)",
+      "Escuadra de Incursores",
+      "Incursor Squad"
+    ],
+    "role": "Exploración / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_reiver_squad",
-          "name": "Escuadra de Reivers",
-          "originalName": "Reiver Squad",
-          "aliases": [
-                "Reiver Squad",
-                "Escuadra de Reivers",
-                "Escuadra de Reivers",
-                "Reiver Squad"
-          ],
-          "role": "Guerra Psicológica / Asalto",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "8\"",
-                "r": 4,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 85
-                },
-                {
-                      "models": 10,
-                      "points": 165
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Carbine",
-                      "range": "18\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Precision",
-                            "ASSAULT"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Special-issue Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Precision"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Monomolecular Combat Knife",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Precision"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Terror Troops (Aura): While an enemy model is within 3\" of this unit, that enemy model has -1 OC .",
-                "Fearsome Assault: At the start of the Fight phase , each enemy unit engaged with a unit with this ability makes a battle-shock roll , with -1 to that battle-shock roll .",
-                "This unit can be supported by the following unit: LIEUTENANT IN PHOBOS ARMOUR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Especialistas del terror con máscaras de calavera que provocan chequeos de acobardamiento y niegan estratagemas."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 90
+      },
+      {
+        "models": 10,
+        "points": 170
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Carabina Bólter Occulus (Occulus Bolt Carbine)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Ignora Cobertura (Ignores Cover)",
+          "Asalto (Assault)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillas Gemelas de Combate",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 1"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Auspex Clase Divinador (1 vez por fase): En tu fase de Disparo, escanea a una unidad enemiga visible a 18\"; las unidades amigables que disparen contra ella repiten tiradas de impacto de 1.",
+      "Mina de Pulso Electromagnético (1 vez por batalla): Causa D3 heridas mortales a una unidad enemiga a 6\" (o 2D3 heridas mortales si es un VEHÍCULO).",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Teniente con Armadura Phobos.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Puntería designadora mediante visores ópticos que otorgan bonificadores de impacto al resto del ejército."
+  },
+  {
+    "id": "sm_reiver_squad",
+    "name": "Escuadra de Reivers",
+    "originalName": "Reiver Squad",
+    "aliases": [
+      "Reiver Squad",
+      "Escuadra de Reivers",
+      "Escuadra de Reivers",
+      "Reiver Squad"
+    ],
+    "role": "Guerra Psicológica / Asalto",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "8\"",
+      "r": 4,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_scout_squad",
-          "name": "Escuadra de Exploradores (Scouts)",
-          "originalName": "Scout Squad",
-          "aliases": [
-                "Scout Squad",
-                "Escuadra de Exploradores (Scouts)",
-                "Escuadra de Exploradores",
-                "Scout Squad"
-          ],
-          "role": "Infiltración / Guerrilla",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 4,
-                "sv": "4+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 65
-                },
-                {
-                      "models": 10,
-                      "points": 120
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Boltgun",
-                      "range": "24\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1",
-                            "Heavy"
-                      ],
-                      "bs": "4+"
-                },
-                {
-                      "name": "Missile Launcher - Frag",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Heavy"
-                      ],
-                      "bs": "4+"
-                },
-                {
-                      "name": "Missile Launcher - Krak",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "4+"
-                },
-                {
-                      "name": "Shotgun",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "ASSAULT",
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Sniper Rifle",
-                      "range": "36\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Heavy",
-                            "Precision"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Chainsword",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                },
-                {
-                      "name": "Combat Knife",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Flexible Asset: When this unit is selected to make an advance / fall-back move , that advance / fall-back move does not prevent this unit from being eligible to start an action .",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Infiltrados versátiles capaces de desaparecer del tablero al final del turno enemigo para reaparecer estratégicamente."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 85
+      },
+      {
+        "models": 10,
+        "points": 165
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Carabina Bólter (Bolt Carbine)",
+        "range": "18\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Precisión (Precision)",
+          "Asalto (Assault)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Pistola Bólter de Fabricación Especial",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Precisión (Precision)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Cuchillo Monomolecular de Combate",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Precisión (Precision)"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Tropas de Terror (Aura): Mientras una miniatura enemiga esté a 3\" de esta unidad, su Control de Objetivo (CO) se reduce en 1.",
+      "Asalto Aterrador: Al inicio de la fase de Combate, las unidades enemigas trabadas deben realizar un chequeo de Acobardamiento con penalizador de -1.",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Teniente con Armadura Phobos.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Especialistas del terror con máscaras de calavera que provocan chequeos de acobardamiento y niegan estratagemas."
+  },
+  {
+    "id": "sm_scout_squad",
+    "name": "Escuadra de Exploradores (Scouts)",
+    "originalName": "Scout Squad",
+    "aliases": [
+      "Scout Squad",
+      "Escuadra de Exploradores (Scouts)",
+      "Escuadra de Exploradores",
+      "Scout Squad"
+    ],
+    "role": "Infiltración / Guerrilla",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 4,
+      "sv": "4+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_centurion_assault_squad",
-          "name": "Escuadra de Asalto Centurión",
-          "originalName": "Centurion Assault Squad",
-          "aliases": [
-                "Centurion Assault Squad",
-                "Escuadra de Asalto Centurión",
-                "Escuadra de Asalto Centurión",
-                "Centurion Assault Squad"
-          ],
-          "role": "Asedio / Asalto Pesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "4\"",
-                "r": 7,
-                "sv": "2+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 150
-                },
-                {
-                      "models": 6,
-                      "points": 300
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Centurion Bolters",
-                      "range": "24\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 3",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1",
-                            "Twin-linked",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Twin Meltagun",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Siege Drills",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 10,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Annihilator Protocols: This unit’s melee attacks that target a MONSTER / VEHICLE / FORTIFICATION unit have [SUSTAINED HITS 2] .",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Exoesqueletos blindados devastadores equipados con taladros de asedio y lanzallamas pesados."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 65
+      },
+      {
+        "models": 10,
+        "points": 120
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter (Boltgun)",
+        "range": "24\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1",
+          "Pesada (Heavy)"
+        ],
+        "bs": "4+"
+      },
+      {
+        "name": "Lanzamisiles – Fragmentación (Frag)",
+        "range": "48\"",
+        "a": 4,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Pesada (Heavy)"
+        ],
+        "bs": "4+"
+      },
+      {
+        "name": "Lanzamisiles – Perforante (Krak)",
+        "range": "48\"",
+        "a": 1,
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "4+"
+      },
+      {
+        "name": "Escopeta Astartes (Astartes Shotgun)",
+        "range": "18\"",
+        "a": 2,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Asalto (Assault)",
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Sniper Rifle",
+        "range": "36\"",
+        "a": 1,
+        "f": 5,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Pesada (Heavy)",
+          "Precisión (Precision)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Espada Sierra Astartes (Astartes Chainsword)",
+        "range": "Melee",
+        "a": 4,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      },
+      {
+        "name": "Cuchillo de Combate (Combat Knife)",
+        "range": "Melee",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Recurso Flexible: Avanzar o retroceder no impide que esta unidad sea elegible para realizar acciones tácticas.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Infiltrados versátiles capaces de desaparecer del tablero al final del turno enemigo para reaparecer estratégicamente."
+  },
+  {
+    "id": "sm_centurion_assault_squad",
+    "name": "Escuadra de Asalto Centurión",
+    "originalName": "Centurion Assault Squad",
+    "aliases": [
+      "Centurion Assault Squad",
+      "Escuadra de Asalto Centurión",
+      "Escuadra de Asalto Centurión",
+      "Centurion Assault Squad"
+    ],
+    "role": "Asedio / Asalto Pesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "4\"",
+      "r": 7,
+      "sv": "2+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_centurion_devastator_squad",
-          "name": "Escuadra de Devastadores Centurión",
-          "originalName": "Centurion Devastator Squad",
-          "aliases": [
-                "Centurion Devastator Squad",
-                "Escuadra de Devastadores Centurión",
-                "Escuadra de Devastadores Centurión",
-                "Centurion Devastator Squad"
-          ],
-          "role": "Fuego Pesado / Asedio",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "4\"",
-                "r": 7,
-                "sv": "2+",
-                "inv": "-",
-                "h": 4,
-                "l": "6+",
-                "co": 2
-          },
-          "pointsOptions": [
-                {
-                      "models": 3,
-                      "points": 175
-                },
-                {
-                      "models": 6,
-                      "points": 350
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Centurion Bolters",
-                      "range": "24\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 3",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Centurion Missile Launcher",
-                      "range": "36\"",
-                      "a": 2,
-                      "f": 9,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Grav-cannon",
-                      "range": "24\"",
-                      "a": 3,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Anti-Vehicle 2+"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Centurion Fists",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Decimator Protocols: This unit’s ranged attacks can re-roll hit rolls of 1. Or: This unit’s ranged attacks that target an enemy unit within range of an objective can re-roll hit rolls .",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Plataformas de armas andantes armadas con cañones láser, gravimétricos y lanzamisiles."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 150
+      },
+      {
+        "models": 6,
+        "points": 300
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólteres Centurión (Centurion Bolters)",
+        "range": "24\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 3 (Rapid Fire 3)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Acoplado (Twin Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Explosión 1",
+          "Acoplada (Twin-linked)",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Rifle de Fusión Acoplado (Twin Meltagun)",
+        "range": "12\"",
+        "a": 1,
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Taladros de Asedio (Siege Drills)",
+        "range": "Melee",
+        "a": 3,
+        "f": 10,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Protocolos Aniquiladores: Los ataques cuerpo a cuerpo contra MONSTRUOS, VEHÍCULOS o FORTIFICACIONES tienen [Impactos Sostenidos 2].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Exoesqueletos blindados devastadores equipados con taladros de asedio y lanzallamas pesados."
+  },
+  {
+    "id": "sm_centurion_devastator_squad",
+    "name": "Escuadra de Devastadores Centurión",
+    "originalName": "Centurion Devastator Squad",
+    "aliases": [
+      "Centurion Devastator Squad",
+      "Escuadra de Devastadores Centurión",
+      "Escuadra de Devastadores Centurión",
+      "Centurion Devastator Squad"
+    ],
+    "role": "Fuego Pesado / Asedio",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "4\"",
+      "r": 7,
+      "sv": "2+",
+      "inv": "-",
+      "h": 4,
+      "l": "6+",
+      "co": 2
     },
-
-    {
-          "id": "sm_vanguard_veteran_squad",
-          "name": "Escuadra de Veteranos de Vanguardia (a pie)",
-          "originalName": "Vanguard Veteran Squad",
-          "aliases": [
-                "Vanguard Veteran Squad",
-                "Escuadra de Veteranos de Vanguardia (a pie)",
-                "Escuadra de Veteranos de Vanguardia",
-                "Vanguard Veteran Squad"
-          ],
-          "role": "Combate Veterano",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "6\"",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 2,
-                "l": "6+",
-                "co": 1
-          },
-          "pointsOptions": [
-                {
-                      "models": 5,
-                      "points": 120
-                },
-                {
-                      "models": 10,
-                      "points": 240
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Bolt Pistol",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Inferno Pistol",
-                      "range": "9\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Hand Flamer",
-                      "range": "9\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Grav-pistol",
-                      "range": "12\"",
-                      "a": 2,
-                      "f": 2,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "CLOSE-QUARTERS",
-                            "Anti-Vehicle 2+"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Pistol - Standard",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Pistol - Supercharge",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Hazardous",
-                            "CLOSE-QUARTERS"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Heirloom Weapon",
-                      "range": "Melee",
-                      "a": 4,
-                      "f": 5,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Vanguard Assault: If this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS] .",
-                "This unit can be supported by the following units: ANCIENT JUDICIAR LIEUTENANT WARDENS OF ULTRAMAR",
-                "Codex Discipline",
-                "Furious Assault"
-          ],
-          "leaderOf": [],
-          "notes": "Veteranos de combate cuerpo a cuerpo armados con escudos de tormenta y armas reliquia."
+    "pointsOptions": [
+      {
+        "models": 3,
+        "points": 175
+      },
+      {
+        "models": 6,
+        "points": 350
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólteres Centurión (Centurion Bolters)",
+        "range": "24\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 3 (Rapid Fire 3)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzamisiles de Centurión (Centurion Missile Launcher)",
+        "range": "36\"",
+        "a": 2,
+        "f": 9,
+        "ap": -2,
+        "d": 3,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Gravitatorio (Grav-cannon)",
+        "range": "24\"",
+        "a": 3,
+        "f": 6,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Anti-Vehicle 2+"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puños de Centurión (Centurion Fists)",
+        "range": "Melee",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Protocolos Diezmadores: Los ataques a distancia repiten tiradas de impacto de 1 (o todas las tiradas de impacto si el objetivo está en un marcador).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Plataformas de armas andantes armadas con cañones láser, gravimétricos y lanzamisiles."
+  },
+  {
+    "id": "sm_vanguard_veteran_squad",
+    "name": "Escuadra de Veteranos de Vanguardia (a pie)",
+    "originalName": "Vanguard Veteran Squad",
+    "aliases": [
+      "Vanguard Veteran Squad",
+      "Escuadra de Veteranos de Vanguardia (a pie)",
+      "Escuadra de Veteranos de Vanguardia",
+      "Vanguard Veteran Squad"
+    ],
+    "role": "Combate Veterano",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "6\"",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 2,
+      "l": "6+",
+      "co": 1
     },
-
-    {
-          "id": "sm_astraeus",
-          "name": "Tanque Superpesado Astraeus",
-          "originalName": "Astraeus",
-          "aliases": [
-                "Astraeus",
-                "Tanque Superpesado Astraeus",
-                "Tanque Superpesado Astraeus",
-                "Astraeus"
-          ],
-          "role": "Superpesado / Titánico",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "5++",
-                "h": 24,
-                "l": "6+",
-                "co": 8
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 550
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Astareus Las-ripper",
-                      "range": "36\"",
-                      "a": 2,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Ironhail Heavy Stubber",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Eradicator - Standard",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "BLAST 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Plasma Eradicator - Supercharge",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 2",
-                            "Hazardous"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Macro-accelerator Cannon",
-                      "range": "72\"",
-                      "a": 12,
-                      "f": 10,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Suppression Fire: In your Shooting phase , when this unit has shot, select one enemy unit hit by this model’s Twin Macro-accelerator Cannon weapon. That enemy unit is suppressed until the start of your next turn: While a unit is suppressed , that unit’s attacks have -1 to hit rolls .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Fortaleza gravítica superpesada equipada con cañones macroaceleradores colosales."
+    "pointsOptions": [
+      {
+        "models": 5,
+        "points": 120
+      },
+      {
+        "models": 10,
+        "points": 240
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Pistola Bólter (Bolt Pistol)",
+        "range": "12\"",
+        "a": 1,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Pistola Infernal (Inferno Pistol)",
+        "range": "9\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas de Mano (Hand Flamer)",
+        "range": "9\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Pistola Gravitatoria (Grav-pistol)",
+        "range": "12\"",
+        "a": 2,
+        "f": 2,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)",
+          "Anti-Vehicle 2+"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Pistola de Plasma – Estándar",
+        "range": "12\"",
+        "a": 1,
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Pistola de Plasma – Sobrecarga",
+        "range": "12\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Peligrosa (Hazardous)",
+          "Combate Cerrado (Close-Quarters)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Arma Reliquia Familiar (Heirloom Weapon)",
+        "range": "Melee",
+        "a": 4,
+        "f": 5,
+        "ap": -2,
+        "d": 1,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Asalto de Vanguardia: Si esta unidad realizó un movimiento de carga este turno, sus ataques cuerpo a cuerpo obtienen [Impactos Letales].",
+      "Unidad de Apoyo: Esta unidad puede contar con el apoyo conjunto de un segundo líder: Anciano, Judiciar o Teniente.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Asalto Furioso: Al cargar en combate cuerpo a cuerpo, esta unidad ataca con un ímpetu demoledor."
+    ],
+    "leaderOf": [],
+    "notes": "Veteranos de combate cuerpo a cuerpo armados con escudos de tormenta y armas reliquia."
+  },
+  {
+    "id": "sm_astraeus",
+    "name": "Tanque Superpesado Astraeus",
+    "originalName": "Astraeus",
+    "aliases": [
+      "Astraeus",
+      "Tanque Superpesado Astraeus",
+      "Tanque Superpesado Astraeus",
+      "Astraeus"
+    ],
+    "role": "Superpesado / Titánico",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "5++",
+      "h": 24,
+      "l": "6+",
+      "co": 8
     },
-
-    {
-          "id": "sm_falchion",
-          "name": "Superpesado Falchion",
-          "originalName": "Falchion",
-          "aliases": [
-                "Falchion",
-                "Superpesado Falchion",
-                "Superpesado Falchion",
-                "Falchion"
-          ],
-          "role": "Cazatitanes Superpesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "9\"",
-                "r": 13,
-                "sv": "2+",
-                "inv": "-",
-                "h": 24,
-                "l": "6+",
-                "co": 8
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 420
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Laser Destroyer",
-                      "range": "72\"",
-                      "a": 2,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D6+3",
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Quad Lascannon",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Twin-linked",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Falchion Volcano Cannon",
-                      "range": "120\"",
-                      "a": "D3+1",
-                      "f": 24,
-                      "ap": -4,
-                      "d": 12,
-                      "keywords": [
-                            "BLAST 1",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Twin-linked",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Titan-killer: This unit’s Twin Falchion Volcano Cannon ranged attacks that target a MONSTER / VEHICLE unit have [DEVASTATING WOUNDS] .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Blindado masivo de destrucción equipado con dos cañones láser volcán gemelos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 550
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Láser Desgarrador Astraeus (Las-ripper)",
+        "range": "36\"",
+        "a": 2,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Ametralladora Pesada Ironhail",
+        "range": "36\"",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 3 (Rapid Fire 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Erradicador de Plasma – Estándar",
+        "range": "36\"",
+        "a": 3,
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Explosión 2"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Erradicador de Plasma – Sobrecarga",
+        "range": "36\"",
+        "a": 3,
+        "f": 8,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Explosión 2",
+          "Peligrosa (Hazardous)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Acoplado (Twin Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Macroacelerador Acoplado",
+        "range": "72\"",
+        "a": 12,
+        "f": 10,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Fuego de Supresión: Si un enemigo es alcanzado por el cañón acelerador, queda suprimido y sufre -1 a sus tiradas para impactar hasta tu próximo turno.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Fortaleza gravítica superpesada equipada con cañones macroaceleradores colosales."
+  },
+  {
+    "id": "sm_falchion",
+    "name": "Superpesado Falchion",
+    "originalName": "Falchion",
+    "aliases": [
+      "Falchion",
+      "Superpesado Falchion",
+      "Superpesado Falchion",
+      "Falchion"
+    ],
+    "role": "Cazatitanes Superpesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "9\"",
+      "r": 13,
+      "sv": "2+",
+      "inv": "-",
+      "h": 24,
+      "l": "6+",
+      "co": 8
     },
-
-    {
-          "id": "sm_mastodon",
-          "name": "Transporte de Asedio Mastodon",
-          "originalName": "Mastodon",
-          "aliases": [
-                "Mastodon",
-                "Transporte de Asedio Mastodon",
-                "Transporte de Asedio Mastodon",
-                "Mastodon"
-          ],
-          "role": "Transporte Superpesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "9\"",
-                "r": 14,
-                "sv": "2+",
-                "inv": "-",
-                "h": 30,
-                "l": "6+",
-                "co": 12
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 540
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Siege Melta Array",
-                      "range": "24\"",
-                      "a": 6,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Skyreaper Battery",
-                      "range": "48\"",
-                      "a": 8,
-                      "f": 7,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Anti-Fly 4+"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Volkite Culverin",
-                      "range": "36\"",
-                      "a": 4,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Inviolable Transport: Attacks allocated to this unit have -1 D .",
-                "This model has a transport capacity of 45 ADEPTUS ASTARTES INFANTRY models. And 2 DREADNOUGHT models. Each JUMP PACK , GRAVIS , TERMINATOR model takes up the space of 2 models. Each CENTURION model takes up the space of 3 models. Each DREADNOUGHT model take up the space of a number of models equal to their W characteristic.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Monstruoso transporte de asedio capaz de transportar más de 40 miniaturas y resistir bombardeos orbitales."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 420
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Destructor Láser (Laser Destroyer)",
+        "range": "72\"",
+        "a": 2,
+        "f": 14,
+        "ap": -3,
+        "d": "D6+3",
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Cuádruple (Quad Lascannon)",
+        "range": "48\"",
+        "a": 4,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado Acoplado (Twin Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Volcán Falchion Acoplado",
+        "range": "120\"",
+        "a": "D3+1",
+        "f": 24,
+        "ap": -4,
+        "d": 12,
+        "keywords": [
+          "Explosión 1",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado Acoplado (Twin Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Acoplada (Twin-linked)",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Cazatitanes: Los disparos del Cañón Volcán contra unidades de MONSTRUO o VEHÍCULO tienen la habilidad [Heridas Devastadoras].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Blindado masivo de destrucción equipado con dos cañones láser volcán gemelos."
+  },
+  {
+    "id": "sm_mastodon",
+    "name": "Transporte de Asedio Mastodon",
+    "originalName": "Mastodon",
+    "aliases": [
+      "Mastodon",
+      "Transporte de Asedio Mastodon",
+      "Transporte de Asedio Mastodon",
+      "Mastodon"
+    ],
+    "role": "Transporte Superpesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "9\"",
+      "r": 14,
+      "sv": "2+",
+      "inv": "-",
+      "h": 30,
+      "l": "6+",
+      "co": 12
     },
-
-    {
-          "id": "sm_land_raider_excelsior",
-          "name": "Land Raider Excelsior",
-          "originalName": "Land Raider Excelsior",
-          "aliases": [
-                "Land Raider Excelsior",
-                "Land Raider Excelsior",
-                "Land Raider Excelsior",
-                "Land Raider Excelsior"
-          ],
-          "role": "Mando Blindado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "5++",
-                "h": 16,
-                "l": "6+",
-                "co": 5
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 250
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Combi-weapon - Damnatus",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Combi-weapon - Infernus",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 1"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Combi-weapon - Purgatus",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Godhammer Lascannon",
-                      "range": "48\"",
-                      "a": 2,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Grav-cannon",
-                      "range": "24\"",
-                      "a": 3,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Anti-Vehicle 2+"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Rites of Battle: Once per battle round , one unit from your army with this ability can use it when it is targeted with a stratagem . If it does, reduce the cost of that stratagem by 1 CP.",
-                "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY models. Each JUMP PACK , GRAVIS , TERMINATOR model takes up the space of 2 models. Each CENTURION model takes up the space of 3 models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Tanque de mando venerado que coordina fuego balístico de precisión."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 540
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Batería de Fusión de Asedio",
+        "range": "24\"",
+        "a": 6,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Batería Segadora Celestial (Skyreaper)",
+        "range": "48\"",
+        "a": 8,
+        "f": 7,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Anti-Fly 4+"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Culebrina Volkite",
+        "range": "36\"",
+        "a": 4,
+        "f": 6,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Transporte Inviolable: Los ataques dirigidos contra este vehículo sufren un modificador de -1 al Daño recibido.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 45 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Monstruoso transporte de asedio capaz de transportar más de 40 miniaturas y resistir bombardeos orbitales."
+  },
+  {
+    "id": "sm_land_raider_excelsior",
+    "name": "Land Raider Excelsior",
+    "originalName": "Land Raider Excelsior",
+    "aliases": [
+      "Land Raider Excelsior",
+      "Land Raider Excelsior",
+      "Land Raider Excelsior",
+      "Land Raider Excelsior"
+    ],
+    "role": "Mando Blindado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "5++",
+      "h": 16,
+      "l": "6+",
+      "co": 5
     },
-
-    {
-          "id": "sm_rhino_primaris",
-          "name": "Rhino Primaris de Mando",
-          "originalName": "Rhino Primaris",
-          "aliases": [
-                "Rhino Primaris",
-                "Rhino Primaris de Mando",
-                "Rhino Primaris de Mando",
-                "Rhino Primaris"
-          ],
-          "role": "Mando / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "12\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 10,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 95
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Twin Plasma Gun - Standard",
-                      "range": "24\"",
-                      "a": 1,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Plasma Gun - Supercharge",
-                      "range": "24\"",
-                      "a": 1,
-                      "f": 8,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 1",
-                            "Hazardous",
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Self-repair: In your Command phase , this unit heals 1 wound.",
-                "Orbital Comms Array: While a friendly ADEPTUS ASTARTES unit is within 6\" of this unit, each time you target that unit with a stratagem roll 1D6: On a 5+, you gain 1 CP.",
-                "This model has a transport capacity of 6 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK , GRAVIS , CENTURION or TERMINATOR models.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Vehículo de comunicaciones que solicita bombardeos orbitales devastadores."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 250
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Combiarma – Damnatus",
+        "range": "12\"",
+        "a": 1,
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Combiarma – Infernus",
+        "range": "12\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 1"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Combiarma – Purgatus",
+        "range": "24\"",
+        "a": 2,
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Godhammer (Godhammer Lascannon)",
+        "range": "48\"",
+        "a": 2,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Gravitatorio (Grav-cannon)",
+        "range": "24\"",
+        "a": 3,
+        "f": 6,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Anti-Vehicle 2+"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Ritos de Batalla: Una vez por ronda de batalla, una unidad de tu ejército con esta habilidad puede reducir en 1 CP el coste de una estratagema que la designe como objetivo.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 12 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Tanque de mando venerado que coordina fuego balístico de precisión."
+  },
+  {
+    "id": "sm_rhino_primaris",
+    "name": "Rhino Primaris de Mando",
+    "originalName": "Rhino Primaris",
+    "aliases": [
+      "Rhino Primaris",
+      "Rhino Primaris de Mando",
+      "Rhino Primaris de Mando",
+      "Rhino Primaris"
+    ],
+    "role": "Mando / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "12\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 10,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_gladiator_reaper",
-          "name": "Gladiator Segador (Reaper)",
-          "originalName": "Gladiator Reaper",
-          "aliases": [
-                "Gladiator Reaper",
-                "Gladiator Segador (Reaper)",
-                "Gladiator Segador",
-                "Gladiator Reaper"
-          ],
-          "role": "Antipersona Blindado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 165
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Defensive Array",
-                      "range": "24\"",
-                      "a": 12,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 12"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Heavy Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 12,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "SUSTAINED HITS 2: non- MONSTER/VEHICLE",
-                            "Twin-linked",
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Reaping Tally: This unit’s ranged attacks that target a unit (excluding MONSTER / VEHICLE units) have +1 AP .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Tanque gravítico destructor de infantería armado con cañón rotatorio Tempest gemelo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 95
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Rifle de Plasma Acoplado – Estándar",
+        "range": "24\"",
+        "a": 1,
+        "f": 7,
+        "ap": -2,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Rifle de Plasma Acoplado – Sobrecarga",
+        "range": "24\"",
+        "a": 1,
+        "f": 8,
+        "ap": -3,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 1 (Rapid Fire 1)",
+          "Peligrosa (Hazardous)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Auto-reparación: En tu fase de Mando, este vehículo repara y recupera automáticamente 1 herida perdida.",
+      "Matriz de Comunicaciones Orbital: Mientras una unidad amigable de ADEPTUS ASTARTES esté a 6\", cada vez que uses una estratagema con ella, tira 1D6: con 5+ ganas 1 CP.",
+      "Capacidad de Transporte: Este vehículo tiene capacidad para transportar 6 miniaturas de INFANTERÍA ADEPTUS ASTARTES (armaduras Gravis, Exterminador o Propulsores ocupan 2 espacios; Centuriones ocupan 3 espacios).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Vehículo de comunicaciones que solicita bombardeos orbitales devastadores."
+  },
+  {
+    "id": "sm_gladiator_reaper",
+    "name": "Gladiator Segador (Reaper)",
+    "originalName": "Gladiator Reaper",
+    "aliases": [
+      "Gladiator Reaper",
+      "Gladiator Segador (Reaper)",
+      "Gladiator Segador",
+      "Gladiator Reaper"
+    ],
+    "role": "Antipersona Blindado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_gladiator_valiant",
-          "name": "Gladiator Valiente (Valiant)",
-          "originalName": "Gladiator Valiant",
-          "aliases": [
-                "Gladiator Valiant",
-                "Gladiator Valiente (Valiant)",
-                "Gladiator Valiente",
-                "Gladiator Valiant"
-          ],
-          "role": "Antitanque Blindado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 145
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Defensive Array",
-                      "range": "24\"",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 6"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Las-talon",
-                      "range": "36\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Priority Target Acquisition: This unit’s ranged attacks that target a unit within 12\" of this unit have +1 S .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Tanque gravítico perforador con cañones láser pesados y cañones de fusión gemelos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 165
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Batería Defensiva (Defensive Array)",
+        "range": "24\"",
+        "a": 12,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 12 (Rapid Fire 12)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Megacañón Gatling Onslaught Pesado Acoplado",
+        "range": "24\"",
+        "a": 12,
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Impactos Sostenidos 2: No Monstruos/Vehículos",
+          "Acoplada (Twin-linked)",
+          "Heridas Devastadoras: No Monstruos/Vehículos"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Cosecha Mortal: Los ataques a distancia contra unidades que no sean Monstruos ni Vehículos obtienen un bonificador de +1 al FP.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Tanque gravítico destructor de infantería armado con cañón rotatorio Tempest gemelo."
+  },
+  {
+    "id": "sm_gladiator_valiant",
+    "name": "Gladiator Valiente (Valiant)",
+    "originalName": "Gladiator Valiant",
+    "aliases": [
+      "Gladiator Valiant",
+      "Gladiator Valiente (Valiant)",
+      "Gladiator Valiente",
+      "Gladiator Valiant"
+    ],
+    "role": "Antitanque Blindado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_land_speeder",
-          "name": "Land Speeder Clásico",
-          "originalName": "Land Speeder",
-          "aliases": [
-                "Land Speeder",
-                "Land Speeder Clásico",
-                "Land Speeder Clásico",
-                "Land Speeder"
-          ],
-          "role": "Exploración Rápida",
-          "wing": "Ala de Cuervo",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "14\"",
-                "r": 8,
-                "sv": "3+",
-                "inv": "-",
-                "h": 9,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 105
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Onslaught Gatling Cannon",
-                      "range": "24\"",
-                      "a": 8,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "DEVASTATING WOUNDS: non- MONSTER/VEHICLE"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Pyrecannon",
-                      "range": "12\"",
-                      "a": 4,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Stormfury Missile Launcher",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Impact",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Purgation Run: In your Shooting phase , when this unit has shot, you can use this ability. If you do: This unit can make a normal move of up to D6\". This unit is not eligible to declare a charge until the end of the turn.",
-                "Codex Discipline",
-                "Auspex Triangulation Shrines"
-          ],
-          "leaderOf": [],
-          "notes": "Deslizador ligero biplaza de reconocimiento y apoyo de fuego del Ala de Cuervo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 145
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Batería Defensiva (Defensive Array)",
+        "range": "24\"",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 6 (Rapid Fire 6)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Garras Láser Acopladas (Twin Las-talon)",
+        "range": "36\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Adquisición de Objetivo Prioritario: Los ataques a distancia contra enemigos situados a 12\" o menos tienen +1 a la Fuerza (F).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Tanque gravítico perforador con cañones láser pesados y cañones de fusión gemelos."
+  },
+  {
+    "id": "sm_land_speeder",
+    "name": "Land Speeder Clásico",
+    "originalName": "Land Speeder",
+    "aliases": [
+      "Land Speeder",
+      "Land Speeder Clásico",
+      "Land Speeder Clásico",
+      "Land Speeder"
+    ],
+    "role": "Exploración Rápida",
+    "wing": "Ala de Cuervo",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "14\"",
+      "r": 8,
+      "sv": "3+",
+      "inv": "-",
+      "h": 9,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_cerberus",
-          "name": "Destructor Pesado Cerberus",
-          "originalName": "Cerberus",
-          "aliases": [
-                "Cerberus",
-                "Destructor Pesado Cerberus",
-                "Destructor Pesado Cerberus",
-                "Cerberus"
-          ],
-          "role": "Cazatanques Pesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 18,
-                "l": "6+",
-                "co": 6
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 270
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Cerberus Neutron Pulse Array",
-                      "range": "48\"",
-                      "a": 3,
-                      "f": 16,
-                      "ap": -3,
-                      "d": "D3+6",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Torrent"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Atomantic Arc-reactor: In a turn this unit remained stationary , this unit’s Cerberus Neutron Pulse Array ranged attacks have [LETHAL HITS] .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Plataforma de asedio armada con el devastador haz neutrón de fisión atómica."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 105
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Gatling Onslaught (Onslaught Gatling)",
+        "range": "24\"",
+        "a": 8,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras: No Monstruos/Vehículos"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Ígneo (Pyrecannon)",
+        "range": "12\"",
+        "a": 4,
+        "f": 6,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Lanzamisiles Stormfury",
+        "range": "48\"",
+        "a": 1,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Impacto Blindado (Armoured Impact)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Pasada de Purgación: Tras disparar, este vehículo puede realizar un movimiento normal adicional de hasta 1D6\" (no podrá cargar este turno).",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Santuarios de Triangulación de Auspex: Red de sensores avanzados que anulan las ventajas de cobertura del enemigo."
+    ],
+    "leaderOf": [],
+    "notes": "Deslizador ligero biplaza de reconocimiento y apoyo de fuego del Ala de Cuervo."
+  },
+  {
+    "id": "sm_cerberus",
+    "name": "Destructor Pesado Cerberus",
+    "originalName": "Cerberus",
+    "aliases": [
+      "Cerberus",
+      "Destructor Pesado Cerberus",
+      "Destructor Pesado Cerberus",
+      "Cerberus"
+    ],
+    "role": "Cazatanques Pesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 18,
+      "l": "6+",
+      "co": 6
     },
-
-    {
-          "id": "sm_kratos",
-          "name": "Tanque Pesado Kratos",
-          "originalName": "Kratos",
-          "aliases": [
-                "Kratos",
-                "Tanque Pesado Kratos",
-                "Tanque Pesado Kratos",
-                "Kratos"
-          ],
-          "role": "Tanque de Asalto Pesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 18,
-                "l": "6+",
-                "co": 6
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 240
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Autocannon",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 9,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Combi-weapon - Damnatus",
-                      "range": "12\"",
-                      "a": 1,
-                      "f": 9,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Combi-weapon - Infernus",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 1"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Combi-weapon - Purgatus",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 7,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Havoc Launcher",
-                      "range": "48\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Kratos Battle Cannon - Blast",
-                      "range": "36\"",
-                      "a": "D3+3",
-                      "f": 10,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "BLAST 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Kratos Battle Cannon - Piercing",
-                      "range": "36\"",
-                      "a": 1,
-                      "f": 18,
-                      "ap": -4,
-                      "d": "D3+6",
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Melta Blast-gun",
-                      "range": "24\"",
-                      "a": 4,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Boltgun",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Rapid Fire 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Volkite Caliver",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Volkite Cardanelle",
-                      "range": "36\"",
-                      "a": 9,
-                      "f": 9,
-                      "ap": 0,
-                      "d": 3,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Volkite Culverin",
-                      "range": "36\"",
-                      "a": 4,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Line-breaker: In your Shooting phase , when this unit is selected to shoot using close-quarters shooting : This unit’s attacks that target a unit engaged with this unit can ignore modifiers to: BS . Hit rolls . For each of this unit’s [Blast] weapons, you can choose for that weapon to not have [Blast] : If you do, that weapon can only target an enemy unit that is not engaged with another friendly unit.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Coloso acorazado de la Gran Cruzada armado con cañón de batalla Kratos o melta explosivo."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 270
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Array de Pulsos Neutrón Cerberus",
+        "range": "48\"",
+        "a": 3,
+        "f": 16,
+        "ap": -3,
+        "d": "D3+6",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Torrente (Torrent)"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Reactor de Arco Atomántico: En los turnos en que este blindado permanezca estacionario, sus ataques con el array neutrón obtienen [Impactos Letales].",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Plataforma de asedio armada con el devastador haz neutrón de fisión atómica."
+  },
+  {
+    "id": "sm_kratos",
+    "name": "Tanque Pesado Kratos",
+    "originalName": "Kratos",
+    "aliases": [
+      "Kratos",
+      "Tanque Pesado Kratos",
+      "Tanque Pesado Kratos",
+      "Kratos"
+    ],
+    "role": "Tanque de Asalto Pesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 18,
+      "l": "6+",
+      "co": 6
     },
-
-    {
-          "id": "sm_predator_annihilator",
-          "name": "Tanque Predator Aniquilador",
-          "originalName": "Predator Annihilator",
-          "aliases": [
-                "Predator Annihilator",
-                "Tanque Predator Aniquilador",
-                "Tanque Predator Aniquilador",
-                "Predator Annihilator"
-          ],
-          "role": "Antitanque Oruga",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 135
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Predator Twin Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Annihilator: This unit’s ranged attacks that target a MONSTER / VEHICLE unit can re-roll damage rolls .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Tanque de batalla armado con cañones láser gemelos en torreta y barquillas láser."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 240
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Automático (Autocannon)",
+        "range": "48\"",
+        "a": 4,
+        "f": 9,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Combiarma – Damnatus",
+        "range": "12\"",
+        "a": 1,
+        "f": 9,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 2 (Melta 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Combiarma – Infernus",
+        "range": "12\"",
+        "a": 3,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 1"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Combiarma – Purgatus",
+        "range": "24\"",
+        "a": 2,
+        "f": 7,
+        "ap": -2,
+        "d": 2,
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzador Havoc (Havoc Launcher)",
+        "range": "48\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Cañón de Batalla Kratos – Explosión",
+        "range": "36\"",
+        "a": "D3+3",
+        "f": 10,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Explosión 2"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón de Batalla Kratos – Perforante",
+        "range": "36\"",
+        "a": 1,
+        "f": 18,
+        "ap": -4,
+        "d": "D3+6",
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón de Fusión Blast-gun",
+        "range": "24\"",
+        "a": 4,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Acoplado (Twin Boltgun)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Disparo Rápido 1 (Rapid Fire 1)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Caliver Volkite",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cardanelle Volkite",
+        "range": "36\"",
+        "a": 9,
+        "f": 9,
+        "ap": 0,
+        "d": 3,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Culebrina Volkite",
+        "range": "36\"",
+        "a": 4,
+        "f": 6,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Rompe-Líneas: Al disparar en combate cerrado a quemarropa, ignora modificadores negativos a la HP y tiradas de impacto, y puede disparar armas de Explosión a enemigos no trabados con otras tropas amigables.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Coloso acorazado de la Gran Cruzada armado con cañón de batalla Kratos o melta explosivo."
+  },
+  {
+    "id": "sm_predator_annihilator",
+    "name": "Tanque Predator Aniquilador",
+    "originalName": "Predator Annihilator",
+    "aliases": [
+      "Predator Annihilator",
+      "Tanque Predator Aniquilador",
+      "Tanque Predator Aniquilador",
+      "Predator Annihilator"
+    ],
+    "role": "Antitanque Oruga",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_predator_destructor",
-          "name": "Tanque Predator Destructor",
-          "originalName": "Predator Destructor",
-          "aliases": [
-                "Predator Destructor",
-                "Tanque Predator Destructor",
-                "Tanque Predator Destructor",
-                "Predator Destructor"
-          ],
-          "role": "Antipersona / Apoyo",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 140
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Predator Autocannon",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 9,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Destructor: This unit’s ranged attacks that target an INFANTRY unit have +1 AP .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Tanque de batalla armado con cañón automático pesado Predator en torreta."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 135
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser Acoplado Predator",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Aniquilador: Los ataques a distancia contra unidades de MONSTRUO o VEHÍCULO pueden repetir las tiradas de daño.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Tanque de batalla armado con cañones láser gemelos en torreta y barquillas láser."
+  },
+  {
+    "id": "sm_predator_destructor",
+    "name": "Tanque Predator Destructor",
+    "originalName": "Predator Destructor",
+    "aliases": [
+      "Predator Destructor",
+      "Tanque Predator Destructor",
+      "Tanque Predator Destructor",
+      "Predator Destructor"
+    ],
+    "role": "Antipersona / Apoyo",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_sicaran",
-          "name": "Tanque de Batalla Sicaran",
-          "originalName": "Sicaran",
-          "aliases": [
-                "Sicaran",
-                "Tanque de Batalla Sicaran",
-                "Tanque de Batalla Sicaran",
-                "Sicaran"
-          ],
-          "role": "Blindado Rápido",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 11,
-                "sv": "2+",
-                "inv": "-",
-                "h": 14,
-                "l": "6+",
-                "co": 4
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 180
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Arcus Multi-launcher",
-                      "range": "48\"",
-                      "a": 7,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 2,
-                      "keywords": [
-                            "Indirect Fire"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Herakles-pattern Autocannon",
-                      "range": "48\"",
-                      "a": 6,
-                      "f": 9,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Omega Plasma Array - Standard",
-                      "range": "36\"",
-                      "a": 6,
-                      "f": 9,
-                      "ap": -3,
-                      "d": 2,
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Omega Plasma Array - Supercharge",
-                      "range": "36\"",
-                      "a": 6,
-                      "f": 10,
-                      "ap": -3,
-                      "d": 3,
-                      "keywords": [
-                            "Hazardous"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Punisher Rotary Cannon",
-                      "range": "36\"",
-                      "a": 18,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [
-                            "Devastating Wounds"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Venator Neutron Laser",
-                      "range": "48\"",
-                      "a": 3,
-                      "f": 16,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "Heavy"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Armoured Spearhead: This unit’s ranged attacks can re-roll one : Hit roll . Wound roll . Damage roll .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Vehículo veloz de la Herejía equipado con cañones automáticos aceleradores Herakles."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 140
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Cañón Automático Predator (Predator Autocannon)",
+        "range": "48\"",
+        "a": 4,
+        "f": 9,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Destructor: Los ataques a distancia contra unidades de INFANTERÍA obtienen un bonificador de +1 al FP.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Tanque de batalla armado con cañón automático pesado Predator en torreta."
+  },
+  {
+    "id": "sm_sicaran",
+    "name": "Tanque de Batalla Sicaran",
+    "originalName": "Sicaran",
+    "aliases": [
+      "Sicaran",
+      "Tanque de Batalla Sicaran",
+      "Tanque de Batalla Sicaran",
+      "Sicaran"
+    ],
+    "role": "Blindado Rápido",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 11,
+      "sv": "2+",
+      "inv": "-",
+      "h": 14,
+      "l": "6+",
+      "co": 4
     },
-
-    {
-          "id": "sm_tarantula_air_defence_battery",
-          "name": "Batería Antiaérea Tarantula",
-          "originalName": "Tarantula Air Defence Battery",
-          "aliases": [
-                "Tarantula Air Defence Battery",
-                "Batería Antiaérea Tarantula",
-                "Batería Antiaérea Tarantula",
-                "Tarantula Air Defence Battery"
-          ],
-          "role": "Antiaéreo Automatizado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 5,
-                "sv": "3+",
-                "inv": "-",
-                "h": 4,
-                "l": "7+",
-                "co": "0"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 70
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Tarantula Air Defence Missiles",
-                      "range": "48\"",
-                      "a": 3,
-                      "f": 7,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 2",
-                            "Anti-Fly 2+"
-                      ],
-                      "bs": "4+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Hull",
-                      "range": "Melee",
-                      "a": 1,
-                      "f": 4,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Sentry Programming (Once per phase, per unit): You can target this unit with the Fire Overwatch stratagem , regardless of any other uses of that stratagem this phase. If you do: That use is -1 CP. That use does not prevent any uses of that stratagem on other units this phase.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Batería de misiles antiaéreos de bloqueo para derribar aeronaves enemigas."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 180
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Multilanzador Arcus (Arcus Multi-launcher)",
+        "range": "48\"",
+        "a": 7,
+        "f": 6,
+        "ap": 0,
+        "d": 2,
+        "keywords": [
+          "Fuego Indirecto (Indirect Fire)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Automático Patrón Herakles",
+        "range": "48\"",
+        "a": 6,
+        "f": 9,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Batería de Plasma Omega – Estándar",
+        "range": "36\"",
+        "a": 6,
+        "f": 9,
+        "ap": -3,
+        "d": 2,
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Batería de Plasma Omega – Sobrecarga",
+        "range": "36\"",
+        "a": 6,
+        "f": 10,
+        "ap": -3,
+        "d": 3,
+        "keywords": [
+          "Peligrosa (Hazardous)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Rotatorio Castigador (Punisher)",
+        "range": "36\"",
+        "a": 18,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [
+          "Heridas Devastadoras (Devastating Wounds)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Láser Neutrónico Venator",
+        "range": "48\"",
+        "a": 3,
+        "f": 16,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Pesada (Heavy)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Punta de Lanza Blindada: Los ataques a distancia de este blindado pueden repetir una tirada de impacto, una de herida o una de daño.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Vehículo veloz de la Herejía equipado con cañones automáticos aceleradores Herakles."
+  },
+  {
+    "id": "sm_tarantula_air_defence_battery",
+    "name": "Batería Antiaérea Tarantula",
+    "originalName": "Tarantula Air Defence Battery",
+    "aliases": [
+      "Tarantula Air Defence Battery",
+      "Batería Antiaérea Tarantula",
+      "Batería Antiaérea Tarantula",
+      "Tarantula Air Defence Battery"
+    ],
+    "role": "Antiaéreo Automatizado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 5,
+      "sv": "3+",
+      "inv": "-",
+      "h": 4,
+      "l": "7+",
+      "co": "0"
     },
-
-    {
-          "id": "sm_typhon",
-          "name": "Cañón de Asedio Typhon",
-          "originalName": "Typhon",
-          "aliases": [
-                "Typhon",
-                "Cañón de Asedio Typhon",
-                "Cañón de Asedio Typhon",
-                "Typhon"
-          ],
-          "role": "Bombardero Superpesado",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 18,
-                "l": "6+",
-                "co": 6
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 320
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Dreadhammer Siege Cannon",
-                      "range": "24\"",
-                      "a": "D6+6",
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Rapid Fire 2",
-                            "Sustained Hits 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Flamer",
-                      "range": "12\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Lascannon",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 12,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Multi-melta",
-                      "range": "18\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -3,
-                      "d": "D3+2",
-                      "keywords": [
-                            "Melta 3"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 6,
-                      "f": 8,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Sunderer of Fortresses: This unit’s ranged attacks that: Target a VEHICLE unit have +1 S and D . Target a FORTIFICATION unit have +2 S and D .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Mortero de asedio masivo diseñado para pulverizar fortificaciones y búnkeres enteros."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 70
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misiles Antiaéreos Tarantula",
+        "range": "48\"",
+        "a": 3,
+        "f": 7,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 2",
+          "Anti-Aéreo 2+ (Anti-Fly 2+)"
+        ],
+        "bs": "4+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Casco Blindado (Armoured Hull)",
+        "range": "Melee",
+        "a": 1,
+        "f": 4,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Programación Centinela (1 vez por fase): Puede disparar Fuego de Fuga (Overwatch) con coste de -1 CP sin impedir otros usos de la estratagema este turno.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Batería de misiles antiaéreos de bloqueo para derribar aeronaves enemigas."
+  },
+  {
+    "id": "sm_typhon",
+    "name": "Cañón de Asedio Typhon",
+    "originalName": "Typhon",
+    "aliases": [
+      "Typhon",
+      "Cañón de Asedio Typhon",
+      "Cañón de Asedio Typhon",
+      "Typhon"
+    ],
+    "role": "Bombardero Superpesado",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 18,
+      "l": "6+",
+      "co": 6
     },
-
-    {
-          "id": "sm_vindicator",
-          "name": "Tanque de Asedio Vindicator",
-          "originalName": "Vindicator",
-          "aliases": [
-                "Vindicator",
-                "Tanque de Asedio Vindicator",
-                "Tanque de Asedio Vindicator",
-                "Vindicator"
-          ],
-          "role": "Demolición / Asedio",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "9\"",
-                "r": 11,
-                "sv": "2+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 185
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Demolisher Cannon",
-                      "range": "24\"",
-                      "a": "D3+3",
-                      "f": 14,
-                      "ap": -3,
-                      "d": 4,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Siege Shield: In your Shooting phase , when this unit is selected to shoot using close-quarters shooting : This unit’s attacks that target a unit engaged with this unit can ignore modifiers to: BS . Hit rolls . For each of this unit’s [Blast] weapons, you can choose for that weapon to not have [BLAST] : If you do, that weapon can only target an enemy unit that is not engaged with another friendly unit.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Tanque blindado con pala excavadora armada con el temido cañón Demoledor de alcance medio."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 320
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón de Asedio Dreadhammer",
+        "range": "24\"",
+        "a": "D6+6",
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Impactos Sostenidos 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzallamas Pesado (Heavy Flamer)",
+        "range": "12\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Cañón Láser (Lascannon)",
+        "range": "48\"",
+        "a": 1,
+        "f": 12,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "3+"
+      },
+      {
+        "name": "Multifusión (Multi-melta)",
+        "range": "18\"",
+        "a": 2,
+        "f": 10,
+        "ap": -3,
+        "d": "D3+2",
+        "keywords": [
+          "Fusión 3 (Melta 3)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 6,
+        "f": 8,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Demoledor de Fortalezas: Los ataques contra VEHÍCULOS ganan +1 F y +1 D; contra FORTIFICACIONES ganan +2 F y +2 D.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Mortero de asedio masivo diseñado para pulverizar fortificaciones y búnkeres enteros."
+  },
+  {
+    "id": "sm_vindicator",
+    "name": "Tanque de Asedio Vindicator",
+    "originalName": "Vindicator",
+    "aliases": [
+      "Vindicator",
+      "Tanque de Asedio Vindicator",
+      "Tanque de Asedio Vindicator",
+      "Vindicator"
+    ],
+    "role": "Demolición / Asedio",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "9\"",
+      "r": 11,
+      "sv": "2+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_whirlwind",
-          "name": "Tanque Lanzamisiles Whirlwind",
-          "originalName": "Whirlwind",
-          "aliases": [
-                "Whirlwind",
-                "Tanque Lanzamisiles Whirlwind",
-                "Tanque Lanzamisiles Whirlwind",
-                "Whirlwind"
-          ],
-          "role": "Artillería / Fuego Indirecto",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 10,
-                "sv": "3+",
-                "inv": "-",
-                "h": 11,
-                "l": "6+",
-                "co": 3
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 175
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hunter-killer Missile",
-                      "range": "48\"",
-                      "a": 1,
-                      "f": 14,
-                      "ap": -3,
-                      "d": "D3+3",
-                      "keywords": [
-                            "ONE SHOT"
-                      ],
-                      "bs": "2+"
-                },
-                {
-                      "name": "Storm Bolter",
-                      "range": "24\"",
-                      "a": 2,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Whirlwind Vengeance Launcher",
-                      "range": "72\"",
-                      "a": 6,
-                      "f": 8,
-                      "ap": -2,
-                      "d": 2,
-                      "keywords": [
-                            "Indirect Fire",
-                            "BLAST 2"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Armoured Tracks",
-                      "range": "Melee",
-                      "a": 3,
-                      "f": 6,
-                      "ap": 0,
-                      "d": 1,
-                      "keywords": [],
-                      "ws": "4+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Punishing Bombardment: In your Shooting phase , when this unit has shot, select one enemy INFANTRY unit hit by Whirlwind Vengeance Launcher attacks. That enemy unit makes a battle-shock roll .",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Artillería de cohetes de bombardeo indirecto que castiga objetivos ocultos tras escenografía."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 185
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Cañón Demoledor (Demolisher Cannon)",
+        "range": "24\"",
+        "a": "D3+3",
+        "f": 14,
+        "ap": -3,
+        "d": 4,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Pala de Asedio: Protege el chasis en combate cerrado y permite disparar armas de demolición contra unidades trabadas.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Tanque blindado con pala excavadora armada con el temido cañón Demoledor de alcance medio."
+  },
+  {
+    "id": "sm_whirlwind",
+    "name": "Tanque Lanzamisiles Whirlwind",
+    "originalName": "Whirlwind",
+    "aliases": [
+      "Whirlwind",
+      "Tanque Lanzamisiles Whirlwind",
+      "Tanque Lanzamisiles Whirlwind",
+      "Whirlwind"
+    ],
+    "role": "Artillería / Fuego Indirecto",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 10,
+      "sv": "3+",
+      "inv": "-",
+      "h": 11,
+      "l": "6+",
+      "co": 3
     },
-
-    {
-          "id": "sm_invictor_tactical_warsuit",
-          "name": "Bípode Táctico Invictor",
-          "originalName": "Invictor Tactical Warsuit",
-          "aliases": [
-                "Invictor Tactical Warsuit",
-                "Bípode Táctico Invictor",
-                "Bípode Táctico Invictor",
-                "Invictor Tactical Warsuit"
-          ],
-          "role": "Bípode / Infiltración",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "10\"",
-                "r": 9,
-                "sv": "3+",
-                "inv": "-",
-                "h": 12,
-                "l": "6+",
-                "co": 4
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 135
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Fragstorm Grenade Launcher",
-                      "range": "18\"",
-                      "a": 3,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Heavy Bolter",
-                      "range": "36\"",
-                      "a": 3,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Incendium Cannon",
-                      "range": "12\"",
-                      "a": 4,
-                      "f": 6,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Torrent",
-                            "BLAST 2"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Ironhail Heavy Stubbers",
-                      "range": "36\"",
-                      "a": 6,
-                      "f": 4,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Rapid Fire 6"
-                      ],
-                      "bs": "3+"
-                },
-                {
-                      "name": "Twin Ironhail Autocannon",
-                      "range": "48\"",
-                      "a": 4,
-                      "f": 9,
-                      "ap": -1,
-                      "d": 3,
-                      "keywords": [
-                            "Twin-linked"
-                      ],
-                      "bs": "3+"
-                }
-          ],
-          "meleeWeapons": [
-                {
-                      "name": "Invictor Fist",
-                      "range": "Melee",
-                      "a": 5,
-                      "f": 12,
-                      "ap": -2,
-                      "d": 3,
-                      "keywords": [],
-                      "ws": "3+"
-                }
-          ],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Forward Assault Warsuit: At the start of the first battle round , you can select one enemy unit to be this unit’s mark : This unit’s attacks that target this unit’s mark can re-roll wound rolls of 1. Each time this unit’s mark is destroyed , select one enemy unit to be this unit’s mark .",
-                "Codex Discipline"
-          ],
-          "leaderOf": [],
-          "notes": "Bípode de combate de despliegue avanzado que apoya y defiende a las fuerzas de infiltración Phobos."
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 175
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Misil Cazador-Asesino (Hunter-killer Missile)",
+        "range": "48\"",
+        "a": 1,
+        "f": 14,
+        "ap": -3,
+        "d": "D3+3",
+        "keywords": [
+          "Un Solo Uso (One Shot)"
+        ],
+        "bs": "2+"
+      },
+      {
+        "name": "Bólter Tormenta (Storm Bolter)",
+        "range": "24\"",
+        "a": 2,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Lanzamisiles Venganza Whirlwind",
+        "range": "72\"",
+        "a": 6,
+        "f": 8,
+        "ap": -2,
+        "d": 2,
+        "keywords": [
+          "Fuego Indirecto (Indirect Fire)",
+          "Explosión 2"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Orugas Blindadas (Armoured Tracks)",
+        "range": "Melee",
+        "a": 3,
+        "f": 6,
+        "ap": 0,
+        "d": 1,
+        "keywords": [],
+        "ws": "4+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Bombardeo Punitivo: Si una unidad de INFANTERÍA enemiga es alcanzada por el lanzamisiles Whirlwind, debe superar un chequeo de Acobardamiento de inmediato.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Artillería de cohetes de bombardeo indirecto que castiga objetivos ocultos tras escenografía."
+  },
+  {
+    "id": "sm_invictor_tactical_warsuit",
+    "name": "Bípode Táctico Invictor",
+    "originalName": "Invictor Tactical Warsuit",
+    "aliases": [
+      "Invictor Tactical Warsuit",
+      "Bípode Táctico Invictor",
+      "Bípode Táctico Invictor",
+      "Invictor Tactical Warsuit"
+    ],
+    "role": "Bípode / Infiltración",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "10\"",
+      "r": 9,
+      "sv": "3+",
+      "inv": "-",
+      "h": 12,
+      "l": "6+",
+      "co": 4
     },
-
-    {
-          "id": "sm_hammerfall_bunker",
-          "name": "Búnker Hammerfall",
-          "originalName": "Hammerfall Bunker",
-          "aliases": [
-                "Hammerfall Bunker",
-                "Búnker Hammerfall",
-                "Búnker Hammerfall",
-                "Hammerfall Bunker"
-          ],
-          "role": "Fortificación",
-          "wing": "Ala Verde",
-          "isEpicHero": false,
-          "keywords": [
-                "ADEPTUS ASTARTES",
-                "IMPERIUM",
-                "DARK ANGELS"
-          ],
-          "stats": {
-                "m": "-",
-                "r": 12,
-                "sv": "2+",
-                "inv": "-",
-                "h": 14,
-                "l": "6+",
-                "co": "0"
-          },
-          "pointsOptions": [
-                {
-                      "models": 1,
-                      "points": 175
-                }
-          ],
-          "rangedWeapons": [
-                {
-                      "name": "Hammerfall Heavy Bolter Array",
-                      "range": "36\"",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 2,
-                      "keywords": [
-                            "Sustained Hits 1",
-                            "Rapid Fire 2",
-                            "Twin-linked"
-                      ],
-                      "bs": "4+"
-                },
-                {
-                      "name": "Hammerfall Heavy Flamer Array",
-                      "range": "12\"",
-                      "a": 6,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "Twin-linked",
-                            "Torrent",
-                            "BLAST 2"
-                      ],
-                      "bs": "-"
-                },
-                {
-                      "name": "Hammerfall Missile Launcher - Superfrag",
-                      "range": "48\"",
-                      "a": 7,
-                      "f": 5,
-                      "ap": -1,
-                      "d": 1,
-                      "keywords": [
-                            "BLAST 1"
-                      ],
-                      "bs": "4+"
-                },
-                {
-                      "name": "Hammerfall Missile Launcher - Superkrak",
-                      "range": "48\"",
-                      "a": 2,
-                      "f": 10,
-                      "ap": -2,
-                      "d": "D3+3",
-                      "keywords": [],
-                      "bs": "4+"
-                }
-          ],
-          "meleeWeapons": [],
-          "abilities": [
-                "Regla de Facción: Juramento del Momento",
-                "Ceramite Cover: When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",
-                "Defensive Array (Once per phase, per unit): You can target this unit with the Fire Overwatch stratagem regardless of any other uses of that stratagem this phase. If you do, that use is -1 CP.",
-                "Fortification: While an enemy unit is engaged with only FORTIFICATION units: That enemy unit can be selected as a target of ranged attacks. When shooting that enemy unit, those ranged attacks have -1 to hit rolls (excluding [CLOSE-QUARTERS] attacks). When that enemy unit is selected to make a fall-back move , if that enemy unit is not battle-shocked , hazard rolls made for that enemy unit are automatically passed.",
-                "Codex Discipline",
-                "Gunnery Honours"
-          ],
-          "leaderOf": [],
-          "notes": "Fortificación orbital con ametrallamiento defensivo automático en 360 grados."
-    }
-  ]
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 135
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Lanzagranadas Fragstorm",
+        "range": "18\"",
+        "a": 3,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Bólter Pesado (Heavy Bolter)",
+        "range": "36\"",
+        "a": 3,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Incendium (Incendium Cannon)",
+        "range": "12\"",
+        "a": 4,
+        "f": 6,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Ametralladoras Pesadas Ironhail",
+        "range": "36\"",
+        "a": 6,
+        "f": 4,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Disparo Rápido 6 (Rapid Fire 6)"
+        ],
+        "bs": "3+"
+      },
+      {
+        "name": "Cañón Automático Ironhail Acoplado",
+        "range": "48\"",
+        "a": 4,
+        "f": 9,
+        "ap": -1,
+        "d": 3,
+        "keywords": [
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "3+"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Puño Invictor (Invictor Fist)",
+        "range": "Melee",
+        "a": 5,
+        "f": 12,
+        "ap": -2,
+        "d": 3,
+        "keywords": [],
+        "ws": "3+"
+      }
+    ],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Bípode de Asalto Avanzado: Al inicio de la primera ronda, designa un objetivo enemigo; los ataques contra dicha presa repiten tiradas de herida de 1.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes."
+    ],
+    "leaderOf": [],
+    "notes": "Bípode de combate de despliegue avanzado que apoya y defiende a las fuerzas de infiltración Phobos."
+  },
+  {
+    "id": "sm_hammerfall_bunker",
+    "name": "Búnker Hammerfall",
+    "originalName": "Hammerfall Bunker",
+    "aliases": [
+      "Hammerfall Bunker",
+      "Búnker Hammerfall",
+      "Búnker Hammerfall",
+      "Hammerfall Bunker"
+    ],
+    "role": "Fortificación",
+    "wing": "Ala Verde",
+    "isEpicHero": false,
+    "keywords": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "DARK ANGELS"
+    ],
+    "stats": {
+      "m": "-",
+      "r": 12,
+      "sv": "2+",
+      "inv": "-",
+      "h": 14,
+      "l": "6+",
+      "co": "0"
+    },
+    "pointsOptions": [
+      {
+        "models": 1,
+        "points": 175
+      }
+    ],
+    "rangedWeapons": [
+      {
+        "name": "Batería de Bólteres Pesados Hammerfall",
+        "range": "36\"",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 2,
+        "keywords": [
+          "Impactos Sostenidos 1",
+          "Disparo Rápido 2 (Rapid Fire 2)",
+          "Acoplada (Twin-linked)"
+        ],
+        "bs": "4+"
+      },
+      {
+        "name": "Batería de Lanzallamas Pesados Hammerfall",
+        "range": "12\"",
+        "a": 6,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Acoplada (Twin-linked)",
+          "Torrente (Torrent)",
+          "Explosión 2"
+        ],
+        "bs": "-"
+      },
+      {
+        "name": "Lanzamisiles Hammerfall – Superfragmentación",
+        "range": "48\"",
+        "a": 7,
+        "f": 5,
+        "ap": -1,
+        "d": 1,
+        "keywords": [
+          "Explosión 1"
+        ],
+        "bs": "4+"
+      },
+      {
+        "name": "Lanzamisiles Hammerfall – Superperforante",
+        "range": "48\"",
+        "a": 2,
+        "f": 10,
+        "ap": -2,
+        "d": "D3+3",
+        "keywords": [],
+        "bs": "4+"
+      }
+    ],
+    "meleeWeapons": [],
+    "abilities": [
+      "Regla de Facción: Juramento del Momento",
+      "Cobertura de Ceramita: Otorga beneficio de cobertura a las unidades aliadas que se oculten tras el casco de esta estructura.",
+      "Matriz Defensiva (1 vez por fase): Puede disparar Fuego de Fuga (Overwatch) con coste de -1 CP.",
+      "Fortificación: Estructura estática defensiva en 360 grados que proporciona fuego continuo y cobertura inamovible.",
+      "Disciplina del Códex: Esta unidad sigue las doctrinas tácticas estándar del Adeptus Astartes.",
+      "Honores de Artillería: Maestría balística veterana que optimiza la precisión del armamento pesado."
+    ],
+    "leaderOf": [],
+    "notes": "Fortificación orbital con ametrallamiento defensivo automático en 360 grados."
+  }
+]
 };
 
 // Exportación global para navegadores
