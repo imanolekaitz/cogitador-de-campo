@@ -1,0 +1,32 @@
+{
+  "name": "Cogitador de Campo: La Roca",
+  "short_name": "Cogitador 40K",
+  "description": "Cogitador táctico de colección de miniaturas, hojas de datos oficiales y creador de listas de combate de Ángeles Oscuros (Warhammer 40,000 10ª Edición).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#060e0a",
+  "theme_color": "#0a5c36",
+  "lang": "es",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

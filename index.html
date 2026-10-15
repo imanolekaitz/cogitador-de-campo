@@ -6,6 +6,17 @@
   <title>Cogitador de Campo: La Roca — Gestión de Colección y Listas (Ángeles Oscuros)</title>
   <meta name="description" content="Aplicación táctica para el control de la colección de miniaturas de Ángeles Oscuros (Dark Angels), inventario con estado de pintura y creador de listas para Warhammer 40,000 10ª Edición.">
   
+  <!-- Metadatos PWA y Soporte para Tablets (iPad / Android) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a5c36">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cogitador 40K">
+  
   <!-- Tipografías Góticas e Imperiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1626,5 +1637,20 @@
   <!-- Scripts -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+
+  <!-- Registro de Service Worker para Modo Offline e Instalación PWA en Tablets -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((reg) => {
+            console.log('🛡️ Cogitador SW activo y listo para modo offline:', reg.scope);
+          })
+          .catch((err) => {
+            console.warn('Aviso: Service Worker no registrado (modo local sin servidor HTTPS):', err);
+          });
+      });
+    }
+  </script>
 </body>
 </html>
