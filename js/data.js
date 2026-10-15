@@ -6405,1225 +6405,4721 @@ const WH40K_DATA = {
 
   // CATÁLOGO COMPLETO DE DATASHEETS (49+ UNIDADES WAHAPEDIA 11ED / ÁNGELES OSCUROS)
   datasheets: [
-    // === PERSONAJES Y HÉROES ÉPICOS EXCLUSIVOS DE LOS ÁNGELES OSCUROS ===
     {
-      id: "da_lion",
-      name: "Lion El'Jonson",
-      originalName: "Lion El'jonson",
-      aliases: ["Lion El’jonson", "Lion El Jonson"],
-      role: "Héroe Épico",
-      wing: "Ala de Muerte",
-      isEpicHero: true,
-      keywords: ["MONSTRUO", "PERSONAJE", "HÉROE ÉPICO", "PRIMARCA", "ALA DE MUERTE", "IMPERIUM", "LION EL'JONSON", "MONSTER", "CHARACTER", "EPIC HERO", "PRIMARCH", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES"],
-      stats: { m: "8\"", r: 9, sv: "2+", inv: "3++", h: 10, l: "5+", co: 4 },
-      pointsOptions: [{ models: 1, points: 415 }],
-      rangedWeapons: [
-        { name: "Arma Arcanum (Disparo)", range: "12\"", a: 4, bs: "2+", f: 5, ap: -1, d: 2, keywords: ["Pistola", "Pistol"] }
-      ],
-      meleeWeapons: [
-        { name: "Fealty - Golpe demoledor", range: "Combate", a: 8, ws: "2+", f: 12, ap: -4, d: 4, keywords: ["Golpes Letales", "Lethal Hits"] },
-        { name: "Fealty - Barrido", range: "Combate", a: 16, ws: "2+", f: 6, ap: -2, d: 1, keywords: ["Impactos Sostenidos 1", "Sustained Hits 1"] }
-      ],
-      abilities: ["Juramento de Momento", "Escudo del Emperador (3++ salvación invulnerable, 4++ contra mortales)", "Aura del Primarca (No Hay Dolor 4+++ contra mortales, repetición de cargas o -1 a impactar para el enemigo)."],
-      leaderOf: [],
-      notes: "Señor Primarca de la Primera Legión. Combate en solitario con la protección del Escudo del Emperador."
-    },
-    {
-      id: "da_azrael",
-      name: "Comandante Supremo Azrael",
-      originalName: "Azrael",
-      role: "Héroe Épico",
-      wing: "Ala de Muerte",
-      isEpicHero: true,
-      keywords: ["INFANTERÍA", "PERSONAJE", "HÉROE ÉPICO", "GRAN MAESTRE", "ALA DE MUERTE", "AZRAEL", "INFANTRY", "CHARACTER", "EPIC HERO", "CHAPTER MASTER", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES", "TACTICUS"],
-      stats: { m: "6\"", r: 4, sv: "2+", inv: "4++", h: 6, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 150 }],
-      rangedWeapons: [
-        { name: "Ira del León (Bólter)", range: "24\"", a: 2, bs: "2+", f: 4, ap: -1, d: 2, keywords: ["Fuego Rápido 1", "Rapid Fire 1"] },
-        { name: "Ira del León (Plasma sobrecargado)", range: "24\"", a: 1, bs: "2+", f: 8, ap: -3, d: 3, keywords: ["Peligrosa", "Hazardous"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada de Secretos", range: "Combate", a: 6, ws: "2+", f: 6, ap: -3, d: 2, keywords: ["Heridas Devastadoras", "Devastating Wounds"] }
-      ],
-      abilities: ["Juramento de Momento", "Yelmo del León: Concede Salvación Invulnerable 4++ a su unidad.", "Líder Supremo: Al inicio de tu fase de mando, obtienes +1 Punto de Mando (CP).", "Ira Justiciera: Las armas de su unidad obtienen [IMPACTOS SOSTENIDOS 1]."],
-      leaderOf: [
-        "Camaradas del Círculo Interior",
-        "Escuadra de Intercesores",
-        "Escuadra de Intercesores de Asalto",
-        "Escuadra de Revientainfiernos",
-        "Escuadra de Veteranos de Ferreaguardia",
-        "Escuadra de Veteranos de Retaguardia",
-        "Escuadra Infernus",
-        "Héroes de la Compañía"
-      ],
-      notes: "Gran Maestre Supremo del Capítulo de los Ángeles Oscuros."
-    },
-    {
-      id: "da_belial",
-      name: "Belial",
-      originalName: "Belial",
-      role: "Héroe Épico",
-      wing: "Ala de Muerte",
-      isEpicHero: true,
-      keywords: ["INFANTERÍA", "PERSONAJE", "HÉROE ÉPICO", "EXTERMINADOR", "GRAN MAESTRE", "ALA DE MUERTE", "BELIAL", "INFANTRY", "CHARACTER", "EPIC HERO", "TERMINATOR", "CAPTAIN", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 6, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 100 }],
-      rangedWeapons: [
-        { name: "Bólter de Asalto Maestro", range: "24\"", a: 2, bs: "2+", f: 4, ap: 0, d: 2, keywords: ["Fuego Rápido 2", "Precisión", "Rapid Fire 2", "Precision"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada del Silencio", range: "Combate", a: 6, ws: "2+", f: 6, ap: -2, d: 2, keywords: ["Precisión", "Precision"] }
-      ],
-      abilities: ["Juramento de Momento", "Gran Maestre del Ala de Muerte: Mientras lidera una unidad, los ataques de combate obtienen Impactos Críticos con 5+ sin modificar."],
-      leaderOf: [
-        "Caballeros del Ala de Muerte",
-        "Escuadra de Exterminadores",
-        "Escuadra de Exterminadores del Ala de Muerte",
-        "Escuadra de Exterminadores de Asalto"
-      ],
-      notes: "Gran Maestre de la 1ª Compañía (Ala de Muerte)."
-    },
-    {
-      id: "da_sammael",
-      name: "Sammael",
-      originalName: "Sammael",
-      role: "Héroe Épico",
-      wing: "Ala de Cuervo",
-      isEpicHero: true,
-      keywords: ["MONTADO", "PERSONAJE", "HÉROE ÉPICO", "VOLAR", "ALA DE CUERVO", "SAMMAEL", "MOUNTED", "CHARACTER", "EPIC HERO", "FLY", "CAPTAIN", "RAVENWING", "DARK ANGELS", "ADEPTUS ASTARTES"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "4++", h: 7, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 120 }],
-      rangedWeapons: [
-        { name: "Cañón de Plasma Corvex", range: "36\"", a: "D3", bs: "2+", f: 8, ap: -3, d: 3, keywords: ["Área", "Blast"] },
-        { name: "Bólteres Tormenta gemelos", range: "24\"", a: 4, bs: "2+", f: 4, ap: 0, d: 1, keywords: ["Doble Enlace", "Twin-linked"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada Raven", range: "Combate", a: 6, ws: "2+", f: 6, ap: -3, d: 2, keywords: ["Impactos Sostenidos 1", "Sustained Hits 1"] }
-      ],
-      abilities: ["Juramento de Momento", "Gran Maestre del Ala de Cuervo: Permite a su unidad Avanzar, Disparar y Cargar en el mismo turno."],
-      leaderOf: [
-        "Caballero Negro del Ala de Cuervo",
-        "Escuadra de Mando del Ala de Cuervo",
-        "Escuadra de Batidores (Outriders)"
-      ],
-      notes: "Gran Maestre de la 2ª Compañía montado sobre la moto a reacción reliquia Corvex."
-    },
-    {
-      id: "da_asmodai",
-      name: "Asmodai",
-      originalName: "Asmodai",
-      role: "Héroe Épico",
-      wing: "Ala de Muerte",
-      isEpicHero: true,
-      keywords: ["INFANTERÍA", "PERSONAJE", "HÉROE ÉPICO", "CAPELLÁN", "ALA DE MUERTE", "ASMODAI", "INFANTRY", "CHARACTER", "EPIC HERO", "CHAPLAIN", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES", "TACTICUS"],
-      stats: { m: "6\"", r: 5, sv: "3+", inv: "4++", h: 4, l: "5+", co: 1 },
-      pointsOptions: [{ models: 1, points: 70 }],
-      rangedWeapons: [
-        { name: "Pistola Bólter Pesada", range: "18\"", a: 1, bs: "2+", f: 4, ap: -1, d: 1, keywords: ["Pistola", "Pistol"] }
-      ],
-      meleeWeapons: [
-        { name: "Crozius Arcanum & Cuchillas de la Razón", range: "Combate", a: 5, ws: "2+", f: 6, ap: -2, d: 2, keywords: ["Heridas Devastadoras", "Devastating Wounds"] }
-      ],
-      abilities: ["Juramento de Momento", "Capellán Interrogador: Permite a su unidad repetir tiradas completas para impactar en combate cuerpo a cuerpo."],
-      leaderOf: [
-        "Camaradas del Círculo Interior",
-        "Escuadra de Intercesores de Asalto",
-        "Escuadra de Veteranos de Ferreaguardia"
-      ],
-      notes: "El más antiguo y temido Maestro de la Herejía y Capellán Interrogador."
-    },
-    {
-      id: "da_ezekiel",
-      name: "Ezekiel",
-      originalName: "Ezekiel",
-      role: "Héroe Épico",
-      wing: "Ala de Muerte",
-      isEpicHero: true,
-      keywords: ["INFANTERÍA", "PERSONAJE", "HÉROE ÉPICO", "PSÍQUICO", "BIBLIOTECARIO", "ALA DE MUERTE", "EZEKIEL", "INFANTRY", "CHARACTER", "EPIC HERO", "PSYKER", "LIBRARIAN", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES"],
-      stats: { m: "6\"", r: 4, sv: "2+", inv: "4++", h: 5, l: "6+", co: 1 },
-      pointsOptions: [{ models: 1, points: 75 }],
-      rangedWeapons: [
-        { name: "La Mirada de la Condenación (Psíquico)", range: "24\"", a: "D6", bs: "2+", f: 6, ap: -2, d: 2, keywords: ["Psíquico", "Psychic"] },
-        { name: "El Libertador", range: "12\"", a: 1, bs: "2+", f: 4, ap: -1, d: 2, keywords: ["Pistola", "Precisión", "Pistol", "Precision"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada Traidor", range: "Combate", a: 5, ws: "2+", f: 6, ap: -3, d: "D3", keywords: ["Psíquico", "Psychic"] }
-      ],
-      abilities: ["Juramento de Momento", "Guardián de las Llaves: Añade +1 Ataque a las miniaturas de su unidad en combate.", "Libro de la Salvación: Concede No Hay Dolor 4+ contra heridas mortales."],
-      leaderOf: [
-        "Camaradas del Círculo Interior",
-        "Escuadra de Intercesores",
-        "Escuadra de Veteranos de Ferreaguardia"
-      ],
-      notes: "Gran Maestre de los Bibliotecarios y Guardián del Libro de la Salvación."
-    },
-    {
-      id: "da_lazarus",
-      name: "Maestre Lazarus",
-      originalName: "Lazarus",
-      role: "Héroe Épico",
-      wing: "Compañía Verde",
-      isEpicHero: true,
-      keywords: ["INFANTERÍA", "PERSONAJE", "HÉROE ÉPICO", "CAPITÁN", "LAZARUS", "INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "DARK ANGELS", "ADEPTUS ASTARTES", "TACTICUS"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "4++", h: 5, l: "6+", co: 1 },
-      pointsOptions: [{ models: 1, points: 70 }],
-      rangedWeapons: [
-        { name: "Pistola Bólter Especial", range: "12\"", a: 1, bs: "2+", f: 4, ap: 0, d: 1, keywords: ["Pistola", "Pistol"] }
-      ],
-      meleeWeapons: [
-        { name: "Filo de Enemistad", range: "Combate", a: 6, ws: "2+", f: 6, ap: -3, d: 2, keywords: ["Anti-Psíquico 2+", "Anti-Psyker 2+"] }
-      ],
-      abilities: ["Juramento de Momento", "Escudo Espiritual de Caliban: Concede a su unidad salvación especial No Hay Dolor 3+ contra ataques Psíquicos y heridas mortales."],
-      leaderOf: [
-        "Camaradas del Círculo Interior",
-        "Escuadra de Intercesores",
-        "Escuadra de Revientainfiernos"
-      ],
-      notes: "Capitán de la 5.ª Compañía, primer Marine Espacial Primaris en liderar una compañía de los Ángeles Oscuros."
+          "id": "da_lion",
+          "name": "Lion El'Jonson",
+          "originalName": "Lion El'jonson",
+          "aliases": [
+                "Lion El’jonson",
+                "Lion El Jonson",
+                "El León"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Ala de Muerte",
+          "isEpicHero": true,
+          "keywords": [
+                "MONSTRUO",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "PRIMARCA",
+                "ALA DE MUERTE",
+                "IMPERIUM",
+                "LION EL'JONSON",
+                "MONSTER",
+                "CHARACTER",
+                "EPIC HERO",
+                "PRIMARCH",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES"
+          ],
+          "stats": {
+                "m": "8\"",
+                "r": 9,
+                "sv": "2+",
+                "inv": "3++",
+                "h": 10,
+                "l": "5+",
+                "co": 4
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 315
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Arma Luminis – Pistola Bólter",
+                      "range": "12\"",
+                      "a": 4,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                },
+                {
+                      "name": "Arma Luminis – Pistola de Plasma",
+                      "range": "12\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Fealty – Golpe demoledor (Strike)",
+                      "range": "Combate",
+                      "a": 8,
+                      "ws": "2+",
+                      "f": 12,
+                      "ap": -4,
+                      "d": 4,
+                      "keywords": [
+                            "Impactos Letales",
+                            "Lethal Hits"
+                      ]
+                },
+                {
+                      "name": "Fealty – Barrido (Sweep)",
+                      "range": "Combate",
+                      "a": 16,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Impactos Sostenidos 1",
+                            "Sustained Hits 1"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Despliegue Rápido, Ataca Primero",
+                "Regla de Facción: Juramento del Momento",
+                "Primarca de la Primera Legión: Al inicio de tu fase de mando, elige dos habilidades del Primarca hasta tu siguiente fase de mando: [Ejemplar Marcial (Aura)]: a 6\" o menos repite tiradas de 1 para impactar y herir en combate; [No Hay Escape de los Vigilantes (Aura)]: a 6\" o menos otorga No Hay Dolor 4+++ contra mortales; [Todos los Secretos Revelados (Aura)]: enemigos a 12\" sufren +1 CP en estratagemas con 5+.",
+                "El Escudo del Emperador: Salvación invulnerable 3++. Si la Fuerza de un ataque es mayor que la Resistencia de Lion, resta 1 a la tirada para herirle.",
+                "Guardaespaldas de los Ángeles Oscuros: Mientras esté a 3\" o menos de una o más unidades amigables de Infantería Adeptus Astartes, tiene [Agente Solitario].",
+                "Reinos Sombríos Envolventes: En tu fase de mando, si no está trabado en combate, puede retirarse del campo a Reservas Estratégicas.",
+                "Comandante Supremo: Si está en tu ejército, debe ser obligatoriamente tu Señor de la Guerra (Warlord)."
+          ],
+          "leaderOf": [],
+          "notes": "Señor Primarca de la Primera Legión. Porta la colosal espada Fealty y el Escudo del Emperador."
     },
 
-    // === UNIDADES EXCLUSIVAS DEL ALA DE MUERTE (DEATHWING) ===
     {
-      id: "da_deathwing_knights",
-      name: "Caballeros del Ala de Muerte",
-      originalName: "Deathwing Knights",
-      role: "Élite / Infantería Pesada",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "EXTERMINADOR", "ALA DE MUERTE", "CABALLEROS", "INFANTRY", "TERMINATOR", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 6, sv: "2+", inv: "4++", h: 4, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 235 }
-      ],
-      rangedWeapons: [],
-      meleeWeapons: [
-        { name: "Maza de Absolución", range: "Combate", a: 4, ws: "2+", f: 6, ap: -2, d: 2, keywords: ["Heridas Devastadoras", "Devastating Wounds"] },
-        { name: "Espada de Reliquia (Gran Maestre)", range: "Combate", a: 5, ws: "2+", f: 7, ap: -2, d: 2, keywords: ["Golpes Letales", "Lethal Hits"] },
-        { name: "Mangual de los No Perdonados", range: "Combate", a: 5, ws: "2+", f: 7, ap: -3, d: 2, keywords: ["Heridas Devastadoras", "Devastating Wounds"] }
-      ],
-      abilities: ["Juramento de Momento", "Fortaleza del Círculo Interior: Reduce en 1 todo el daño sufrido (hasta un mínimo de 1).", "Despliegue Rápido (Deep Strike)."],
-      leaderOf: [],
-      notes: "La élite suprema de combate cuerpo a cuerpo del Ala de Muerte con Mazas de Absolución."
-    },
-    {
-      id: "da_deathwing_terminator_squad",
-      name: "Escuadra de Exterminadores del Ala de Muerte",
-      originalName: "Deathwing Terminator Squad",
-      role: "Infantería Pesada",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "EXTERMINADOR", "ALA DE MUERTE", "INFANTRY", "TERMINATOR", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 3, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 190 },
-        { models: 10, points: 380 }
-      ],
-      rangedWeapons: [
-        { name: "Bólter de Asalto Tormenta", range: "24\"", a: 2, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Fuego Rápido 2", "Rapid Fire 2"] },
-        { name: "Cañón de Plasma (Sobrecargado)", range: "36\"", a: "D3", bs: "3+", f: 8, ap: -3, d: 2, keywords: ["Área", "Peligrosa", "Blast", "Hazardous"] },
-        { name: "Cañón de Asalto", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras", "Devastating Wounds"] },
-        { name: "Lanzamisiles Ciclón", range: "36\"", a: 2, bs: "3+", f: 9, ap: -2, d: "D6", keywords: [] }
-      ],
-      meleeWeapons: [
-        { name: "Puño de Combate", range: "Combate", a: 3, ws: "3+", f: 8, ap: -2, d: 2, keywords: [] },
-        { name: "Arma de Energía", range: "Combate", a: 4, ws: "3+", f: 5, ap: -2, d: 1, keywords: [] },
-        { name: "Cuchillas Relámpago gemelas", range: "Combate", a: 5, ws: "3+", f: 5, ap: -2, d: 1, keywords: ["Doble Enlace", "Twin-linked"] }
-      ],
-      abilities: ["Juramento de Momento", "Despliegue Rápido (Deep Strike)", "Vigilancia de Caliban: Ignora modificadores a la tirada para impactar y suma +1 al Control de Objetivo al mantener marcadores."],
-      leaderOf: [],
-      notes: "Veteranos de la 1ª Compañía equipados con cañones de plasma exclusivos de Caliban."
-    },
-    {
-      id: "da_inner_circle_companions",
-      name: "Camaradas del Círculo Interior",
-      originalName: "Inner Circle Companions",
-      role: "Élite / Guardia de Honor",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "ALA DE MUERTE", "CÍRCULO INTERIOR", "GUARDIA", "INFANTRY", "DEATHWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM", "TACTICUS"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "4++", h: 3, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 3, points: 90 },
-        { models: 6, points: 180 }
-      ],
-      rangedWeapons: [
-        { name: "Pistola Bólter Pesada", range: "18\"", a: 1, bs: "3+", f: 4, ap: -1, d: 1, keywords: ["Pistola", "Pistol"] }
-      ],
-      meleeWeapons: [
-        { name: "Gran Espada de Caliban - Golpe", range: "Combate", a: 4, ws: "3+", f: 6, ap: -2, d: 2, keywords: ["Golpes Letales", "Lethal Hits"] },
-        { name: "Gran Espada de Caliban - Barrido", range: "Combate", a: 6, ws: "3+", f: 5, ap: -1, d: 1, keywords: ["Impactos Sostenidos 1", "Sustained Hits 1"] }
-      ],
-      abilities: ["Juramento de Momento", "Guardaespaldas del Círculo: Mientras un Personaje lidere esta unidad, los enemigos sufren -1 para impactarles en combate cuerpo a cuerpo."],
-      leaderOf: [],
-      notes: "Misteriosos guerreros encapuchados que custodian a los más altos dignatarios de la Orden."
-    },
-
-    // === UNIDADES EXCLUSIVAS DEL ALA DE CUERVO (RAVENWING) ===
-    {
-      id: "da_ravenwing_black_knights",
-      name: "Caballero Negro del Ala de Cuervo",
-      originalName: "Ravenwing Black Knights",
-      role: "Ataque Rápido / Montado",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "ALA DE CUERVO", "CABALLEROS NEGROS", "MOUNTED", "RAVENWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "5++", h: 3, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 3, points: 85 },
-        { models: 6, points: 170 }
-      ],
-      rangedWeapons: [
-        { name: "Garras de Plasma (Sobrecargadas)", range: "18\"", a: 2, bs: "3+", f: 8, ap: -3, d: 2, keywords: ["Fuego Rápido 1", "Peligrosa", "Rapid Fire 1", "Hazardous"] }
-      ],
-      meleeWeapons: [
-        { name: "Martillo Corvus", range: "Combate", a: 3, ws: "3+", f: 5, ap: -1, d: 2, keywords: ["Lanza", "Lance"] }
-      ],
-      abilities: ["Juramento de Momento", "Jinetes de la Tormenta: Las armas cuerpo a cuerpo ganan [ANTI-MONSTRUO 4+] y [ANTI-VEHÍCULO 4+] tras cargar."],
-      leaderOf: [],
-      notes: "Élite montada de la 2ª Compañía armados con martillos Corvus y garras de plasma."
-    },
-    {
-      id: "da_ravenwing_command_squad",
-      name: "Escuadra de Mando del Ala de Cuervo",
-      originalName: "Ravenwing Command Squad",
-      role: "Montado / Mando",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "ALA DE CUERVO", "MANDO", "PERSONAJE", "MOUNTED", "RAVENWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "5++", h: 3, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 3, points: 115 }
-      ],
-      rangedWeapons: [
-        { name: "Garras de Plasma", range: "18\"", a: 2, bs: "3+", f: 8, ap: -3, d: 2, keywords: ["Fuego Rápido 1", "Rapid Fire 1"] }
-      ],
-      meleeWeapons: [
-        { name: "Martillo Corvus", range: "Combate", a: 3, ws: "3+", f: 5, ap: -1, d: 2, keywords: ["Lanza", "Lance"] }
-      ],
-      abilities: ["Juramento de Momento", "Apotecario en Moto: Revive una miniatura eliminada de la unidad en cada fase de mando.", "Estandarte del Cuervo: +1 al Control de Objetivo."],
-      leaderOf: [],
-      notes: "Escuadra de cuartel general móvil que incluye Campeón, Apotecario y Portaestandarte en moto."
-    },
-    {
-      id: "da_ravenwing_darkshroud",
-      name: "Mortaja del Ala de Cuervo",
-      originalName: "Ravenwing Darkshroud",
-      role: "Vehículo de Apoyo",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "DESLIZADOR", "VOLAR", "ALA DE CUERVO", "HUMO", "VEHICLE", "SPEEDER", "FLY", "RAVENWING", "SMOKE", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "14\"", r: 8, sv: "3+", inv: "4++", h: 10, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 1, points: 80 }
-      ],
-      rangedWeapons: [
-        { name: "Cañón de Asalto Pesado", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras", "Devastating Wounds"] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida", range: "Combate", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Manto de Tinieblas (Aura): Las unidades amigas a 6\" obtienen [SIGILO] (-1 a impactar para el atacante) y beneficio de cobertura."],
-      leaderOf: [],
-      notes: "Porta una antigua piedra reliquia de Caliban que emite un campo impenetrable de sombras protectoras."
-    },
-    {
-      id: "da_land_speeder_vengeance",
-      name: "Land Speeder Venganza",
-      originalName: "Land Speeder Vengeance",
-      role: "Vehículo Pesado / Artillería Móvil",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "DESLIZADOR", "VOLAR", "ALA DE CUERVO", "VEHICLE", "SPEEDER", "FLY", "RAVENWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "14\"", r: 8, sv: "3+", inv: "5++", h: 10, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 1, points: 140 }
-      ],
-      rangedWeapons: [
-        { name: "Batería de Tormenta de Plasma (Sobrecargada)", range: "36\"", a: "D6+3", bs: "3+", f: 9, ap: -3, d: 3, keywords: ["Área", "Peligrosa", "Blast", "Hazardous"] },
-        { name: "Cañón de Asalto Pesado", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras", "Devastating Wounds"] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida", range: "Combate", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Furia Castigadora: Repite tiradas de daño de 1 con la Batería de Tormenta de Plasma."],
-      leaderOf: [],
-      notes: "El mayor deslizador de combate del Ala de Cuervo dotado de devastadora potencia de plasma."
-    },
-    {
-      id: "da_nephilim_jetfighter",
-      name: "Caza Nephilim",
-      originalName: "Nephilim Jetfighter",
-      role: "Aeronave / Interceptor",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["AERONAVE", "VEHÍCULO", "VOLAR", "ALA DE CUERVO", "AIRCRAFT", "VEHICLE", "FLY", "RAVENWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "20+\"", r: 8, sv: "3+", inv: "-", h: 11, l: "6+", co: 0 },
-      pointsOptions: [
-        { models: 1, points: 200 }
-      ],
-      rangedWeapons: [
-        { name: "Megabolter Vengador", range: "36\"", a: 10, bs: "3+", f: 6, ap: -1, d: 2, keywords: [] },
-        { name: "Lanza Láser Gemela", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: ["Doble Enlace", "Twin-linked"] },
-        { name: "Misiles Blacksword", range: "36\"", a: 2, bs: "3+", f: 8, ap: -2, d: "D6", keywords: ["Anti-Aeronave 2+", "Anti-Fly 2+"] }
-      ],
-      meleeWeapons: [
-        { name: "Blindaje de Combate (Armoured hull)", range: "Melee", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Supremacía Aérea: Suma +1 a impactar contra objetivos que tengan la clave VOLAR."],
-      leaderOf: [],
-      notes: "Caza interceptor de alta velocidad para erradicar amenazas aéreas enemigas."
-    },
-    {
-      id: "da_dark_talon",
-      name: "Espolón del Ala de Cuervo (Dark Talon)",
-      originalName: "Ravenwing Dark Talon",
-      role: "Aeronave / Bombardero",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["AERONAVE", "VEHÍCULO", "VOLAR", "ALA DE CUERVO", "AIRCRAFT", "VEHICLE", "FLY", "RAVENWING", "DARK ANGELS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "20+\"", r: 8, sv: "3+", inv: "-", h: 11, l: "6+", co: 0 },
-      pointsOptions: [
-        { models: 1, points: 190 }
-      ],
-      rangedWeapons: [
-        { name: "Cañón Rift del Vacío (Rift Cannon)", range: "18\"", a: "D3", bs: "3+", f: 16, ap: -4, d: "D6+1", keywords: ["Área", "Heridas Devastadoras", "Blast", "Devastating Wounds"] },
-        { name: "Bólteres Huracán gemelos", range: "24\"", a: 12, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Doble Enlace", "Twin-linked"] }
-      ],
-      meleeWeapons: [],
-      abilities: ["Juramento de Momento", "Bomba de Estasis: Una vez por batalla, lanza una bomba sobre una unidad enemiga causando heridas mortales y reduciendo su movimiento."],
-      leaderOf: [],
-      notes: "Aeronave equipada con el Cañón Rift, capaz de abrir microfisuras en la disformidad."
+          "id": "da_azrael",
+          "name": "Comandante Supremo Azrael",
+          "originalName": "Supreme Grand Master Azrael",
+          "aliases": [
+                "Azrael",
+                "Gran Maestre Supremo Azrael"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Ala de Muerte",
+          "isEpicHero": true,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "GRAN MAESTRE",
+                "ALA DE MUERTE",
+                "AZRAEL",
+                "INFANTRY",
+                "CHARACTER",
+                "EPIC HERO",
+                "CHAPTER MASTER",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "TACTICUS"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 6,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 125
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Ira del León (Lion's Wrath)",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Anti-Infantería 4+",
+                            "Anti-Infantry 4+",
+                            "Heridas Devastadoras",
+                            "Devastating Wounds",
+                            "Fuego Rápido 1",
+                            "Rapid Fire 1"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "La Espada de los Secretos (The Sword of Secrets)",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -4,
+                      "d": 2,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Gran Maestre Supremo: Mientras este modelo lidere una unidad, las armas de las miniaturas de dicha unidad obtienen [IMPACTOS SOSTENIDOS 1].",
+                "Estratega Magistral: Al inicio de tu fase de mando, si este modelo está en el campo de batalla, obtienes +1 Punto de Mando (CP).",
+                "El Yelmo del León (Equipo): Las miniaturas de la unidad de Azrael tienen salvación invulnerable 4++. Además, una vez por batalla en cualquier fase, puede invocar a un Vigilante en la Oscuridad para otorgar a su unidad No Hay Dolor 4+++ contra heridas mortales hasta el final de la fase."
+          ],
+          "leaderOf": [
+                "Camaradas del Círculo Interior",
+                "Escuadra de Intercesores",
+                "Escuadra de Intercesores de Asalto",
+                "Escuadra de Revientainfiernos",
+                "Escuadra de Veteranos de Ferreaguardia",
+                "Escuadra de Veteranos de Retaguardia",
+                "Escuadra Infernus",
+                "Héroes de la Compañía"
+          ],
+          "notes": "Líder indiscutible del Capítulo de los Ángeles Oscuros, portador del Yelmo del León y la Espada de los Secretos."
     },
 
-    // === UNIDADES GENERALES Y SÍNERGICAS DE ADEPTUS ASTARTES (DEATHWING / RAVENWING / COMÚN) ===
     {
-      id: "sm_terminator_squad",
-      name: "Escuadra de Exterminadores",
-      originalName: "Terminator Squad",
-      role: "Infantería Pesada",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "EXTERMINADOR", "ALA DE MUERTE", "INFANTRY", "TERMINATOR", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 3, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 190 },
-        { models: 10, points: 380 }
-      ],
-      rangedWeapons: [
-        { name: "Bólter de Asalto Tormenta", range: "24\"", a: 2, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Fuego Rápido 2", "Rapid Fire 2"] },
-        { name: "Cañón de Asalto", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras", "Devastating Wounds"] }
-      ],
-      meleeWeapons: [
-        { name: "Puño de Combate", range: "Combate", a: 3, ws: "3+", f: 8, ap: -2, d: 2, keywords: [] },
-        { name: "Arma de Energía", range: "Combate", a: 4, ws: "3+", f: 5, ap: -2, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Despliegue Rápido (Deep Strike)", "Furia Teleportada: Repite tiradas para impactar de 1 contra el Juramento."],
-      leaderOf: [],
-      notes: "Escuadra estándar de Exterminadores de la 1.ª Compañía del Ala de Muerte."
+          "id": "da_belial",
+          "name": "Belial",
+          "originalName": "Grand Master Belial",
+          "aliases": [
+                "Gran Maestre Belial",
+                "Belial"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Ala de Muerte",
+          "isEpicHero": true,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "EXTERMINADOR",
+                "GRAN MAESTRE",
+                "ALA DE MUERTE",
+                "BELIAL",
+                "INFANTRY",
+                "CHARACTER",
+                "EPIC HERO",
+                "TERMINATOR",
+                "CAPTAIN",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 6,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 85
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter de Asalto Magistral",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 2,
+                      "keywords": [
+                            "Precisión",
+                            "Precision",
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "La Espada del Silencio (The Sword of Silence)",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Precisión",
+                            "Precision"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Despliegue Rápido, Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Gran Maestre del Ala de Muerte: Mientras este modelo lidere una unidad, cada vez que una miniatura de la unidad obtenga un Impacto Crítico, dicho ataque tiene la habilidad [PRECISIÓN].",
+                "Golpes de Retribución: Cada vez que se asigne un ataque cuerpo a cuerpo a Belial, tras resolver los ataques de la unidad atacante, tira 1D6 (máx. 6D6): por cada 4+, la unidad atacante sufre 1 herida mortal."
+          ],
+          "leaderOf": [
+                "Escuadra de Exterminadores del Ala de Muerte",
+                "Caballeros del Ala de Muerte",
+                "Escuadra de Exterminadores",
+                "Escuadra de Exterminadores de Asalto"
+          ],
+          "notes": "Comandante supremo de la 1ª Compañía (Ala de Muerte). Letal duelista equipado con armadura de Exterminador."
     },
+
     {
-      id: "sm_terminator_assault_squad",
-      name: "Escuadra de Exterminadores de Asalto",
-      originalName: "Terminator Assault Squad",
-      role: "Infantería Pesada / Asalto",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "EXTERMINADOR", "ALA DE MUERTE", "INFANTRY", "TERMINATOR", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 6, sv: "2+", inv: "4++", h: 3, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 170 },
-        { models: 10, points: 340 }
-      ],
-      rangedWeapons: [],
-      meleeWeapons: [
-        { name: "Martillo de Trueno y Escudo Tormenta", range: "Combate", a: 3, ws: "4+", f: 8, ap: -2, d: 3, keywords: ["Heridas Devastadoras", "Devastating Wounds"] },
-        { name: "Cuchillas Relámpago gemelas", range: "Combate", a: 5, ws: "3+", f: 5, ap: -2, d: 1, keywords: ["Doble Enlace", "Twin-linked"] }
-      ],
-      abilities: ["Juramento de Momento", "Despliegue Rápido (Deep Strike)", "Escudo Tormenta: Otorga 4 Heridas por modelo (H4)."],
-      leaderOf: [],
-      notes: "Especialistas de choque cuerpo a cuerpo con martillos de trueno y escudos de asedio."
+          "id": "da_sammael",
+          "name": "Sammael",
+          "originalName": "Grand Master Sammael",
+          "aliases": [
+                "Gran Maestre Sammael",
+                "Sammael"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": true,
+          "keywords": [
+                "MONTADO",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "SAMMAEL",
+                "MOUNTED",
+                "CHARACTER",
+                "EPIC HERO",
+                "FLY",
+                "CAPTAIN",
+                "RAVENWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 7,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 115
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón de Plasma Magistral",
+                      "range": "36\"",
+                      "a": "D3",
+                      "bs": "2+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Área",
+                            "Blast"
+                      ]
+                },
+                {
+                      "name": "Bólter de Asalto Acoplado",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2",
+                            "Acoplada",
+                            "Twin-linked"
+                      ]
+                },
+                {
+                      "name": "Pistola Bólter",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "La Espada del Cuervo (The Raven Sword)",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Impactos Sostenidos 2",
+                            "Sustained Hits 2"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Gran Maestre del Ala de Cuervo: Mientras este modelo lidere una unidad, dicha unidad es elegible para disparar y declarar una carga en un turno en el que haya Avanzado. Si ya tenía esta habilidad, suma +1 a sus tiradas de Avance y Carga en su lugar.",
+                "Siega a la Huida (Cut Them Down): Cada vez que una unidad enemiga Destrabe (Fall Back) de la unidad de Sammael, tira 1D6: con 2+, esa unidad sufre D3 heridas mortales."
+          ],
+          "leaderOf": [
+                "Escuadra de Batidores (Outriders)",
+                "Caballero Negro del Ala de Cuervo",
+                "Escuadra de Mando del Ala de Cuervo"
+          ],
+          "notes": "Comandante supremo de la 2ª Compañía (Ala de Cuervo) a lomos de su moto a reacción relicaria Corvex."
     },
+
     {
-      id: "sm_captain_terminator",
-      name: "Capitán con Armadura de Exterminador",
-      originalName: "Captain in Terminator Armour",
-      role: "Cuartel General / Personaje",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "PERSONAJE", "EXTERMINADOR", "CAPITÁN", "ALA DE MUERTE", "INFANTRY", "CHARACTER", "TERMINATOR", "CAPTAIN", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 6, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 90 }],
-      rangedWeapons: [
-        { name: "Bólter de Asalto Tormenta", range: "24\"", a: 2, bs: "2+", f: 4, ap: 0, d: 1, keywords: ["Fuego Rápido 2", "Rapid Fire 2"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de Reliquia", range: "Combate", a: 6, ws: "2+", f: 6, ap: -2, d: 2, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Genio Rito de Batalla: Reduce en 1 CP el coste de una estratagema dirigida a su unidad.", "Despliegue Rápido."],
-      leaderOf: ["Caballeros del Ala de Muerte", "Escuadra de Exterminadores", "Escuadra de Exterminadores de Asalto", "Escuadra de Exterminadores del Ala de Muerte"],
-      notes: "Líder de la 1.ª Compañía."
+          "id": "da_asmodai",
+          "name": "Asmodai",
+          "originalName": "Master of Repentance Asmodai",
+          "aliases": [
+                "Asmodai",
+                "Maestre Asmodai"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Ala de Muerte",
+          "isEpicHero": true,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "CAPELLÁN",
+                "ALA DE MUERTE",
+                "ASMODAI",
+                "INFANTRY",
+                "CHARACTER",
+                "EPIC HERO",
+                "CHAPLAIN",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "TACTICUS"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 4,
+                "l": "5+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 70
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Bólter Pesada",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Crozius Arcanum y Espada de Energía – Golpe",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Crozius Arcanum y Espada de Energía – Barrido",
+                      "range": "Combate",
+                      "a": 8,
+                      "ws": "2+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Ejemplar del Odio: Mientras lidere una unidad, cada vez que una miniatura de la unidad realice un ataque cuerpo a cuerpo, puedes repetir la tirada para Impactar.",
+                "Interrogador Temido: Cada vez que este modelo destruya un PERSONAJE enemigo, tira 1D6: con 2+, ganas 1 CP. Además, al inicio de la fase de combate, una unidad enemiga a 6\" o menos debe superar un chequeo de Shock de Batalla."
+          ],
+          "leaderOf": [
+                "Escuadra de Intercesores de Asalto",
+                "Escuadra de Veteranos de Ferreaguardia",
+                "Escuadra de Revientainfiernos",
+                "Escuadra Infernus",
+                "Escuadra de Intercesores",
+                "Escuadra de Veteranos de Retaguardia",
+                "Camaradas del Círculo Interior"
+          ],
+          "notes": "El más antiguo y temido de los Capellanes Interrogadores de los Ángeles Oscuros."
     },
+
     {
-      id: "sm_chaplain_terminator",
-      name: "Capellán con Armadura de Exterminador",
-      originalName: "Chaplain in Terminator Armour",
-      role: "Cuartel General / Personaje",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "PERSONAJE", "EXTERMINADOR", "CAPELLÁN", "ALA DE MUERTE", "INFANTRY", "CHARACTER", "TERMINATOR", "CHAPLAIN", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 5, l: "5+", co: 1 },
-      pointsOptions: [{ models: 1, points: 75 }],
-      rangedWeapons: [
-        { name: "Bólter de Asalto Tormenta", range: "24\"", a: 2, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Fuego Rápido 2"] }
-      ],
-      meleeWeapons: [
-        { name: "Crozius Arcanum", range: "Combate", a: 5, ws: "2+", f: 6, ap: -1, d: 2, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Letanías de Odio: Suma +1 a las tiradas para herir en combate cuerpo a cuerpo para su unidad.", "No Hay Dolor 4+ contra mortales."],
-      leaderOf: ["Caballeros del Ala de Muerte", "Escuadra de Exterminadores", "Escuadra de Exterminadores de Asalto", "Escuadra de Exterminadores del Ala de Muerte"],
-      notes: "Inspirador fanático del Ala de Muerte."
+          "id": "da_ezekiel",
+          "name": "Ezekiel",
+          "originalName": "Grand Master of Librarians Ezekiel",
+          "aliases": [
+                "Ezekiel",
+                "Gran Bibliotecario Ezekiel"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Ala de Muerte",
+          "isEpicHero": true,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "PSÍQUICO",
+                "BIBLIOTECARIO",
+                "ALA DE MUERTE",
+                "EZEKIEL",
+                "INFANTRY",
+                "CHARACTER",
+                "EPIC HERO",
+                "PSYKER",
+                "LIBRARIAN",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 4,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 75
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "El Salvador (The Deliverer)",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol",
+                            "Precisión",
+                            "Precision"
+                      ]
+                },
+                {
+                      "name": "Borrado Mental – Fuego Brujo",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": "D6",
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds",
+                            "Precisión",
+                            "Precision",
+                            "Psíquico",
+                            "Psyker"
+                      ]
+                },
+                {
+                      "name": "Borrado Mental – Fuego Brujo Concentrado",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": "D6",
+                      "keywords": [
+                            "Anti-Personaje 4+",
+                            "Anti-Character 4+",
+                            "Heridas Devastadoras",
+                            "Devastating Wounds",
+                            "Peligroso",
+                            "Hazardous",
+                            "Precisión",
+                            "Precision",
+                            "Psíquico",
+                            "Psyker"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Perdición del Traidor (Traitor's Bane)",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": "D3",
+                      "keywords": [
+                            "Anti-Caos 2+",
+                            "Anti-Chaos 2+",
+                            "Psíquico",
+                            "Psyker"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Capucha Psíquica: Mientras este modelo lidere una unidad, las miniaturas de dicha unidad tienen No Hay Dolor 4+++ contra Ataques Psíquicos.",
+                "Libro de la Salvación: Mientras lidere una unidad, añade +1 al atributo de Ataques de las armas de combate cuerpo a cuerpo de las miniaturas de la unidad. Cuando Ezekiel sea destruido, cada unidad amigable de ADEPTUS ASTARTES a 6\" o menos debe superar un chequeo de Shock de Batalla."
+          ],
+          "leaderOf": [
+                "Escuadra de Intercesores de Asalto",
+                "Escuadra de Veteranos de Ferreaguardia",
+                "Escuadra de Revientainfiernos",
+                "Escuadra Infernus",
+                "Escuadra de Intercesores",
+                "Escuadra de Veteranos de Retaguardia",
+                "Camaradas del Círculo Interior"
+          ],
+          "notes": "Poseedor del Libro de la Salvación y Guardián de las Llaves del Librarium de la Roca."
     },
+
     {
-      id: "sm_librarian_terminator",
-      name: "Bibliotecario con Armadura de Exterminador",
-      originalName: "Librarian in Terminator Armour",
-      role: "Cuartel General / Psíquico",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "PERSONAJE", "EXTERMINADOR", "PSÍQUICO", "BIBLIOTECARIO", "ALA DE MUERTE", "INFANTRY", "CHARACTER", "TERMINATOR", "PSYKER", "LIBRARIAN", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 5, l: "6+", co: 1 },
-      pointsOptions: [{ models: 1, points: 80 }],
-      rangedWeapons: [
-        { name: "Furia Psíquica (Smite)", range: "24\"", a: "D6", bs: "3+", f: 6, ap: -2, d: "D3", keywords: ["Psíquico", "Psychic"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma Psíquica", range: "Combate", a: 4, ws: "3+", f: 6, ap: -2, d: "D3", keywords: ["Psíquico", "Psychic"] }
-      ],
-      abilities: ["Juramento de Momento", "Velo Psíquico: Concede [IMPACTOS SOSTENIDOS 1] a los ataques a distancia y cuerpo a cuerpo de su unidad."],
-      leaderOf: ["Caballeros del Ala de Muerte", "Escuadra de Exterminadores", "Escuadra de Exterminadores de Asalto", "Escuadra de Exterminadores del Ala de Muerte"],
-      notes: "Canaliza poderes de la disformidad con la protección de la armadura indomitus."
+          "id": "da_lazarus",
+          "name": "Maestre Lazarus",
+          "originalName": "Master Lazarus",
+          "aliases": [
+                "Lazarus",
+                "Capitán Lazarus"
+          ],
+          "role": "Héroe Épico",
+          "wing": "Línea General / Círculo Interior",
+          "isEpicHero": true,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "HÉROE ÉPICO",
+                "CAPITÁN",
+                "LAZARUS",
+                "INFANTRY",
+                "CHARACTER",
+                "EPIC HERO",
+                "CAPTAIN",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "TACTICUS"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 5,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 70
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Bólter",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Filo de la Enemistad (Enmity's Edge)",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Anti-Psíquico 2+",
+                            "Anti-Psyker 2+"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Voluntad Intratable: Mientras lidere una unidad, cada vez que una miniatura de la unidad sea destruida por un ataque cuerpo a cuerpo, si aún no ha combatido en esta fase, tira 1D6: con 4+, no se retira de inmediato; puede combatir tras resolver los ataques enemigos.",
+                "El Escudo Espiritual (The Spiritshield): Mientras lidere una unidad, las miniaturas de su unidad tienen No Hay Dolor 3+++ contra heridas mortales y Ataques Psíquicos."
+          ],
+          "leaderOf": [
+                "Escuadra de Intercesores de Asalto",
+                "Escuadra de Veteranos de Ferreaguardia",
+                "Escuadra Infernus",
+                "Escuadra de Intercesores",
+                "Escuadra de Veteranos de Retaguardia",
+                "Camaradas del Círculo Interior"
+          ],
+          "notes": "Capitán de la 5ª Compañía de los Ángeles Oscuros, primer Primaris en cruzar el Rubicón dentro de la Orden."
     },
+
     {
-      id: "sm_ancient_terminator",
-      name: "Anciano con Armadura de Exterminador",
-      originalName: "Ancient in Terminator Armour",
-      role: "Personaje / Soporte",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "PERSONAJE", "EXTERMINADOR", "PORTAESTANDARTE", "ALA DE MUERTE", "INFANTRY", "CHARACTER", "TERMINATOR", "ANCIENT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 5, sv: "2+", inv: "4++", h: 5, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 75 }],
-      rangedWeapons: [
-        { name: "Bólter de Asalto Tormenta", range: "24\"", a: 2, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Fuego Rápido 2"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de Energía", range: "Combate", a: 4, ws: "3+", f: 5, ap: -2, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Estandarte del Astartes: Suma +1 al Control de Objetivo (CO) de todas las miniaturas de su unidad."],
-      leaderOf: ["Escuadra de Exterminadores", "Escuadra de Exterminadores de Asalto", "Escuadra de Exterminadores del Ala de Muerte"],
-      notes: "Portador de los sagrados estandartes del Ala de Muerte."
+          "id": "da_deathwing_knights",
+          "name": "Caballeros del Ala de Muerte",
+          "originalName": "Deathwing Knights",
+          "role": "Élite / Infantería Pesada",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "EXTERMINADOR",
+                "ALA DE MUERTE",
+                "CABALLEROS",
+                "INFANTRY",
+                "TERMINATOR",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 6,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 4,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 235
+                }
+          ],
+          "rangedWeapons": [],
+          "meleeWeapons": [
+                {
+                      "name": "Maza de Absolución",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Espada de Reliquia (Gran Maestre)",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 7,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Golpes Letales",
+                            "Lethal Hits"
+                      ]
+                },
+                {
+                      "name": "Mangual de los No Perdonados",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 7,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Fortaleza del Círculo Interior: Reduce en 1 todo el daño sufrido (hasta un mínimo de 1).",
+                "Despliegue Rápido (Deep Strike)."
+          ],
+          "leaderOf": [],
+          "notes": "La élite suprema de combate cuerpo a cuerpo del Ala de Muerte con Mazas de Absolución."
     },
+
     {
-      id: "sm_bladeguard_ancient",
-      name: "Anciano de Ferreaguardia",
-      originalName: "Bladeguard Ancient",
-      role: "Personaje / Soporte",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "PERSONAJE", "PORTAESTANDARTE", "ALA DE MUERTE", "INFANTRY", "CHARACTER", "ANCIENT", "DEATHWING", "ADEPTUS ASTARTES", "TACTICUS", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "4++", h: 4, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 70 }],
-      rangedWeapons: [
-        { name: "Pistola Bólter Pesada", range: "18\"", a: 1, bs: "3+", f: 4, ap: -1, d: 1, keywords: ["Pistola"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada de Combate", range: "Combate", a: 4, ws: "3+", f: 5, ap: -2, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Estandarte de Ferreaguardia: Suma +1 a impactar en cuerpo a cuerpo a su unidad."],
-      leaderOf: ["Escuadra de Veteranos de Ferreaguardia", "Camaradas del Círculo Interior"],
-      notes: "Guardián de reliquias de la espada."
+          "id": "da_deathwing_terminator_squad",
+          "name": "Escuadra de Exterminadores del Ala de Muerte",
+          "originalName": "Deathwing Terminator Squad",
+          "role": "Infantería Pesada",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "EXTERMINADOR",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "TERMINATOR",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 190
+                },
+                {
+                      "models": 10,
+                      "points": 380
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter de Asalto Tormenta",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                },
+                {
+                      "name": "Cañón de Plasma (Sobrecargado)",
+                      "range": "36\"",
+                      "a": "D3",
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Área",
+                            "Peligrosa",
+                            "Blast",
+                            "Hazardous"
+                      ]
+                },
+                {
+                      "name": "Cañón de Asalto",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Lanzamisiles Ciclón",
+                      "range": "36\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -2,
+                      "d": "D6",
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Puño de Combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Arma de Energía",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": []
+                },
+                {
+                      "name": "Cuchillas Relámpago gemelas",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": [
+                            "Doble Enlace",
+                            "Twin-linked"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Despliegue Rápido (Deep Strike)",
+                "Vigilancia de Caliban: Ignora modificadores a la tirada para impactar y suma +1 al Control de Objetivo al mantener marcadores."
+          ],
+          "leaderOf": [],
+          "notes": "Veteranos de la 1ª Compañía equipados con cañones de plasma exclusivos de Caliban."
     },
+
     {
-      id: "sm_bladeguard_veterans",
-      name: "Escuadra de Veteranos de Ferreaguardia",
-      originalName: "Bladeguard Veteran Squad",
-      role: "Élite / Infantería",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "ALA DE MUERTE", "FERREAGUARDIA", "INFANTRY", "DEATHWING", "BLADEGUARD", "ADEPTUS ASTARTES", "TACTICUS", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "4++", h: 3, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 3, points: 90 },
-        { models: 6, points: 180 }
-      ],
-      rangedWeapons: [
-        { name: "Pistola Bólter Pesada", range: "18\"", a: 1, bs: "3+", f: 4, ap: -1, d: 1, keywords: ["Pistola"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada de Energía Maestra", range: "Combate", a: 4, ws: "3+", f: 5, ap: -2, d: 2, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Escudos Tormenta (4++ invulnerable)", "Espadachines Consumados: Repite tiradas de salvación de 1 en combate."],
-      leaderOf: [],
-      notes: "Veteranos con espadas maestras y escudos tormenta incorporados a la 1ª Compañía."
+          "id": "da_inner_circle_companions",
+          "name": "Camaradas del Círculo Interior",
+          "originalName": "Inner Circle Companions",
+          "role": "Élite / Guardia de Honor",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "ALA DE MUERTE",
+                "CÍRCULO INTERIOR",
+                "GUARDIA",
+                "INFANTRY",
+                "DEATHWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM",
+                "TACTICUS"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 90
+                },
+                {
+                      "models": 6,
+                      "points": 180
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Bólter Pesada",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Gran Espada de Caliban - Golpe",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Golpes Letales",
+                            "Lethal Hits"
+                      ]
+                },
+                {
+                      "name": "Gran Espada de Caliban - Barrido",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Impactos Sostenidos 1",
+                            "Sustained Hits 1"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Guardaespaldas del Círculo: Mientras un Personaje lidere esta unidad, los enemigos sufren -1 para impactarles en combate cuerpo a cuerpo."
+          ],
+          "leaderOf": [],
+          "notes": "Misteriosos guerreros encapuchados que custodian a los más altos dignatarios de la Orden."
     },
+
     {
-      id: "sm_sternguard_veterans",
-      name: "Escuadra de Veteranos de Retaguardia (Sternguard)",
-      originalName: "Sternguard Veteran Squad",
-      role: "Infantería / Disparo",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "ALA DE MUERTE", "RETAGUARDIA", "INFANTRY", "DEATHWING", "STERNGUARD", "ADEPTUS ASTARTES", "TACTICUS", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "-", h: 2, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 105 },
-        { models: 10, points: 210 }
-      ],
-      rangedWeapons: [
-        { name: "Rifle Bólter Sternguard", range: "24\"", a: 2, bs: "3+", f: 4, ap: -1, d: 1, keywords: ["Fuego Rápido 1", "Heridas Devastadoras", "Rapid Fire 1", "Devastating Wounds"] },
-        { name: "Bólter Pesado Sternguard", range: "36\"", a: 3, bs: "3+", f: 5, ap: -1, d: 2, keywords: ["Pesada", "Heridas Devastadoras", "Heavy", "Devastating Wounds"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de Combate", range: "Combate", a: 3, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Puntería de Veteranos: Repite tiradas para herir de 1 contra el Juramento de Momento."],
-      leaderOf: [],
-      notes: "Especialistas de tiro con munición artesanal integrada en la 1ª Compañía."
+          "id": "da_ravenwing_black_knights",
+          "name": "Caballero Negro del Ala de Cuervo",
+          "originalName": "Ravenwing Black Knights",
+          "role": "Ataque Rápido / Montado",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "ALA DE CUERVO",
+                "CABALLEROS NEGROS",
+                "MOUNTED",
+                "RAVENWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "5++",
+                "h": 3,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 85
+                },
+                {
+                      "models": 6,
+                      "points": 170
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Garras de Plasma (Sobrecargadas)",
+                      "range": "18\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Fuego Rápido 1",
+                            "Peligrosa",
+                            "Rapid Fire 1",
+                            "Hazardous"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Martillo Corvus",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Lanza",
+                            "Lance"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Jinetes de la Tormenta: Las armas cuerpo a cuerpo ganan [ANTI-MONSTRUO 4+] y [ANTI-VEHÍCULO 4+] tras cargar."
+          ],
+          "leaderOf": [],
+          "notes": "Élite montada de la 2ª Compañía armados con martillos Corvus y garras de plasma."
     },
+
     {
-      id: "sm_vanguard_veterans_jump",
-      name: "Escuadra de Veteranos de Vanguardia con Propulsores",
-      originalName: "Vanguard Veteran Squad With Jump Packs",
-      role: "Infantería Rápida / Asalto",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "VOLAR", "PROPULSOR DE SALTO", "ALA DE MUERTE", "INFANTRY", "FLY", "JUMP PACK", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 4, sv: "3+", inv: "4++", h: 2, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 110 },
-        { models: 10, points: 220 }
-      ],
-      rangedWeapons: [
-        { name: "Pistola Bólter", range: "12\"", a: 1, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Pistola"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de Vanguardia", range: "Combate", a: 4, ws: "3+", f: 5, ap: -1, d: 1, keywords: ["Golpes Letales", "Lethal Hits"] }
-      ],
-      abilities: ["Juramento de Momento", "Despliegue Rápido (Deep Strike)", "Asalto Aéreo: +1 a las tiradas de carga tras descender."],
-      leaderOf: [],
-      notes: "Veteranos aerotransportados con retrocohetes y escudos."
+          "id": "da_ravenwing_command_squad",
+          "name": "Escuadra de Mando del Ala de Cuervo",
+          "originalName": "Ravenwing Command Squad",
+          "role": "Montado / Mando",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "ALA DE CUERVO",
+                "MANDO",
+                "PERSONAJE",
+                "MOUNTED",
+                "RAVENWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM",
+                "CHARACTER"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "5++",
+                "h": 4,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 120
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Garra de Plasma – Estándar",
+                      "range": "18\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 7,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 1",
+                            "Rapid Fire 1"
+                      ]
+                },
+                {
+                      "name": "Garra de Plasma – Sobrecarga",
+                      "range": "18\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Fuego Rápido 1",
+                            "Rapid Fire 1",
+                            "Peligroso",
+                            "Hazardous"
+                      ]
+                },
+                {
+                      "name": "Lanzagranadas Astartes – Fragmentación",
+                      "range": "24\"",
+                      "a": "D3",
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Área",
+                            "Blast"
+                      ]
+                },
+                {
+                      "name": "Lanzagranadas Astartes – Perforante",
+                      "range": "24\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -2,
+                      "d": "D3",
+                      "keywords": []
+                },
+                {
+                      "name": "Pistola Bólter",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de Combate de Caballero Negro",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Arma de Energía Magistral (Campeón)",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Narthecium: Mientras esta unidad contenga un Boticario del Ala de Cuervo, en tu fase de mando puedes devolver 1 miniatura destruida a la unidad.",
+                "Estandarte del Ala de Cuervo: Suma +1 al Control de Objetivos (OC) de las miniaturas de la unidad.",
+                "Campeón del Ala de Cuervo: En la fase de combate, el Campeón tiene la habilidad [ATACA PRIMERO]."
+          ],
+          "leaderOf": [
+                "Caballero Negro del Ala de Cuervo",
+                "Escuadra de Batidores (Outriders)"
+          ],
+          "notes": "Compuesta por el Campeón, el Boticario y el Portaestandarte del Ala de Cuervo."
     },
+
     {
-      id: "sm_captain_bike",
-      name: "Capitán en Moto",
-      originalName: "Captain on Bike",
-      role: "Cuartel General / Montado",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "PERSONAJE", "CAPITÁN", "ALA DE CUERVO", "MOUNTED", "CHARACTER", "CAPTAIN", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "4++", h: 6, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 75 }],
-      rangedWeapons: [
-        { name: "Bólteres Gemelos de Moto", range: "24\"", a: 4, bs: "2+", f: 4, ap: 0, d: 1, keywords: ["Doble Enlace"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de Reliquia", range: "Combate", a: 6, ws: "2+", f: 6, ap: -2, d: 2, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Genio Rito de Batalla: -1 CP a estratagemas dirigidas a su escuadra."],
-      leaderOf: ["Caballero Negro del Ala de Cuervo", "Escuadra de Batidores (Outriders)"],
-      notes: "Líder de ataque rápido del Ala de Cuervo."
+          "id": "da_ravenwing_darkshroud",
+          "name": "Mortaja del Ala de Cuervo",
+          "originalName": "Ravenwing Darkshroud",
+          "role": "Vehículo de Apoyo",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "DESLIZADOR",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "HUMO",
+                "VEHICLE",
+                "SPEEDER",
+                "FLY",
+                "RAVENWING",
+                "SMOKE",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "14\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 10,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 80
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón de Asalto Pesado",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Manto de Tinieblas (Aura): Las unidades amigas a 6\" obtienen [SIGILO] (-1 a impactar para el atacante) y beneficio de cobertura."
+          ],
+          "leaderOf": [],
+          "notes": "Porta una antigua piedra reliquia de Caliban que emite un campo impenetrable de sombras protectoras."
     },
+
     {
-      id: "sm_chaplain_bike",
-      name: "Capellán en Moto",
-      originalName: "Chaplain On Bike",
-      role: "Cuartel General / Montado",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "PERSONAJE", "CAPELLÁN", "ALA DE CUERVO", "MOUNTED", "CHARACTER", "CHAPLAIN", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "4++", h: 6, l: "5+", co: 2 },
-      pointsOptions: [{ models: 1, points: 75 }],
-      rangedWeapons: [
-        { name: "Bólteres Gemelos de Moto", range: "24\"", a: 4, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Doble Enlace"] }
-      ],
-      meleeWeapons: [
-        { name: "Crozius Arcanum", range: "Combate", a: 5, ws: "2+", f: 6, ap: -1, d: 2, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Exhortación a la Carga: Suma +1 a la Fuerza y tiradas para herir de su unidad montada al cargar."],
-      leaderOf: ["Caballero Negro del Ala de Cuervo", "Escuadra de Batidores (Outriders)"],
-      notes: "Predicador marcial del Ala de Cuervo."
+          "id": "da_land_speeder_vengeance",
+          "name": "Land Speeder Venganza",
+          "originalName": "Land Speeder Vengeance",
+          "role": "Vehículo Pesado / Artillería Móvil",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "DESLIZADOR",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "VEHICLE",
+                "SPEEDER",
+                "FLY",
+                "RAVENWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "14\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "5++",
+                "h": 10,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 140
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Batería de Tormenta de Plasma (Sobrecargada)",
+                      "range": "36\"",
+                      "a": "D6+3",
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -3,
+                      "d": 3,
+                      "keywords": [
+                            "Área",
+                            "Peligrosa",
+                            "Blast",
+                            "Hazardous"
+                      ]
+                },
+                {
+                      "name": "Cañón de Asalto Pesado",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Furia Castigadora: Repite tiradas de daño de 1 con la Batería de Tormenta de Plasma."
+          ],
+          "leaderOf": [],
+          "notes": "El mayor deslizador de combate del Ala de Cuervo dotado de devastadora potencia de plasma."
     },
+
     {
-      id: "sm_outriders",
-      name: "Escuadra de Batidores (Outriders)",
-      originalName: "Outrider Squad",
-      role: "Ataque Rápido / Montado",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "ALA DE CUERVO", "LÍNEA", "MOUNTED", "RAVENWING", "BATTLELINE", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "-", h: 4, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 3, points: 80 },
-        { models: 6, points: 160 }
-      ],
-      rangedWeapons: [
-        { name: "Bólteres Gemelos de Moto", range: "24\"", a: 4, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Doble Enlace", "Twin-linked"] }
-      ],
-      meleeWeapons: [
-        { name: "Espadas Sierra Astartes", range: "Combate", a: 4, ws: "3+", f: 4, ap: -1, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Avance Turbocargado: Al avanzar, añade 6\" automáticos en lugar de tirar dado."],
-      leaderOf: [],
-      notes: "Motos de intercepción veloz del Ala de Cuervo (Línea de Batalla en destacamentos de Alas)."
+          "id": "da_nephilim_jetfighter",
+          "name": "Caza Nephilim",
+          "originalName": "Nephilim Jetfighter",
+          "role": "Aeronave / Interceptor",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "AERONAVE",
+                "VEHÍCULO",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "AIRCRAFT",
+                "VEHICLE",
+                "FLY",
+                "RAVENWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "20+\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 11,
+                "l": "6+",
+                "co": 0
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 200
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Megabolter Vengador",
+                      "range": "36\"",
+                      "a": 10,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Lanza Láser Gemela",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": [
+                            "Doble Enlace",
+                            "Twin-linked"
+                      ]
+                },
+                {
+                      "name": "Misiles Blacksword",
+                      "range": "36\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": "D6",
+                      "keywords": [
+                            "Anti-Aeronave 2+",
+                            "Anti-Fly 2+"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Blindaje de Combate (Armoured hull)",
+                      "range": "Melee",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Supremacía Aérea: Suma +1 a impactar contra objetivos que tengan la clave VOLAR."
+          ],
+          "leaderOf": [],
+          "notes": "Caza interceptor de alta velocidad para erradicar amenazas aéreas enemigas."
     },
+
     {
-      id: "sm_invader_atv",
-      name: "Quads Invader (ATV)",
-      originalName: "Invader ATVs",
-      role: "Montado / Apoyo Ligero",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "ALA DE CUERVO", "MOUNTED", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "3+", inv: "-", h: 8, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 1, points: 65 },
-        { models: 2, points: 130 }
-      ],
-      rangedWeapons: [
-        { name: "Cañón Multifuón", range: "18\"", a: 2, bs: "3+", f: 9, ap: -4, d: "D6", keywords: ["Fusión 2", "Melta 2"] },
-        { name: "Cañón Gatling Onslaught", range: "24\"", a: 8, bs: "3+", f: 5, ap: 0, d: 1, keywords: ["Heridas Devastadoras"] }
-      ],
-      meleeWeapons: [
-        { name: "Ruedas Pesadas", range: "Combate", a: 3, ws: "4+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Fuego de Cobertura Retributivo: Puede disparar en respuesta si una unidad amiga a 6\" es atacada."],
-      leaderOf: [],
-      notes: "Vehículo todoterreno de fuego de apoyo del Ala de Cuervo."
+          "id": "da_dark_talon",
+          "name": "Espolón del Ala de Cuervo (Dark Talon)",
+          "originalName": "Ravenwing Dark Talon",
+          "role": "Aeronave / Bombardero",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "AERONAVE",
+                "VEHÍCULO",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "AIRCRAFT",
+                "VEHICLE",
+                "FLY",
+                "RAVENWING",
+                "DARK ANGELS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "20+\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 11,
+                "l": "6+",
+                "co": 0
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 190
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Rift del Vacío (Rift Cannon)",
+                      "range": "18\"",
+                      "a": "D3",
+                      "bs": "3+",
+                      "f": 16,
+                      "ap": -4,
+                      "d": "D6+1",
+                      "keywords": [
+                            "Área",
+                            "Heridas Devastadoras",
+                            "Blast",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Bólteres Huracán gemelos",
+                      "range": "24\"",
+                      "a": 12,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Doble Enlace",
+                            "Twin-linked"
+                      ]
+                }
+          ],
+          "meleeWeapons": [],
+          "abilities": [
+                "Juramento de Momento",
+                "Bomba de Estasis: Una vez por batalla, lanza una bomba sobre una unidad enemiga causando heridas mortales y reduciendo su movimiento."
+          ],
+          "leaderOf": [],
+          "notes": "Aeronave equipada con el Cañón Rift, capaz de abrir microfisuras en la disformidad."
     },
+
     {
-      id: "sm_scout_bikes",
-      name: "Escuadra de Batidores en Moto",
-      originalName: "Scout Bike Squad",
-      role: "Montado / Explorador",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["MONTADO", "ALA DE CUERVO", "EXPLORADOR", "MOUNTED", "RAVENWING", "SCOUT", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "12\"", r: 5, sv: "4+", inv: "-", h: 3, l: "6+", co: 1 },
-      pointsOptions: [{ models: 3, points: 70 }],
-      rangedWeapons: [
-        { name: "Escopeta Astartes", range: "18\"", a: 2, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Asalto"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de Combate", range: "Combate", a: 2, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Exploradores 9\" (Scouts 9\")."],
-      leaderOf: [],
-      notes: "Pioneros del Ala de Cuervo en reconocimiento avanzado."
+          "id": "sm_terminator_squad",
+          "name": "Escuadra de Exterminadores",
+          "originalName": "Terminator Squad",
+          "role": "Infantería Pesada",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "EXTERMINADOR",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "TERMINATOR",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 190
+                },
+                {
+                      "models": 10,
+                      "points": 380
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter de Asalto Tormenta",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                },
+                {
+                      "name": "Cañón de Asalto",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Puño de Combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Arma de Energía",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Despliegue Rápido (Deep Strike)",
+                "Furia Teleportada: Repite tiradas para impactar de 1 contra el Juramento."
+          ],
+          "leaderOf": [],
+          "notes": "Escuadra estándar de Exterminadores de la 1.ª Compañía del Ala de Muerte."
     },
+
     {
-      id: "sm_storm_speeder_thunderstrike",
-      name: "Storm Speeder Atronador",
-      originalName: "Storm Speeder Thunderstrike",
-      role: "Vehículo / Cazador de Blindados",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "DESLIZADOR", "VOLAR", "ALA DE CUERVO", "VEHICLE", "SPEEDER", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "14\"", r: 8, sv: "3+", inv: "-", h: 11, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 140 }],
-      rangedWeapons: [
-        { name: "Láser Cazador Stormstrike", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] },
-        { name: "Lanzamisiles de Doble Icarus", range: "48\"", a: 4, bs: "3+", f: 8, ap: -1, d: 2, keywords: ["Anti-Aeronave 2+"] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida", range: "Combate", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Designador de Blancos de Impacto: Los aliados que disparen a un objetivo impactado por este speeder obtienen +1 para herir contra Monstruos o Vehículos."],
-      leaderOf: [],
-      notes: "Deslizador pesado con láser de alto calibre del Ala de Cuervo."
+          "id": "sm_terminator_assault_squad",
+          "name": "Escuadra de Exterminadores de Asalto",
+          "originalName": "Terminator Assault Squad",
+          "role": "Infantería Pesada / Asalto",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "EXTERMINADOR",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "TERMINATOR",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 6,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 170
+                },
+                {
+                      "models": 10,
+                      "points": 340
+                }
+          ],
+          "rangedWeapons": [],
+          "meleeWeapons": [
+                {
+                      "name": "Martillo de Trueno y Escudo Tormenta",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 3,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Cuchillas Relámpago gemelas",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": [
+                            "Doble Enlace",
+                            "Twin-linked"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Despliegue Rápido (Deep Strike)",
+                "Escudo Tormenta: Otorga 4 Heridas por modelo (H4)."
+          ],
+          "leaderOf": [],
+          "notes": "Especialistas de choque cuerpo a cuerpo con martillos de trueno y escudos de asedio."
     },
+
     {
-      id: "sm_storm_speeder_hailstrike",
-      name: "Storm Speeder Granizador",
-      originalName: "Storm Speeder Hailstrike",
-      role: "Vehículo / Supresión Ligera",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "DESLIZADOR", "VOLAR", "ALA DE CUERVO", "VEHICLE", "SPEEDER", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "14\"", r: 8, sv: "3+", inv: "-", h: 11, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 110 }],
-      rangedWeapons: [
-        { name: "Cañón Gatling Onslaught Pesado", range: "36\"", a: 12, bs: "3+", f: 6, ap: -1, d: 1, keywords: [] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida", range: "Combate", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Fuego de Supresión: Concede +1 FP a las unidades amigas que disparen al objetivo alcanzado."],
-      leaderOf: [],
-      notes: "Deslizador de saturación de infantería."
+          "id": "sm_captain_terminator",
+          "name": "Capitán con Armadura de Exterminador",
+          "originalName": "Captain in Terminator Armour",
+          "role": "Cuartel General / Personaje",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "EXTERMINADOR",
+                "CAPITÁN",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "CHARACTER",
+                "TERMINATOR",
+                "CAPTAIN",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 6,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 95
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter de Asalto",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                },
+                {
+                      "name": "Arma Combinada",
+                      "range": "24\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Anti-Infantería 4+",
+                            "Anti-Infantry 4+",
+                            "Heridas Devastadoras",
+                            "Devastating Wounds",
+                            "Fuego Rápido 1",
+                            "Rapid Fire 1"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma Reliquia",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Puño Reliquia",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Despliegue Rápido, Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Ritos de Batalla: Una vez por ronda de batalla, una unidad con esta habilidad puede reducir el coste de una Estratagema con la que sea seleccionada en 1 CP.",
+                "Carga Temeraria: Puedes repetir las tiradas de Carga realizadas para la unidad de este modelo."
+          ],
+          "leaderOf": [
+                "Escuadra de Exterminadores del Ala de Muerte",
+                "Caballeros del Ala de Muerte",
+                "Escuadra de Exterminadores",
+                "Escuadra de Exterminadores de Asalto"
+          ],
+          "notes": "Veterano oficial protegido por armadura táctica Dreadnought con halo de hierro integrado."
     },
+
     {
-      id: "sm_storm_speeder_hammerstrike",
-      name: "Storm Speeder Martillador",
-      originalName: "Storm Speeder Hammerstrike",
-      role: "Vehículo / Destructor de Búnkeres",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "DESLIZADOR", "VOLAR", "ALA DE CUERVO", "VEHICLE", "SPEEDER", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "14\"", r: 8, sv: "3+", inv: "-", h: 11, l: "6+", co: 2 },
-      pointsOptions: [{ models: 1, points: 125 }],
-      rangedWeapons: [
-        { name: "Lanzador de Fusión Hammerstrike", range: "18\"", a: 3, bs: "3+", f: 9, ap: -4, d: "D6", keywords: ["Fusión 2"] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida", range: "Combate", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Rompefortalezas: Niega el beneficio de cobertura al blanco."],
-      leaderOf: [],
-      notes: "Deslizador de demolición a corta distancia."
+          "id": "sm_chaplain_terminator",
+          "name": "Capellán con Armadura de Exterminador",
+          "originalName": "Chaplain in Terminator Armour",
+          "role": "Cuartel General / Personaje",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "EXTERMINADOR",
+                "CAPELLÁN",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "CHARACTER",
+                "TERMINATOR",
+                "CHAPLAIN",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 5,
+                "l": "5+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 75
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter de Asalto",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Crozius Arcanum",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Despliegue Rápido, Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Letanía de Odio: Mientras lidere una unidad, cada vez que una miniatura realice un ataque cuerpo a cuerpo, suma +1 a la tirada para Herir.",
+                "Fervor Inquebrantable: Las miniaturas de la unidad de este modelo tienen No Hay Dolor 4+++ contra heridas mortales.",
+                "Escudo Reliquia (Opcional): Si equipa un Escudo Reliquia, su atributo de Heridas pasa a ser 6."
+          ],
+          "leaderOf": [
+                "Escuadra de Exterminadores del Ala de Muerte",
+                "Caballeros del Ala de Muerte",
+                "Escuadra de Exterminadores",
+                "Escuadra de Exterminadores de Asalto"
+          ],
+          "notes": "Líder espiritual y guerrero implacable que inspira a sus hermanos exterminadores al combate sagrado."
     },
+
     {
-      id: "sm_brutalis_dreadnought",
-      name: "Dreadnought Brutalis",
-      originalName: "Brutalis Dreadnought",
-      role: "Bípode / Choque Frontal",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "BÍPODE", "DREADNOUGHT", "ALA DE MUERTE", "VEHICLE", "WALKER", "DREADNOUGHT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "8\"", r: 10, sv: "2+", inv: "-", h: 12, l: "6+", co: 4 },
-      pointsOptions: [{ models: 1, points: 160 }],
-      rangedWeapons: [
-        { name: "Cañones Gatling pesados gemelos", range: "24\"", a: 10, bs: "3+", f: 6, ap: 0, d: 1, keywords: [] },
-        { name: "Rifles Multifuón gemelos", range: "18\"", a: 2, bs: "3+", f: 9, ap: -4, d: "D6", keywords: ["Fusión 2"] }
-      ],
-      meleeWeapons: [
-        { name: "Garras Brutalis - Golpe desgarrador", range: "Combate", a: 6, ws: "3+", f: 12, ap: -2, d: 3, keywords: ["Golpes Letales"] },
-        { name: "Garras Brutalis - Barrido", range: "Combate", a: 10, ws: "3+", f: 7, ap: -2, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Carga Brutal: Al completar una carga inflige heridas mortales masivas con tirada de dado."],
-      leaderOf: [],
-      notes: "El temible Dreadnought de asalto de corta distancia de la 1ª Compañía."
+          "id": "sm_librarian_terminator",
+          "name": "Bibliotecario con Armadura de Exterminador",
+          "originalName": "Librarian in Terminator Armour",
+          "role": "Cuartel General / Psíquico",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "EXTERMINADOR",
+                "PSÍQUICO",
+                "BIBLIOTECARIO",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "CHARACTER",
+                "TERMINATOR",
+                "PSYKER",
+                "LIBRARIAN",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 5,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 75
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Castigo – Fuego Brujo (Smite – witchfire)",
+                      "range": "24\"",
+                      "a": "D6",
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": "D3",
+                      "keywords": [
+                            "Psíquico",
+                            "Psyker"
+                      ]
+                },
+                {
+                      "name": "Castigo – Fuego Brujo Concentrado",
+                      "range": "24\"",
+                      "a": "D6",
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": -2,
+                      "d": "D3",
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds",
+                            "Peligroso",
+                            "Hazardous",
+                            "Psíquico",
+                            "Psyker"
+                      ]
+                },
+                {
+                      "name": "Bólter de Asalto",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                },
+                {
+                      "name": "Arma Combinada",
+                      "range": "24\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Anti-Infantería 4+",
+                            "Anti-Infantry 4+",
+                            "Heridas Devastadoras",
+                            "Devastating Wounds",
+                            "Fuego Rápido 1",
+                            "Rapid Fire 1"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de Fuerza",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 6,
+                      "ap": -1,
+                      "d": "D3",
+                      "keywords": [
+                            "Psíquico",
+                            "Psyker"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Despliegue Rápido, Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Capucha Psíquica: Mientras lidere una unidad, las miniaturas de dicha unidad tienen No Hay Dolor 4+++ contra Ataques Psíquicos.",
+                "Celo Velado: Mientras lidere una unidad, las armas equipadas por las miniaturas de la unidad tienen la habilidad [IMPACTOS SOSTENIDOS 1]."
+          ],
+          "leaderOf": [
+                "Escuadra de Exterminadores del Ala de Muerte",
+                "Caballeros del Ala de Muerte",
+                "Escuadra de Exterminadores",
+                "Escuadra de Exterminadores de Asalto"
+          ],
+          "notes": "Canaliza las tormentas del Immaterium protegido por su servoarmadura blindada y capucha psíquica."
     },
+
     {
-      id: "sm_ballistus_dreadnought",
-      name: "Dreadnought Ballistus",
-      originalName: "Ballistus Dreadnought",
-      role: "Bípode / Apoyo Pesado",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "BÍPODE", "DREADNOUGHT", "ALA DE MUERTE", "VEHICLE", "WALKER", "DREADNOUGHT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "8\"", r: 10, sv: "2+", inv: "-", h: 12, l: "6+", co: 4 },
-      pointsOptions: [{ models: 1, points: 150 }],
-      rangedWeapons: [
-        { name: "Cañón láser Ballistus", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] },
-        { name: "Lanzamisiles Ballistus (Perforante)", range: "48\"", a: 2, bs: "3+", f: 9, ap: -2, d: "D6", keywords: [] },
-        { name: "Lanzamisiles Ballistus (Fragmentación)", range: "48\"", a: "2D6", bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Área"] }
-      ],
-      meleeWeapons: [
-        { name: "Pies Acorazados", range: "Combate", a: 5, ws: "4+", f: 7, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Fuego de Precisión Ballistus: Repite tiradas para impactar contra objetivos que no estén por debajo de la mitad de su fuerza."],
-      leaderOf: [],
-      notes: "Plataforma de artillería andante de largo alcance del Ala de Muerte."
+          "id": "sm_ancient_terminator",
+          "name": "Anciano con Armadura de Exterminador",
+          "originalName": "Ancient in Terminator Armour",
+          "role": "Personaje / Soporte",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "EXTERMINADOR",
+                "PORTAESTANDARTE",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "CHARACTER",
+                "TERMINATOR",
+                "ANCIENT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 5,
+                "sv": "2+",
+                "inv": "4++",
+                "h": 5,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 75
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter de Asalto",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Puño de Combate",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Cuchilla Sierra (Chainfist)",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Anti-Vehículo 3+",
+                            "Anti-Vehicle 3+"
+                      ]
+                },
+                {
+                      "name": "Martillo de Trueno",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Cuchillas Relámpago Acopladas",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": [
+                            "Acoplada",
+                            "Twin-linked"
+                      ]
+                },
+                {
+                      "name": "Arma de Energía",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Despliegue Rápido, Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Estandarte Astartes: Mientras lidere una unidad, añade +1 al Control de Objetivos (OC) de las miniaturas de la unidad.",
+                "Líder Secundario: Puedes adjuntar este modelo a una unidad de Exterminadores incluso si ya tiene un CAPITÁN o CAPELLÁN adjunto.",
+                "Escudo Tormenta de Exterminador (Opcional): Si equipa un Escudo Tormenta, su atributo de Heridas pasa a ser 6."
+          ],
+          "leaderOf": [
+                "Escuadra de Exterminadores del Ala de Muerte",
+                "Caballeros del Ala de Muerte",
+                "Escuadra de Exterminadores",
+                "Escuadra de Exterminadores de Asalto"
+          ],
+          "notes": "Guardián de las sagradas enseñas del Ala de Muerte. Eleva la moral de los veteranos en los puntos críticos."
     },
+
     {
-      id: "sm_redemptor_dreadnought",
-      name: "Dreadnought Redentor",
-      originalName: "Redemptor Dreadnought",
-      role: "Bípode / Asedio",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "BÍPODE", "DREADNOUGHT", "ALA DE MUERTE", "VEHICLE", "WALKER", "DREADNOUGHT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "8\"", r: 10, sv: "2+", inv: "-", h: 12, l: "6+", co: 4 },
-      pointsOptions: [{ models: 1, points: 170 }],
-      rangedWeapons: [
-        { name: "Macro Incinerador de Plasma (Sobrecargado)", range: "36\"", a: "D6+1", bs: "3+", f: 9, ap: -4, d: 3, keywords: ["Área", "Peligrosa", "Blast", "Hazardous"] },
-        { name: "Cañón Gatling pesado Onslaught", range: "36\"", a: 8, bs: "3+", f: 6, ap: -1, d: 1, keywords: ["Heridas Devastadoras"] }
-      ],
-      meleeWeapons: [
-        { name: "Puño Redemptor", range: "Combate", a: 5, ws: "3+", f: 12, ap: -2, d: "D6+1", keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Blindaje Reforzado: Reduce en 1 todo el daño sufrido (mínimo 1)."],
-      leaderOf: [],
-      notes: "El dreadnought multipropósito por excelencia, veterano de la 1ª Compañía."
+          "id": "sm_bladeguard_ancient",
+          "name": "Anciano de Ferreaguardia",
+          "originalName": "Bladeguard Ancient",
+          "role": "Personaje / Soporte",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "PERSONAJE",
+                "PORTAESTANDARTE",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "CHARACTER",
+                "ANCIENT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "TACTICUS",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 4,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 45
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Bólter Pesada",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de Combate Cuerpo a Cuerpo",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Estandarte Astartes: Mientras lidere una unidad, añade +1 al Control de Objetivos (OC) de las miniaturas de la unidad.",
+                "Ira del Estandarte: Una vez por batalla, al inicio de la fase de combate, las armas cuerpo a cuerpo de las miniaturas de su unidad obtienen +1 al atributo de Ataques hasta el final de la fase.",
+                "Líder Secundario: Puede unirse a la Escuadra de Veteranos de Ferreaguardia incluso si ya tiene un CAPITÁN o TENIENTE adjunto."
+          ],
+          "leaderOf": [
+                "Escuadra de Veteranos de Ferreaguardia"
+          ],
+          "notes": "Veterano del Círculo Interior que porta un estandarte de batalla glorioso para alentar a la Ferreaguardia."
     },
+
     {
-      id: "sm_dreadnought",
-      name: "Dreadnought Clásico / Venerable",
-      originalName: "Dreadnought",
-      role: "Bípode / Soporte",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "BÍPODE", "DREADNOUGHT", "ALA DE MUERTE", "VEHICLE", "WALKER", "DREADNOUGHT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 9, sv: "2+", inv: "-", h: 8, l: "6+", co: 3 },
-      pointsOptions: [{ models: 1, points: 135 }],
-      rangedWeapons: [
-        { name: "Cañón Láser Doble", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] }
-      ],
-      meleeWeapons: [
-        { name: "Puño Dreadnought", range: "Combate", a: 5, ws: "3+", f: 10, ap: -2, d: 3, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Sabiduría de los Antiguos (Aura): Unidades de infantería a 6\" repiten tiradas de 1 para impactar y herir."],
-      leaderOf: [],
-      notes: "Casta venerable de antiguos héroes del Capítulo."
+          "id": "sm_bladeguard_veterans",
+          "name": "Escuadra de Veteranos de Ferreaguardia",
+          "originalName": "Bladeguard Veteran Squad",
+          "role": "Élite / Infantería",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "ALA DE MUERTE",
+                "FERREAGUARDIA",
+                "INFANTRY",
+                "DEATHWING",
+                "BLADEGUARD",
+                "ADEPTUS ASTARTES",
+                "TACTICUS",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 90
+                },
+                {
+                      "models": 6,
+                      "points": 180
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Bólter Pesada",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Espada de Energía Maestra",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Escudos Tormenta (4++ invulnerable)",
+                "Espadachines Consumados: Repite tiradas de salvación de 1 en combate."
+          ],
+          "leaderOf": [],
+          "notes": "Veteranos con espadas maestras y escudos tormenta incorporados a la 1ª Compañía."
     },
+
     {
-      id: "sm_venerable_dreadnought",
-      name: "Dreadnought Venerable",
-      originalName: "Venerable Dreadnought",
-      role: "Bípode / Soporte Veterano",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "BÍPODE", "DREADNOUGHT", "ALA DE MUERTE", "VEHICLE", "WALKER", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 9, sv: "2+", inv: "-", h: 8, l: "6+", co: 3 },
-      pointsOptions: [{ models: 1, points: 135 }],
-      rangedWeapons: [
-        { name: "Cañón Láser Doble", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] }
-      ],
-      meleeWeapons: [
-        { name: "Puño Dreadnought Acorazado", range: "Combate", a: 5, ws: "3+", f: 10, ap: -2, d: 3, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Resolución Venerable: No Hay Dolor 6+ y aura de repetición de tiradas de 1."],
-      leaderOf: [],
-      notes: "Casta venerable de antiguos héroes del Capítulo."
+          "id": "sm_sternguard_veterans",
+          "name": "Escuadra de Veteranos de Retaguardia (Sternguard)",
+          "originalName": "Sternguard Veteran Squad",
+          "role": "Infantería / Disparo",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "ALA DE MUERTE",
+                "RETAGUARDIA",
+                "INFANTRY",
+                "DEATHWING",
+                "STERNGUARD",
+                "ADEPTUS ASTARTES",
+                "TACTICUS",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "-",
+                "h": 2,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 105
+                },
+                {
+                      "models": 10,
+                      "points": 210
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Rifle Bólter Sternguard",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 1",
+                            "Heridas Devastadoras",
+                            "Rapid Fire 1",
+                            "Devastating Wounds"
+                      ]
+                },
+                {
+                      "name": "Bólter Pesado Sternguard",
+                      "range": "36\"",
+                      "a": 3,
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Pesada",
+                            "Heridas Devastadoras",
+                            "Heavy",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de Combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Puntería de Veteranos: Repite tiradas para herir de 1 contra el Juramento de Momento."
+          ],
+          "leaderOf": [],
+          "notes": "Especialistas de tiro con munición artesanal integrada en la 1ª Compañía."
     },
+
     {
-      id: "sm_thunderhawk_gunship",
-      name: "Cañonera Thunderhawk",
-      originalName: "Thunderhawk Gunship",
-      role: "Titánico / Aeronave Pesada",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["TITÁNICO", "AERONAVE", "VEHÍCULO", "TRANSPORTE", "VOLAR", "ALA DE CUERVO", "TITANIC", "AIRCRAFT", "VEHICLE", "TRANSPORT", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "20+\"", r: 12, sv: "2+", inv: "-", h: 30, l: "6+", co: 0 },
-      pointsOptions: [{ models: 1, points: 850 }],
-      rangedWeapons: [
-        { name: "Cañón Turbo-láser", range: "96\"", a: "D3+1", bs: "3+", f: 20, ap: -4, d: "D6+6", keywords: ["Área", "Blast"] },
-        { name: "Cañones Láser pesados (x2)", range: "48\"", a: 4, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] },
-        { name: "Bólteres Pesados dobles (x4)", range: "36\"", a: 12, bs: "3+", f: 5, ap: -1, d: 2, keywords: [] }
-      ],
-      meleeWeapons: [],
-      abilities: ["Juramento de Momento", "Supremacía Titánica: Capacidad de transporte de 32 miniaturas o hasta 3 Dreadnoughts."],
-      leaderOf: [],
-      notes: "Superpesado titánico aerotransportado del Capítulo."
+          "id": "sm_vanguard_veterans_jump",
+          "name": "Escuadra de Veteranos de Vanguardia con Propulsores",
+          "originalName": "Vanguard Veteran Squad With Jump Packs",
+          "role": "Infantería Rápida / Asalto",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "VOLAR",
+                "PROPULSOR DE SALTO",
+                "ALA DE MUERTE",
+                "INFANTRY",
+                "FLY",
+                "JUMP PACK",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 2,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 110
+                },
+                {
+                      "models": 10,
+                      "points": 220
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Bólter",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de Vanguardia",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Golpes Letales",
+                            "Lethal Hits"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Despliegue Rápido (Deep Strike)",
+                "Asalto Aéreo: +1 a las tiradas de carga tras descender."
+          ],
+          "leaderOf": [],
+          "notes": "Veteranos aerotransportados con retrocohetes y escudos."
     },
+
     {
-      id: "sm_land_raider_standard",
-      name: "Land Raider",
-      originalName: "Land Raider",
-      role: "Vehículo / Transporte Blindado",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "HUMO", "TRANSPORTE", "ALA DE MUERTE", "VEHICLE", "SMOKE", "TRANSPORT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "10\"", r: 12, sv: "2+", inv: "-", h: 16, l: "6+", co: 5 },
-      pointsOptions: [{ models: 1, points: 245 }],
-      rangedWeapons: [
-        { name: "Cañón Láser Doble Godhammer (x2)", range: "48\"", a: 4, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] },
-        { name: "Bólter Pesado gemelo", range: "36\"", a: 3, bs: "3+", f: 5, ap: -1, d: 2, keywords: ["Doble Enlace"] }
-      ],
-      meleeWeapons: [
-        { name: "Orugas Acorazadas", range: "Combate", a: 6, ws: "4+", f: 8, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Rampa de Asalto (Assault Ramp): Las unidades que desembarquen tras un movimiento normal pueden declarar una carga.", "Capacidad: 12 miniaturas."],
-      leaderOf: [],
-      notes: "El vehículo de asedio y transporte definitivo del Ala de Muerte con cañones láser Godhammer."
+          "id": "sm_captain_bike",
+          "name": "Capitán en Moto",
+          "originalName": "Captain on Bike",
+          "role": "Cuartel General / Montado (Legends)",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "PERSONAJE",
+                "CAPITÁN",
+                "ALA DE CUERVO",
+                "LEGENDS",
+                "MOUNTED",
+                "CHARACTER",
+                "CAPTAIN",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 6,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 95
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólter Acoplado",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Acoplada",
+                            "Twin-linked"
+                      ]
+                },
+                {
+                      "name": "Pistola Bólter",
+                      "range": "12\"",
+                      "a": 1,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                },
+                {
+                      "name": "Bólter de Asalto",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "2+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Fuego Rápido 2",
+                            "Rapid Fire 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Espada Sierra Astartes",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": []
+                },
+                {
+                      "name": "Arma Reliquia",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "2+",
+                      "f": 5,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Puño de Combate",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": []
+                },
+                {
+                      "name": "Martillo de Trueno",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 8,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Heridas Devastadoras",
+                            "Devastating Wounds"
+                      ]
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Asalto Veloz: Mientras este modelo lidere una unidad, las armas de disparo equipadas por las miniaturas de dicha unidad tienen la habilidad [ASALTO].",
+                "Ritos de Batalla: Una vez por ronda de batalla, una unidad con esta habilidad puede reducir el coste de una Estratagema con la que sea seleccionada en 1 CP.",
+                "Escudo Reliquia (Opcional): El portador tiene una característica de Heridas de 7."
+          ],
+          "leaderOf": [
+                "Escuadra de Batidores (Outriders)",
+                "Caballero Negro del Ala de Cuervo"
+          ],
+          "notes": "Comandante de vanguardia montado del Ala de Cuervo (Ficha de reglas oficiales Legends)."
     },
+
     {
-      id: "sm_land_raider_crusader",
-      name: "Land Raider Cruzado",
-      originalName: "Land Raider Crusader",
-      role: "Vehículo / Transporte de Asalto",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "HUMO", "TRANSPORTE", "ALA DE MUERTE", "EXPLOSIVOS", "VEHICLE", "SMOKE", "TRANSPORT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "10\"", r: 12, sv: "2+", inv: "-", h: 16, l: "6+", co: 5 },
-      pointsOptions: [{ models: 1, points: 230 }],
-      rangedWeapons: [
-        { name: "Bólteres Huracán gemelos (x2)", range: "24\"", a: 24, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Doble Enlace", "Twin-linked"] },
-        { name: "Cañón de Asalto gemelo", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras"] }
-      ],
-      meleeWeapons: [
-        { name: "Orugas Acorazadas", range: "Combate", a: 6, ws: "4+", f: 8, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Rampa de Asalto (Assault Ramp): Desembarco y carga en el mismo turno.", "Capacidad: 16 miniaturas de infantería o 8 Exterminadores."],
-      leaderOf: [],
-      notes: "Variante creada expresamente para asaltar con escuadras masivas de Exterminadores."
+          "id": "sm_chaplain_bike",
+          "name": "Capellán en Moto",
+          "originalName": "Chaplain on Bike",
+          "role": "Cuartel General / Montado",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "PERSONAJE",
+                "CAPELLÁN",
+                "ALA DE CUERVO",
+                "MOUNTED",
+                "CHARACTER",
+                "CHAPLAIN",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "4++",
+                "h": 5,
+                "l": "5+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 75
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Rifle Bólter Acoplado",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Acoplada",
+                            "Twin-linked"
+                      ]
+                },
+                {
+                      "name": "Pistola Bólter Absolvor",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Crozius Arcanum",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "2+",
+                      "f": 6,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Reglas Básicas: Líder",
+                "Regla de Facción: Juramento del Momento",
+                "Letanía de Odio: Mientras lidere una unidad, cada vez que una miniatura de la unidad realice un ataque cuerpo a cuerpo, suma +1 a la tirada para Herir.",
+                "Fervor Marcial: Las miniaturas de la unidad de este modelo tienen No Hay Dolor 4+++ contra heridas mortales."
+          ],
+          "leaderOf": [
+                "Escuadra de Batidores (Outriders)",
+                "Caballero Negro del Ala de Cuervo"
+          ],
+          "notes": "Capellán montado en moto todoterreno Raider, liderando a las fuerzas móviles del Ala de Cuervo."
     },
+
     {
-      id: "sm_land_raider_redeemer",
-      name: "Land Raider Redentor",
-      originalName: "Land Raider Redeemer",
-      role: "Vehículo / Transporte Flamígero",
-      wing: "Ala de Muerte",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "HUMO", "TRANSPORTE", "ALA DE MUERTE", "VEHICLE", "SMOKE", "TRANSPORT", "DEATHWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "10\"", r: 12, sv: "2+", inv: "-", h: 16, l: "6+", co: 5 },
-      pointsOptions: [{ models: 1, points: 245 }],
-      rangedWeapons: [
-        { name: "Cañones Tormenta Flamestorm (x2)", range: "12\"", a: "2D6+6", bs: "N/A", f: 6, ap: -2, d: 2, keywords: ["Torrente", "Ignora Cobertura", "Torrent", "Ignores Cover"] },
-        { name: "Cañón de Asalto gemelo", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras"] }
-      ],
-      meleeWeapons: [
-        { name: "Orugas Acorazadas", range: "Combate", a: 6, ws: "4+", f: 8, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Rampa de Asalto: Desembarca y carga de forma inmediata.", "Capacidad: 14 miniaturas."],
-      leaderOf: [],
-      notes: "El destructor de trincheras definitivo con lanzallamas de plasma pesado."
+          "id": "sm_outriders",
+          "name": "Escuadra de Batidores (Outriders)",
+          "originalName": "Outrider Squad",
+          "role": "Ataque Rápido / Montado",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "ALA DE CUERVO",
+                "LÍNEA",
+                "MOUNTED",
+                "RAVENWING",
+                "BATTLELINE",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "-",
+                "h": 4,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 80
+                },
+                {
+                      "models": 6,
+                      "points": 160
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólteres Gemelos de Moto",
+                      "range": "24\"",
+                      "a": 4,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Doble Enlace",
+                            "Twin-linked"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Espadas Sierra Astartes",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Avance Turbocargado: Al avanzar, añade 6\" automáticos en lugar de tirar dado."
+          ],
+          "leaderOf": [],
+          "notes": "Motos de intercepción veloz del Ala de Cuervo (Línea de Batalla en destacamentos de Alas)."
     },
+
     {
-      id: "sm_repulsor",
-      name: "Tanque Repulsor",
-      originalName: "Repulsor",
-      role: "Vehículo / Transporte Pesado",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "TRANSPORTE", "DESLIZADOR", "VEHICLE", "TRANSPORT", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "10\"", r: 12, sv: "3+", inv: "-", h: 16, l: "6+", co: 5 },
-      pointsOptions: [{ models: 1, points: 190 }],
-      rangedWeapons: [
-        { name: "Cañón láser pesado gemelo", range: "48\"", a: 1, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: ["Doble enlace"] },
-        { name: "Cañón Gatling pesado", range: "24\"", a: 8, bs: "3+", f: 5, ap: 0, d: 1, keywords: [] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida acorazada", range: "Combate", a: 6, ws: "4+", f: 8, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Salida de Emergencia: Si una unidad amiga desembarcada es cargada, puede reembarcar inmediatamente.", "Capacidad: 14 miniaturas."],
-      leaderOf: [],
-      notes: "Transporte gravítico blindado multipropósito."
+          "id": "sm_invader_atv",
+          "name": "Quads Invader (ATV)",
+          "originalName": "Invader ATVs",
+          "role": "Montado / Apoyo Ligero",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "ALA DE CUERVO",
+                "MOUNTED",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "3+",
+                "inv": "-",
+                "h": 8,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 65
+                },
+                {
+                      "models": 2,
+                      "points": 130
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Multifuón",
+                      "range": "18\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -4,
+                      "d": "D6",
+                      "keywords": [
+                            "Fusión 2",
+                            "Melta 2"
+                      ]
+                },
+                {
+                      "name": "Cañón Gatling Onslaught",
+                      "range": "24\"",
+                      "a": 8,
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Ruedas Pesadas",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Fuego de Cobertura Retributivo: Puede disparar en respuesta si una unidad amiga a 6\" es atacada."
+          ],
+          "leaderOf": [],
+          "notes": "Vehículo todoterreno de fuego de apoyo del Ala de Cuervo."
     },
+
     {
-      id: "sm_repulsor_executioner",
-      name: "Repulsor Ejecutor",
-      originalName: "Repulsor Executioner",
-      role: "Vehículo / Cazador de Tanques Pesado",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "TRANSPORTE", "DESLIZADOR", "VEHICLE", "TRANSPORT", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "10\"", r: 12, sv: "3+", inv: "-", h: 16, l: "6+", co: 5 },
-      pointsOptions: [{ models: 1, points: 260 }],
-      rangedWeapons: [
-        { name: "Destructor Láser Pesado", range: "72\"", a: 2, bs: "3+", f: 16, ap: -4, d: "D6+4", keywords: ["Pesada"] },
-        { name: "Incinerador Macroplasma", range: "36\"", a: "D6+1", bs: "3+", f: 9, ap: -4, d: 3, keywords: ["Área", "Peligrosa"] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida Acorazada", range: "Combate", a: 6, ws: "4+", f: 8, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Puntería de Verdugo: +1 para impactar contra objetivos por debajo de la mitad de su fuerza.", "Capacidad: 6 miniaturas."],
-      leaderOf: [],
-      notes: "El destructor acorazado más potente de los Marines Espaciales."
+          "id": "sm_scout_bikes",
+          "name": "Escuadra de Batidores en Moto",
+          "originalName": "Scout Bike Squad",
+          "role": "Montado / Explorador",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "MONTADO",
+                "ALA DE CUERVO",
+                "EXPLORADOR",
+                "MOUNTED",
+                "RAVENWING",
+                "SCOUT",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "12\"",
+                "r": 5,
+                "sv": "4+",
+                "inv": "-",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 70
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Escopeta Astartes",
+                      "range": "18\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Asalto"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de Combate",
+                      "range": "Combate",
+                      "a": 2,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Exploradores 9\" (Scouts 9\")."
+          ],
+          "leaderOf": [],
+          "notes": "Pioneros del Ala de Cuervo en reconocimiento avanzado."
     },
+
     {
-      id: "sm_gladiator_lancer",
-      name: "Gladiator Lancero",
-      originalName: "Gladiator Lancer",
-      role: "Vehículo / Antitanque",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["VEHÍCULO", "DESLIZADOR", "VEHICLE", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "10\"", r: 10, sv: "3+", inv: "-", h: 12, l: "6+", co: 3 },
-      pointsOptions: [{ models: 1, points: 160 }],
-      rangedWeapons: [
-        { name: "Cañón láser Lancer", range: "72\"", a: 2, bs: "3+", f: 14, ap: -4, d: "D6+3", keywords: ["Pesada"] }
-      ],
-      meleeWeapons: [
-        { name: "Embestida", range: "Combate", a: 3, ws: "4+", f: 6, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Fuego de Precisión: Repite 1 impacto, 1 herida y 1 dado de daño por fase."],
-      leaderOf: [],
-      notes: "Cazatanques de larga distancia."
+          "id": "sm_storm_speeder_thunderstrike",
+          "name": "Storm Speeder Atronador",
+          "originalName": "Storm Speeder Thunderstrike",
+          "role": "Vehículo / Cazador de Blindados",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "DESLIZADOR",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "VEHICLE",
+                "SPEEDER",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "14\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 11,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 140
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Láser Cazador Stormstrike",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                },
+                {
+                      "name": "Lanzamisiles de Doble Icarus",
+                      "range": "48\"",
+                      "a": 4,
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Anti-Aeronave 2+"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Designador de Blancos de Impacto: Los aliados que disparen a un objetivo impactado por este speeder obtienen +1 para herir contra Monstruos o Vehículos."
+          ],
+          "leaderOf": [],
+          "notes": "Deslizador pesado con láser de alto calibre del Ala de Cuervo."
     },
+
     {
-      id: "sm_stormraven_gunship",
-      name: "Cañonera Stormraven",
-      originalName: "Stormraven Gunship",
-      role: "Aeronave / Transporte Pesado",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["AERONAVE", "VEHÍCULO", "TRANSPORTE", "VOLAR", "ALA DE CUERVO", "AIRCRAFT", "VEHICLE", "TRANSPORT", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "20+\"", r: 10, sv: "3+", inv: "-", h: 14, l: "6+", co: 0 },
-      pointsOptions: [{ models: 1, points: 280 }],
-      rangedWeapons: [
-        { name: "Cañón Láser Doble", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] },
-        { name: "Cañón de Plasma Pesado", range: "36\"", a: "D3", bs: "3+", f: 8, ap: -3, d: 2, keywords: ["Área"] }
-      ],
-      meleeWeapons: [],
-      abilities: ["Juramento de Momento", "Transporte Aéreo: Puede transportar hasta 12 miniaturas de infantería Y 1 Dreadnought simultáneamente."],
-      leaderOf: [],
-      notes: "Transporte aéreo de asalto acorazado."
+          "id": "sm_storm_speeder_hailstrike",
+          "name": "Storm Speeder Granizador",
+          "originalName": "Storm Speeder Hailstrike",
+          "role": "Vehículo / Supresión Ligera",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "DESLIZADOR",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "VEHICLE",
+                "SPEEDER",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "14\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 11,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 110
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Gatling Onslaught Pesado",
+                      "range": "36\"",
+                      "a": 12,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Fuego de Supresión: Concede +1 FP a las unidades amigas que disparen al objetivo alcanzado."
+          ],
+          "leaderOf": [],
+          "notes": "Deslizador de saturación de infantería."
     },
+
     {
-      id: "sm_stormtalon_gunship",
-      name: "Cañonera Stormtalon",
-      originalName: "Stormtalon Gunship",
-      role: "Aeronave / Escolta",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["AERONAVE", "VEHÍCULO", "VOLAR", "ALA DE CUERVO", "AIRCRAFT", "VEHICLE", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "20+\"", r: 8, sv: "3+", inv: "-", h: 10, l: "6+", co: 0 },
-      pointsOptions: [{ models: 1, points: 170 }],
-      rangedWeapons: [
-        { name: "Cañón de Asalto gemelo", range: "24\"", a: 6, bs: "3+", f: 6, ap: 0, d: 1, keywords: ["Heridas Devastadoras"] }
-      ],
-      meleeWeapons: [],
-      abilities: ["Juramento de Momento", "Escolta de Intercepción: Suma +1 para impactar contra objetivos sin la clave Volar."],
-      leaderOf: [],
-      notes: "Caza de apoyo aéreo cercano."
+          "id": "sm_storm_speeder_hammerstrike",
+          "name": "Storm Speeder Martillador",
+          "originalName": "Storm Speeder Hammerstrike",
+          "role": "Vehículo / Destructor de Búnkeres",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "DESLIZADOR",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "VEHICLE",
+                "SPEEDER",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "14\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 11,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 125
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Lanzador de Fusión Hammerstrike",
+                      "range": "18\"",
+                      "a": 3,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -4,
+                      "d": "D6",
+                      "keywords": [
+                            "Fusión 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Rompefortalezas: Niega el beneficio de cobertura al blanco."
+          ],
+          "leaderOf": [],
+          "notes": "Deslizador de demolición a corta distancia."
     },
+
     {
-      id: "sm_stormhawk_interceptor",
-      name: "Interceptor Stormhawk",
-      originalName: "Stormhawk Interceptor",
-      role: "Aeronave / Superioridad Aérea",
-      wing: "Ala de Cuervo",
-      isEpicHero: false,
-      keywords: ["AERONAVE", "VEHÍCULO", "VOLAR", "ALA DE CUERVO", "AIRCRAFT", "VEHICLE", "FLY", "RAVENWING", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "20+\"", r: 8, sv: "3+", inv: "-", h: 10, l: "6+", co: 0 },
-      pointsOptions: [{ models: 1, points: 160 }],
-      rangedWeapons: [
-        { name: "Cañones Láser gemelos", range: "48\"", a: 2, bs: "3+", f: 12, ap: -3, d: "D6+1", keywords: [] }
-      ],
-      meleeWeapons: [],
-      abilities: ["Juramento de Momento", "Cazador de Vuelo: +1 para impactar contra unidades con Volar."],
-      leaderOf: [],
-      notes: "Caza de combate para derribar aeronaves rivales."
+          "id": "sm_brutalis_dreadnought",
+          "name": "Dreadnought Brutalis",
+          "originalName": "Brutalis Dreadnought",
+          "role": "Bípode / Choque Frontal",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "BÍPODE",
+                "DREADNOUGHT",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "WALKER",
+                "DREADNOUGHT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "8\"",
+                "r": 10,
+                "sv": "2+",
+                "inv": "-",
+                "h": 12,
+                "l": "6+",
+                "co": 4
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 160
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañones Gatling pesados gemelos",
+                      "range": "24\"",
+                      "a": 10,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                },
+                {
+                      "name": "Rifles Multifuón gemelos",
+                      "range": "18\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -4,
+                      "d": "D6",
+                      "keywords": [
+                            "Fusión 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Garras Brutalis - Golpe desgarrador",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "3+",
+                      "f": 12,
+                      "ap": -2,
+                      "d": 3,
+                      "keywords": [
+                            "Golpes Letales"
+                      ]
+                },
+                {
+                      "name": "Garras Brutalis - Barrido",
+                      "range": "Combate",
+                      "a": 10,
+                      "ws": "3+",
+                      "f": 7,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Carga Brutal: Al completar una carga inflige heridas mortales masivas con tirada de dado."
+          ],
+          "leaderOf": [],
+          "notes": "El temible Dreadnought de asalto de corta distancia de la 1ª Compañía."
     },
+
     {
-      id: "sm_intercessors",
-      name: "Escuadra de Intercesores",
-      originalName: "Intercessor Squad",
-      role: "Línea / Infantería",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "LÍNEA", "TACTICUS", "INFANTRY", "BATTLELINE", "TACTICUS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "-", h: 2, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 5, points: 85 },
-        { models: 10, points: 170 }
-      ],
-      rangedWeapons: [
-        { name: "Rifle Bólter", range: "24\"", a: 2, bs: "3+", f: 4, ap: -1, d: 1, keywords: ["Asalto", "Pesada", "Assault", "Heavy"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de combate", range: "Combate", a: 3, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Objetivo Asegurado: Controlan objetivos incluso tras alejarse de ellos."],
-      leaderOf: [],
-      notes: "Núcleo versátil de la infantería del Capítulo."
+          "id": "sm_ballistus_dreadnought",
+          "name": "Dreadnought Ballistus",
+          "originalName": "Ballistus Dreadnought",
+          "role": "Bípode / Apoyo Pesado",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "BÍPODE",
+                "DREADNOUGHT",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "WALKER",
+                "DREADNOUGHT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "8\"",
+                "r": 10,
+                "sv": "2+",
+                "inv": "-",
+                "h": 12,
+                "l": "6+",
+                "co": 4
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 150
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón láser Ballistus",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                },
+                {
+                      "name": "Lanzamisiles Ballistus (Perforante)",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -2,
+                      "d": "D6",
+                      "keywords": []
+                },
+                {
+                      "name": "Lanzamisiles Ballistus (Fragmentación)",
+                      "range": "48\"",
+                      "a": "2D6",
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Área"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Pies Acorazados",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "4+",
+                      "f": 7,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Fuego de Precisión Ballistus: Repite tiradas para impactar contra objetivos que no estén por debajo de la mitad de su fuerza."
+          ],
+          "leaderOf": [],
+          "notes": "Plataforma de artillería andante de largo alcance del Ala de Muerte."
     },
+
     {
-      id: "sm_assault_intercessors",
-      name: "Escuadra de Intercesores de Asalto",
-      originalName: "Assault Intercessor Squad",
-      role: "Línea / Combate",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "LÍNEA", "TACTICUS", "ASALTO", "INFANTRY", "BATTLELINE", "TACTICUS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "-", h: 2, l: "6+", co: 2 },
-      pointsOptions: [
-        { models: 5, points: 85 },
-        { models: 10, points: 170 }
-      ],
-      rangedWeapons: [
-        { name: "Pistola Pesada Bólter", range: "18\"", a: 1, bs: "3+", f: 4, ap: -1, d: 1, keywords: ["Pistola", "Pistol"] }
-      ],
-      meleeWeapons: [
-        { name: "Espada Sierra Astartes", range: "Combate", a: 4, ws: "3+", f: 4, ap: -1, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Carga Destructora: Repite tiradas para herir de 1 en combate cuerpo a cuerpo (o repite todas contra enemigos en objetivos)."],
-      leaderOf: [],
-      notes: "Infantería de choque cuerpo a cuerpo."
+          "id": "sm_redemptor_dreadnought",
+          "name": "Dreadnought Redentor",
+          "originalName": "Redemptor Dreadnought",
+          "role": "Bípode / Asedio",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "BÍPODE",
+                "DREADNOUGHT",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "WALKER",
+                "DREADNOUGHT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "8\"",
+                "r": 10,
+                "sv": "2+",
+                "inv": "-",
+                "h": 12,
+                "l": "6+",
+                "co": 4
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 170
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Macro Incinerador de Plasma (Sobrecargado)",
+                      "range": "36\"",
+                      "a": "D6+1",
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -4,
+                      "d": 3,
+                      "keywords": [
+                            "Área",
+                            "Peligrosa",
+                            "Blast",
+                            "Hazardous"
+                      ]
+                },
+                {
+                      "name": "Cañón Gatling pesado Onslaught",
+                      "range": "36\"",
+                      "a": 8,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Puño Redemptor",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 12,
+                      "ap": -2,
+                      "d": "D6+1",
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Blindaje Reforzado: Reduce en 1 todo el daño sufrido (mínimo 1)."
+          ],
+          "leaderOf": [],
+          "notes": "El dreadnought multipropósito por excelencia, veterano de la 1ª Compañía."
     },
+
     {
-      id: "sm_hellblasters",
-      name: "Escuadra de Revientainfiernos (Hellblasters)",
-      originalName: "Hellblaster Squad",
-      role: "Infantería / Plasma",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "TACTICUS", "PLASMA", "INFANTRY", "TACTICUS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "-", h: 2, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 115 },
-        { models: 10, points: 230 }
-      ],
-      rangedWeapons: [
-        { name: "Incinerador de Plasma (Estándar)", range: "24\"", a: 2, bs: "3+", f: 7, ap: -2, d: 1, keywords: ["Asalto", "Pesada", "Assault", "Heavy"] },
-        { name: "Incinerador de Plasma (Sobrecargado)", range: "24\"", a: 2, bs: "3+", f: 8, ap: -3, d: 2, keywords: ["Peligrosa", "Hazardous"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de combate", range: "Combate", a: 3, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Dispara al Morir: Con una tirada de 3+, una miniatura eliminada puede disparar inmediatamente antes de ser retirada."],
-      leaderOf: [],
-      notes: "Especialistas devotos del plasma, en perfecta sinergia con el Capítulo."
+          "id": "sm_dreadnought",
+          "name": "Dreadnought Clásico / Venerable",
+          "originalName": "Dreadnought",
+          "role": "Bípode / Soporte",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "BÍPODE",
+                "DREADNOUGHT",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "WALKER",
+                "DREADNOUGHT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 9,
+                "sv": "2+",
+                "inv": "-",
+                "h": 8,
+                "l": "6+",
+                "co": 3
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 135
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Láser Doble",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Puño Dreadnought",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 10,
+                      "ap": -2,
+                      "d": 3,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Sabiduría de los Antiguos (Aura): Unidades de infantería a 6\" repiten tiradas de 1 para impactar y herir."
+          ],
+          "leaderOf": [],
+          "notes": "Casta venerable de antiguos héroes del Capítulo."
     },
+
     {
-      id: "sm_infernus",
-      name: "Escuadra Infernus",
-      originalName: "Infernus Squad",
-      role: "Infantería / Lanzallamas",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "TACTICUS", "LANZALLAMAS", "INFANTRY", "TACTICUS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "-", h: 2, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 95 },
-        { models: 10, points: 190 }
-      ],
-      rangedWeapons: [
-        { name: "Pirólisis (Pyreblaster)", range: "12\"", a: "D6", bs: "N/A", f: 5, ap: 0, d: 1, keywords: ["Torrente", "Ignora Cobertura", "Torrent", "Ignores Cover"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de combate", range: "Combate", a: 3, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Fuego Purgador: Si inflige impactos a una unidad enemiga, esta debe realizar un chequeo de Acobardamiento."],
-      leaderOf: [],
-      notes: "Purificadores con lanzallamas de alta presión."
+          "id": "sm_venerable_dreadnought",
+          "name": "Dreadnought Venerable",
+          "originalName": "Venerable Dreadnought",
+          "role": "Bípode / Soporte Veterano",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "BÍPODE",
+                "DREADNOUGHT",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "WALKER",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 9,
+                "sv": "2+",
+                "inv": "-",
+                "h": 8,
+                "l": "6+",
+                "co": 3
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 135
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Láser Doble",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Puño Dreadnought Acorazado",
+                      "range": "Combate",
+                      "a": 5,
+                      "ws": "3+",
+                      "f": 10,
+                      "ap": -2,
+                      "d": 3,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Resolución Venerable: No Hay Dolor 6+ y aura de repetición de tiradas de 1."
+          ],
+          "leaderOf": [],
+          "notes": "Casta venerable de antiguos héroes del Capítulo."
     },
+
     {
-      id: "sm_infiltrators",
-      name: "Escuadra de Infiltradores",
-      originalName: "Infiltrator Squad",
-      role: "Infantería / Sigilo",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "PHOBOS", "INFILTRADOR", "HUMO", "INFANTRY", "PHOBOS", "SMOKE", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "6\"", r: 4, sv: "3+", inv: "-", h: 2, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 5, points: 85 },
-        { models: 10, points: 150 }
-      ],
-      rangedWeapons: [
-        { name: "Carabina Bólter Marksman", range: "24\"", a: 2, bs: "3+", f: 4, ap: 0, d: 1, keywords: ["Pesada", "Golpes Letales", "Heavy", "Lethal Hits"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de combate", range: "Combate", a: 3, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Infiltradores (Despliegue a >9\")", "Red Omni-scrambler: Las reservas y refuerzos enemigos no pueden desplegar a 12\" o menos de esta unidad."],
-      leaderOf: [],
-      notes: "La mejor unidad para denegar el despliegue rápido enemigo."
+          "id": "sm_thunderhawk_gunship",
+          "name": "Cañonera Thunderhawk",
+          "originalName": "Thunderhawk Gunship",
+          "role": "Titánico / Aeronave Pesada",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "TITÁNICO",
+                "AERONAVE",
+                "VEHÍCULO",
+                "TRANSPORTE",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "TITANIC",
+                "AIRCRAFT",
+                "VEHICLE",
+                "TRANSPORT",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "20+\"",
+                "r": 12,
+                "sv": "2+",
+                "inv": "-",
+                "h": 30,
+                "l": "6+",
+                "co": 0
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 850
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Turbo-láser",
+                      "range": "96\"",
+                      "a": "D3+1",
+                      "bs": "3+",
+                      "f": 20,
+                      "ap": -4,
+                      "d": "D6+6",
+                      "keywords": [
+                            "Área",
+                            "Blast"
+                      ]
+                },
+                {
+                      "name": "Cañones Láser pesados (x2)",
+                      "range": "48\"",
+                      "a": 4,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                },
+                {
+                      "name": "Bólteres Pesados dobles (x4)",
+                      "range": "36\"",
+                      "a": 12,
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [],
+          "abilities": [
+                "Juramento de Momento",
+                "Supremacía Titánica: Capacidad de transporte de 32 miniaturas o hasta 3 Dreadnoughts."
+          ],
+          "leaderOf": [],
+          "notes": "Superpesado titánico aerotransportado del Capítulo."
     },
+
     {
-      id: "sm_eradicators",
-      name: "Escuadra de Erradicadores",
-      originalName: "Eradicator Squad",
-      role: "Infantería Pesada / Fusión",
-      wing: "Compañía Verde",
-      isEpicHero: false,
-      keywords: ["INFANTERÍA", "GRAVIS", "FUSIÓN", "INFANTRY", "GRAVIS", "ADEPTUS ASTARTES", "IMPERIUM"],
-      stats: { m: "5\"", r: 6, sv: "3+", inv: "-", h: 3, l: "6+", co: 1 },
-      pointsOptions: [
-        { models: 3, points: 100 },
-        { models: 6, points: 200 }
-      ],
-      rangedWeapons: [
-        { name: "Fusil de Fusión Melta", range: "18\"", a: 1, bs: "3+", f: 9, ap: -4, d: "D6", keywords: ["Fusión 2", "Melta 2"] }
-      ],
-      meleeWeapons: [
-        { name: "Arma de combate", range: "Combate", a: 3, ws: "3+", f: 4, ap: 0, d: 1, keywords: [] }
-      ],
-      abilities: ["Juramento de Momento", "Exterminación Total: Repite todas las tiradas para impactar, herir y daño contra Monstruos o Vehículos."],
-      leaderOf: [],
-      notes: "Cazadores acorazados en servoarmadura Gravis."
+          "id": "sm_land_raider_standard",
+          "name": "Land Raider",
+          "originalName": "Land Raider",
+          "role": "Vehículo / Transporte Blindado",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "HUMO",
+                "TRANSPORTE",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "SMOKE",
+                "TRANSPORT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "10\"",
+                "r": 12,
+                "sv": "2+",
+                "inv": "-",
+                "h": 16,
+                "l": "6+",
+                "co": 5
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 245
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Láser Doble Godhammer (x2)",
+                      "range": "48\"",
+                      "a": 4,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                },
+                {
+                      "name": "Bólter Pesado gemelo",
+                      "range": "36\"",
+                      "a": 3,
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": -1,
+                      "d": 2,
+                      "keywords": [
+                            "Doble Enlace"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Orugas Acorazadas",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Rampa de Asalto (Assault Ramp): Las unidades que desembarquen tras un movimiento normal pueden declarar una carga.",
+                "Capacidad: 12 miniaturas."
+          ],
+          "leaderOf": [],
+          "notes": "El vehículo de asedio y transporte definitivo del Ala de Muerte con cañones láser Godhammer."
+    },
+
+    {
+          "id": "sm_land_raider_crusader",
+          "name": "Land Raider Cruzado",
+          "originalName": "Land Raider Crusader",
+          "role": "Vehículo / Transporte de Asalto",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "HUMO",
+                "TRANSPORTE",
+                "ALA DE MUERTE",
+                "EXPLOSIVOS",
+                "VEHICLE",
+                "SMOKE",
+                "TRANSPORT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "10\"",
+                "r": 12,
+                "sv": "2+",
+                "inv": "-",
+                "h": 16,
+                "l": "6+",
+                "co": 5
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 230
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Bólteres Huracán gemelos (x2)",
+                      "range": "24\"",
+                      "a": 24,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Doble Enlace",
+                            "Twin-linked"
+                      ]
+                },
+                {
+                      "name": "Cañón de Asalto gemelo",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Orugas Acorazadas",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Rampa de Asalto (Assault Ramp): Desembarco y carga en el mismo turno.",
+                "Capacidad: 16 miniaturas de infantería o 8 Exterminadores."
+          ],
+          "leaderOf": [],
+          "notes": "Variante creada expresamente para asaltar con escuadras masivas de Exterminadores."
+    },
+
+    {
+          "id": "sm_land_raider_redeemer",
+          "name": "Land Raider Redentor",
+          "originalName": "Land Raider Redeemer",
+          "role": "Vehículo / Transporte Flamígero",
+          "wing": "Ala de Muerte",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "HUMO",
+                "TRANSPORTE",
+                "ALA DE MUERTE",
+                "VEHICLE",
+                "SMOKE",
+                "TRANSPORT",
+                "DEATHWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "10\"",
+                "r": 12,
+                "sv": "2+",
+                "inv": "-",
+                "h": 16,
+                "l": "6+",
+                "co": 5
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 245
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañones Tormenta Flamestorm (x2)",
+                      "range": "12\"",
+                      "a": "2D6+6",
+                      "bs": "N/A",
+                      "f": 6,
+                      "ap": -2,
+                      "d": 2,
+                      "keywords": [
+                            "Torrente",
+                            "Ignora Cobertura",
+                            "Torrent",
+                            "Ignores Cover"
+                      ]
+                },
+                {
+                      "name": "Cañón de Asalto gemelo",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Orugas Acorazadas",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Rampa de Asalto: Desembarca y carga de forma inmediata.",
+                "Capacidad: 14 miniaturas."
+          ],
+          "leaderOf": [],
+          "notes": "El destructor de trincheras definitivo con lanzallamas de plasma pesado."
+    },
+
+    {
+          "id": "sm_repulsor",
+          "name": "Tanque Repulsor",
+          "originalName": "Repulsor",
+          "role": "Vehículo / Transporte Pesado",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "TRANSPORTE",
+                "DESLIZADOR",
+                "VEHICLE",
+                "TRANSPORT",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "10\"",
+                "r": 12,
+                "sv": "3+",
+                "inv": "-",
+                "h": 16,
+                "l": "6+",
+                "co": 5
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 190
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón láser pesado gemelo",
+                      "range": "48\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": [
+                            "Doble enlace"
+                      ]
+                },
+                {
+                      "name": "Cañón Gatling pesado",
+                      "range": "24\"",
+                      "a": 8,
+                      "bs": "3+",
+                      "f": 5,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida acorazada",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Salida de Emergencia: Si una unidad amiga desembarcada es cargada, puede reembarcar inmediatamente.",
+                "Capacidad: 14 miniaturas."
+          ],
+          "leaderOf": [],
+          "notes": "Transporte gravítico blindado multipropósito."
+    },
+
+    {
+          "id": "sm_repulsor_executioner",
+          "name": "Repulsor Ejecutor",
+          "originalName": "Repulsor Executioner",
+          "role": "Vehículo / Cazador de Tanques Pesado",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "TRANSPORTE",
+                "DESLIZADOR",
+                "VEHICLE",
+                "TRANSPORT",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "10\"",
+                "r": 12,
+                "sv": "3+",
+                "inv": "-",
+                "h": 16,
+                "l": "6+",
+                "co": 5
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 260
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Destructor Láser Pesado",
+                      "range": "72\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 16,
+                      "ap": -4,
+                      "d": "D6+4",
+                      "keywords": [
+                            "Pesada"
+                      ]
+                },
+                {
+                      "name": "Incinerador Macroplasma",
+                      "range": "36\"",
+                      "a": "D6+1",
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -4,
+                      "d": 3,
+                      "keywords": [
+                            "Área",
+                            "Peligrosa"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida Acorazada",
+                      "range": "Combate",
+                      "a": 6,
+                      "ws": "4+",
+                      "f": 8,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Puntería de Verdugo: +1 para impactar contra objetivos por debajo de la mitad de su fuerza.",
+                "Capacidad: 6 miniaturas."
+          ],
+          "leaderOf": [],
+          "notes": "El destructor acorazado más potente de los Marines Espaciales."
+    },
+
+    {
+          "id": "sm_gladiator_lancer",
+          "name": "Gladiator Lancero",
+          "originalName": "Gladiator Lancer",
+          "role": "Vehículo / Antitanque",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "VEHÍCULO",
+                "DESLIZADOR",
+                "VEHICLE",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "10\"",
+                "r": 10,
+                "sv": "3+",
+                "inv": "-",
+                "h": 12,
+                "l": "6+",
+                "co": 3
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 160
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón láser Lancer",
+                      "range": "72\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 14,
+                      "ap": -4,
+                      "d": "D6+3",
+                      "keywords": [
+                            "Pesada"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Embestida",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "4+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Fuego de Precisión: Repite 1 impacto, 1 herida y 1 dado de daño por fase."
+          ],
+          "leaderOf": [],
+          "notes": "Cazatanques de larga distancia."
+    },
+
+    {
+          "id": "sm_stormraven_gunship",
+          "name": "Cañonera Stormraven",
+          "originalName": "Stormraven Gunship",
+          "role": "Aeronave / Transporte Pesado",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "AERONAVE",
+                "VEHÍCULO",
+                "TRANSPORTE",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "AIRCRAFT",
+                "VEHICLE",
+                "TRANSPORT",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "20+\"",
+                "r": 10,
+                "sv": "3+",
+                "inv": "-",
+                "h": 14,
+                "l": "6+",
+                "co": 0
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 280
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón Láser Doble",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                },
+                {
+                      "name": "Cañón de Plasma Pesado",
+                      "range": "36\"",
+                      "a": "D3",
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Área"
+                      ]
+                }
+          ],
+          "meleeWeapons": [],
+          "abilities": [
+                "Juramento de Momento",
+                "Transporte Aéreo: Puede transportar hasta 12 miniaturas de infantería Y 1 Dreadnought simultáneamente."
+          ],
+          "leaderOf": [],
+          "notes": "Transporte aéreo de asalto acorazado."
+    },
+
+    {
+          "id": "sm_stormtalon_gunship",
+          "name": "Cañonera Stormtalon",
+          "originalName": "Stormtalon Gunship",
+          "role": "Aeronave / Escolta",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "AERONAVE",
+                "VEHÍCULO",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "AIRCRAFT",
+                "VEHICLE",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "20+\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 10,
+                "l": "6+",
+                "co": 0
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 170
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañón de Asalto gemelo",
+                      "range": "24\"",
+                      "a": 6,
+                      "bs": "3+",
+                      "f": 6,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Heridas Devastadoras"
+                      ]
+                }
+          ],
+          "meleeWeapons": [],
+          "abilities": [
+                "Juramento de Momento",
+                "Escolta de Intercepción: Suma +1 para impactar contra objetivos sin la clave Volar."
+          ],
+          "leaderOf": [],
+          "notes": "Caza de apoyo aéreo cercano."
+    },
+
+    {
+          "id": "sm_stormhawk_interceptor",
+          "name": "Interceptor Stormhawk",
+          "originalName": "Stormhawk Interceptor",
+          "role": "Aeronave / Superioridad Aérea",
+          "wing": "Ala de Cuervo",
+          "isEpicHero": false,
+          "keywords": [
+                "AERONAVE",
+                "VEHÍCULO",
+                "VOLAR",
+                "ALA DE CUERVO",
+                "AIRCRAFT",
+                "VEHICLE",
+                "FLY",
+                "RAVENWING",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "20+\"",
+                "r": 8,
+                "sv": "3+",
+                "inv": "-",
+                "h": 10,
+                "l": "6+",
+                "co": 0
+          },
+          "pointsOptions": [
+                {
+                      "models": 1,
+                      "points": 160
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Cañones Láser gemelos",
+                      "range": "48\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 12,
+                      "ap": -3,
+                      "d": "D6+1",
+                      "keywords": []
+                }
+          ],
+          "meleeWeapons": [],
+          "abilities": [
+                "Juramento de Momento",
+                "Cazador de Vuelo: +1 para impactar contra unidades con Volar."
+          ],
+          "leaderOf": [],
+          "notes": "Caza de combate para derribar aeronaves rivales."
+    },
+
+    {
+          "id": "sm_intercessors",
+          "name": "Escuadra de Intercesores",
+          "originalName": "Intercessor Squad",
+          "role": "Línea / Infantería",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "LÍNEA",
+                "TACTICUS",
+                "INFANTRY",
+                "BATTLELINE",
+                "TACTICUS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "-",
+                "h": 2,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 85
+                },
+                {
+                      "models": 10,
+                      "points": 170
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Rifle Bólter",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Asalto",
+                            "Pesada",
+                            "Assault",
+                            "Heavy"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Objetivo Asegurado: Controlan objetivos incluso tras alejarse de ellos."
+          ],
+          "leaderOf": [],
+          "notes": "Núcleo versátil de la infantería del Capítulo."
+    },
+
+    {
+          "id": "sm_assault_intercessors",
+          "name": "Escuadra de Intercesores de Asalto",
+          "originalName": "Assault Intercessor Squad",
+          "role": "Línea / Combate",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "LÍNEA",
+                "TACTICUS",
+                "ASALTO",
+                "INFANTRY",
+                "BATTLELINE",
+                "TACTICUS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "-",
+                "h": 2,
+                "l": "6+",
+                "co": 2
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 85
+                },
+                {
+                      "models": 10,
+                      "points": 170
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pistola Pesada Bólter",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": [
+                            "Pistola",
+                            "Pistol"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Espada Sierra Astartes",
+                      "range": "Combate",
+                      "a": 4,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": -1,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Carga Destructora: Repite tiradas para herir de 1 en combate cuerpo a cuerpo (o repite todas contra enemigos en objetivos)."
+          ],
+          "leaderOf": [],
+          "notes": "Infantería de choque cuerpo a cuerpo."
+    },
+
+    {
+          "id": "sm_hellblasters",
+          "name": "Escuadra de Revientainfiernos (Hellblasters)",
+          "originalName": "Hellblaster Squad",
+          "role": "Infantería / Plasma",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "TACTICUS",
+                "PLASMA",
+                "INFANTRY",
+                "TACTICUS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "-",
+                "h": 2,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 115
+                },
+                {
+                      "models": 10,
+                      "points": 230
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Incinerador de Plasma (Estándar)",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 7,
+                      "ap": -2,
+                      "d": 1,
+                      "keywords": [
+                            "Asalto",
+                            "Pesada",
+                            "Assault",
+                            "Heavy"
+                      ]
+                },
+                {
+                      "name": "Incinerador de Plasma (Sobrecargado)",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 8,
+                      "ap": -3,
+                      "d": 2,
+                      "keywords": [
+                            "Peligrosa",
+                            "Hazardous"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Dispara al Morir: Con una tirada de 3+, una miniatura eliminada puede disparar inmediatamente antes de ser retirada."
+          ],
+          "leaderOf": [],
+          "notes": "Especialistas devotos del plasma, en perfecta sinergia con el Capítulo."
+    },
+
+    {
+          "id": "sm_infernus",
+          "name": "Escuadra Infernus",
+          "originalName": "Infernus Squad",
+          "role": "Infantería / Lanzallamas",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "TACTICUS",
+                "LANZALLAMAS",
+                "INFANTRY",
+                "TACTICUS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "-",
+                "h": 2,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 95
+                },
+                {
+                      "models": 10,
+                      "points": 190
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Pirólisis (Pyreblaster)",
+                      "range": "12\"",
+                      "a": "D6",
+                      "bs": "N/A",
+                      "f": 5,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Torrente",
+                            "Ignora Cobertura",
+                            "Torrent",
+                            "Ignores Cover"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Fuego Purgador: Si inflige impactos a una unidad enemiga, esta debe realizar un chequeo de Acobardamiento."
+          ],
+          "leaderOf": [],
+          "notes": "Purificadores con lanzallamas de alta presión."
+    },
+
+    {
+          "id": "sm_infiltrators",
+          "name": "Escuadra de Infiltradores",
+          "originalName": "Infiltrator Squad",
+          "role": "Infantería / Sigilo",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "PHOBOS",
+                "INFILTRADOR",
+                "HUMO",
+                "INFANTRY",
+                "PHOBOS",
+                "SMOKE",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "6\"",
+                "r": 4,
+                "sv": "3+",
+                "inv": "-",
+                "h": 2,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 5,
+                      "points": 85
+                },
+                {
+                      "models": 10,
+                      "points": 150
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Carabina Bólter Marksman",
+                      "range": "24\"",
+                      "a": 2,
+                      "bs": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": [
+                            "Pesada",
+                            "Golpes Letales",
+                            "Heavy",
+                            "Lethal Hits"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Infiltradores (Despliegue a >9\")",
+                "Red Omni-scrambler: Las reservas y refuerzos enemigos no pueden desplegar a 12\" o menos de esta unidad."
+          ],
+          "leaderOf": [],
+          "notes": "La mejor unidad para denegar el despliegue rápido enemigo."
+    },
+
+    {
+          "id": "sm_eradicators",
+          "name": "Escuadra de Erradicadores",
+          "originalName": "Eradicator Squad",
+          "role": "Infantería Pesada / Fusión",
+          "wing": "Compañía Verde",
+          "isEpicHero": false,
+          "keywords": [
+                "INFANTERÍA",
+                "GRAVIS",
+                "FUSIÓN",
+                "INFANTRY",
+                "GRAVIS",
+                "ADEPTUS ASTARTES",
+                "IMPERIUM"
+          ],
+          "stats": {
+                "m": "5\"",
+                "r": 6,
+                "sv": "3+",
+                "inv": "-",
+                "h": 3,
+                "l": "6+",
+                "co": 1
+          },
+          "pointsOptions": [
+                {
+                      "models": 3,
+                      "points": 100
+                },
+                {
+                      "models": 6,
+                      "points": 200
+                }
+          ],
+          "rangedWeapons": [
+                {
+                      "name": "Fusil de Fusión Melta",
+                      "range": "18\"",
+                      "a": 1,
+                      "bs": "3+",
+                      "f": 9,
+                      "ap": -4,
+                      "d": "D6",
+                      "keywords": [
+                            "Fusión 2",
+                            "Melta 2"
+                      ]
+                }
+          ],
+          "meleeWeapons": [
+                {
+                      "name": "Arma de combate",
+                      "range": "Combate",
+                      "a": 3,
+                      "ws": "3+",
+                      "f": 4,
+                      "ap": 0,
+                      "d": 1,
+                      "keywords": []
+                }
+          ],
+          "abilities": [
+                "Juramento de Momento",
+                "Exterminación Total: Repite todas las tiradas para impactar, herir y daño contra Monstruos o Vehículos."
+          ],
+          "leaderOf": [],
+          "notes": "Cazadores acorazados en servoarmadura Gravis."
     }
   ]
 };
