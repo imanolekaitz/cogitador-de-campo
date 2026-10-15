@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cogitador de Campo: La Roca — Gestión de Colección y Listas (Ángeles Oscuros)</title>
+  <meta name="description" content="Aplicación táctica para el control de la colección de miniaturas de Ángeles Oscuros (Dark Angels), inventario con estado de pintura y creador de listas para Warhammer 40,000 10ª Edición.">
+  
+  <!-- Tipografías Góticas e Imperiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       CABECERA DEL COGITADOR (THE ROCK FIELD INTERFACE)
+       ====================================================================== -->
+  <header class="cogitator-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="chapter-badge" title="La Primera Legión — No Perdonados">⚔️</div>
+        <div class="brand-text">
+          <h1>Cogitador de Campo</h1>
+          <div class="brand-subtitle">
+            <span class="status-dot"></span>
+            <span>Fortaleza-Monasterio La Roca • Ángeles Oscuros</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Indicadores Globales de la Colección -->
+      <div class="header-stats">
+        <div class="stat-pill">
+          <span class="label" id="header-lbl-models">Miniaturas</span>
+          <span class="value" id="header-total-models">0</span>
+        </div>
+        <div class="stat-pill">
+          <span class="label" id="header-lbl-points">Valor en Puntos (MFM)</span>
+          <span class="value" id="header-total-points">0 pts</span>
+        </div>
+        <div class="stat-pill">
+          <span class="label" id="header-lbl-painting">Pintadas (Battle Ready)</span>
+          <span class="value" id="header-painting-ratio" style="color: var(--caliban-bright);">0%</span>
+        </div>
+      </div>
+
+      <!-- Selector de Idioma (Castellano / English) -->
+      <div class="lang-selector-container" role="group" aria-label="Selector de Idioma / Language Selector">
+        <button class="lang-btn active" id="lang-btn-es" onclick="setAppLanguage('es')" title="Cambiar interfaz y estratagemas a Castellano">
+          <span class="flag-icon">🇪🇸</span> <span class="lang-text">Castellano</span>
+        </button>
+        <button class="lang-btn" id="lang-btn-en" onclick="setAppLanguage('en')" title="Switch interface and stratagems to English">
+          <span class="flag-icon">🇬🇧</span> <span class="lang-text">English</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       BARRA DE NAVEGACIÓN POR MÓDULOS
+       ====================================================================== -->
+  <nav class="main-nav" aria-label="Navegación de módulos">
+    <div class="nav-container">
+      <button class="nav-tab-btn active" data-tab="codex" id="nav-btn-codex">
+        <span id="nav-text-codex">📜 Códex & Datasheets</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="detachments" id="nav-btn-detachments">
+        <span id="nav-text-detachments">🦅 Destacamentos (11ª Ed)</span>
+        <span class="nav-tab-badge">21</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="stratagems" id="nav-btn-stratagems">
+        <span id="nav-text-stratagems">⚡ Estratagemas</span>
+        <span class="nav-tab-badge" id="nav-badge-stratagems">69</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="collection" id="nav-btn-collection">
+        <span id="nav-text-collection">🛡️ Mi Colección (Armería)</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="army" id="nav-btn-army">
+        <span id="nav-text-army">⚔️ Forja de Listas</span>
+        <span class="nav-tab-badge" id="nav-badge-army-pts">11ª Ed</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="battle" id="nav-btn-battle">
+        <span id="nav-text-battle">🎯 Cogitador de Batalla</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="mathhammer" id="nav-btn-mathhammer">
+        <span id="nav-text-mathhammer">🎲 Mathhammer</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================================================================
+       CONTENIDO PRINCIPAL
+       ====================================================================== -->
+  <main class="app-main">
+
+    <!-- ====================================================================
+         MÓDULO 1: CÓDEX Y CATÁLOGO DE LA FACCIÓN (11ª EDICIÓN)
+         ==================================================================== -->
+    <section class="tab-pane active" id="pane-codex">
+      <!-- COMPARADOR TÁCTICO DE UNIDADES (CARA A CARA) -->
+      <div class="comparator-panel" id="unit-comparator-section" style="display: none;">
+        <div class="comparator-header">
+          <div class="comparator-title-group">
+            <span class="comparator-badge" style="background: linear-gradient(135deg, #1e3a8a, #0284c7); color: #fff;">MODO COMPARADOR DE UNIDADES</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--deathwing-bone);">⚖️ Comparador Frente a Frente de Hojas de Datos</h3>
+            <p class="comparator-subtitle">
+              Compara atributos (M, R, SV, INV, H, L, CO), eficiencia en puntos por herida, armamento a distancia/combate y habilidades especiales entre dos unidades de los Ángeles Oscuros.
+            </p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-gothic-secondary" id="btn-swap-unit-comparator" onclick="swapUnitComparator()" title="Intercambiar Unidad A y Unidad B">⇄ Intercambiar</button>
+            <button class="btn-gothic-secondary" id="btn-close-unit-comparator" onclick="toggleUnitComparator()" title="Cerrar comparador de unidades">✕ Cerrar</button>
+          </div>
+        </div>
+
+        <div class="comparator-selectors-bar">
+          <div class="comparator-select-box">
+            <label for="unit-comparator-select-a" style="color: #38bdf8;">🔵 Unidad A:</label>
+            <select id="unit-comparator-select-a" class="form-control-gothic">
+              <!-- Cargado dinámicamente -->
+            </select>
+          </div>
+          <div class="comparator-vs-badge">VS</div>
+          <div class="comparator-select-box">
+            <label for="unit-comparator-select-b" style="color: #f43f5e;">🔴 Unidad B:</label>
+            <select id="unit-comparator-select-b" class="form-control-gothic">
+              <!-- Cargado dinámicamente -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Contenido de Comparación lado a lado -->
+        <div class="comparator-body" id="unit-comparator-content-grid">
+          <!-- Renderizado dinámico desde renderUnitComparator() en js/app.js -->
+        </div>
+      </div>
+
+      <div class="toolbar-panel" style="display: flex; flex-direction: column; gap: 14px; align-items: stretch;">
+        <!-- Fila Superior: Búsqueda y Acciones del Códex -->
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+          <div class="search-input-wrap" style="flex: 1; min-width: 280px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="codex-search" placeholder="Buscar unidad por nombre, rol, armas o palabras clave..." aria-label="Buscar hojas de datos">
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-gothic" id="btn-toggle-unit-comparator" onclick="toggleUnitComparator()" style="background: linear-gradient(135deg, #1e3a8a, #0284c7); border-color: #38bdf8;" title="Comparar dos hojas de datos frente a frente">⚖️ Comparar Unidades</button>
+            <button class="btn-gothic" onclick="openCreateDatasheetModal()">+ Nueva Hoja de Datos</button>
+            <button class="btn-gothic-secondary" onclick="openRulesUpdateModal()" style="border-color: var(--gold-primary); color: var(--gold-accent);">📜 Reglas 11ª Ed</button>
+            <button class="btn-gothic-secondary" onclick="exportCodexJson()" title="Descargar Códex completo en JSON">💾 Exportar Códex</button>
+            <button class="btn-gothic-secondary" onclick="triggerImportCodexJson()" title="Importar actualización de Códex en JSON">📂 Importar Códex</button>
+            <button class="btn-gothic-secondary" onclick="resetCodexToDefaults()" style="color: #f87171;" title="Restablecer Códex al estado original">↺ Restaurar</button>
+          </div>
+        </div>
+
+        <!-- Fila Inferior: Filtros de Ala, Rol, Palabra Clave, Ordenación y Contador -->
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+          <!-- Filtro de Ala -->
+          <div class="filter-group">
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Ala:</span>
+            <button class="filter-btn wing-filter-btn active" data-wing="all" onclick="setWingFilter('all')">Todas</button>
+            <button class="filter-btn wing-filter-btn wing-deathwing" data-wing="deathwing" onclick="setWingFilter('deathwing')">Ala de Muerte</button>
+            <button class="filter-btn wing-filter-btn wing-ravenwing" data-wing="ravenwing" onclick="setWingFilter('ravenwing')">Ala de Cuervo</button>
+            <button class="filter-btn wing-filter-btn" data-wing="green" style="border-color: var(--caliban-bright);" onclick="setWingFilter('green')">Compañía Verde</button>
+          </div>
+
+          <!-- Filtro de Rol Táctico -->
+          <div class="filter-group">
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Rol:</span>
+            <select id="codex-role-filter" class="form-control-gothic" aria-label="Filtrar por rol táctico">
+              <option value="all">Todos los Roles</option>
+              <option value="character">Personaje / Líder</option>
+              <option value="battleline">Línea de Batalla</option>
+              <option value="infantry">Infantería</option>
+              <option value="elite">Élite / Veteranos</option>
+              <option value="mounted">Montado / Bípede</option>
+              <option value="vehicle">Vehículo / Tanque</option>
+              <option value="transport">Transporte Dedicado</option>
+              <option value="aircraft">Aeronave</option>
+            </select>
+          </div>
+
+          <!-- Filtro de Palabras Clave -->
+          <div class="filter-group">
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Palabra Clave:</span>
+            <select id="codex-keyword-filter" class="form-control-gothic" aria-label="Filtrar por palabra clave">
+              <option value="all">Todas las Keywords</option>
+            </select>
+          </div>
+
+          <!-- Ordenación -->
+          <div class="filter-group">
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Ordenar:</span>
+            <select id="codex-sort-select" class="form-control-gothic" aria-label="Ordenar hojas de datos">
+              <option value="name_asc">Nombre (A - Z)</option>
+              <option value="name_desc">Nombre (Z - A)</option>
+              <option value="points_asc">Puntos (Menor a Mayor)</option>
+              <option value="points_desc">Puntos (Mayor a Menor)</option>
+              <option value="t_desc">Resistencia (T: Mayor a Menor)</option>
+              <option value="sv_asc">Salvación (Sv: Mejor a Peor)</option>
+              <option value="w_desc">Heridas (W: Mayor a Menor)</option>
+            </select>
+          </div>
+
+          <!-- Contador y Botón Limpiar -->
+          <div style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
+            <span id="codex-results-count" class="results-counter-pill">Mostrando 55 de 55</span>
+            <button id="btn-clear-codex-filters" class="btn-gothic-secondary" onclick="clearCodexFilters()" style="padding: 6px 12px; font-size: 0.85rem;" title="Restablecer todos los filtros del Códex">✕ Limpiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Hojas de Datos -->
+      <div class="datasheet-grid" id="codex-cards-container">
+        <!-- Renderizado dinámico desde js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MÓDULO NUEVO: DESTACAMENTOS Y COMPARADOR TÁCTICO (11ª EDICIÓN)
+         ==================================================================== -->
+    <section class="tab-pane" id="pane-detachments">
+      <!-- Banner Resumen de Doctrinas de Combate -->
+      <div class="detachment-summary-banner">
+        <div class="summary-info">
+          <h2 class="section-title">🦅 Doctrinas de Combate y Destacamentos de los Ángeles Oscuros</h2>
+          <p class="section-desc">
+            Compendio oficial de 11ª Edición (Wahapedia & Balance Dataslate). Descubre las <strong>21 doctrinas tácticas</strong> disponibles (5 exclusivas del Capítulo y 16 formaciones Astartes compatibles). Consulta para qué sirve cada formación, sus reglas especiales de mando, mejoras para líderes, estratagemas y sinergias con miniaturas de tu colección, o usa el <strong>Comparador Táctico</strong> interactivo.
+          </p>
+        </div>
+        <div class="summary-kpis">
+          <div class="kpi-mini">
+            <span class="kpi-mini-val">21</span>
+            <span class="kpi-mini-lbl">Destacamentos</span>
+          </div>
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" style="color: var(--gold-accent);">5</span>
+            <span class="kpi-mini-lbl">Exclusivos AO</span>
+          </div>
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" style="color: #38bdf8;">16</span>
+            <span class="kpi-mini-lbl">Compatibles SM</span>
+          </div>
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" style="color: var(--caliban-bright);">1-3 PD</span>
+            <span class="kpi-mini-lbl">Coste de Mando</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODO COMPARADOR TÁCTICO -->
+      <div class="comparator-panel" id="detachment-comparator-section">
+        <div class="comparator-header">
+          <div class="comparator-title-group">
+            <span class="comparator-badge">MODO COMPARADOR TÁCTICO</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--deathwing-bone);">⚖️ Comparador Frente a Frente de Destacamentos</h3>
+            <p class="comparator-subtitle">
+              Analiza simultáneamente dos destacamentos: puntos de destacamento (PD), utilidad estratégica recomendada, regla del destacamento, pros/contras, unidades sinérgicas, mejoras y estratagemas.
+            </p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-gothic-secondary" id="btn-swap-comparator" onclick="swapComparatorDetachments()" title="Intercambiar Ranura A y Ranura B">⇄ Intercambiar</button>
+            <button class="btn-gothic-secondary" id="btn-toggle-comparator" onclick="toggleComparatorVisibility()" title="Ocultar o desplegar comparador">🔼 Ocultar</button>
+          </div>
+        </div>
+
+        <div class="comparator-selectors-bar">
+          <div class="comparator-select-box">
+            <label for="comparator-select-a" style="color: #38bdf8;">🔵 Destacamento A:</label>
+            <select id="comparator-select-a" class="form-control-gothic">
+              <!-- Cargado dinámicamente -->
+            </select>
+          </div>
+          <div class="comparator-vs-badge">VS</div>
+          <div class="comparator-select-box">
+            <label for="comparator-select-b" style="color: #f43f5e;">🔴 Destacamento B:</label>
+            <select id="comparator-select-b" class="form-control-gothic">
+              <!-- Cargado dinámicamente -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Contenido de Comparación lado a lado -->
+        <div class="comparator-body" id="comparator-content-grid">
+          <!-- Renderizado dinámico desde renderDetachmentComparator() en js/app.js -->
+        </div>
+      </div>
+
+      <!-- Barra de Filtros y Búsqueda de Destacamentos -->
+      <div class="toolbar-panel">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="detachment-search" placeholder="Buscar destacamento por nombre, regla, miniatura sinérgica o propósito táctico..." aria-label="Buscar destacamentos">
+        </div>
+        <div class="filter-group">
+          <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Filtrar Tipo:</span>
+          <button class="filter-btn det-filter-btn active" data-detfilter="all">Todos (21)</button>
+          <button class="filter-btn det-filter-btn" data-detfilter="exclusive" style="border-color: var(--gold-primary); color: var(--gold-accent);">★ Exclusivos AO (5)</button>
+          <button class="filter-btn det-filter-btn" data-detfilter="astartes">Astartes (16)</button>
+          <button class="filter-btn det-filter-btn" data-detfilter="dp1">1 PD (19)</button>
+          <button class="filter-btn det-filter-btn" data-detfilter="dp2">2 PD (1)</button>
+          <button class="filter-btn det-filter-btn" data-detfilter="dp3">3 PD (1)</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-left: auto; flex-wrap: wrap;">
+          <span id="detachment-results-count" class="results-counter-pill">Mostrando 21 de 21</span>
+          <button class="btn-gothic-secondary" id="btn-clear-det-filters" onclick="clearDetachmentFilters()" style="padding: 6px 12px; font-size: 0.85rem;" title="Restablecer filtros de destacamentos">✕ Limpiar</button>
+          <button class="btn-gothic-primary" id="btn-create-detachment" onclick="openDetachmentEditor(null)" style="padding: 6px 14px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;" title="Crear o personalizar un destacamento"><span style="color: var(--gold-accent);">➕</span> <span>Nuevo Destacamento</span></button>
+          <button class="btn-gothic-secondary" id="btn-reset-all-detachments" onclick="resetAllDetachmentsToDefault()" style="display: none; padding: 6px 12px; font-size: 0.82rem; color: #f87171; border-color: rgba(239, 68, 68, 0.4);" title="Restablecer todos los destacamentos a valores oficiales de Wahapedia">🔄 <span>Restaurar Oficiales</span></button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Todos los Destacamentos (21 Cartas) -->
+      <div class="detachments-cards-grid" id="detachments-cards-container">
+        <!-- Renderizado dinámico desde renderDetachments() en js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MÓDULO DE ESTRATAGEMAS: 11ª EDICIÓN / WAHAPEDIA
+         ==================================================================== -->
+    <section class="tab-pane" id="pane-stratagems">
+      <!-- Banner de Estratagemas -->
+      <div class="stratagems-banner">
+        <div class="summary-info">
+          <h2 class="section-title" id="stratagems-banner-title">⚡ Compendio Táctico de Estratagemas (11ª Edición)</h2>
+          <p class="section-desc" id="stratagems-banner-desc">
+            Base de datos completa de estratagemas oficiales según <strong>Wahapedia</strong>. Incluye las <strong>11 Estratagemas del Reglamento Básico</strong>, las <strong>24 Estratagemas exclusivas de los Ángeles Oscuros</strong> y las <strong>34 Estratagemas de Destacamentos Marines Espaciales</strong>. Clasificadas y filtrables por <strong>fase exacta</strong> (Mando, Movimiento, Disparo, Carga, Combate o Cualquier Fase), <strong>turno</strong> y <strong>destacamento</strong>.
+          </p>
+        </div>
+        <div class="summary-kpis">
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" id="kpi-strat-total">69</span>
+            <span class="kpi-mini-lbl" id="kpi-lbl-strat-total">Estratagemas</span>
+          </div>
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" style="color: var(--gold-accent);">11</span>
+            <span class="kpi-mini-lbl" id="kpi-lbl-strat-core">Reglas Básicas</span>
+          </div>
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" style="color: var(--caliban-bright);">24</span>
+            <span class="kpi-mini-lbl" id="kpi-lbl-strat-da">Ángeles Oscuros</span>
+          </div>
+          <div class="kpi-mini">
+            <span class="kpi-mini-val" style="color: #38bdf8;">34</span>
+            <span class="kpi-mini-lbl" id="kpi-lbl-strat-sm">Marines Astartes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros y Búsqueda de Estratagemas -->
+      <div class="stratagems-toolbar">
+        <!-- Fila 1: Búsqueda y Selector de Destacamento -->
+        <div class="stratagems-filter-row" style="justify-content: space-between;">
+          <div style="flex: 1; min-width: 260px; max-width: 450px; position: relative;">
+            <input type="text" id="stratagem-search-input" class="form-control-gothic" placeholder="🔍 Buscar estratagema (nombre, regla, efecto...)..." style="width: 100%;">
+          </div>
+          
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <label for="stratagem-detachment-select" id="lbl-strat-detachment" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Destacamento:</label>
+            <select id="stratagem-detachment-select" class="form-control-gothic" style="min-width: 240px;">
+              <option value="all">Todos los Destacamentos (69)</option>
+              <option value="core">Reglamento (Básicas del Core) (11)</option>
+              <optgroup label="Ángeles Oscuros (Exclusivos)" id="optgroup-da">
+                <option value="darkflight_pursuit">Persecución del Vuelo Oscuro (3)</option>
+                <option value="inner_circle">Contingente del Círculo Interior (3)</option>
+                <option value="wrath_of_the_rock">Ira de la Roca (6)</option>
+              </optgroup>
+              <optgroup label="Marines Espaciales (Compatibles)" id="optgroup-sm">
+                <option value="gladius">Contingente Gladius (6)</option>
+                <option value="ironstorm">Punta de Lanza Ferrotormenta (3)</option>
+                <option value="stormlance">Contingente Lanzatormenta (3)</option>
+                <option value="ceramite_sentinels">Centinelas de Ceramita (6)</option>
+                <option value="boarding_strike">Golpe de Abordaje (4)</option>
+                <option value="terminator_assault">Asalto de Exterminadores (4)</option>
+                <option value="shield_of_void">Escudo del Vacío (4)</option>
+                <option value="pilum_strike">Equipo de Asalto Pilum (4)</option>
+                <option value="tactical_brethren">Hermandad Táctica (3)</option>
+                <option value="assault_brethren">Hermandad de Asalto (3)</option>
+                <option value="devastator_brethren">Hermandad Devastadora (3)</option>
+                <option value="phobos_shadow">Fuerza de Sombras Phobos (3)</option>
+              </optgroup>
+            </select>
+
+            <button class="btn-gothic-secondary" id="btn-clear-strat-filters" onclick="clearStratagemFilters()" style="padding: 6px 14px; font-size: 0.85rem;" title="Restablecer todos los filtros de estratagemas">✕ Limpiar</button>
+            <button class="btn-gothic-primary" id="btn-create-stratagem" onclick="openStratagemEditor(null)" style="padding: 6px 14px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;" title="Crear una estratagema personalizada"><span style="color: var(--gold-accent);">➕</span> <span id="txt-btn-new-strat">Nueva Estratagema</span></button>
+            <button class="btn-gothic-secondary" id="btn-reset-all-stratagems" onclick="resetAllStratagemsToDefault()" style="display: none; padding: 6px 12px; font-size: 0.82rem; color: #f87171; border-color: rgba(239, 68, 68, 0.4);" title="Restablecer todas las estratagemas a valores oficiales de Wahapedia">🔄 <span id="txt-btn-reset-strats">Restaurar Wahapedia</span></button>
+          </div>
+        </div>
+
+        <!-- Fila 2: Filtro por Fase (Clasificación explícita por fases) -->
+        <div class="stratagems-filter-row">
+          <span id="lbl-strat-phase" style="font-size: 0.82rem; color: var(--gold-accent); font-weight: 700; text-transform: uppercase;">Fase Táctica:</span>
+          <div class="stratagem-pills-group" id="stratagem-phase-pills">
+            <button class="stratagem-pill-btn active" data-phase="all">
+              <span id="txt-phase-all">Todas</span>
+              <span class="pill-count" id="count-phase-all">69</span>
+            </button>
+            <button class="stratagem-pill-btn" data-phase="command">
+              <span id="txt-phase-command">👑 Mando</span>
+              <span class="pill-count" id="count-phase-command">7</span>
+            </button>
+            <button class="stratagem-pill-btn" data-phase="movement">
+              <span id="txt-phase-movement">🏃 Movimiento</span>
+              <span class="pill-count" id="count-phase-movement">14</span>
+            </button>
+            <button class="stratagem-pill-btn" data-phase="shooting">
+              <span id="txt-phase-shooting">🎯 Disparo</span>
+              <span class="pill-count" id="count-phase-shooting">26</span>
+            </button>
+            <button class="stratagem-pill-btn" data-phase="charge">
+              <span id="txt-phase-charge">⚡ Carga</span>
+              <span class="pill-count" id="count-phase-charge">5</span>
+            </button>
+            <button class="stratagem-pill-btn" data-phase="fight">
+              <span id="txt-phase-fight">⚔️ Combate</span>
+              <span class="pill-count" id="count-phase-fight">14</span>
+            </button>
+            <button class="stratagem-pill-btn" data-phase="any">
+              <span id="txt-phase-any">🔄 Reacción / Cualquier Fase</span>
+              <span class="pill-count" id="count-phase-any">3</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fila 3: Filtro por Turno -->
+        <div class="stratagems-filter-row">
+          <span id="lbl-strat-turn" style="font-size: 0.82rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Turno de Uso:</span>
+          <div class="stratagem-pills-group" id="stratagem-turn-pills">
+            <button class="stratagem-pill-btn active" data-turn="all" id="pill-turn-all">Todos los Turnos</button>
+            <button class="stratagem-pill-btn" data-turn="your_turn" id="pill-turn-player">🔵 Tu Turno (28)</button>
+            <button class="stratagem-pill-btn" data-turn="opponent_turn" id="pill-turn-opponent">🔴 Turno Oponente (20)</button>
+            <button class="stratagem-pill-btn" data-turn="either_turn" id="pill-turn-either">⚪ Cualquier Turno (21)</button>
+          </div>
+          <span id="stratagems-filter-status" style="margin-left: auto; font-size: 0.8rem; color: var(--caliban-bright); font-weight: 600;">Mostrando 69 estratagemas</span>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Cartas de Estratagemas -->
+      <div class="stratagems-cards-grid" id="stratagems-cards-container">
+        <!-- Renderizado dinámico desde renderStratagems() en js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MÓDULO 2: GESTOR DE COLECCIÓN PERSONAL Y PINTURA
+         ==================================================================== -->
+    <section class="tab-pane" id="pane-collection">
+      <!-- Tablero de Métricas (KPIs) -->
+      <div class="collection-stats-board">
+        <div class="kpi-card">
+          <div class="kpi-icon">🛡️</div>
+          <div class="kpi-data">
+            <span class="kpi-label">Total Miniaturas</span>
+            <span class="kpi-val" id="kpi-col-models">0</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="color: var(--gold-accent);">🏆</div>
+          <div class="kpi-data">
+            <span class="kpi-label">Puntos Físicos en Vitrina</span>
+            <span class="kpi-val" id="kpi-col-points">0 pts</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="color: var(--caliban-bright);">⚔️</div>
+          <div class="kpi-data">
+            <span class="kpi-label">Pintadas (Battle Ready+)</span>
+            <span class="kpi-val" id="kpi-col-battleready">0 (0%)</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="color: #f87171;">📦</div>
+          <div class="kpi-data">
+            <span class="kpi-label">Pila de la Vergüenza</span>
+            <span class="kpi-val" id="kpi-col-pile">0 minis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Progreso del Taller de Pintura -->
+      <div class="painting-progress-wrap">
+        <div class="progress-header">
+          <span style="font-family: var(--font-serif); letter-spacing: 1px; color: var(--deathwing-bone);">ESTADO GENERAL DE PINTURA Y MODELISMO</span>
+          <span style="color: var(--gold-accent); font-size: 0.9rem;">Progreso de la Colección</span>
+        </div>
+        <div class="progress-track" aria-label="Progreso de pintura">
+          <div class="progress-segment seg-parade" id="seg-parade" style="width: 0%;" title="Nivel Desfile"></div>
+          <div class="progress-segment seg-battle" id="seg-battle" style="width: 0%;" title="Battle Ready"></div>
+          <div class="progress-segment seg-base" id="seg-base" style="width: 0%;" title="Color Base"></div>
+          <div class="progress-segment seg-primed" id="seg-primed" style="width: 0%;" title="Imprimado"></div>
+          <div class="progress-segment seg-built" id="seg-built" style="width: 0%;" title="Montado"></div>
+          <div class="progress-segment seg-box" id="seg-box" style="width: 0%;" title="En caja"></div>
+        </div>
+        <div class="progress-legend">
+          <div class="legend-item"><span class="legend-dot" style="background: var(--status-parade);"></span> Nivel Desfile</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--status-battle);"></span> Battle Ready</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--status-base);"></span> Color Base</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--status-primed);"></span> Imprimado</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--status-built);"></span> Montado</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--status-box);"></span> En caja / Matriz</div>
+        </div>
+      </div>
+
+      <!-- Barra de herramientas de la colección -->
+      <div class="toolbar-panel">
+        <div class="filter-group">
+          <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Filtrar Estado:</span>
+          <button class="filter-btn col-status-filter-btn active" data-status="all">Todos</button>
+          <button class="filter-btn col-status-filter-btn" data-status="parade">🏆 Desfile</button>
+          <button class="filter-btn col-status-filter-btn" data-status="battle">⚔️ Battle Ready</button>
+          <button class="filter-btn col-status-filter-btn" data-status="base">🖌️ Base</button>
+          <button class="filter-btn col-status-filter-btn" data-status="primed">🎨 Imprimado</button>
+          <button class="filter-btn col-status-filter-btn" data-status="built">🛠️ Montado</button>
+          <button class="filter-btn col-status-filter-btn" data-status="box">📦 En caja</button>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-gothic" id="btn-add-collection-custom">+ Registrar Miniatura</button>
+          <button class="btn-gothic-secondary" onclick="exportCollectionJson()" title="Copia de Seguridad">💾 Exportar JSON</button>
+          <button class="btn-gothic-secondary" onclick="triggerImportCollectionJson()" title="Restaurar Copia">📂 Importar JSON</button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de la Colección -->
+      <div class="collection-grid" id="collection-cards-container">
+        <!-- Renderizado dinámico desde js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MÓDULO 3: CREADOR Y VALIDADOR DE LISTAS DE EJÉRCITO
+         ==================================================================== -->
+    <section class="tab-pane" id="pane-army">
+      <div class="army-builder-layout">
+        
+        <!-- Panel Lateral de Configuración de Lista -->
+        <aside class="army-config-sidebar">
+          <div>
+            <label for="army-name-input" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Nombre del Destacamento / Lista:</label>
+            <input type="text" id="army-name-input" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: var(--text-main); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 1rem; margin-top: 4px;" value="Fuerza de Asedio de la Primera Legión">
+          </div>
+
+          <div>
+            <label for="army-points-limit" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Formato / Límite de Puntos:</label>
+            <select id="army-points-limit" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: var(--text-main); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.95rem; margin-top: 4px;">
+              <option value="500">Patrulla de Combate (500 pts)</option>
+              <option value="1000">Incursión (1.000 pts)</option>
+              <option value="2000" selected>Fuerza de Choque (2.000 pts - Estándar)</option>
+              <option value="3000">Embestida (3.000 pts)</option>
+            </select>
+          </div>
+
+          <!-- Gestión Multi-Destacamento con Puntos de Destacamento (PD) -->
+          <div style="background: rgba(0,0,0,0.35); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-primary); font-weight: 700; margin: 0;">
+                Destacamentos Seleccionados:
+              </label>
+              <button type="button" class="btn-gothic-secondary" onclick="openManageDetachmentsModal()" style="font-size: 0.72rem; padding: 2px 8px; border-color: var(--gold-primary); color: var(--gold-accent);" title="Gestionar y comparar destacamentos de la fuerza">
+                ⚙️ Gestionar (<span id="count-selected-dets">1</span>)
+              </button>
+            </div>
+
+            <!-- Lista de chips de destacamentos seleccionados -->
+            <div id="army-selected-detachments-chips" style="display: flex; flex-direction: column; gap: 6px;">
+              <!-- Rellenado dinámicamente -->
+            </div>
+
+            <!-- Selector para añadir otro destacamento rápidamente -->
+            <div class="army-add-detachment-row" style="display: flex; gap: 6px; align-items: center; min-width: 0; width: 100%;">
+              <select id="army-add-detachment-select" class="form-control-gothic" style="flex: 1 1 0; min-width: 0; max-width: 100%; width: 100%; font-size: 0.8rem; padding: 6px 8px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" aria-label="Añadir otro destacamento">
+                <option value="">+ Añadir otro destacamento...</option>
+                <!-- Rellenado dinámicamente -->
+              </select>
+              <button type="button" class="btn-gothic-primary" onclick="addSelectedDetachmentFromSelect()" style="padding: 6px 12px; font-size: 0.8rem; flex-shrink: 0;" title="Añadir este destacamento a la fuerza">
+                ➕
+              </button>
+            </div>
+
+            <!-- Medidor de Puntos de Destacamento (PD) en Tiempo Real -->
+            <div style="background: rgba(0, 0, 0, 0.5); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 8px 10px; margin-top: 2px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">
+                  Puntos de Destacamento (PD):
+                </span>
+                <span id="meter-detachment-points" style="color: var(--caliban-bright); font-weight: 800; font-size: 0.95rem;">
+                  1 / 3 PD
+                </span>
+              </div>
+              <div class="meter-bar-track" style="height: 6px;">
+                <div class="meter-bar-fill" id="meter-pd-fill" style="width: 33.3%;"></div>
+              </div>
+              <div id="pd-budget-warning" style="display: none; font-size: 0.72rem; color: #f87171; margin-top: 4px; font-weight: 700;"></div>
+            </div>
+          </div>
+
+          <!-- Banner con las reglas acumuladas de TODOS los destacamentos seleccionados -->
+          <div id="detachment-rule-banner" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Reglas activas acumuladas -->
+          </div>
+
+          <!-- Medidor de Puntos en Tiempo Real -->
+          <div class="meter-wrapper">
+            <div class="meter-labels">
+              <span id="meter-current-points" style="color: var(--caliban-bright); font-size: 1.2rem;">0 pts</span>
+              <span id="meter-max-points" style="color: var(--text-muted);">/ 2000 pts</span>
+            </div>
+            <div class="meter-bar-track">
+              <div class="meter-bar-fill" id="meter-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Acciones de Lista -->
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button class="btn-gothic" onclick="openAddUnitToArmyModal()">+ Añadir Unidad al Ejército</button>
+            <button class="btn-gothic-secondary" id="btn-export-tournament" onclick="exportActiveListTournamentText()">
+              📋 Copiar Formato Oficial Torneo (BCP/WTC)
+            </button>
+            <button class="btn-gothic-secondary" onclick="window.print()">
+              🖨️ Imprimir / Guardar en PDF
+            </button>
+          </div>
+        </aside>
+
+        <!-- Contenedor Principal de Unidades del Ejército -->
+        <main class="army-units-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h3 style="font-family: var(--font-serif); color: var(--deathwing-bone); letter-spacing: 1px;">COMPOSICIÓN DE LA FUERZA</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Cotejo automático con tu inventario real</span>
+          </div>
+
+          <div id="army-units-list-container">
+            <!-- Renderizado dinámico de las unidades de la lista -->
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MÓDULO 4: COGITADOR DE BATALLA (MODO PARTIDA EN VIVO)
+         ==================================================================== -->
+    <section class="tab-pane" id="pane-battle">
+      <div class="battle-tracker-grid">
+        
+        <!-- HUD Principal de Mando y Puntos de Victoria -->
+        <div class="battle-hud-panel">
+          <!-- Banner de Ronda -->
+          <div class="round-control-banner">
+            <span class="round-counter-text" id="hud-round-num">RONDA 1 / 5</span>
+            <div class="counter-stepper">
+              <button class="step-btn" onclick="adjustRound(-1)">-</button>
+              <button class="step-btn" onclick="adjustRound(1)">+</button>
+            </div>
+          </div>
+
+          <!-- Selector de Turno Activo (Propio vs Enemigo) y Fases Tácticas -->
+          <div class="battle-turn-phase-control">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">
+                Bando Activo del Turno:
+              </span>
+              <span id="hud-turn-indicator-badge" style="font-size: 0.75rem; font-weight: 700; color: #38bdf8; text-transform: uppercase;">
+                🔵 Mi Turno (Jugador)
+              </span>
+            </div>
+            <div class="battle-turn-bar">
+              <button class="battle-turn-btn active turn-player" id="btn-turn-player" onclick="setBattleTurn('player')">
+                <span>🔵 Mi Turno (Jugador)</span>
+              </button>
+              <button class="battle-turn-btn turn-opponent" id="btn-turn-opponent" onclick="setBattleTurn('opponent')">
+                <span>🔴 Turno Enemigo (Oponente)</span>
+              </button>
+            </div>
+
+            <!-- Selector de Fase Táctica de la Ronda -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; margin-bottom: 2px;">
+              <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">
+                Fase de la Ronda:
+              </span>
+              <button class="battle-next-phase-btn" onclick="nextBattlePhase()" title="Avanzar automáticamente a la siguiente fase táctica de Warhammer 40k">
+                Siguiente Fase ⏩
+              </button>
+            </div>
+            <div class="battle-phases-bar" id="battle-phases-btn-group">
+              <button class="battle-phase-btn active" data-bphase="command" onclick="setBattlePhase('command')">👑 Mando</button>
+              <button class="battle-phase-btn" data-bphase="movement" onclick="setBattlePhase('movement')">🏃 Movimiento</button>
+              <button class="battle-phase-btn" data-bphase="shooting" onclick="setBattlePhase('shooting')">🎯 Disparo</button>
+              <button class="battle-phase-btn" data-bphase="charge" onclick="setBattlePhase('charge')">⚡ Carga</button>
+              <button class="battle-phase-btn" data-bphase="fight" onclick="setBattlePhase('fight')">⚔️ Combate</button>
+            </div>
+          </div>
+
+          <!-- Puntos de Mando (CP) -->
+          <div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Puntos de Mando Disponibles (CP)</span>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--gold-accent);" id="hud-cp-val">1</div>
+            </div>
+            <div class="counter-stepper">
+              <button class="step-btn" onclick="adjustCP(-1)">-1 CP</button>
+              <button class="step-btn" onclick="adjustCP(1)">+1 CP</button>
+            </div>
+          </div>
+
+          <!-- Objetivo del Juramento de Momento (Oath of Moment) -->
+          <div class="oath-banner">
+            <h4>⚔️ Objetivo de Juramento de Momento (Oath of Moment)</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">Todas tus unidades repiten las tiradas para impactar contra esta unidad enemiga:</p>
+            <input type="text" id="hud-oath-target-input" placeholder="Nombre de la unidad enemiga designada este turno..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--caliban-bright); color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 0.95rem;">
+          </div>
+
+          <!-- Marcadores de Puntos de Victoria (VP) -->
+          <div class="score-blocks-row">
+            <!-- Jugador (Ángeles Oscuros) -->
+            <div class="score-box" style="border-color: var(--caliban-bright);">
+              <span class="score-title" style="color: var(--caliban-bright);">Tu Puntuación (VP)</span>
+              <div class="score-big-num" id="hud-player-total-vp">0</div>
+              <div style="display: flex; justify-content: space-around; margin-top: 10px; font-size: 0.85rem;">
+                <div>
+                  <span style="color: var(--text-muted);">Prim:</span> <strong id="hud-p-prim-val">0</strong>
+                  <div style="margin-top: 4px;">
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('p-prim', -1)">-</button>
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('p-prim', 1)">+</button>
+                  </div>
+                </div>
+                <div>
+                  <span style="color: var(--text-muted);">Sec:</span> <strong id="hud-p-sec-val">0</strong>
+                  <div style="margin-top: 4px;">
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('p-sec', -1)">-</button>
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('p-sec', 1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Oponente -->
+            <div class="score-box" style="border-color: #ef4444;">
+              <span class="score-title" style="color: #f87171;">Oponente (VP)</span>
+              <div class="score-big-num" id="hud-opp-total-vp" style="color: #fca5a5;">0</div>
+              <div style="display: flex; justify-content: space-around; margin-top: 10px; font-size: 0.85rem;">
+                <div>
+                  <span style="color: var(--text-muted);">Prim:</span> <strong id="hud-o-prim-val">0</strong>
+                  <div style="margin-top: 4px;">
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('o-prim', -1)">-</button>
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('o-prim', 1)">+</button>
+                  </div>
+                </div>
+                <div>
+                  <span style="color: var(--text-muted);">Sec:</span> <strong id="hud-o-sec-val">0</strong>
+                  <div style="margin-top: 4px;">
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('o-sec', -1)">-</button>
+                    <button class="step-btn" style="width: 24px; height: 24px; font-size: 0.8rem;" onclick="adjustScore('o-sec', 1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ESTRATAGEMAS DISPONIBLES EN ESTE MOMENTO (FASE Y TURNO ACTIVOS) -->
+          <div class="battle-available-stratagems-panel" id="battle-available-stratagems-panel">
+            <div class="battle-stratagems-header-row">
+              <div class="battle-stratagems-title-group">
+                <h4>
+                  <span id="hud-stratagems-title-text">⚡ Estratagemas Disponibles en este Momento</span>
+                  <span id="hud-stratagems-count-badge" class="stratagem-cp-badge" style="font-size: 0.78rem; padding: 2px 8px; margin-left: 8px;">0</span>
+                </h4>
+                <p class="battle-stratagems-subtitle" id="hud-stratagems-current-phase-desc">
+                  Fase de Mando • Mi Turno (Jugador)
+                </p>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <label style="font-size: 0.78rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
+                  <input type="checkbox" id="battle-stratagems-scope-filter" onchange="toggleBattleStratagemsScope()" checked>
+                  <span id="lbl-battle-stratagems-scope">Solo mi Destacamento + Básicas</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Contenedor dinámico de estratagemas utilizables -->
+            <div class="battle-available-stratagems-grid" id="battle-available-stratagems-grid">
+              <!-- Renderizado dinámico desde renderBattleStratagems() en js/app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Rastreador Rápido de Heridas de la Lista de Ejército -->
+        <div class="battle-hud-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.2rem;">HERIDAS DE LA FUERZA EN COMBATE</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Seguimiento de bajas en mesa</span>
+          </div>
+
+          <div id="battle-wounds-tracker-container" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Renderizado dinámico de contadores de vida de tus unidades -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MÓDULO 5: SIMULADOR MATHHAMMER
+         ==================================================================== -->
+    <section class="tab-pane" id="pane-mathhammer">
+      <div class="mathhammer-card">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.6rem; letter-spacing: 1px;">SIMULADOR TÁCTICO DE DAÑO (MATHHAMMER)</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Calcula matemáticamente el daño medio esperado de tus armas contra cualquier perfil enemigo.</p>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
+          <h4 style="font-size: 0.85rem; color: var(--deathwing-bone); text-transform: uppercase; margin-bottom: 8px;">1. Parámetros del Arma Atacante:</h4>
+          <div class="calc-inputs-grid">
+            <div class="input-field-group">
+              <label for="math-attacks">Número de Ataques (A):</label>
+              <input type="number" id="math-attacks" class="math-calc-trigger" value="10" min="1">
+            </div>
+            <div class="input-field-group">
+              <label for="math-bsws">Habilidad HP / HA:</label>
+              <select id="math-bsws" class="math-calc-trigger">
+                <option value="2">2+ (Maestros / Primarca)</option>
+                <option value="3" selected>3+ (Space Marines)</option>
+                <option value="4">4+ (Pesada / Disparo apresurado)</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+            <div class="input-field-group">
+              <label for="math-strength">Fuerza del Arma (F):</label>
+              <input type="number" id="math-strength" class="math-calc-trigger" value="6" min="1">
+            </div>
+            <div class="input-field-group">
+              <label for="math-ap">Penetración (FP / AP):</label>
+              <select id="math-ap" class="math-calc-trigger">
+                <option value="0">FP 0</option>
+                <option value="-1">FP -1</option>
+                <option value="-2" selected>FP -2</option>
+                <option value="-3">FP -3</option>
+                <option value="-4">FP -4</option>
+              </select>
+            </div>
+            <div class="input-field-group">
+              <label for="math-damage">Daño por Ataque (D):</label>
+              <input type="number" id="math-damage" class="math-calc-trigger" value="2" min="1">
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+            <input type="checkbox" id="math-oath" class="math-calc-trigger" checked style="width: 18px; height: 18px;">
+            <label for="math-oath" style="font-size: 0.9rem; color: var(--caliban-bright); font-weight: 700; cursor: pointer;">
+              Repetición por Juramento de Momento (Oath of Moment activado)
+            </label>
+          </div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px;">
+          <h4 style="font-size: 0.85rem; color: var(--deathwing-bone); text-transform: uppercase; margin-bottom: 8px;">2. Perfil Defensor del Objetivo:</h4>
+          <div class="calc-inputs-grid">
+            <div class="input-field-group">
+              <label for="math-target-t">Resistencia Enemiga (R):</label>
+              <input type="number" id="math-target-t" class="math-calc-trigger" value="5" min="1">
+            </div>
+            <div class="input-field-group">
+              <label for="math-target-sv">Salvación por Armadura (Sv):</label>
+              <select id="math-target-sv" class="math-calc-trigger">
+                <option value="2" selected>2+ (Exterminador / Tanque)</option>
+                <option value="3">3+ (Marine estándar)</option>
+                <option value="4">4+ (Infantería ligera)</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+            <div class="input-field-group">
+              <label for="math-target-inv">Salvación Invulnerable (Inv):</label>
+              <select id="math-target-inv" class="math-calc-trigger">
+                <option value="0" selected>Sin Invulnerable</option>
+                <option value="4">4++ (Escudo de Tormenta)</option>
+                <option value="5">5++</option>
+                <option value="6">6++</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resultado Calculado -->
+        <div class="math-result-box">
+          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 700;">DAÑO MEDIO TOTAL ESTIMADO:</span>
+          <div class="damage-score" id="math-result-damage">0.00</div>
+          <div id="math-result-subtext" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       MODAL: AÑADIR MINIATURA A LA COLECCIÓN
+       ====================================================================== -->
+  <div class="modal-backdrop" id="add-miniature-modal" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
+    <div class="modal-content-da">
+      <div class="modal-header">
+        <h3 id="modal-add-title">Registrar Miniatura en la Armería</h3>
+        <button class="modal-close-btn" onclick="closeAddMiniatureModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <label for="modal-select-datasheet" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Hoja de Datos Oficial:</label>
+            <select id="modal-select-datasheet" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+              <!-- Rellenado dinámico -->
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label for="modal-mini-count" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Cantidad de Miniaturas:</label>
+              <input type="number" id="modal-mini-count" value="1" min="1" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+            </div>
+            <div>
+              <label for="modal-mini-status" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Estado de Pintura / Hobby:</label>
+              <select id="modal-mini-status" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+                <option value="box">📦 En caja / Matriz</option>
+                <option value="built" selected>🛠️ Montado</option>
+                <option value="primed">🎨 Imprimado</option>
+                <option value="base">🖌️ Color Base</option>
+                <option value="battle">⚔️ Battle Ready (Listo para mesa)</option>
+                <option value="parade">🏆 Nivel Desfile (Parade Ready)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="modal-mini-notes" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Opciones de Armamento Montado (WYSIWYG):</label>
+            <input type="text" id="modal-mini-notes" placeholder="Ej. Sargento con Puño de Combate y Cañón de Plasma..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="modal-mini-mag" style="width: 18px; height: 18px;">
+            <label for="modal-mini-mag" style="font-size: 0.85rem; color: var(--gold-accent); cursor: pointer;">
+              Miniatura magnetizada con opciones de armas intercambiables
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-gothic-secondary" onclick="closeAddMiniatureModal()">Cancelar</button>
+        <button class="btn-gothic" onclick="submitAddMiniature()">Guardar en Colección</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: SELECCIONAR UNIDAD PARA AÑADIR A LA LISTA DE EJÉRCITO
+       ====================================================================== -->
+  <div class="modal-backdrop" id="add-unit-to-army-modal" role="dialog" aria-modal="true" aria-labelledby="modal-army-title">
+    <div class="modal-content-da">
+      <div class="modal-header">
+        <h3 id="modal-army-title">Reclutar Unidad para la Lista de Combate</h3>
+        <button class="modal-close-btn" onclick="closeAddUnitToArmyModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Selecciona la hoja de datos que deseas desplegar en esta fuerza:</p>
+        <div id="army-modal-unit-selector" style="display: flex; flex-direction: column; gap: 8px; max-height: 400px; overflow-y: auto; padding-right: 6px;">
+          <!-- Rellenado dinámico -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-gothic-secondary" onclick="closeAddUnitToArmyModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: EDITOR DE HOJA DE DATOS DEL CÓDEX (11ª EDICIÓN)
+       ====================================================================== -->
+  <div class="modal-backdrop" id="edit-datasheet-modal" role="dialog" aria-modal="true" aria-labelledby="modal-edit-ds-title">
+    <div class="modal-content-da" style="max-width: 960px;">
+      <div class="modal-header">
+        <h3 id="modal-edit-ds-title">Editor de Parámetros del Códex</h3>
+        <button class="modal-close-btn" onclick="closeEditDatasheetModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+        <input type="hidden" id="edit-ds-id">
+
+        <!-- Fila 1: Nombre, Rol y Ala -->
+        <div style="display: grid; grid-template-columns: 2fr 1.3fr 1.1fr; gap: 12px;">
+          <div>
+            <label for="edit-ds-name" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Nombre de la Unidad:</label>
+            <input type="text" id="edit-ds-name" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+          </div>
+          <div>
+            <label for="edit-ds-role" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Rol Táctico:</label>
+            <select id="edit-ds-role" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+              <option value="Héroe Épico">Héroe Épico</option>
+              <option value="Líder / Personaje">Líder / Personaje</option>
+              <option value="Línea (Battleline)">Línea (Battleline)</option>
+              <option value="Línea / Infiltración">Línea / Infiltración</option>
+              <option value="Élite">Élite</option>
+              <option value="Élite / Mando">Élite / Mando</option>
+              <option value="Élite / Apoyo de Fuego">Élite / Apoyo de Fuego</option>
+              <option value="Ataque Rápido">Ataque Rápido</option>
+              <option value="Apoyo de Fuego">Apoyo de Fuego</option>
+              <option value="Apoyo Pesado">Apoyo Pesado</option>
+              <option value="Blindado / Dreadnought">Blindado / Dreadnought</option>
+              <option value="Blindado / Artillería">Blindado / Artillería</option>
+              <option value="Vehículo">Vehículo</option>
+              <option value="Vehículo / Tanque">Vehículo / Tanque</option>
+              <option value="Vehículo / Transporte">Vehículo / Transporte</option>
+              <option value="Vehículo / Transporte Pesado">Vehículo / Transporte Pesado</option>
+              <option value="Aeronave">Aeronave</option>
+            </select>
+          </div>
+          <div>
+            <label for="edit-ds-wing" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Ala del Capítulo:</label>
+            <select id="edit-ds-wing" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+              <option value="Ala de Muerte">Ala de Muerte</option>
+              <option value="Ala de Cuervo">Ala de Cuervo</option>
+              <option value="Compañía Verde">Compañía Verde</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila 2: Palabras Clave y Héroe Épico -->
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 12px; align-items: start;">
+          <div>
+            <label for="edit-ds-keywords" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Palabras Clave (Keywords):</label>
+            <input type="text" id="edit-ds-keywords" placeholder="INFANTERÍA, PERSONAJE, ALA DE MUERTE, IMPERIUM..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px;">
+              <span class="kw-chip" onclick="addKeywordChip('ADEPTUS ASTARTES')">+ ADEPTUS ASTARTES</span>
+              <span class="kw-chip" onclick="addKeywordChip('INFANTERÍA')">+ INFANTERÍA</span>
+              <span class="kw-chip" onclick="addKeywordChip('PERSONAJE')">+ PERSONAJE</span>
+              <span class="kw-chip" onclick="addKeywordChip('ALA DE MUERTE')">+ ALA DE MUERTE</span>
+              <span class="kw-chip" onclick="addKeywordChip('ALA DE CUERVO')">+ ALA DE CUERVO</span>
+              <span class="kw-chip" onclick="addKeywordChip('EXTERMINADOR')">+ EXTERMINADOR</span>
+              <span class="kw-chip" onclick="addKeywordChip('MONTADO')">+ MONTADO</span>
+              <span class="kw-chip" onclick="addKeywordChip('VEHÍCULO')">+ VEHÍCULO</span>
+              <span class="kw-chip" onclick="addKeywordChip('DREADNOUGHT')">+ DREADNOUGHT</span>
+              <span class="kw-chip" onclick="addKeywordChip('AERONAVE')">+ AERONAVE</span>
+              <span class="kw-chip" onclick="addKeywordChip('VOLAR')">+ VOLAR</span>
+              <span class="kw-chip" onclick="addKeywordChip('TRANSPORTE')">+ TRANSPORTE</span>
+              <span class="kw-chip" onclick="addKeywordChip('HUMO')">+ HUMO</span>
+              <span class="kw-chip" onclick="addKeywordChip('EXPLOSIVOS')">+ EXPLOSIVOS</span>
+              <span class="kw-chip" onclick="addKeywordChip('TACTICUS')">+ TACTICUS</span>
+              <span class="kw-chip" onclick="addKeywordChip('PHOBOS')">+ PHOBOS</span>
+              <span class="kw-chip" onclick="addKeywordChip('GRAVIS')">+ GRAVIS</span>
+              <span class="kw-chip" onclick="addKeywordChip('LÍNEA')">+ LÍNEA</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 26px;">
+            <input type="checkbox" id="edit-ds-epic" style="width: 18px; height: 18px;">
+            <label for="edit-ds-epic" style="font-size: 0.85rem; color: var(--gold-accent); cursor: pointer; font-weight: 700;">Héroe Épico</label>
+          </div>
+        </div>
+
+        <!-- Fila 3: Atributos Básicos 11ª Edición (Celdas) -->
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
+          <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin-bottom: 8px;">Atributos Básicos de Hoja de Datos (11ª Edición):</h4>
+          <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center;">
+            <div>
+              <label for="edit-stat-m" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700;">M (Mov)</label>
+              <input type="text" id="edit-stat-m" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px; border-radius: 4px;">
+            </div>
+            <div>
+              <label for="edit-stat-r" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700;">R (Res)</label>
+              <input type="number" id="edit-stat-r" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px; border-radius: 4px;">
+            </div>
+            <div>
+              <label for="edit-stat-sv" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700;">SV (Salv)</label>
+              <input type="text" id="edit-stat-sv" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px; border-radius: 4px;">
+            </div>
+            <div>
+              <label for="edit-stat-inv" style="font-size: 0.7rem; color: #38bdf8; font-weight: 700;">INV (Invul)</label>
+              <input type="text" id="edit-stat-inv" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #38bdf8; padding: 6px; border-radius: 4px;">
+            </div>
+            <div>
+              <label for="edit-stat-h" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700;">H (Heridas)</label>
+              <input type="number" id="edit-stat-h" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px; border-radius: 4px;">
+            </div>
+            <div>
+              <label for="edit-stat-l" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700;">L (Liderazgo)</label>
+              <input type="text" id="edit-stat-l" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px; border-radius: 4px;">
+            </div>
+            <div>
+              <label for="edit-stat-co" style="font-size: 0.7rem; color: var(--gold-accent); font-weight: 700;">CO (Control)</label>
+              <input type="number" id="edit-stat-co" style="width: 100%; text-align: center; background: var(--bg-deep); border: 1px solid var(--border-bright); color: var(--gold-accent); padding: 6px; border-radius: 4px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 4: Opciones de Puntos MFM (Celdas individuales en tabla) -->
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Coste en Puntos Oficiales (MFM):</h4>
+            <button type="button" class="btn-gothic-secondary" onclick="addPointsOptionRow()" style="font-size: 0.75rem; padding: 4px 10px;">+ Añadir Opción de Tamaño</button>
+          </div>
+          <table class="editor-table" id="table-points-options">
+            <thead>
+              <tr>
+                <th style="width: 160px;">Nº Miniaturas</th>
+                <th>Coste Total en Puntos</th>
+                <th style="width: 50px; text-align: center;">Quitar</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-points-options">
+              <!-- Celdas añadidas dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Fila 5: Armas a Distancia (Celdas individuales en tabla) -->
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Armas a Distancia (Ranged Weapons):</h4>
+            <button type="button" class="btn-gothic-secondary" onclick="addRangedWeaponRow()" style="font-size: 0.75rem; padding: 4px 10px;">+ Añadir Arma a Distancia</button>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="editor-table" id="table-ranged-weapons">
+              <thead>
+                <tr>
+                  <th style="min-width: 170px;">Nombre del Arma</th>
+                  <th style="width: 80px;">Alcance</th>
+                  <th style="width: 60px;">A</th>
+                  <th style="width: 60px;">HP</th>
+                  <th style="width: 60px;">F</th>
+                  <th style="width: 60px;">FP</th>
+                  <th style="width: 60px;">D</th>
+                  <th style="min-width: 150px;">Palabras Clave (ej: Asalto, Pesada)</th>
+                  <th style="width: 45px; text-align: center;">Quitar</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-ranged-weapons">
+                <!-- Celdas añadidas dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Fila 6: Armas Cuerpo a Cuerpo (Celdas individuales en tabla) -->
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Armas Cuerpo a Cuerpo (Melee Weapons):</h4>
+            <button type="button" class="btn-gothic-secondary" onclick="addMeleeWeaponRow()" style="font-size: 0.75rem; padding: 4px 10px;">+ Añadir Arma Cuerpo a Cuerpo</button>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="editor-table" id="table-melee-weapons">
+              <thead>
+                <tr>
+                  <th style="min-width: 170px;">Nombre del Arma</th>
+                  <th style="width: 80px;">Alcance</th>
+                  <th style="width: 60px;">A</th>
+                  <th style="width: 60px;">HA</th>
+                  <th style="width: 60px;">F</th>
+                  <th style="width: 60px;">FP</th>
+                  <th style="width: 60px;">D</th>
+                  <th style="min-width: 150px;">Palabras Clave (ej: Lanza, Devastadoras)</th>
+                  <th style="width: 45px; text-align: center;">Quitar</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-melee-weapons">
+                <!-- Celdas añadidas dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Fila 7: Habilidades y Reglas Especiales (Celdas individuales en lista) -->
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Habilidades y Reglas Especiales:</h4>
+            <button type="button" class="btn-gothic-secondary" onclick="addAbilityRow()" style="font-size: 0.75rem; padding: 4px 10px;">+ Añadir Habilidad</button>
+          </div>
+          <div id="container-abilities-rows" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Celdas añadidas dinámicamente -->
+          </div>
+        </div>
+
+        <!-- Fila 8: Liderazgo y Notas -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label for="edit-ds-leader" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Puede Liderar a (Escuadras que acompaña):</label>
+            <input type="text" id="edit-ds-leader" placeholder="Camaradas del Círculo Interior, Escuadra de Intercesores..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+          </div>
+          <div>
+            <label for="edit-ds-notes" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Notas y Trasfondo:</label>
+            <input type="text" id="edit-ds-notes" placeholder="Notas sobre equipamiento o rol en la batalla..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button class="btn-gothic-secondary" id="btn-delete-datasheet" onclick="deleteDatasheetFromModal()" style="color: #f87171; border-color: #ef4444;">Eliminar del Códex</button>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-gothic-secondary" onclick="closeEditDatasheetModal()">Cancelar</button>
+          <button class="btn-gothic" onclick="saveDatasheetFromModal()">Guardar en Códex</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: CONSULTA DE ACTUALIZACIÓN DE REGLAS (11ª EDICIÓN / 2026)
+       ====================================================================== -->
+  <div class="modal-backdrop" id="rules-update-modal" role="dialog" aria-modal="true" aria-labelledby="modal-rules-title">
+    <div class="modal-content-da" style="max-width: 750px;">
+      <div class="modal-header">
+        <h3 id="modal-rules-title">Actualización Oficial de Reglas (11ª Edición)</h3>
+        <button class="modal-close-btn" onclick="closeRulesUpdateModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: rgba(21, 128, 61, 0.15); border-left: 4px solid var(--caliban-bright); padding: 12px; border-radius: 4px;">
+          <strong style="color: var(--caliban-bright); font-size: 1rem;">Válido para Juego Equilibrado 2026</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+            Este compendio incorpora el suplemento oficial <em>Actualización de Reglas (Balance Dataslate)</em> y las mecánicas básicas vigentes.
+          </p>
+        </div>
+
+        <div id="rules-update-content-list" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Rellenado dinámico desde WH40K_DATA.coreRulesUpdates -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-gothic-secondary" onclick="closeRulesUpdateModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL: EDITOR DE ESTRATAGEMAS (WAHAPEDIA & PERSONALIZADAS)
+       ==================================================================== -->
+  <div class="modal-backdrop" id="edit-stratagem-modal" role="dialog" aria-modal="true" aria-labelledby="modal-stratagem-editor-title">
+    <div class="modal-content-da" style="max-width: 800px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.4rem;">📜</span>
+          <div>
+            <h3 id="modal-stratagem-editor-title" style="margin: 0; font-size: 1.25rem;">Editor de Estratagema</h3>
+            <span id="modal-strat-status-pill" class="stratagem-tag tag-custom" style="display: none; margin-top: 2px;">Personalizada</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeStratagemEditorModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px; max-height: 72vh; overflow-y: auto; padding-right: 6px;">
+        <input type="hidden" id="edit-strat-id">
+        <input type="hidden" id="edit-strat-is-new" value="false">
+
+        <!-- Fila de Coste en CP y Destacamento -->
+        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 14px; background: rgba(0,0,0,0.35); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); align-items: center;">
+          <div>
+            <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; display: block; margin-bottom: 6px;">Coste en Puntos de Mando (CP):</label>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <button type="button" class="btn-gothic-secondary cp-preset-btn" data-cp="0" onclick="setEditorCP(0)">0 CP</button>
+              <button type="button" class="btn-gothic-secondary cp-preset-btn active" data-cp="1" onclick="setEditorCP(1)">1 CP</button>
+              <button type="button" class="btn-gothic-secondary cp-preset-btn" data-cp="2" onclick="setEditorCP(2)">2 CP</button>
+              <button type="button" class="btn-gothic-secondary cp-preset-btn" data-cp="3" onclick="setEditorCP(3)">3 CP</button>
+              <input type="number" id="edit-strat-cp" min="0" max="6" value="1" style="width: 55px; background: var(--bg-deep); border: 1px solid var(--border-bright); color: var(--gold-accent); font-weight: 800; text-align: center; padding: 6px; border-radius: 4px;" aria-label="Coste exacto en CP">
+            </div>
+          </div>
+
+          <div>
+            <label for="edit-strat-detachment" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; display: block; margin-bottom: 6px;">Destacamento de Pertenencia:</label>
+            <select id="edit-strat-detachment" class="form-control-gothic" style="width: 100%;">
+              <!-- Rellenado dinámicamente -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila: Tipo, Fase y Turno -->
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 12px;">
+          <div>
+            <label for="edit-strat-type" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Tipo de Estratagema:</label>
+            <select id="edit-strat-type" class="form-control-gothic" style="width: 100%; margin-top: 4px;">
+              <option value="Táctica de Batalla">Táctica de Batalla (Battle Tactic)</option>
+              <option value="Treta Estratégica">Treta Estratégica (Strategic Ploy)</option>
+              <option value="Hazaña Épica">Hazaña Épica (Epic Deed)</option>
+              <option value="Equipo de Guerra">Equipo de Guerra (Wargear)</option>
+            </select>
+          </div>
+          <div>
+            <label for="edit-strat-phase" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Fase de Activación:</label>
+            <select id="edit-strat-phase" class="form-control-gothic" style="width: 100%; margin-top: 4px;">
+              <option value="any">Cualquier Fase (Any)</option>
+              <option value="command">Fase de Mando (Command)</option>
+              <option value="movement">Fase de Movimiento (Movement)</option>
+              <option value="shooting">Fase de Disparo (Shooting)</option>
+              <option value="charge">Fase de Carga (Charge)</option>
+              <option value="fight">Fase de Combate (Fight)</option>
+            </select>
+          </div>
+          <div>
+            <label for="edit-strat-turn" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Turno Aplicable:</label>
+            <select id="edit-strat-turn" class="form-control-gothic" style="width: 100%; margin-top: 4px;">
+              <option value="either_turn">Cualquier Turno (Either Turn)</option>
+              <option value="your_turn">Tu Turno (Your Turn)</option>
+              <option value="opponent_turn">Turno Enemigo (Opponent's Turn)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pestañas de Idioma -->
+        <div style="margin-top: 4px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; background: rgba(0,0,0,0.2);">
+          <div style="display: flex; gap: 8px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; align-items: center;">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Idioma de Regla:</span>
+            <button type="button" id="tab-strat-es" class="btn-gothic-secondary active" onclick="switchStratEditorTab('es')" style="padding: 4px 12px; font-size: 0.82rem;">🇪🇸 Castellano</button>
+            <button type="button" id="tab-strat-en" class="btn-gothic-secondary" onclick="switchStratEditorTab('en')" style="padding: 4px 12px; font-size: 0.82rem;">🇬🇧 English (Wahapedia)</button>
+          </div>
+
+          <!-- Pestaña Castellano -->
+          <div id="strat-editor-pane-es" style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+            <div>
+              <label for="edit-strat-name-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Nombre (Castellano):</label>
+              <input type="text" id="edit-strat-name-es" placeholder="ej. La Ira del León" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
+            </div>
+            <div>
+              <label for="edit-strat-when-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">CUÁNDO (Disparador de la estratagema):</label>
+              <textarea id="edit-strat-when-es" rows="2" placeholder="ej. En tu fase de carga, cuando una unidad..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+            </div>
+            <div>
+              <label for="edit-strat-target-es" style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700;">OBJETIVO (Unidad elegible / blanco):</label>
+              <textarea id="edit-strat-target-es" rows="2" placeholder="ej. Esa unidad del Ala de la Muerte aliada..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+            </div>
+            <div>
+              <label for="edit-strat-effect-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--deathwing-bone); font-weight: 700;">EFECTO (Mecánica de la regla y beneficios):</label>
+              <textarea id="edit-strat-effect-es" rows="3" placeholder="ej. Selecciona una unidad enemiga trabada..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div>
+                <label for="edit-strat-restrictions-es" style="font-size: 0.75rem; text-transform: uppercase; color: #f87171; font-weight: 700;">Restricciones (Opcional):</label>
+                <input type="text" id="edit-strat-restrictions-es" placeholder="ej. No se puede usar más de una vez por turno..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
+              </div>
+              <div>
+                <label for="edit-strat-fluff-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Ambientación / Fluff (Opcional):</label>
+                <input type="text" id="edit-strat-fluff-es" placeholder="ej. Con férrea disciplina..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Pestaña English -->
+          <div id="strat-editor-pane-en" style="display: none; flex-direction: column; gap: 10px; margin-top: 12px;">
+            <div>
+              <label for="edit-strat-name-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Name (English):</label>
+              <input type="text" id="edit-strat-name-en" placeholder="e.g. Wrath of the Lion" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
+            </div>
+            <div>
+              <label for="edit-strat-when-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">WHEN (Trigger):</label>
+              <textarea id="edit-strat-when-en" rows="2" placeholder="e.g. Your Charge phase, when a friendly..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+            </div>
+            <div>
+              <label for="edit-strat-target-en" style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700;">TARGET (Eligible unit):</label>
+              <textarea id="edit-strat-target-en" rows="2" placeholder="e.g. That DEATHWING unit..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+            </div>
+            <div>
+              <label for="edit-strat-effect-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--deathwing-bone); font-weight: 700;">EFFECT (Rules text):</label>
+              <textarea id="edit-strat-effect-en" rows="3" placeholder="e.g. Select one enemy unit engaged..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div>
+                <label for="edit-strat-restrictions-en" style="font-size: 0.75rem; text-transform: uppercase; color: #f87171; font-weight: 700;">Restrictions (Optional):</label>
+                <input type="text" id="edit-strat-restrictions-en" placeholder="e.g. You cannot use this Stratagem..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
+              </div>
+              <div>
+                <label for="edit-strat-fluff-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Lore / Fluff (Optional):</label>
+                <input type="text" id="edit-strat-fluff-en" placeholder="e.g. Channelling the strategic puissance..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.35);">
+        <div>
+          <button type="button" id="btn-revert-stratagem" class="btn-gothic-secondary" onclick="revertCurrentEditorStratagem()" style="display: none; color: #f87171; border-color: rgba(239, 68, 68, 0.4);">
+            🔄 Restaurar Wahapedia
+          </button>
+          <button type="button" id="btn-delete-stratagem" class="btn-gothic-secondary" onclick="deleteCurrentEditorStratagem()" style="display: none; color: #f87171; border-color: rgba(239, 68, 68, 0.4);">
+            🗑️ Eliminar Estratagema
+          </button>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="button" class="btn-gothic-secondary" onclick="closeStratagemEditorModal()">✕ Cancelar</button>
+          <button type="button" class="btn-gothic-primary" onclick="saveStratagemFromEditor()">💾 Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL: GESTIÓN DE DESTACAMENTOS DE LA FUERZA (PUNTOS DE DESTACAMENTO)
+       ==================================================================== -->
+  <div class="modal-backdrop" id="manage-detachments-modal" role="dialog" aria-modal="true" aria-labelledby="modal-manage-det-title">
+    <div class="modal-content-da" style="max-width: 850px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.4rem;">🦅</span>
+          <div>
+            <h3 id="modal-manage-det-title" style="margin: 0; font-size: 1.25rem;">Destacamentos y Puntos de Destacamento (PD)</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Selecciona varios destacamentos según el formato de la partida para acumular sus efectos</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeManageDetachmentsModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px; max-height: 74vh; overflow-y: auto; padding-right: 6px;">
+        <!-- Indicador de presupuesto en el modal -->
+        <div style="background: rgba(0,0,0,0.45); border: 1px solid var(--border-gold); padding: 12px 16px; border-radius: var(--radius-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: block;">Presupuesto de Destacamentos:</span>
+            <span id="modal-manage-det-format-desc" style="font-size: 0.88rem; color: var(--deathwing-bone); font-weight: 600;">Formato: Fuerza de Choque (2.000 pts) — Límite: 3 PD</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Total Asignado:</span>
+            <span id="modal-manage-det-pd-badge" class="det-badge dp-badge" style="font-size: 1.05rem; padding: 4px 12px;">1 / 3 PD</span>
+          </div>
+        </div>
+
+        <div id="modal-manage-det-warning" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5; padding: 8px 12px; border-radius: 4px; font-size: 0.82rem; font-weight: 700;">
+          ⚠️ Has superado el límite de Puntos de Destacamento para el tamaño de partida seleccionado.
+        </div>
+
+        <!-- Buscador rápido dentro del modal -->
+        <div class="search-input-wrap">
+          <input type="text" id="manage-det-search-input" placeholder="Buscar destacamento por nombre, regla o palabra clave..." oninput="filterManageDetachmentsList(this.value)">
+        </div>
+
+        <!-- Lista de los 21 destacamentos con casillas interactivas -->
+        <div id="manage-detachments-list-container" style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- Rellenado dinámicamente -->
+        </div>
+      </div>
+
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.35);">
+        <div>
+          <span id="modal-manage-det-footer-summary" style="font-size: 0.85rem; color: var(--text-muted);">
+            1 destacamento seleccionado (1 PD)
+          </span>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="button" class="btn-gothic" onclick="closeManageDetachmentsModal()">✓ Aceptar y Volver a la Lista</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL: FICHA TÉCNICA RÁPIDA DE UNIDAD (COGITADOR DE BATALLA)
+       ==================================================================== -->
+  <div class="modal-backdrop" id="battle-datasheet-modal" role="dialog" aria-modal="true" aria-labelledby="modal-battle-ds-title">
+    <div class="modal-content-da" style="max-width: 900px;">
+      <div class="modal-header" style="align-items: flex-start;">
+        <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
+          <span style="font-size: 1.6rem; flex-shrink: 0;">📜</span>
+          <div style="min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <h3 id="modal-battle-ds-title" style="margin: 0; font-size: 1.3rem; font-family: var(--font-serif); color: var(--gold-accent);">
+                Ficha Técnica de Unidad
+              </h3>
+              <span id="modal-battle-ds-wing-badge" class="wing-badge green">Compañía Verde</span>
+              <span id="modal-battle-ds-role-badge" class="det-badge" style="font-size: 0.72rem;">CG</span>
+            </div>
+            <div id="modal-battle-ds-sub" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+              Consulta táctica en combate • Atributos, Armamento y Habilidades
+            </div>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeBattleUnitDatasheetModal()" aria-label="Cerrar ficha">✕</button>
+      </div>
+
+      <div class="modal-body" id="modal-battle-ds-body" style="max-height: 75vh; overflow-y: auto; padding-right: 6px; display: flex; flex-direction: column; gap: 14px;">
+        <!-- Rellenado dinámicamente con renderBattleUnitDatasheetModalContent -->
+      </div>
+
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.35); flex-wrap: wrap; gap: 10px;">
+        <div id="modal-battle-ds-footer-actions" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <!-- Botón de enviar a comparador u otras acciones -->
+        </div>
+        <div>
+          <button type="button" class="btn-gothic" onclick="closeBattleUnitDatasheetModal()">✓ Volver a la Batalla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL: EDITOR DE DESTACAMENTOS (11ª EDICIÓN / WAHAPEDIA)
+       ==================================================================== -->
+  <div class="modal-backdrop" id="edit-detachment-modal" role="dialog" aria-modal="true" aria-labelledby="modal-det-editor-title">
+    <div class="modal-content-da" style="max-width: 860px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.4rem;">🦅</span>
+          <div>
+            <h3 id="modal-det-editor-title" style="margin: 0; font-size: 1.25rem;">Editor de Destacamento</h3>
+            <span id="modal-det-status-pill" class="stratagem-tag tag-custom" style="display: none; margin-top: 2px;">Personalizado</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeDetachmentEditorModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px; max-height: 72vh; overflow-y: auto; padding-right: 6px;">
+        <input type="hidden" id="edit-det-id">
+        <input type="hidden" id="edit-det-is-new" value="false">
+
+        <!-- Fila 1: Puntos de Destacamento (PD), Exclusividad y Tipo -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; background: rgba(0,0,0,0.35); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); align-items: center;">
+          <div>
+            <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; display: block; margin-bottom: 6px;">Puntos de Mando (PD):</label>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <button type="button" class="btn-gothic-secondary det-dp-preset-btn active" data-dp="1" onclick="setEditorDetDP(1)">1 PD</button>
+              <button type="button" class="btn-gothic-secondary det-dp-preset-btn" data-dp="2" onclick="setEditorDetDP(2)">2 PD</button>
+              <button type="button" class="btn-gothic-secondary det-dp-preset-btn" data-dp="3" onclick="setEditorDetDP(3)">3 PD</button>
+              <input type="hidden" id="edit-det-dp" value="1">
+            </div>
+          </div>
+
+          <div>
+            <label for="edit-det-exclusive" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; display: block; margin-bottom: 6px;">Tipo de Destacamento:</label>
+            <select id="edit-det-exclusive" class="form-control-gothic" style="width: 100%;">
+              <option value="da">★ Exclusivo Ángeles Oscuros</option>
+              <option value="astartes">Doctrina Adeptus Astartes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="edit-det-type" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; display: block; margin-bottom: 6px;">Arquetipo / Doctrina:</label>
+            <input type="text" id="edit-det-type" placeholder="ej. Doctrina de Asalto Furtivo" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 7px 10px; border-radius: 4px; font-size: 0.85rem;">
+          </div>
+        </div>
+
+        <!-- Fila 2: Nombres (Castellano e Inglés) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label for="edit-det-name-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Nombre (Castellano):</label>
+            <input type="text" id="edit-det-name-es" placeholder="ej. Fuerza de Ataque del Círculo Interior" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
+          </div>
+          <div>
+            <label for="edit-det-name-en" style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700;">Nombre Original (English / Wahapedia):</label>
+            <input type="text" id="edit-det-name-en" placeholder="ej. Inner Circle Task Force" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
+          </div>
+        </div>
+
+        <!-- ¿Para qué sirve? -->
+        <div>
+          <label for="edit-det-purpose" style="font-size: 0.75rem; text-transform: uppercase; color: var(--deathwing-bone); font-weight: 700;">🎯 ¿Para qué sirve este destacamento? (Rol Táctico):</label>
+          <textarea id="edit-det-purpose" rows="2" placeholder="ej. Destacamento de asalto terminal especializado en exterminadores y veteranos del Círculo Interior..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+        </div>
+
+        <!-- Regla del Destacamento -->
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+          <div>
+            <label for="edit-det-rule-name" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">📜 Nombre de la Regla de Destacamento:</label>
+            <input type="text" id="edit-det-rule-name" placeholder="ej. Voto de los Astartes / Campeones Guiados" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 7px 10px; border-radius: 4px; margin-top: 3px;">
+          </div>
+          <div>
+            <label for="edit-det-rule-desc" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Texto Completo de la Regla (Wahapedia / Códex):</label>
+            <textarea id="edit-det-rule-desc" rows="3" placeholder="Descripción detallada de la regla del destacamento..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+          </div>
+        </div>
+
+        <!-- Pros y Contras -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label for="edit-det-pros" style="font-size: 0.75rem; text-transform: uppercase; color: #86efac; font-weight: 700;">✔ Fortalezas / Pros (Uno por línea):</label>
+            <textarea id="edit-det-pros" rows="3" placeholder="Una fortaleza por línea..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 10px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+          </div>
+          <div>
+            <label for="edit-det-cons" style="font-size: 0.75rem; text-transform: uppercase; color: #fca5a5; font-weight: 700;">✖ Limitaciones / Contras (Uno por línea):</label>
+            <textarea id="edit-det-cons" rows="3" placeholder="Una limitación por línea..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 10px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
+          </div>
+        </div>
+
+        <!-- Sinergias -->
+        <div>
+          <label for="edit-det-synergies" style="font-size: 0.75rem; text-transform: uppercase; color: var(--caliban-bright); font-weight: 700;">⚔️ Miniaturas y Sinergias Recomendadas (Separadas por comas):</label>
+          <input type="text" id="edit-det-synergies" placeholder="ej. Belial, Caballeros del Ala de la Muerte, Capellán en Armadura de Exterminador" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 7px 10px; border-radius: 4px; margin-top: 3px;">
+        </div>
+
+        <!-- Mejoras del Destacamento -->
+        <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; background: rgba(0,0,0,0.2);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 700; text-transform: uppercase;">🛡️ Mejoras del Destacamento (Enhancements):</span>
+            <button type="button" class="btn-gothic-secondary" onclick="addEnhancementRowToEditor()" style="font-size: 0.78rem; padding: 4px 10px;">➕ Añadir Mejora</button>
+          </div>
+          <div id="det-editor-enhancements-list" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Filas dinámicas generadas desde JS -->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.35);">
+        <div>
+          <button type="button" id="btn-revert-detachment" class="btn-gothic-secondary" onclick="revertCurrentEditorDetachment()" style="display: none; color: #f87171; border-color: rgba(239, 68, 68, 0.4);">
+            🔄 Restaurar Oficial
+          </button>
+          <button type="button" id="btn-delete-detachment" class="btn-gothic-secondary" onclick="deleteCurrentEditorDetachment()" style="display: none; color: #f87171; border-color: rgba(239, 68, 68, 0.4);">
+            🗑️ Eliminar Destacamento
+          </button>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="button" class="btn-gothic-secondary" onclick="closeDetachmentEditorModal()">✕ Cancelar</button>
+          <button type="button" class="btn-gothic-primary" onclick="saveDetachmentFromEditor()">💾 Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
