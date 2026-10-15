@@ -1,8 +1,8 @@
 # ⚔️ Cogitador de Campo: La Roca
 
-> **Herramienta táctica de gestión de colección, creación de listas y cogitador de batalla para Ángeles Oscuros (*Warhammer 40,000 10ª Edición*).**
+> **Herramienta táctica de gestión de colección, creación de listas y cogitador de batalla para Ángeles Oscuros (*Warhammer 40,000 11ª Edición / Wahapedia 11ed*).**
 
-![Warhammer 40k](https://img.shields.io/badge/Warhammer%2040K-10th%20Edition-red.svg)
+![Warhammer 40k](https://img.shields.io/badge/Warhammer%2040K-11th%20Edition-red.svg)
 ![Faction](https://img.shields.io/badge/Faction-Dark%20Angels-004d25.svg)
 ![Language](https://img.shields.io/badge/Idiomas-Espa%C3%B1ol%20%7C%20English-blue.svg)
 ![Tech](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20(Vanilla)-darkgreen.svg)

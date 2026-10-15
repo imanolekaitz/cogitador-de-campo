@@ -511,10 +511,10 @@ function loadFromStorage() {
     if (savedCustomDS) {
       const parsedDS = JSON.parse(savedCustomDS);
       if (Array.isArray(parsedDS)) {
-        // Auto-saneamiento de caché: Si la caché antigua guardaba menos de 50 hojas de datos,
-        // la purgamos para asegurar el catálogo íntegro oficial de 55 datasheets de 11ª Edición.
-        if (parsedDS.length < 50) {
-          console.info("Cogitador: Actualizando caché local al catálogo oficial completo de 55 datasheets...");
+        // Auto-saneamiento de caché: Si la caché antigua guardaba menos de 110 hojas de datos,
+        // la purgamos para asegurar el catálogo íntegro oficial de 113 datasheets de 11ª Edición.
+        if (parsedDS.length < 110) {
+          console.info("Cogitador: Actualizando caché local al catálogo oficial completo de 113 datasheets...");
           localStorage.removeItem("cogitator_custom_datasheets");
         } else {
           // Si el usuario tenía datasheets personalizadas (isCustom), preservarlas
