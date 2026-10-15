@@ -574,10 +574,12 @@ function initDefaultCollectionIfEmpty() {
       {
         id: "col_1",
         datasheetId: "da_azrael",
+        alias: "Comandante Supremo Azrael",
         customName: "Comandante Supremo Azrael",
         wing: "Ala de Muerte",
         count: 1,
         status: "parade", // Nivel desfile
+        selectedWeapons: ["Arma de Fuego Artesanal – Damnatus", "La Espada de los Secretos (The Sword of Secrets)"],
         loadoutNotes: "Ira del León, Espada de Secretos, Yelmo del León",
         isMagnetized: false,
         addedDate: "2026-01-10"
@@ -585,21 +587,25 @@ function initDefaultCollectionIfEmpty() {
       {
         id: "col_2",
         datasheetId: "da_deathwing_knights",
-        customName: "Caballeros del Ala de Muerte - Escuadra I",
+        alias: "Escuadra I - Martillos de Caliban",
+        customName: "Escuadra I - Martillos de Caliban",
         wing: "Ala de Muerte",
         count: 5,
         status: "battle", // Listo para combate
-        loadoutNotes: "Maza de expiación x4, Mayal del no perdonado x1",
-        isMagnetized: false,
+        selectedWeapons: ["Maza de Absolución (Mace of Absolution)", "Gran Arma de los No Perdonados"],
+        loadoutNotes: "Maza de expiación x4, Gran Arma de los No Perdonados x1",
+        isMagnetized: true,
         addedDate: "2026-02-14"
       },
       {
         id: "col_3",
         datasheetId: "da_inner_circle_companions",
-        customName: "Camaradas del Círculo Interior",
+        alias: "Custodios del Círculo Interior",
+        customName: "Custodios del Círculo Interior",
         wing: "Ala de Muerte",
         count: 6,
         status: "base", // Color base
+        selectedWeapons: ["Mandoble Calibanita – Golpe (Strike)", "Mandoble Calibanita – Barrido (Sweep)"],
         loadoutNotes: "Mandobles de Caliban",
         isMagnetized: false,
         addedDate: "2026-03-01"
@@ -607,10 +613,12 @@ function initDefaultCollectionIfEmpty() {
       {
         id: "col_4",
         datasheetId: "sm_hellblasters",
-        customName: "Escuadra de Revientainfiernos",
+        alias: "Escuadra Fuego Solar",
+        customName: "Escuadra Fuego Solar",
         wing: "Compañía Verde",
         count: 10,
         status: "built", // Montado
+        selectedWeapons: ["Incinerador de Plasma – Estándar", "Incinerador de Plasma – Sobrecarga", "Pistola Bólter (Bolt Pistol)"],
         loadoutNotes: "Incineradores de plasma",
         isMagnetized: false,
         addedDate: "2026-03-15"
@@ -618,10 +626,12 @@ function initDefaultCollectionIfEmpty() {
       {
         id: "col_5",
         datasheetId: "da_ravenwing_black_knights",
-        customName: "Caballeros Negros del Ala de Cuervo",
+        alias: "Lanzas de la Medianoche",
+        customName: "Lanzas de la Medianoche",
         wing: "Ala de Cuervo",
         count: 3,
         status: "box", // En caja / matriz
+        selectedWeapons: ["Garras de Plasma – Estándar (Plasma Talon)", "Martillos Corvus (Corvus Hammers)"],
         loadoutNotes: "Garras de plasma y Martillos Corvus",
         isMagnetized: true,
         addedDate: "2026-04-01"
@@ -629,11 +639,13 @@ function initDefaultCollectionIfEmpty() {
       {
         id: "col_6",
         datasheetId: "sm_redemptor_dreadnought",
-        customName: "Dreadnought Redentor - 'Venganza de Caliban'",
+        alias: "Venganza de Caliban",
+        customName: "Venganza de Caliban",
         wing: "Ala de Muerte",
         count: 1,
         status: "battle",
-        loadoutNotes: "Macroplasma Incinerator, Cañón Gatling Onslaught",
+        selectedWeapons: ["Macroincinerador de Plasma – Estándar", "Cañón Gatling Onslaught (Onslaught Gatling)", "Puño Redemptor (Redemptor Fist)"],
+        loadoutNotes: "Macroincinerador de Plasma, Cañón Gatling Onslaught, Puño Redemptor",
         isMagnetized: true,
         addedDate: "2026-02-20"
       }
@@ -3355,22 +3367,28 @@ function renderCollection() {
   
   container.innerHTML = filtered.map(item => {
     const ds = WH40K_DATA.datasheets.find(d => d.id === item.datasheetId) || {
-      name: item.customName,
+      name: item.customName || "Miniatura Desconocida",
       stats: { m: "-", r: "-", sv: "-", inv: "-", h: "-", l: "-", co: "-" },
-      pointsOptions: [{ points: 0 }]
+      pointsOptions: [{ points: 0 }],
+      rangedWeapons: [],
+      meleeWeapons: []
     };
     
     const wingClass = item.wing === "Ala de Muerte" ? "deathwing" : (item.wing === "Ala de Cuervo" ? "ravenwing" : "green");
-    const pointsVal = ds.pointsOptions[0] ? ds.pointsOptions[0].points : 0;
+    const pointsVal = ds.pointsOptions && ds.pointsOptions[0] ? ds.pointsOptions[0].points : 0;
     
+    const hasAlias = item.alias && item.alias.trim() && item.alias.trim() !== ds.name;
+    const titleName = hasAlias ? item.alias.trim() : (item.customName || ds.name);
+
     return `
       <div class="collection-card wing-${wingClass}">
         <div class="card-header-da">
           <div class="card-title-group">
-            <h3>${item.customName}</h3>
-            <div class="card-subtitle">
+            <h3 class="collection-alias-title">${escapeHtml(titleName)}</h3>
+            <div class="card-subtitle" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+              ${hasAlias ? `<span class="collection-ds-badge" title="Hoja de datos oficial">📜 ${escapeHtml(ds.name)}</span>` : ''}
               <span class="wing-badge ${wingClass}">${item.wing}</span>
-              <span>• ${item.count} miniatura${item.count > 1 ? 's' : ''}</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">• ${item.count} miniatura${item.count > 1 ? 's' : ''}</span>
             </div>
           </div>
           <div class="points-badge">${pointsVal} pts</div>
@@ -3400,14 +3418,39 @@ function renderCollection() {
           </div>
         </div>
         
-        <div style="font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.3); padding: 8px; border-radius: var(--radius-sm);">
-          <strong>Equipo WYSIWYG:</strong> ${item.loadoutNotes || "Equipo estándar"}
-          ${item.isMagnetized ? ' <span style="color: var(--gold-accent);">[🧲 Magnetizada]</span>' : ''}
+        <!-- VISUALIZACIÓN DE ARMAMENTO SELECCIONADO (WYSIWYG) -->
+        <div class="collection-wargear-display">
+          <div class="wargear-display-header">
+            <span>🛡️ Armamento Equipado (${(item.selectedWeapons && item.selectedWeapons.length) || 0})</span>
+            ${item.isMagnetized ? '<span style="color: var(--gold-accent); font-size: 0.72rem;">[🧲 Magnetizada]</span>' : ''}
+          </div>
+          ${item.selectedWeapons && item.selectedWeapons.length > 0 ? `
+            <div class="wargear-tag-list">
+              ${item.selectedWeapons.map(wName => {
+                const isRanged = (ds.rangedWeapons || []).some(w => w.name === wName);
+                const icon = isRanged ? '🏹' : '⚔️';
+                const typeClass = isRanged ? 'ranged' : 'melee';
+                return `<span class="wargear-tag ${typeClass}" title="${escapeHtml(wName)}">${icon} ${escapeHtml(wName)}</span>`;
+              }).join('')}
+            </div>
+          ` : `
+            <div style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;">
+              ${escapeHtml(item.loadoutNotes || "Equipo estándar")}
+            </div>
+          `}
+          ${item.loadoutNotes && (!item.selectedWeapons || item.loadoutNotes !== item.selectedWeapons.join(", ")) ? `
+            <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 3px;">
+              <strong>Nota WYSIWYG:</strong> ${escapeHtml(item.loadoutNotes)}
+            </div>
+          ` : ''}
         </div>
         
         <div class="card-actions-row">
-          <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 10px;" onclick="addCollectionItemToActiveList('${item.datasheetId}')">
+          <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 10px;" onclick="addCollectionItemToActiveList('${item.id}')">
             + Añadir a Lista
+          </button>
+          <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 10px; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="openEditCollectionItemModal('${item.id}')">
+            ✏️ Personalizar
           </button>
           <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 8px; color: #f87171;" onclick="deleteCollectionItem('${item.id}')">
             Eliminar
@@ -3486,39 +3529,64 @@ function deleteCollectionItem(itemId) {
   }
 }
 
-function addDatasheetToCollection(datasheetId) {
-  const ds = WH40K_DATA.datasheets.find(d => d.id === datasheetId);
-  if (!ds) return;
-  
-  const newItem = {
-    id: "col_" + Date.now(),
-    datasheetId: ds.id,
-    customName: ds.name,
-    wing: ds.wing,
-    count: ds.pointsOptions[0] ? ds.pointsOptions[0].models : 1,
-    status: "built", // Por defecto montada
-    loadoutNotes: "Montaje estándar",
-    isMagnetized: false,
-    addedDate: new Date().toISOString().split("T")[0]
-  };
-  
-  AppState.collection.unshift(newItem);
-  saveToStorage();
-  updateHeaderStats();
-  
-  // Feedback
-  alert(`¡${ds.name} ha sido añadido a tu colección de La Roca!`);
+function openEditCollectionItemModal(itemId) {
+  openAddMiniatureModal(null, itemId);
 }
 
-function openAddMiniatureModal() {
+function openAddMiniatureModal(presetDatasheetId = null, existingItemId = null) {
   const modal = document.getElementById("add-miniature-modal");
   if (!modal) return;
   
+  const titleEl = document.getElementById("modal-add-title");
+  const submitBtn = document.getElementById("btn-submit-collection-mini");
+  const idInput = document.getElementById("modal-collection-item-id");
   const selectDs = document.getElementById("modal-select-datasheet");
-  if (selectDs) {
+  const aliasInput = document.getElementById("modal-mini-alias");
+  const countInput = document.getElementById("modal-mini-count");
+  const statusSelect = document.getElementById("modal-mini-status");
+  const notesInput = document.getElementById("modal-mini-notes");
+  const isMagCheckbox = document.getElementById("modal-mini-mag");
+
+  // Rellenar selector de hojas de datos si está vacío o no coincide
+  if (selectDs && (!selectDs.options || selectDs.options.length !== WH40K_DATA.datasheets.length)) {
     selectDs.innerHTML = WH40K_DATA.datasheets.map(ds => `
-      <option value="${ds.id}">${ds.name} (${ds.wing} - ${ds.pointsOptions[0].points} pts)</option>
+      <option value="${ds.id}">${escapeHtml(ds.name)} (${escapeHtml(ds.wing)} - ${ds.pointsOptions[0] ? ds.pointsOptions[0].points : 0} pts)</option>
     `).join('');
+  }
+
+  if (existingItemId) {
+    // MODO EDICIÓN
+    const item = AppState.collection.find(i => i.id === existingItemId);
+    if (!item) return;
+
+    if (titleEl) titleEl.textContent = "✏️ Personalizar Escuadra y Armamento";
+    if (submitBtn) submitBtn.textContent = "💾 Guardar Cambios";
+    if (idInput) idInput.value = item.id;
+    if (selectDs) selectDs.value = item.datasheetId;
+    if (aliasInput) aliasInput.value = item.alias || (item.customName !== item.datasheetId ? item.customName : "") || "";
+    if (countInput) countInput.value = item.count || 1;
+    if (statusSelect) statusSelect.value = item.status || "built";
+    if (notesInput) notesInput.value = item.loadoutNotes || "";
+    if (isMagCheckbox) isMagCheckbox.checked = !!item.isMagnetized;
+
+    renderWargearOptionsInModal(item.datasheetId, item.selectedWeapons || []);
+  } else {
+    // MODO NUEVO REGISTRO
+    if (titleEl) titleEl.textContent = "🛡️ Registrar Miniatura en la Armería";
+    if (submitBtn) submitBtn.textContent = "➕ Guardar en Colección";
+    if (idInput) idInput.value = "";
+    
+    const targetDsId = presetDatasheetId || (selectDs && selectDs.value) || (WH40K_DATA.datasheets[0] ? WH40K_DATA.datasheets[0].id : "");
+    if (selectDs) selectDs.value = targetDsId;
+    
+    const ds = WH40K_DATA.datasheets.find(d => d.id === targetDsId);
+    if (aliasInput) aliasInput.value = "";
+    if (countInput) countInput.value = ds && ds.pointsOptions[0] ? ds.pointsOptions[0].models : 1;
+    if (statusSelect) statusSelect.value = "built";
+    if (notesInput) notesInput.value = "";
+    if (isMagCheckbox) isMagCheckbox.checked = false;
+
+    renderWargearOptionsInModal(targetDsId, null);
   }
   
   modal.classList.add("active");
@@ -3529,34 +3597,240 @@ function closeAddMiniatureModal() {
   if (modal) modal.classList.remove("active");
 }
 
-function submitAddMiniature() {
+function onDatasheetChangeInCollectionModal() {
   const selectDs = document.getElementById("modal-select-datasheet");
+  const countInput = document.getElementById("modal-mini-count");
+  if (!selectDs) return;
+
+  const dsId = selectDs.value;
+  const ds = WH40K_DATA.datasheets.find(d => d.id === dsId);
+  if (ds && countInput) {
+    countInput.value = ds.pointsOptions[0] ? ds.pointsOptions[0].models : 1;
+  }
+
+  // Rerender available weapons with smart defaults for this newly chosen datasheet
+  renderWargearOptionsInModal(dsId, null);
+}
+
+function renderWargearOptionsInModal(datasheetId, selectedWeaponsList = null) {
+  const container = document.getElementById("modal-collection-wargear-container");
+  if (!container) return;
+
+  const ds = WH40K_DATA.datasheets.find(d => d.id === datasheetId);
+  if (!ds) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const ranged = ds.rangedWeapons || [];
+  const melee = ds.meleeWeapons || [];
+
+  let isDefault = selectedWeaponsList === null;
+  let selectedSet = new Set(selectedWeaponsList || []);
+
+  if (isDefault) {
+    // Si la unidad tiene armas a distancia, marcar las predeterminadas (las primeras)
+    if (ranged.length > 0) {
+      selectedSet.add(ranged[0].name);
+      if (ranged.length === 2) selectedSet.add(ranged[1].name);
+    }
+    // Si la unidad tiene armas cuerpo a cuerpo, marcar la primera
+    if (melee.length > 0) {
+      selectedSet.add(melee[0].name);
+    }
+  }
+
+  let html = `
+    <div class="col-wargear-group">
+      <div class="col-wargear-header">
+        <span>⚔️ Armamento y Equipo Configurable (WYSIWYG):</span>
+        <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: normal; text-transform: none;">
+          Selecciona el equipo montado en tus miniaturas según las reglas de la escuadra
+        </span>
+      </div>
+  `;
+
+  if (ds.notes) {
+    html += `
+      <div style="font-size: 0.75rem; color: var(--gold-accent); background: rgba(212, 175, 55, 0.08); border-left: 3px solid var(--gold-accent); padding: 6px 10px; border-radius: 2px;">
+        📜 <strong>Reglas y Opciones de Montaje del Códex:</strong> ${escapeHtml(ds.notes)}
+      </div>
+    `;
+  }
+
+  if (ranged.length === 0 && melee.length === 0) {
+    html += `
+      <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; padding: 6px;">
+        Esta unidad no cuenta con opciones de armas en su perfil.
+      </div>
+    `;
+  } else {
+    // Armas a Distancia
+    if (ranged.length > 0) {
+      html += `
+        <div style="margin-top: 4px;">
+          <span style="font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: #38bdf8; display: block; margin-bottom: 6px;">
+            🏹 Armas a Distancia Disponibles (${ranged.length}):
+          </span>
+          <div class="col-wargear-list">
+            ${ranged.map((w, idx) => {
+              const checked = selectedSet.has(w.name);
+              const kwHtml = (w.keywords || []).map(k => `<span class="col-wargear-kw-badge">${escapeHtml(k)}</span>`).join('');
+              return `
+                <label class="col-wargear-card ${checked ? 'selected' : ''}" for="w_r_${idx}">
+                  <input type="checkbox" id="w_r_${idx}" class="col-weapon-checkbox" data-weapon-type="ranged" value="${escapeHtml(w.name)}" ${checked ? 'checked' : ''} onchange="toggleWargearCardSelection(this)">
+                  <div class="col-wargear-info">
+                    <span class="col-wargear-name">${escapeHtml(w.name)}</span>
+                    <span class="col-wargear-stats">Alcance: ${w.range} | A: ${w.a} | HP: ${w.bs} | F: ${w.s} | FP: ${w.ap} | D: ${w.d}</span>
+                    ${kwHtml ? `<div class="col-wargear-kw">${kwHtml}</div>` : ''}
+                  </div>
+                </label>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Armas Cuerpo a Cuerpo
+    if (melee.length > 0) {
+      html += `
+        <div style="margin-top: 8px;">
+          <span style="font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: #f87171; display: block; margin-bottom: 6px;">
+            ⚔️ Armas Cuerpo a Cuerpo Disponibles (${melee.length}):
+          </span>
+          <div class="col-wargear-list">
+            ${melee.map((w, idx) => {
+              const checked = selectedSet.has(w.name);
+              const kwHtml = (w.keywords || []).map(k => `<span class="col-wargear-kw-badge">${escapeHtml(k)}</span>`).join('');
+              return `
+                <label class="col-wargear-card ${checked ? 'selected' : ''}" for="w_m_${idx}">
+                  <input type="checkbox" id="w_m_${idx}" class="col-weapon-checkbox" data-weapon-type="melee" value="${escapeHtml(w.name)}" ${checked ? 'checked' : ''} onchange="toggleWargearCardSelection(this)">
+                  <div class="col-wargear-info">
+                    <span class="col-wargear-name">${escapeHtml(w.name)}</span>
+                    <span class="col-wargear-stats">Alcance: ${w.range} | A: ${w.a} | HA: ${w.ws} | F: ${w.s} | FP: ${w.ap} | D: ${w.d}</span>
+                    ${kwHtml ? `<div class="col-wargear-kw">${kwHtml}</div>` : ''}
+                  </div>
+                </label>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function toggleWargearCardSelection(checkbox) {
+  const card = checkbox.closest('.col-wargear-card');
+  if (card) {
+    if (checkbox.checked) {
+      card.classList.add('selected');
+    } else {
+      card.classList.remove('selected');
+    }
+  }
+}
+
+function submitAddMiniature() {
+  const idInput = document.getElementById("modal-collection-item-id");
+  const selectDs = document.getElementById("modal-select-datasheet");
+  const aliasInput = document.getElementById("modal-mini-alias");
   const countInput = document.getElementById("modal-mini-count");
   const statusSelect = document.getElementById("modal-mini-status");
   const notesInput = document.getElementById("modal-mini-notes");
-  const isMag = document.getElementById("modal-mini-mag").checked;
+  const isMagCheckbox = document.getElementById("modal-mini-mag");
   
+  if (!selectDs) return;
   const dsId = selectDs.value;
   const ds = WH40K_DATA.datasheets.find(d => d.id === dsId);
   if (!ds) return;
   
-  const newItem = {
-    id: "col_" + Date.now(),
-    datasheetId: ds.id,
-    customName: ds.name,
-    wing: ds.wing,
-    count: parseInt(countInput.value) || 1,
-    status: statusSelect.value,
-    loadoutNotes: notesInput.value || "Estándar",
-    isMagnetized: isMag,
-    addedDate: new Date().toISOString().split("T")[0]
-  };
+  const existingId = idInput ? idInput.value : "";
+  const aliasVal = aliasInput ? aliasInput.value.trim() : "";
+  const countVal = parseInt(countInput ? countInput.value : 1, 10) || 1;
+  const statusVal = statusSelect ? statusSelect.value : "built";
+  const notesVal = notesInput ? notesInput.value.trim() : "";
+  const isMagVal = isMagCheckbox ? isMagCheckbox.checked : false;
+
+  // Recoger todas las armas marcadas
+  const selectedWeapons = Array.from(document.querySelectorAll("#modal-collection-wargear-container .col-weapon-checkbox:checked")).map(cb => cb.value);
+
+  if (existingId) {
+    // ACTUALIZAR ELEMENTO EXISTENTE
+    const item = AppState.collection.find(i => i.id === existingId);
+    if (item) {
+      item.datasheetId = ds.id;
+      item.alias = aliasVal;
+      item.customName = aliasVal || ds.name;
+      item.wing = ds.wing;
+      item.count = countVal;
+      item.status = statusVal;
+      item.selectedWeapons = selectedWeapons;
+      item.loadoutNotes = notesVal || (selectedWeapons.length > 0 ? selectedWeapons.join(", ") : "Equipo estándar");
+      item.isMagnetized = isMagVal;
+      showTacticalNotification(`✏️ Escuadra "${item.customName}" actualizada correctamente`);
+    }
+  } else {
+    // CREAR NUEVO REGISTRO EN LA COLECCIÓN
+    const newItem = {
+      id: "col_" + Date.now(),
+      datasheetId: ds.id,
+      alias: aliasVal,
+      customName: aliasVal || ds.name,
+      wing: ds.wing,
+      count: countVal,
+      status: statusVal,
+      selectedWeapons: selectedWeapons,
+      loadoutNotes: notesVal || (selectedWeapons.length > 0 ? selectedWeapons.join(", ") : "Equipo estándar"),
+      isMagnetized: isMagVal,
+      addedDate: new Date().toISOString().split("T")[0]
+    };
+    AppState.collection.unshift(newItem);
+    showTacticalNotification(`🛡️ ¡"${newItem.customName}" añadida a tu Armería de La Roca!`);
+  }
   
-  AppState.collection.unshift(newItem);
   saveToStorage();
   renderCollection();
   updateHeaderStats();
   closeAddMiniatureModal();
+}
+
+function addDatasheetToCollection(datasheetId) {
+  // Abre el modal de registro preseleccionando la unidad para que el usuario configure alias y armamento
+  switchTab("collection");
+  openAddMiniatureModal(datasheetId);
+}
+
+function addCollectionItemToActiveList(itemIdOrDsId) {
+  const item = AppState.collection.find(i => i.id === itemIdOrDsId || i.datasheetId === itemIdOrDsId);
+  const activeList = getActiveArmyList();
+  if (!activeList) return;
+
+  const targetDsId = item ? item.datasheetId : itemIdOrDsId;
+  const ds = WH40K_DATA.datasheets.find(d => d.id === targetDsId);
+  if (!ds) return;
+
+  const unitName = item ? (item.alias || item.customName || ds.name) : ds.name;
+  const newUnit = {
+    instanceId: "u_" + Date.now(),
+    datasheetId: ds.id,
+    customName: unitName,
+    selectedWeapons: item && item.selectedWeapons ? [...item.selectedWeapons] : [],
+    loadoutNotes: item ? item.loadoutNotes : "",
+    modelsCount: item && item.count ? item.count : (ds.pointsOptions[0] ? ds.pointsOptions[0].models : 1),
+    isWarlord: activeList.units.length === 0 && (ds.keywords.includes("PERSONAJE") || ds.keywords.includes("CHARACTER")),
+    enhancementId: null,
+    attachedToUnitInstanceId: null
+  };
+
+  activeList.units.push(newUnit);
+  saveToStorage();
+  renderArmyBuilder();
+  showTacticalNotification(`➕ "${unitName}" añadida a la lista de combate`);
 }
 
 // ==========================================================================
@@ -4120,11 +4394,31 @@ function renderArmyBuilder() {
       `;
     }
 
+    const hasCustomAlias = unitInstance.customName && unitInstance.customName !== ds.name;
+    const displayName = hasCustomAlias ? unitInstance.customName : ds.name;
+
+    let wargearSummaryHtml = "";
+    if (unitInstance.selectedWeapons && unitInstance.selectedWeapons.length > 0) {
+      wargearSummaryHtml = `
+        <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">
+          <span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600;">⚔️ Equipo:</span>
+          ${unitInstance.selectedWeapons.map(w => {
+            const isRanged = (ds.rangedWeapons || []).some(rw => rw.name === w);
+            const tagClass = isRanged ? 'ranged' : 'melee';
+            return `<span class="wargear-tag ${tagClass}" style="font-size: 0.68rem; padding: 1px 6px;">${escapeHtml(w)}</span>`;
+          }).join('')}
+        </div>
+      `;
+    }
+
     return `
       <div class="army-unit-card ${unitInstance.isWarlord ? 'is-warlord' : ''}">
         <div class="army-unit-top">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-main);">${ds.name}</h4>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-main); margin: 0;">
+              ${escapeHtml(displayName)}
+              ${hasCustomAlias ? `<span style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal; margin-left: 6px;">(${escapeHtml(ds.name)})</span>` : ''}
+            </h4>
             ${matchBadge}
           </div>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -4134,7 +4428,7 @@ function renderArmyBuilder() {
           </div>
         </div>
         
-        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 4px;">
           ${ds.keywords.includes("PERSONAJE") ? `
             <button class="warlord-toggle-btn ${unitInstance.isWarlord ? 'active' : ''}" onclick="setUnitAsWarlord('${unitInstance.instanceId}')">
               👑 ${unitInstance.isWarlord ? 'Señor de la Guerra (Warlord)' : 'Designar Warlord'}
@@ -4143,6 +4437,7 @@ function renderArmyBuilder() {
           <span style="font-size: 0.75rem; color: var(--text-muted);">${ds.role} • ${ds.wing}</span>
         </div>
         
+        ${wargearSummaryHtml}
         ${enhPickerHtml}
         ${leaderAttachHtml}
       </div>
@@ -4185,6 +4480,9 @@ function addDatasheetToActiveList(datasheetId) {
   const newUnit = {
     instanceId: "u_" + Date.now(),
     datasheetId: ds.id,
+    customName: ds.name,
+    selectedWeapons: [],
+    loadoutNotes: "",
     modelsCount: ds.pointsOptions[0].models,
     isWarlord: activeList.units.length === 0 && ds.keywords.includes("PERSONAJE"),
     enhancementId: null,

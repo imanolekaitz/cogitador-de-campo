@@ -893,23 +893,36 @@
   </main>
 
   <!-- ======================================================================
-       MODAL: AÑADIR MINIATURA A LA COLECCIÓN
+       MODAL: AÑADIR / PERSONALIZAR MINIATURA EN LA COLECCIÓN
        ====================================================================== -->
   <div class="modal-backdrop" id="add-miniature-modal" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
-    <div class="modal-content-da">
+    <div class="modal-content-da" style="max-width: 840px;">
       <div class="modal-header">
-        <h3 id="modal-add-title">Registrar Miniatura en la Armería</h3>
+        <h3 id="modal-add-title">🛡️ Registrar Miniatura en la Armería</h3>
         <button class="modal-close-btn" onclick="closeAddMiniatureModal()" aria-label="Cerrar modal">✕</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="max-height: 75vh; overflow-y: auto; padding-right: 6px;">
+        <input type="hidden" id="modal-collection-item-id" value="">
         <div style="display: flex; flex-direction: column; gap: 14px;">
-          <div>
-            <label for="modal-select-datasheet" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Hoja de Datos Oficial:</label>
-            <select id="modal-select-datasheet" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
-              <!-- Rellenado dinámico -->
-            </select>
+          
+          <!-- Fila 1: Hoja de Datos Oficial y Alias Personalizado -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label for="modal-select-datasheet" style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Hoja de Datos Oficial:</label>
+              <select id="modal-select-datasheet" onchange="onDatasheetChangeInCollectionModal()" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+                <!-- Rellenado dinámico -->
+              </select>
+            </div>
+            <div>
+              <label for="modal-mini-alias" style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
+                <span>🏷️ Alias / Nombre Personalizado:</span>
+                <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: none; font-weight: normal;">(Opcional)</span>
+              </label>
+              <input type="text" id="modal-mini-alias" placeholder="Ej. Escuadra Balthasar, Hermanos de Caliban..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+            </div>
           </div>
 
+          <!-- Fila 2: Cantidad y Estado de Pintura -->
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
             <div>
               <label for="modal-mini-count" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Cantidad de Miniaturas:</label>
@@ -928,22 +941,29 @@
             </div>
           </div>
 
-          <div>
-            <label for="modal-mini-notes" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Opciones de Armamento Montado (WYSIWYG):</label>
-            <input type="text" id="modal-mini-notes" placeholder="Ej. Sargento con Puño de Combate y Cañón de Plasma..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+          <!-- SECCIÓN DE SELECCIÓN DE EQUIPO DISPONIBLE SEGÚN REGLAS DEL CÓDEX -->
+          <div id="modal-collection-wargear-container">
+            <!-- Rellenado dinámicamente según la unidad seleccionada -->
           </div>
 
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <input type="checkbox" id="modal-mini-mag" style="width: 18px; height: 18px;">
-            <label for="modal-mini-mag" style="font-size: 0.85rem; color: var(--gold-accent); cursor: pointer;">
-              Miniatura magnetizada con opciones de armas intercambiables
+          <!-- Notas de Montaje / WYSIWYG adicionales -->
+          <div>
+            <label for="modal-mini-notes" style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Detalles de Montaje / Opciones WYSIWYG Adicionales:</label>
+            <input type="text" id="modal-mini-notes" placeholder="Ej. Sargento con Puño de Combate y Pistola de Plasma, 1 miniatura con baliza..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 10px; border-radius: var(--radius-sm); margin-top: 4px;">
+          </div>
+
+          <!-- Magnetización -->
+          <div style="display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+            <input type="checkbox" id="modal-mini-mag" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="modal-mini-mag" style="font-size: 0.85rem; color: var(--gold-accent); cursor: pointer; user-select: none;">
+              🧲 Miniaturas magnetizadas con opciones de armas intercambiables
             </label>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn-gothic-secondary" onclick="closeAddMiniatureModal()">Cancelar</button>
-        <button class="btn-gothic" onclick="submitAddMiniature()">Guardar en Colección</button>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+        <button type="button" class="btn-gothic-secondary" onclick="closeAddMiniatureModal()">Cancelar</button>
+        <button type="button" class="btn-gothic" id="btn-submit-collection-mini" onclick="submitAddMiniature()">Guardar en Colección</button>
       </div>
     </div>
   </div>
