@@ -624,8 +624,14 @@
           </div>
 
           <!-- Acciones de Lista -->
-          <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
             <button class="btn-gothic" onclick="openAddUnitToArmyModal()">+ Añadir Unidad al Ejército</button>
+            <button class="btn-gothic-secondary" id="btn-import-army-text" onclick="openImportArmyModal()" style="border-color: #38bdf8; color: #38bdf8;">
+              📥 Importar Lista (GW App / New Recruit)
+            </button>
+            <button class="btn-gothic-secondary" id="btn-share-army-url" onclick="shareActiveListViaUrl()" style="border-color: var(--caliban-bright); color: var(--caliban-bright);">
+              🔗 Compartir Lista por Enlace / URL
+            </button>
             <button class="btn-gothic-secondary" id="btn-validate-army" onclick="runArmyValidationAndNotify()" style="border-color: var(--gold-primary); color: var(--gold-accent);">
               🛡️ Auditar y Validar Lista (11ª Ed / WTC)
             </button>
@@ -735,6 +741,62 @@
             <div class="counter-stepper">
               <button class="step-btn" onclick="adjustCP(-1)">-1 CP</button>
               <button class="step-btn" onclick="adjustCP(1)">+1 CP</button>
+            </div>
+          </div>
+
+          <!-- HERRAMIENTAS TÁCTICAS: RELOJ DE TORNEO (CHESS CLOCK) Y DADOS RÁPIDOS -->
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 10px 14px; margin-top: 4px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">⏱️ Reloj Torneo:</span>
+              <div style="font-size: 0.95rem; font-weight: bold;">
+                <span id="clock-player-time" style="color: var(--caliban-bright);">60:00</span>
+                <span style="color: var(--text-muted); margin: 0 4px;">/</span>
+                <span id="clock-opp-time" style="color: #f87171;">60:00</span>
+              </div>
+              <button class="btn-gothic-secondary" id="btn-clock-toggle" onclick="TacticalTools.toggleClock()" style="padding: 2px 8px; font-size: 0.72rem;">
+                Iniciar Reloj ▶️
+              </button>
+              <button class="btn-gothic-secondary" onclick="TacticalTools.pauseClock()" style="padding: 2px 6px; font-size: 0.72rem;" title="Pausar reloj">
+                ⏸️
+              </button>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <button class="btn-gothic-secondary" onclick="rollChargeDiceQuick()" style="padding: 3px 8px; font-size: 0.75rem; border-color: var(--gold-primary); color: var(--gold-accent);" title="Tirada de carga de 2D6">
+                🎲 Tirar Carga (2D6)
+              </button>
+              <button class="btn-gothic-secondary" onclick="rollSingleDiceQuick()" style="padding: 3px 8px; font-size: 0.75rem;" title="Tirada de 1D6 rápido">
+                🎲 1D6
+              </button>
+            </div>
+          </div>
+
+          <!-- MAZO OFICIAL DE MISIONES PARIAH NEXUS (2024-2026/2027) -->
+          <div style="background: rgba(0,0,0,0.5); border: 1px solid var(--gold-primary); border-radius: var(--radius-sm); padding: 12px; margin-top: 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 1.1rem;">🎴</span>
+                <h4 style="margin: 0; font-family: var(--font-serif); font-size: 0.95rem; color: var(--gold-primary);">
+                  Mazo Oficial Pariah Nexus (2026-2027)
+                </h4>
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <button class="btn-gothic-secondary" onclick="generateRandomMissionSetup()" style="padding: 2px 8px; font-size: 0.72rem; border-color: var(--gold-accent); color: var(--gold-accent);" title="Generar misión completa aleatoria">
+                  🎲 Misión Aleatoria
+                </button>
+                <button class="btn-gothic-secondary" onclick="drawSecondaryTacticalCardUi()" style="padding: 2px 8px; font-size: 0.72rem;" title="Robar carta secundaria táctica">
+                  🃏 Robar Táctica
+                </button>
+              </div>
+            </div>
+
+            <div id="pariah-mission-briefing" style="font-size: 0.8rem; color: var(--deathwing-bone); line-height: 1.4; display: flex; flex-direction: column; gap: 6px;">
+              <!-- Rellenado dinámicamente con renderPariahMissionBriefing() -->
+            </div>
+
+            <!-- Secundarias Activas en Mano / Mesa -->
+            <div id="pariah-active-secondaries-container" style="margin-top: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px;">
+              <!-- Rellenado dinámicamente -->
             </div>
           </div>
 
@@ -1760,11 +1822,60 @@
     </div>
   </div>
 
+  <!-- ====================================================================
+       MODAL: IMPORTADOR DE LISTA DE EJÉRCITO (GW APP / NEW RECRUIT)
+       ==================================================================== -->
+  <div class="modal-backdrop" id="modal-import-army" role="dialog" aria-modal="true" aria-labelledby="modal-import-title">
+    <div class="modal-content-da" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 id="modal-import-title">📥 Importar Lista de Ejército</h3>
+        <button class="modal-close-btn" onclick="closeImportArmyModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+          Pega aquí el texto exportado desde la <strong>Warhammer 40,000 App oficial</strong>, <strong>New Recruit</strong> o <strong>BattleScribe</strong>. El Cogitador reconocerá automáticamente tus unidades de la Primera Legión y Astartes.
+        </p>
+        <textarea id="import-army-textarea" rows="12" placeholder="Pega el texto de tu lista aquí..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 12px; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.82rem; resize: vertical;"></textarea>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; padding: 12px 18px; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.35);">
+        <button type="button" class="btn-gothic-secondary" onclick="closeImportArmyModal()">✕ Cancelar</button>
+        <button type="button" class="btn-gothic-primary" onclick="submitImportArmyText()">📥 Procesar e Importar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL: RECETA DE PINTURA Y NOTAS DEL HOBBY
+       ==================================================================== -->
+  <div class="modal-backdrop" id="modal-paint-recipe" role="dialog" aria-modal="true" aria-labelledby="modal-recipe-title">
+    <div class="modal-content-da" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 id="modal-recipe-title">🎨 Receta de Pintura y Colores</h3>
+        <button class="modal-close-btn" onclick="closePaintRecipeModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div id="recipe-mini-title" style="font-weight: 700; color: var(--gold-accent); font-size: 0.95rem;"></div>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">
+          Anota aquí la guía de colores (imprimación, capas base, lavados, luces y perfilados) para mantener la coherencia de pintura en tu ejército.
+        </p>
+        <input type="hidden" id="recipe-current-mini-id">
+        <textarea id="recipe-textarea" rows="8" placeholder="ej: Imprimación Wraithbone. Armadura: Contrast Skeleton Horde diluido con Medium. Luces: Ushabti Bone. Perfilado final: Screaming Skull..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 12px; border-radius: var(--radius-sm); font-size: 0.85rem; resize: vertical;"></textarea>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; padding: 12px 18px; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.35);">
+        <button type="button" class="btn-gothic-secondary" onclick="closePaintRecipeModal()">✕ Cancelar</button>
+        <button type="button" class="btn-gothic-primary" onclick="saveCurrentPaintRecipe()">💾 Guardar Receta</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="js/data.js"></script>
   <script src="js/modules/mathhammer_adv.js"></script>
   <script src="js/modules/army_validator.js"></script>
   <script src="js/modules/battle_enhancements.js"></script>
+  <script src="js/modules/pariah_nexus_deck.js"></script>
+  <script src="js/modules/army_importer.js"></script>
+  <script src="js/modules/tactical_tools.js"></script>
   <script src="js/app.js"></script>
 
   <!-- Registro de Service Worker para Modo Offline e Instalación PWA en Tablets -->

@@ -495,6 +495,34 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".modal-backdrop.active").forEach(m => m.classList.remove("active"));
     }
   });
+
+  // Detección automática y carga de lista de ejército compartida por URL (?army=...)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sharedArmyParam = urlParams.get("army");
+    if (sharedArmyParam && typeof ArmyListImporter !== "undefined" && ArmyListImporter.decodeShareableUrl) {
+      const decodedList = ArmyListImporter.decodeShareableUrl(sharedArmyParam);
+      if (decodedList && decodedList.name && Array.isArray(decodedList.units)) {
+        decodedList.id = `list_shared_${Date.now()}`;
+        AppState.armyLists.push(decodedList);
+        AppState.activeListId = decodedList.id;
+        saveToStorage();
+        switchTab("army");
+        if (typeof showTacticalNotification === "function") {
+          showTacticalNotification(`📥 Lista compartida "${decodedList.name}" cargada con éxito`);
+        } else if (typeof showBattleToast === "function") {
+          showBattleToast(`📥 Lista compartida "${decodedList.name}" cargada con éxito`);
+        }
+        // Limpiar parámetro sin refrescar la página
+        if (window.history && window.history.replaceState) {
+          const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+          window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+        }
+      }
+    }
+  } catch (urlErr) {
+    console.warn("No se pudo cargar la lista compartida desde la URL:", urlErr);
+  }
 });
 
 function saveToStorage() {
@@ -3449,6 +3477,9 @@ function renderCollection() {
           <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 10px;" onclick="addCollectionItemToActiveList('${item.id}')">
             + Añadir a Lista
           </button>
+          <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 10px; border-color: var(--caliban-bright); color: var(--caliban-bright);" onclick="openPaintRecipeModal('${item.id}')" title="Ver o editar receta de colores">
+            🎨 Receta
+          </button>
           <button class="btn-gothic-secondary" style="font-size: 0.75rem; padding: 4px 10px; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="openEditCollectionItemModal('${item.id}')">
             ✏️ Personalizar
           </button>
@@ -4819,6 +4850,9 @@ function renderBattleTracker() {
     woundsContainer.innerHTML = renderedBlocks.join('');
   }
 
+  // Renderizar briefing de Mazo Pariah Nexus 2026/2027
+  renderPariahMissionBriefing();
+
   // Actualizar estado del botón Deshacer (Undo)
   const undoBtn = document.getElementById("btn-battle-undo");
   if (undoBtn && typeof BattleEnhancements !== "undefined") {
@@ -4838,6 +4872,176 @@ function toggleScreenWakeLockBtn() {
     isWakeLockActive = false;
     showBattleToast("🌙 Ahorro de pantalla reactivado.");
   }
+}
+
+// --------------------------------------------------------------------------
+// MÓDULO PARIAH NEXUS 2026-2027 INTERACTION HANDLERS
+// --------------------------------------------------------------------------
+function renderPariahMissionBriefing() {
+  const briefingEl = document.getElementById("pariah-mission-briefing");
+  const secondariesEl = document.getElementById("pariah-active-secondaries-container");
+  if (!briefingEl || typeof PariahNexusDeck === "undefined") return;
+
+  const state = PariahNexusDeck.getDeckState();
+  briefingEl.innerHTML = `
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <span style="color: var(--gold-accent);"><strong>Despliegue:</strong> ${state.deployment.name}</span>
+      <span style="color: var(--caliban-bright);"><strong>Primaria:</strong> ${state.primary.name}</span>
+      <span style="color: #38bdf8;"><strong>Regla:</strong> ${state.rule.name}</span>
+    </div>
+    <div style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;">
+      ${state.primary.desc}
+    </div>
+  `;
+
+  if (secondariesEl) {
+    if (state.activeSecondaries.length === 0) {
+      secondariesEl.innerHTML = `
+        <div style="grid-column: 1 / -1; font-size: 0.75rem; color: var(--text-muted); font-style: italic; text-align: center; padding: 6px;">
+          No hay cartas secundarias activas en mesa. Pulsa '🃏 Robar Táctica' para robar objetivos.
+        </div>
+      `;
+    } else {
+      secondariesEl.innerHTML = state.activeSecondaries.map(sec => `
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-left: 3px solid var(--gold-accent); border-radius: var(--radius-sm); padding: 8px 10px; display: flex; flex-direction: column; justify-content: space-between; gap: 6px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 6px;">
+              <strong style="color: var(--deathwing-bone); font-size: 0.82rem;">${sec.name}</strong>
+              <span class="stratagem-cp-badge" style="font-size: 0.7rem; padding: 1px 5px;">${sec.vp} VP</span>
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px; line-height: 1.3;">
+              ${sec.desc}
+            </div>
+          </div>
+          <div style="display: flex; gap: 6px; justify-content: flex-end; margin-top: 4px;">
+            <button class="btn-gothic-secondary" onclick="PariahNexusDeck.discardTacticalCard('${sec.id}', true); renderBattleTracker();" style="padding: 2px 6px; font-size: 0.68rem; color: #f87171;" title="Descartar al final del turno y ganar 1 CP">
+              ✕ Descartar (+1 CP)
+            </button>
+            <button class="btn-gothic-primary" onclick="PariahNexusDeck.scoreSecondaryCard('${sec.id}', ${sec.vp});" style="padding: 2px 8px; font-size: 0.68rem;" title="Completar y puntuar">
+              ✓ Puntuar (+${sec.vp} VP)
+            </button>
+          </div>
+        </div>
+      `).join("");
+    }
+  }
+}
+
+function generateRandomMissionSetup() {
+  if (typeof PariahNexusDeck === "undefined") return;
+  const m = PariahNexusDeck.drawRandomTournamentMission();
+  showBattleToast(`¡Misión Pariah Nexus generada!: ${m.primary.name}`);
+  renderPariahMissionBriefing();
+}
+
+function drawSecondaryTacticalCardUi() {
+  if (typeof PariahNexusDeck === "undefined") return;
+  const card = PariahNexusDeck.drawTacticalCard();
+  if (card) {
+    showBattleToast(`Has robado: ${card.name} (${card.vp} VP)`);
+    renderPariahMissionBriefing();
+  } else {
+    showBattleToast("Ya tienes el máximo de 2 secundarias activas o se ha agotado el mazo.");
+  }
+}
+
+function rollChargeDiceQuick() {
+  if (typeof TacticalTools === "undefined") return;
+  const res = TacticalTools.rollCharge(true);
+  showBattleToast(res.text);
+}
+
+function rollSingleDiceQuick() {
+  const d = Math.floor(Math.random() * 6) + 1;
+  showBattleToast(`🎲 Resultado de 1D6: [${d}]`);
+}
+
+// --------------------------------------------------------------------------
+// MÓDULO IMPORTADOR & COMPARTIR LISTAS
+// --------------------------------------------------------------------------
+function openImportArmyModal() {
+  const m = document.getElementById("modal-import-army");
+  if (m) {
+    const area = document.getElementById("import-army-textarea");
+    if (area) area.value = "";
+    m.classList.add("active");
+  }
+}
+
+function closeImportArmyModal() {
+  const m = document.getElementById("modal-import-army");
+  if (m) m.classList.remove("active");
+}
+
+function submitImportArmyText() {
+  const area = document.getElementById("import-army-textarea");
+  if (!area || typeof ArmyListImporter === "undefined") return;
+
+  const res = ArmyListImporter.importFromText(area.value, WH40K_DATA.datasheets, WH40K_DATA.detachments);
+  if (!res.success) {
+    alert("Error importando lista: " + res.error);
+    return;
+  }
+
+  AppState.armyLists.push(res.list);
+  AppState.activeListId = res.list.id;
+  saveToStorage();
+  renderArmyBuilder();
+  closeImportArmyModal();
+  showBattleToast(`¡Lista '${res.list.name}' importada con éxito! (${res.count} unidades identificadas).`);
+}
+
+function shareActiveListViaUrl() {
+  const activeList = getActiveArmyList();
+  if (!activeList || typeof ArmyListImporter === "undefined") return;
+
+  const url = ArmyListImporter.generateShareableUrl(activeList);
+  if (url && navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => {
+      showBattleToast("¡Enlace directo con la lista copiado al portapapeles!");
+    }).catch(() => {
+      prompt("Copia este enlace para compartir tu lista:", url);
+    });
+  } else if (url) {
+    prompt("Copia este enlace para compartir tu lista:", url);
+  }
+}
+
+// --------------------------------------------------------------------------
+// MÓDULO RECETARIO DE PINTURA
+// --------------------------------------------------------------------------
+function openPaintRecipeModal(miniId) {
+  const m = document.getElementById("modal-paint-recipe");
+  const mini = AppState.collection.find(c => c.id === miniId);
+  if (!m || !mini) return;
+
+  const ds = WH40K_DATA.datasheets.find(d => d.id === mini.datasheetId);
+  const titleEl = document.getElementById("recipe-mini-title");
+  const textEl = document.getElementById("recipe-textarea");
+  const hiddenId = document.getElementById("recipe-current-mini-id");
+
+  if (titleEl) titleEl.textContent = `Miniatura: ${mini.customName || (ds ? ds.name : 'Unidad')}`;
+  if (hiddenId) hiddenId.value = miniId;
+  if (textEl && typeof TacticalTools !== "undefined") {
+    textEl.value = TacticalTools.getPaintingRecipe(miniId);
+  }
+
+  m.classList.add("active");
+}
+
+function closePaintRecipeModal() {
+  const m = document.getElementById("modal-paint-recipe");
+  if (m) m.classList.remove("active");
+}
+
+function saveCurrentPaintRecipe() {
+  const hiddenId = document.getElementById("recipe-current-mini-id");
+  const textEl = document.getElementById("recipe-textarea");
+  if (!hiddenId || !textEl || typeof TacticalTools === "undefined") return;
+
+  TacticalTools.savePaintingRecipe(hiddenId.value, textEl.value.trim());
+  showBattleToast("Receta de pintura guardada para esta escuadra.");
+  closePaintRecipeModal();
 }
 
 /**
@@ -6598,5 +6802,24 @@ if (typeof window !== "undefined") {
   window.closeRulesUpdateModal = closeRulesUpdateModal;
   window.renderBattleTracker = renderBattleTracker;
   window.AppState = AppState;
+
+  // Pariah Nexus Mazo 2026-2027 y Herramientas Tácticas
+  window.renderPariahMissionBriefing = renderPariahMissionBriefing;
+  window.generateRandomMissionSetup = generateRandomMissionSetup;
+  window.drawSecondaryTacticalCardUi = drawSecondaryTacticalCardUi;
+  window.rollChargeDiceQuick = rollChargeDiceQuick;
+  window.rollSingleDiceQuick = rollSingleDiceQuick;
+  window.toggleScreenWakeLockBtn = toggleScreenWakeLockBtn;
+
+  // Importador y Compartir Listas
+  window.openImportArmyModal = openImportArmyModal;
+  window.closeImportArmyModal = closeImportArmyModal;
+  window.submitImportArmyText = submitImportArmyText;
+  window.shareActiveListViaUrl = shareActiveListViaUrl;
+
+  // Recetario de Pintura
+  window.openPaintRecipeModal = openPaintRecipeModal;
+  window.closePaintRecipeModal = closePaintRecipeModal;
+  window.saveCurrentPaintRecipe = saveCurrentPaintRecipe;
 }
 

@@ -1,5 +1,5 @@
 // Service Worker para Cogitador de Campo: La Roca
-const CACHE_NAME = 'cogitador-la-roca-v1.1';
+const CACHE_NAME = 'cogitador-la-roca-v1.2';
 
 const ASSETS_TO_CACHE = [
   './',
@@ -9,6 +9,9 @@ const ASSETS_TO_CACHE = [
   './js/modules/mathhammer_adv.js',
   './js/modules/army_validator.js',
   './js/modules/battle_enhancements.js',
+  './js/modules/pariah_nexus_deck.js',
+  './js/modules/army_importer.js',
+  './js/modules/tactical_tools.js',
   './js/app.js',
   './manifest.json',
   './icons/icon-192.png',
