@@ -626,6 +626,9 @@
           <!-- Acciones de Lista -->
           <div style="display: flex; flex-direction: column; gap: 10px;">
             <button class="btn-gothic" onclick="openAddUnitToArmyModal()">+ Añadir Unidad al Ejército</button>
+            <button class="btn-gothic-secondary" id="btn-validate-army" onclick="runArmyValidationAndNotify()" style="border-color: var(--gold-primary); color: var(--gold-accent);">
+              🛡️ Auditar y Validar Lista (11ª Ed / WTC)
+            </button>
             <button class="btn-gothic-secondary" id="btn-export-tournament" onclick="exportActiveListTournamentText()">
               📋 Copiar Formato Oficial Torneo (BCP/WTC)
             </button>
@@ -642,6 +645,9 @@
             <span style="font-size: 0.8rem; color: var(--text-muted);">Cotejo automático con tu inventario real</span>
           </div>
 
+          <!-- Banner dinámico de Validación de Reglas WTC / 11ª Edición -->
+          <div id="army-validation-container" style="margin-bottom: 14px;"></div>
+
           <div id="army-units-list-container">
             <!-- Renderizado dinámico de las unidades de la lista -->
           </div>
@@ -657,6 +663,23 @@
         
         <!-- HUD Principal de Mando y Puntos de Victoria -->
         <div class="battle-hud-panel">
+          <!-- Barra de utilidades de combate: Deshacer, Wake Lock y Fin de Batalla -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 8px 12px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button id="btn-battle-undo" class="btn-gothic-secondary" onclick="BattleEnhancements.undoLastAction()" style="padding: 4px 10px; font-size: 0.78rem; border-color: var(--gold-primary); color: var(--gold-accent);" title="Deshacer la última acción de heridas, bajas o puntos">
+                ↶ Deshacer Acción
+              </button>
+              <button class="btn-gothic-secondary" onclick="toggleScreenWakeLockBtn()" style="padding: 4px 10px; font-size: 0.78rem;" title="Evita que la pantalla se apague durante el juego">
+                <span id="battle-wakelock-status">☀️ Mantener Pantalla Activa</span>
+              </button>
+            </div>
+            <div>
+              <button class="btn-gothic-primary" onclick="BattleEnhancements.finishBattleModal()" style="padding: 4px 14px; font-size: 0.82rem; background: linear-gradient(135deg, #15803d, #047857);" title="Finalizar la partida y archivar resultados">
+                🏁 Fin de Batalla
+              </button>
+            </div>
+          </div>
+
           <!-- Banner de Ronda -->
           <div class="round-control-banner">
             <span class="round-counter-text" id="hud-round-num">RONDA 1 / 5</span>
@@ -817,24 +840,39 @@
     <section class="tab-pane" id="pane-mathhammer">
       <div class="mathhammer-card">
         <div style="text-align: center; margin-bottom: 20px;">
-          <h2 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.6rem; letter-spacing: 1px;">SIMULADOR TÁCTICO DE DAÑO (MATHHAMMER)</h2>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Calcula matemáticamente el daño medio esperado de tus armas contra cualquier perfil enemigo.</p>
+          <h2 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.6rem; letter-spacing: 1px;">SIMULADOR TÁCTICO DE DAÑO (MATHHAMMER 11ª ED)</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Calcula con precisión matemática el daño medio esperado, miniaturas eliminadas y reglas avanzadas (Lethal Hits, Sustained, Devastating Wounds, FnP).</p>
         </div>
 
+        <!-- Selector Rápido de Armas del Códex -->
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <label style="font-size: 0.78rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">
+            📜 Cargar Arma del Códex:
+          </label>
+          <select id="math-quick-weapon-select" class="form-control-gothic" onchange="loadWeaponIntoMathhammer(this.value)" style="flex: 1; min-width: 250px; font-size: 0.85rem; padding: 6px 10px;">
+            <option value="">-- Elige un arma de la Armería de la Roca... --</option>
+          </select>
+        </div>
+
+        <!-- 1. PARÁMETROS DEL ARMA ATACANTE -->
         <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
-          <h4 style="font-size: 0.85rem; color: var(--deathwing-bone); text-transform: uppercase; margin-bottom: 8px;">1. Parámetros del Arma Atacante:</h4>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-size: 0.85rem; color: var(--deathwing-bone); text-transform: uppercase; margin: 0;">1. Parámetros del Arma Atacante:</h4>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">Acepta valores fijos o dados (ej: D6, 2D6, D3+3)</span>
+          </div>
           <div class="calc-inputs-grid">
             <div class="input-field-group">
               <label for="math-attacks">Número de Ataques (A):</label>
-              <input type="number" id="math-attacks" class="math-calc-trigger" value="10" min="1">
+              <input type="text" id="math-attacks" class="math-calc-trigger" value="10">
             </div>
             <div class="input-field-group">
               <label for="math-bsws">Habilidad HP / HA:</label>
               <select id="math-bsws" class="math-calc-trigger">
                 <option value="2">2+ (Maestros / Primarca)</option>
                 <option value="3" selected>3+ (Space Marines)</option>
-                <option value="4">4+ (Pesada / Disparo apresurado)</option>
+                <option value="4">4+ (Pesada / Apresurado)</option>
                 <option value="5">5+</option>
+                <option value="6">6+</option>
               </select>
             </div>
             <div class="input-field-group">
@@ -849,54 +887,142 @@
                 <option value="-2" selected>FP -2</option>
                 <option value="-3">FP -3</option>
                 <option value="-4">FP -4</option>
+                <option value="-5">FP -5</option>
               </select>
             </div>
             <div class="input-field-group">
               <label for="math-damage">Daño por Ataque (D):</label>
-              <input type="number" id="math-damage" class="math-calc-trigger" value="2" min="1">
+              <input type="text" id="math-damage" class="math-calc-trigger" value="2">
             </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
-            <input type="checkbox" id="math-oath" class="math-calc-trigger" checked style="width: 18px; height: 18px;">
-            <label for="math-oath" style="font-size: 0.9rem; color: var(--caliban-bright); font-weight: 700; cursor: pointer;">
-              Repetición por Juramento de Momento (Oath of Moment activado)
+
+          <!-- Reglas Especiales y Modificadores del Arma -->
+          <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
+              <input type="checkbox" id="math-torrent" class="math-calc-trigger"> 🌊 Torrente (Auto-hit)
             </label>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
+              <input type="checkbox" id="math-lethal" class="math-calc-trigger"> ⚡ Impactos Letales
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
+              <input type="checkbox" id="math-devastating" class="math-calc-trigger"> 💀 Heridas Devastadoras
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
+              <input type="checkbox" id="math-twinlinked" class="math-calc-trigger"> 🔄 Acoplada (Repite herir)
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
+              <input type="checkbox" id="math-oath" class="math-calc-trigger" checked> ⚔️ Juramento de Momento (Repite impactar)
+            </label>
+            <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted);">
+              <span>Impactos Sostenidos:</span>
+              <select id="math-sustained" class="math-calc-trigger" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); color: #fff; border-radius: 4px; padding: 2px 6px; font-size: 0.78rem;">
+                <option value="0" selected>Ninguno</option>
+                <option value="1">Sostenidos 1</option>
+                <option value="2">Sostenidos 2</option>
+              </select>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted);">
+              <span>Anti-X:</span>
+              <select id="math-anti" class="math-calc-trigger" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); color: #fff; border-radius: 4px; padding: 2px 6px; font-size: 0.78rem;">
+                <option value="0" selected>Sin Anti-X</option>
+                <option value="2">Anti- 2+</option>
+                <option value="3">Anti- 3+</option>
+                <option value="4">Anti- 4+</option>
+                <option value="5">Anti- 5+</option>
+              </select>
+            </div>
           </div>
         </div>
 
+        <!-- 2. PERFIL DEFENSOR DEL OBJETIVO -->
         <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px;">
-          <h4 style="font-size: 0.85rem; color: var(--deathwing-bone); text-transform: uppercase; margin-bottom: 8px;">2. Perfil Defensor del Objetivo:</h4>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <h4 style="font-size: 0.85rem; color: var(--deathwing-bone); text-transform: uppercase; margin: 0;">2. Perfil Defensor del Objetivo:</h4>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 0.75rem; color: var(--gold-accent);">Perfil Preconfigurado:</span>
+              <select id="math-preset-target-select" class="form-control-gothic" onchange="loadPresetTargetIntoMathhammer(this.value)" style="font-size: 0.78rem; padding: 3px 8px;">
+                <option value="custom">⚙️ Personalizado</option>
+                <option value="geq">Guarda / Cultista (R3 Sv5+ 1H)</option>
+                <option value="meq">Marine Intercesor (R4 Sv3+ 2H)</option>
+                <option value="teq" selected>Exterminador (R5 Sv2+ 4++ 3H)</option>
+                <option value="gravis">Marine Gravis (R6 Sv3+ 3H)</option>
+                <option value="dw_knights">Caballeros Deathwing (R6 Sv2+ 4++ 4H)</option>
+                <option value="custodes">Guardia Custode (R6 Sv2+ 4++ 3H)</option>
+                <option value="light_vehicle">Vehículo Ligero (R9 Sv3+ 10H)</option>
+                <option value="dreadnought">Redemptor Dread (R10 Sv2+ 12H)</option>
+                <option value="land_raider">Land Raider / Tanque (R12 Sv2+ 16H)</option>
+                <option value="monstrous_ctan">C'tan / Primarca (R11 Sv2+ 4++ 5+++ FnP)</option>
+                <option value="knight">Imperial Knight (R12 Sv3+ 5++ 22H)</option>
+              </select>
+            </div>
+          </div>
+
           <div class="calc-inputs-grid">
             <div class="input-field-group">
-              <label for="math-target-t">Resistencia Enemiga (R):</label>
+              <label for="math-target-t">Resistencia (R):</label>
               <input type="number" id="math-target-t" class="math-calc-trigger" value="5" min="1">
             </div>
             <div class="input-field-group">
-              <label for="math-target-sv">Salvación por Armadura (Sv):</label>
+              <label for="math-target-sv">Salvación Armadura (Sv):</label>
               <select id="math-target-sv" class="math-calc-trigger">
                 <option value="2" selected>2+ (Exterminador / Tanque)</option>
                 <option value="3">3+ (Marine estándar)</option>
                 <option value="4">4+ (Infantería ligera)</option>
                 <option value="5">5+</option>
+                <option value="6">6+</option>
               </select>
             </div>
             <div class="input-field-group">
               <label for="math-target-inv">Salvación Invulnerable (Inv):</label>
               <select id="math-target-inv" class="math-calc-trigger">
-                <option value="0" selected>Sin Invulnerable</option>
-                <option value="4">4++ (Escudo de Tormenta)</option>
+                <option value="0">Sin Invulnerable</option>
+                <option value="4" selected>4++ (Escudo de Tormenta)</option>
                 <option value="5">5++</option>
                 <option value="6">6++</option>
+              </select>
+            </div>
+            <div class="input-field-group">
+              <label for="math-target-w">Heridas por Miniatura (H):</label>
+              <input type="number" id="math-target-w" class="math-calc-trigger" value="3" min="1">
+            </div>
+            <div class="input-field-group">
+              <label for="math-target-fnp">No Hay Dolor (Feel No Pain):</label>
+              <select id="math-target-fnp" class="math-calc-trigger">
+                <option value="0" selected>Sin FnP</option>
+                <option value="4">4+++ (FnP 4+)</option>
+                <option value="5">5+++ (FnP 5+)</option>
+                <option value="6">6+++ (FnP 6+)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 10px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
+              <input type="checkbox" id="math-cover" class="math-calc-trigger"> 🛡️ Objetivo en Cobertura (+1 Sv)
+            </label>
+            <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted);">
+              <span>Reducción de Daño:</span>
+              <select id="math-damage-red" class="math-calc-trigger" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); color: #fff; border-radius: 4px; padding: 2px 6px; font-size: 0.78rem;">
+                <option value="0" selected>Sin reducción</option>
+                <option value="1">-1 al Daño (ej. Círculo Interior)</option>
               </select>
             </div>
           </div>
         </div>
 
-        <!-- Resultado Calculado -->
-        <div class="math-result-box">
-          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 700;">DAÑO MEDIO TOTAL ESTIMADO:</span>
-          <div class="damage-score" id="math-result-damage">0.00</div>
-          <div id="math-result-subtext" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;"></div>
+        <!-- Resultado Calculado Analítico -->
+        <div class="math-result-box" style="margin-top: 16px;">
+          <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 700;">DAÑO MEDIO TOTAL:</span>
+              <div class="damage-score" id="math-result-damage" style="font-size: 2.5rem; color: var(--gold-accent);">0.00</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.15); padding-left: 20px;">
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--caliban-bright); font-weight: 700;">MINIATURAS ELIMINADAS:</span>
+              <div id="math-result-kills" style="font-size: 2.5rem; font-weight: 900; color: var(--caliban-bright);">0.0</div>
+            </div>
+          </div>
+          <div id="math-result-subtext" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; line-height: 1.4;"></div>
         </div>
       </div>
     </section>
@@ -1636,6 +1762,9 @@
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
+  <script src="js/modules/mathhammer_adv.js"></script>
+  <script src="js/modules/army_validator.js"></script>
+  <script src="js/modules/battle_enhancements.js"></script>
   <script src="js/app.js"></script>
 
   <!-- Registro de Service Worker para Modo Offline e Instalación PWA en Tablets -->

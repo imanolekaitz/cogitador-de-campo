@@ -4173,6 +4173,76 @@ function renderManageDetachmentsModalContent() {
   }).join('');
 }
 
+function renderArmyValidationBanner(activeList) {
+  const container = document.getElementById("army-validation-container");
+  if (!container) return;
+
+  if (typeof ArmyValidator === "undefined") {
+    container.innerHTML = "";
+    return;
+  }
+
+  const result = ArmyValidator.validateList(activeList, WH40K_DATA.datasheets, WH40K_DATA.detachments);
+  if (result.isValid && result.warningsCount === 0) {
+    container.innerHTML = `
+      <div style="background: rgba(34, 197, 94, 0.12); border: 1px solid var(--caliban-bright); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.2rem;">🛡️</span>
+          <div>
+            <strong style="color: var(--caliban-bright); font-size: 0.85rem;">Lista 100% Válida para Torneo (11ª Edición / WTC)</strong>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Cumple todas las restricciones: Warlord, Héroes Épicos únicos, regla de 3 y mejoras.</div>
+          </div>
+        </div>
+        <span style="font-size: 0.72rem; color: var(--caliban-bright); font-weight: 700; background: rgba(34, 197, 94, 0.2); padding: 2px 8px; border-radius: 4px;">OK</span>
+      </div>
+    `;
+    return;
+  }
+
+  // Si hay errores o advertencias
+  const errorItems = result.issues.filter(i => i.type === "error");
+  const warnItems = result.issues.filter(i => i.type === "warning");
+
+  const borderCol = errorItems.length > 0 ? "#ef4444" : "#f59e0b";
+  const bgCol = errorItems.length > 0 ? "rgba(239, 68, 68, 0.12)" : "rgba(245, 158, 11, 0.12)";
+  const titleCol = errorItems.length > 0 ? "#f87171" : "var(--gold-accent)";
+
+  container.innerHTML = `
+    <div style="background: ${bgCol}; border: 1px solid ${borderCol}; border-radius: var(--radius-sm); padding: 12px 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 1.1rem;">⚠️</span>
+          <strong style="color: ${titleCol}; font-size: 0.88rem;">
+            Auditoría de Lista: ${errorItems.length} infraccion${errorItems.length === 1 ? '' : 'es'}, ${warnItems.length} aviso${warnItems.length === 1 ? '' : 's'}
+          </strong>
+        </div>
+        <span style="font-size: 0.72rem; color: #fff; background: ${errorItems.length > 0 ? 'rgba(239, 68, 68, 0.4)' : 'rgba(245, 158, 11, 0.4)'}; padding: 2px 8px; border-radius: 4px; font-weight: 700;">
+          ${errorItems.length > 0 ? 'NO REGLAMENTARIA' : 'AVISO'}
+        </span>
+      </div>
+      <ul style="margin: 0; padding-left: 20px; font-size: 0.78rem; line-height: 1.45; color: var(--deathwing-bone);">
+        ${errorItems.map(i => `<li style="color: #fca5a5;"><strong style="color: #f87171;">[Regla]:</strong> ${escapeHtml(i.message)}</li>`).join("")}
+        ${warnItems.map(i => `<li style="color: #fde68a;"><strong style="color: #f59e0b;">[Aviso]:</strong> ${escapeHtml(i.message)}</li>`).join("")}
+      </ul>
+    </div>
+  `;
+}
+
+function runArmyValidationAndNotify() {
+  const activeList = getActiveArmyList();
+  if (!activeList || typeof ArmyValidator === "undefined") return;
+
+  const result = ArmyValidator.validateList(activeList, WH40K_DATA.datasheets, WH40K_DATA.detachments);
+  if (result.isValid && result.warningsCount === 0) {
+    showBattleToast("¡Lista auditada con éxito! Cumple todas las restricciones oficiales de 11ª Edición.");
+  } else if (result.isValid) {
+    showBattleToast(`Lista legal con ${result.warningsCount} advertencia(s) menor(es). Revisa el panel superior.`);
+  } else {
+    showBattleToast(`⚠️ Lista NO reglamentaria: Se detectaron ${result.errorsCount} infracciones.`);
+  }
+  renderArmyValidationBanner(activeList);
+}
+
 // --------------------------------------------------------------------------
 // RENDERIZADO DEL ARMY BUILDER
 // --------------------------------------------------------------------------
@@ -4290,6 +4360,9 @@ function renderArmyBuilder() {
     meterFillEl.classList.toggle("over-budget", currentPoints > maxPoints);
   }
   
+  // Renderizar banner de auditoría y validación de reglas (11ª Ed / WTC)
+  renderArmyValidationBanner(activeList);
+
   // Renderizar unidades
   const container = document.getElementById("army-units-list-container");
   if (!container) return;
@@ -4335,13 +4408,20 @@ function renderArmyBuilder() {
       matchBadge = `<span class="unit-inventory-status status-match-none">🔴 No posees suficientes (${totalOwned}/${unitInstance.modelsCount})</span>`;
     }
     
-    // Dropdown de líderes asignables
+    // Dropdown de líderes asignables (con coincidencia difusa bilingüe por nombre y originalName)
     let leaderAttachHtml = "";
     if (ds.keywords.includes("PERSONAJE") && !ds.keywords.includes("MONSTRUO") && ds.leaderOf.length > 0) {
       const eligibleUnits = activeList.units.filter(u => {
         if (u.instanceId === unitInstance.instanceId) return false;
         const targetDs = WH40K_DATA.datasheets.find(d => d.id === u.datasheetId);
-        return targetDs && ds.leaderOf.includes(targetDs.name);
+        if (!targetDs) return false;
+
+        return ds.leaderOf.some(allowed => {
+          const cleanAllowed = allowed.toLowerCase().replace(/\s*\([^)]*\)/g, "").trim();
+          const cleanTarget = targetDs.name.toLowerCase().replace(/\s*\([^)]*\)/g, "").trim();
+          const cleanOrig = (targetDs.originalName || "").toLowerCase().replace(/\s*\([^)]*\)/g, "").trim();
+          return cleanAllowed.includes(cleanTarget) || cleanTarget.includes(cleanAllowed) || (cleanOrig && cleanAllowed.includes(cleanOrig));
+        });
       });
       
       leaderAttachHtml = `
@@ -4626,18 +4706,21 @@ function initBattleTracker() {
 }
 
 function adjustRound(delta) {
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot(`Ronda ${delta > 0 ? '+' : ''}${delta}`);
   AppState.battle.round = Math.max(1, Math.min(5, AppState.battle.round + delta));
   saveToStorage();
   renderBattleTracker();
 }
 
 function adjustCP(delta) {
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot(`Puntos de Mando ${delta > 0 ? '+' : ''}${delta} CP`);
   AppState.battle.commandPoints = Math.max(0, AppState.battle.commandPoints + delta);
   saveToStorage();
   renderBattleTracker();
 }
 
 function adjustScore(target, delta) {
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot(`Puntos de Victoria (${target}) ${delta > 0 ? '+' : ''}${delta} VP`);
   if (target === "p-prim") AppState.battle.playerVPPrimary = Math.max(0, AppState.battle.playerVPPrimary + delta);
   if (target === "p-sec") AppState.battle.playerVPSecondary = Math.max(0, AppState.battle.playerVPSecondary + delta);
   if (target === "o-prim") AppState.battle.opponentVPPrimary = Math.max(0, AppState.battle.opponentVPPrimary + delta);
@@ -4734,6 +4817,26 @@ function renderBattleTracker() {
     });
 
     woundsContainer.innerHTML = renderedBlocks.join('');
+  }
+
+  // Actualizar estado del botón Deshacer (Undo)
+  const undoBtn = document.getElementById("btn-battle-undo");
+  if (undoBtn && typeof BattleEnhancements !== "undefined") {
+    // sincronizar si está disponible
+  }
+}
+
+let isWakeLockActive = false;
+function toggleScreenWakeLockBtn() {
+  if (typeof BattleEnhancements === "undefined") return;
+  if (!isWakeLockActive) {
+    BattleEnhancements.requestScreenWakeLock();
+    isWakeLockActive = true;
+    showBattleToast("☀️ Pantalla activa bloqueada para la partida.");
+  } else {
+    BattleEnhancements.releaseScreenWakeLock();
+    isWakeLockActive = false;
+    showBattleToast("🌙 Ahorro de pantalla reactivado.");
   }
 }
 
@@ -4970,6 +5073,7 @@ function damageUnitModel(instanceId, woundsPerModel) {
   const state = AppState.battle.unitStates[instanceId];
   if (!state || state.modelsAlive <= 0) return;
   
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot("Herida infligida (-1 H)");
   state.currentModelWounds -= 1;
   if (state.currentModelWounds <= 0) {
     // La miniatura herida ha muerto y se retira como baja
@@ -4993,6 +5097,7 @@ function healUnitModel(instanceId, woundsPerModel) {
   const state = AppState.battle.unitStates[instanceId];
   if (!state || state.modelsAlive <= 0) return;
   
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot("Curar herida (+1 H)");
   state.currentModelWounds = Math.min(woundsPerModel, state.currentModelWounds + 1);
   saveToStorage();
   renderBattleTracker();
@@ -5003,6 +5108,7 @@ function removeUnitCasualty(instanceId, woundsPerModel) {
   const state = AppState.battle.unitStates[instanceId];
   if (!state || state.modelsAlive <= 0) return;
   
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot("Retirar baja directa (-1 Mini)");
   state.modelsAlive -= 1;
   if (state.modelsAlive > 0) {
     state.currentModelWounds = woundsPerModel;
@@ -5021,6 +5127,7 @@ function reviveUnitCasualty(instanceId, maxModels, woundsPerModel) {
   if (!state) return;
   
   if (state.modelsAlive < maxModels) {
+    if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot("Revivir miniatura (+1 Mini)");
     state.modelsAlive += 1;
     state.currentModelWounds = woundsPerModel;
     saveToStorage();
@@ -5033,6 +5140,7 @@ function toggleUnitBattleShock(instanceId) {
   const state = AppState.battle.unitStates[instanceId];
   if (!state) return;
   
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot(`Cambio moral (${state.isBattleShocked ? 'Recuperada' : 'Acobardada'})`);
   state.isBattleShocked = !state.isBattleShocked;
   saveToStorage();
   renderBattleTracker();
@@ -5040,6 +5148,7 @@ function toggleUnitBattleShock(instanceId) {
 
 function resetUnitBattleState(instanceId, maxModels, woundsPerModel) {
   if (!AppState.battle.unitStates) AppState.battle.unitStates = {};
+  if (typeof BattleEnhancements !== "undefined") BattleEnhancements.pushStateSnapshot("Restaurar escuadra completa");
   AppState.battle.unitStates[instanceId] = {
     modelsAlive: maxModels,
     currentModelWounds: woundsPerModel,
@@ -5720,60 +5829,189 @@ function initMathhammer() {
   const calcInputs = document.querySelectorAll(".math-calc-trigger");
   calcInputs.forEach(input => {
     input.addEventListener("input", () => calculateMathhammer());
+    input.addEventListener("change", () => calculateMathhammer());
   });
+
+  // Poblar selector de armas del códex
+  populateMathhammerWeaponsSelect();
+  calculateMathhammer();
+}
+
+function populateMathhammerWeaponsSelect() {
+  const select = document.getElementById("math-quick-weapon-select");
+  if (!select || !WH40K_DATA || !Array.isArray(WH40K_DATA.datasheets)) return;
+
+  const options = ['<option value="">-- Elige un arma de la Armería de la Roca... --</option>'];
+  const weaponMap = new Map();
+
+  WH40K_DATA.datasheets.forEach(ds => {
+    const allW = [...(ds.rangedWeapons || []), ...(ds.meleeWeapons || [])];
+    allW.forEach(w => {
+      const key = `${w.name}__${ds.name}`;
+      if (!weaponMap.has(key)) {
+        weaponMap.set(key, { weapon: w, dsName: ds.name });
+      }
+    });
+  });
+
+  // Agrupar por tipo / nombre
+  const sorted = Array.from(weaponMap.entries()).sort((a, b) => a[1].weapon.name.localeCompare(b[1].weapon.name));
+  sorted.forEach(([key, item]) => {
+    const w = item.weapon;
+    const isRanged = !!w.range && w.range !== "Combate";
+    const typeIcon = isRanged ? "🏹" : "⚔️";
+    options.push(`<option value="${escapeHtml(key)}">${typeIcon} ${escapeHtml(w.name)} (${escapeHtml(item.dsName)}) - A:${w.a} F:${w.f} FP:${w.ap} D:${w.d}</option>`);
+  });
+
+  select.innerHTML = options.join("");
+}
+
+function loadWeaponIntoMathhammer(key) {
+  if (!key) return;
+  const parts = key.split("__");
+  const weaponName = parts[0];
+  const dsName = parts[1];
+
+  const ds = WH40K_DATA.datasheets.find(d => d.name === dsName);
+  if (!ds) return;
+  const weapon = [...(ds.rangedWeapons || []), ...(ds.meleeWeapons || [])].find(w => w.name === weaponName);
+  if (!weapon) return;
+
+  // Rellenar campos
+  const elAttacks = document.getElementById("math-attacks");
+  const elBsWs = document.getElementById("math-bsws");
+  const elStrength = document.getElementById("math-strength");
+  const elAp = document.getElementById("math-ap");
+  const elDamage = document.getElementById("math-damage");
+
+  if (elAttacks) elAttacks.value = weapon.a || 1;
+  const rawSkill = parseInt(weapon.bs || weapon.ws) || 3;
+  if (elBsWs) elBsWs.value = Math.max(2, Math.min(6, rawSkill));
+  if (elStrength) elStrength.value = parseInt(weapon.f) || 4;
+  if (elAp) elAp.value = weapon.ap !== undefined ? weapon.ap : -1;
+  if (elDamage) elDamage.value = weapon.d || 1;
+
+  // Reglas del arma
+  const kw = weapon.keywords || [];
+  const elTorrent = document.getElementById("math-torrent");
+  const elLethal = document.getElementById("math-lethal");
+  const elDevastating = document.getElementById("math-devastating");
+  const elTwin = document.getElementById("math-twinlinked");
+  const elSustained = document.getElementById("math-sustained");
+  const elAnti = document.getElementById("math-anti");
+
+  if (elTorrent) elTorrent.checked = kw.some(k => /Torrente|Torrent/i.test(k));
+  if (elLethal) elLethal.checked = kw.some(k => /Impactos Letales|Lethal Hits/i.test(k));
+  if (elDevastating) elDevastating.checked = kw.some(k => /Heridas Devastadoras|Devastating Wounds/i.test(k));
+  if (elTwin) elTwin.checked = kw.some(k => /Acoplada|Twin-linked/i.test(k));
+
+  if (elSustained) {
+    if (kw.some(k => /Impactos Sostenidos 2|Sustained Hits 2/i.test(k))) elSustained.value = "2";
+    else if (kw.some(k => /Impactos Sostenidos|Sustained Hits/i.test(k))) elSustained.value = "1";
+    else elSustained.value = "0";
+  }
+
+  if (elAnti) {
+    const antiMatch = kw.find(k => /Anti-.*?(\d)\+/i.test(k));
+    if (antiMatch) {
+      const match = antiMatch.match(/(\d)\+/);
+      elAnti.value = match ? match[1] : "0";
+    } else {
+      elAnti.value = "0";
+    }
+  }
+
+  calculateMathhammer();
+}
+
+function loadPresetTargetIntoMathhammer(presetId) {
+  if (typeof MathhammerAdv === "undefined" || !MathhammerAdv.PRESET_TARGETS) return;
+  const preset = MathhammerAdv.PRESET_TARGETS.find(p => p.id === presetId);
+  if (!preset || preset.id === "custom") return;
+
+  const elT = document.getElementById("math-target-t");
+  const elSv = document.getElementById("math-target-sv");
+  const elInv = document.getElementById("math-target-inv");
+  const elW = document.getElementById("math-target-w");
+  const elFnp = document.getElementById("math-target-fnp");
+
+  if (elT) elT.value = preset.t;
+  if (elSv) elSv.value = preset.sv;
+  if (elInv) elInv.value = preset.inv;
+  if (elW) elW.value = preset.w;
+  if (elFnp) elFnp.value = preset.fnp;
+
   calculateMathhammer();
 }
 
 function calculateMathhammer() {
-  const attacks = parseFloat(document.getElementById("math-attacks").value) || 0;
-  const bsWs = parseInt(document.getElementById("math-bsws").value) || 3;
-  const strength = parseInt(document.getElementById("math-strength").value) || 4;
-  const ap = parseInt(document.getElementById("math-ap").value) || 0;
-  const damage = parseFloat(document.getElementById("math-damage").value) || 1;
-  const isOath = document.getElementById("math-oath").checked;
-  
-  const targetT = parseInt(document.getElementById("math-target-t").value) || 4;
-  const targetSv = parseInt(document.getElementById("math-target-sv").value) || 3;
-  const targetInv = parseInt(document.getElementById("math-target-inv").value) || 0;
-  
-  // 1. Probabilidad de Impacto
-  let hitProb = (7 - bsWs) / 6;
-  if (isOath) {
-    hitProb = hitProb + ((1 - hitProb) * hitProb); // Repetición de fallos
-  }
-  const expectedHits = attacks * hitProb;
-  
-  // 2. Probabilidad de Herir
-  let woundThreshold = 4;
-  if (strength >= targetT * 2) woundThreshold = 2;
-  else if (strength > targetT) woundThreshold = 3;
-  else if (strength === targetT) woundThreshold = 4;
-  else if (strength <= targetT / 2) woundThreshold = 6;
-  else woundThreshold = 5;
-  
-  const woundProb = (7 - woundThreshold) / 6;
-  const expectedWounds = expectedHits * woundProb;
-  
-  // 3. Probabilidad de Salvación Fallada
-  const modSv = targetSv - ap; // e.g. 3+ con FP -2 necesita 5+
-  let effectiveSv = modSv;
-  if (targetInv > 0 && targetInv < modSv) {
-    effectiveSv = targetInv;
-  }
-  
-  let saveFailProb = 1 - Math.max(0, Math.min(5/6, (7 - effectiveSv) / 6));
-  const expectedUnsaved = expectedWounds * saveFailProb;
-  
-  // 4. Daño total esperado
-  const totalDamageExpected = expectedUnsaved * damage;
-  
-  // Renderizar
+  if (typeof MathhammerAdv === "undefined") return;
+
+  const attacksVal = (document.getElementById("math-attacks")?.value || "10").trim();
+  const bsWs = parseInt(document.getElementById("math-bsws")?.value) || 3;
+  const strength = parseInt(document.getElementById("math-strength")?.value) || 4;
+  const ap = parseInt(document.getElementById("math-ap")?.value) || 0;
+  const damageVal = (document.getElementById("math-damage")?.value || "2").trim();
+
+  const isTorrent = !!document.getElementById("math-torrent")?.checked;
+  const lethalHits = !!document.getElementById("math-lethal")?.checked;
+  const devastatingWounds = !!document.getElementById("math-devastating")?.checked;
+  const twinLinked = !!document.getElementById("math-twinlinked")?.checked;
+  const isOath = !!document.getElementById("math-oath")?.checked;
+  const sustainedHits = parseInt(document.getElementById("math-sustained")?.value) || 0;
+  const antiThreshold = parseInt(document.getElementById("math-anti")?.value) || 0;
+
+  const targetT = parseInt(document.getElementById("math-target-t")?.value) || 4;
+  const targetSv = parseInt(document.getElementById("math-target-sv")?.value) || 3;
+  const targetInv = parseInt(document.getElementById("math-target-inv")?.value) || 0;
+  const targetW = parseInt(document.getElementById("math-target-w")?.value) || 2;
+  const targetFnp = parseInt(document.getElementById("math-target-fnp")?.value) || 0;
+  const hasCover = !!document.getElementById("math-cover")?.checked;
+  const damageReduction = parseInt(document.getElementById("math-damage-red")?.value) || 0;
+
+  const res = MathhammerAdv.calculate({
+    attacks: attacksVal,
+    bsWs,
+    strength,
+    ap,
+    damage: damageVal,
+    isTorrent,
+    lethalHits,
+    devastatingWounds,
+    twinLinked,
+    sustainedHits,
+    antiThreshold,
+    hitReroll: isOath ? "all" : "none",
+    targetT,
+    targetSv,
+    targetInv,
+    targetW,
+    targetFnp,
+    hasCover,
+    damageReduction
+  });
+
   const resEl = document.getElementById("math-result-damage");
+  const killsEl = document.getElementById("math-result-kills");
   const subEl = document.getElementById("math-result-subtext");
-  
-  if (resEl) resEl.textContent = totalDamageExpected.toFixed(2);
+
+  if (resEl) resEl.textContent = res.rawTotalDamage.toFixed(2);
+  if (killsEl) killsEl.textContent = `${res.expectedKills.toFixed(1)} minis`;
+
   if (subEl) {
-    subEl.textContent = `${expectedHits.toFixed(1)} impactos ➔ ${expectedWounds.toFixed(1)} heridas ➔ ${expectedUnsaved.toFixed(1)} salvaciones falladas`;
+    const specialRulesActive = [];
+    if (isTorrent) specialRulesActive.push("Torrente");
+    if (lethalHits) specialRulesActive.push(`Impactos Letales (${res.autoWounds.toFixed(1)} aut.)`);
+    if (sustainedHits > 0) specialRulesActive.push(`Sostenidos ${sustainedHits}`);
+    if (devastatingWounds) specialRulesActive.push(`Devastadoras (${res.devWounds.toFixed(1)} mortales)`);
+    if (twinLinked) specialRulesActive.push("Acoplada");
+    if (isOath) specialRulesActive.push("Juramento (Oath)");
+
+    const rulesStr = specialRulesActive.length > 0 ? ` • [${specialRulesActive.join(", ")}]` : "";
+
+    subEl.innerHTML = `
+      <strong>Flujo Táctico:</strong> ${res.attacks.toFixed(1)} ataques ➔ <strong>${res.expectedHits.toFixed(1)} impactos</strong> ➔ <strong>${res.expectedWounds.toFixed(1)} heridas</strong> (Sv requerida: ${res.effectiveSv}+) ➔ <strong>${res.unsavedWounds.toFixed(1)} fallos de salvación</strong>.${rulesStr}
+    `;
   }
 }
 
