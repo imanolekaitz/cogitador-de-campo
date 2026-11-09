@@ -773,6 +773,16 @@ function switchTab(tabId) {
   if (tabId === "battle") renderBattleTracker();
 }
 
+function getDatasheetPointsForCount(ds, count) {
+  if (!ds || !Array.isArray(ds.pointsOptions) || ds.pointsOptions.length === 0) return 0;
+  const num = parseInt(count) || 1;
+  const exact = ds.pointsOptions.find(p => p.models === num);
+  if (exact) return exact.points;
+  const first = ds.pointsOptions[0];
+  if (!first || !first.models) return first ? first.points : 0;
+  return Math.round((first.points / first.models) * num);
+}
+
 function updateHeaderStats() {
   // Puntos totales de la colección
   let totalCollectionPoints = 0;
@@ -782,9 +792,7 @@ function updateHeaderStats() {
   AppState.collection.forEach(item => {
     const ds = WH40K_DATA.datasheets.find(d => d.id === item.datasheetId);
     if (ds) {
-      const opt = ds.pointsOptions[0];
-      const basePoints = opt ? opt.points : 0;
-      totalCollectionPoints += basePoints;
+      totalCollectionPoints += getDatasheetPointsForCount(ds, item.count);
     }
     totalModels += item.count;
     if (item.status === "battle" || item.status === "parade") {
@@ -3403,7 +3411,7 @@ function renderCollection() {
     };
     
     const wingClass = item.wing === "Ala de Muerte" ? "deathwing" : (item.wing === "Ala de Cuervo" ? "ravenwing" : "green");
-    const pointsVal = ds.pointsOptions && ds.pointsOptions[0] ? ds.pointsOptions[0].points : 0;
+    const pointsVal = getDatasheetPointsForCount(ds, item.count);
     
     const hasAlias = item.alias && item.alias.trim() && item.alias.trim() !== ds.name;
     const titleName = hasAlias ? item.alias.trim() : (item.customName || ds.name);
@@ -3502,8 +3510,8 @@ function updateCollectionKPIs() {
     totalModels += count;
     
     const ds = WH40K_DATA.datasheets.find(d => d.id === item.datasheetId);
-    if (ds && ds.pointsOptions[0]) {
-      totalPts += ds.pointsOptions[0].points;
+    if (ds) {
+      totalPts += getDatasheetPointsForCount(ds, count);
     }
     
     if (item.status === "box") box += count;

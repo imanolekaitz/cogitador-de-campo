@@ -1,35 +1,38 @@
 /* ==========================================================================
-   COGITADOR DE CAMPO: LA ROCA (DARK ANGELS TACTICAL INTERFACE)
-   Estilo Visual: Grimdark Gótico Militar / Interfaz Táctica Imperial Caliban
+   COGITADOR DE CAMPO: LA ROCA (DARK ANGELS TACTICAL INTERFACE — MK.XI REWORK)
+   Estilo Visual: Grimdark Gótico Imperial / Auspex de Mando de Caliban
    ========================================================================== */
 
 :root {
-  --bg-deep: #070e0a;
-  --bg-main: #0c1811;
-  --bg-surface: #122319;
-  --bg-surface-elevated: #182e21;
-  --bg-card: rgba(18, 35, 25, 0.85);
+  --bg-deep: #040906;
+  --bg-main: #08120c;
+  --bg-surface: #0d1d14;
+  --bg-surface-elevated: #132a1d;
+  --bg-card: rgba(12, 26, 18, 0.92);
   
-  --border-subtle: #1e3a2a;
-  --border-bright: #2d5a41;
-  --border-gold: #c5a059;
+  --border-subtle: #1b3626;
+  --border-bright: #2e5c41;
+  --border-highlight: #478963;
+  --border-gold: #c9a24b;
   
-  /* Colores de las Tres Alas */
-  --caliban-green: #15803d;
+  /* Colores Heráldicos de las Tres Alas */
+  --caliban-dark: #0a3d1f;
+  --caliban-green: #146c36;
   --caliban-bright: #22c55e;
-  --caliban-glow: rgba(34, 197, 94, 0.25);
+  --caliban-glow: rgba(34, 197, 94, 0.28);
   
-  --deathwing-bone: #e5ded0;
-  --deathwing-accent: #c9bc9c;
-  --deathwing-shadow: #8c7b5b;
+  --deathwing-bone: #ebe4d5;
+  --deathwing-accent: #d4c5a3;
+  --deathwing-shadow: #7a6a4d;
   
-  --ravenwing-black: #111827;
+  --ravenwing-black: #0c1017;
   --ravenwing-accent: #dc2626;
-  --ravenwing-glow: rgba(220, 38, 38, 0.2);
+  --ravenwing-glow: rgba(220, 38, 38, 0.25);
   
   --gold-primary: #d4af37;
   --gold-accent: #f59e0b;
-  --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+  --gold-gradient: linear-gradient(135deg, #f6d365 0%, #d4af37 45%, #9a6f1a 100%);
+  --imperial-wax: #991b1b;
   
   --text-main: #f1f5f9;
   --text-muted: #94a3b8;
@@ -43,13 +46,14 @@
   --status-parade: #eab308;
 
   --font-serif: 'Cinzel', 'Cinzel Decorative', Georgia, serif;
+  --font-title: 'Cinzel', Georgia, serif;
   --font-sans: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --shadow-gothic: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(21, 128, 61, 0.15);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-gothic: 0 14px 36px -10px rgba(0, 0, 0, 0.88), 0 0 18px rgba(20, 108, 54, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -61,9 +65,14 @@
 body {
   background-color: var(--bg-deep);
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(21, 128, 61, 0.18) 0%, transparent 60%),
-    linear-gradient(rgba(12, 24, 17, 0.92), rgba(7, 14, 10, 0.98)),
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 100, 0.015) 2px, rgba(0, 255, 100, 0.015) 4px);
+    radial-gradient(ellipse at 50% 0%, rgba(20, 108, 54, 0.24) 0%, transparent 65%),
+    radial-gradient(circle at 15% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(185, 28, 28, 0.05) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(6, 13, 9, 0.94) 0%, rgba(4, 9, 6, 0.99) 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34, 197, 94, 0.018) 2px, rgba(34, 197, 94, 0.018) 4px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.025) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(212, 175, 55, 0.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 4px, 48px 48px, 48px 48px;
   color: var(--text-main);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -74,16 +83,99 @@ body {
 }
 
 /* ==========================================================================
+   FRISO DE TELEMETRÍA VOX-IMPERIAL (TOP TICKER)
+   ========================================================================== */
+.vox-telemetry-bar {
+  background: linear-gradient(90deg, #040806 0%, #0b1911 50%, #040806 100%);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 105;
+}
+
+.vox-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 5px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vox-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vox-node strong {
+  color: var(--caliban-bright);
+  font-weight: 700;
+}
+
+.vox-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--caliban-bright);
+  box-shadow: 0 0 8px var(--caliban-bright);
+}
+
+.vox-quote {
+  font-family: var(--font-serif);
+  color: var(--deathwing-accent);
+  font-size: 0.74rem;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.vox-sep {
+  color: var(--gold-primary);
+}
+
+.purity-seal-mini {
+  background: linear-gradient(135deg, #7f1d1d, #450a0a);
+  border: 1px solid #dc2626;
+  color: #fde68a;
+  padding: 1px 7px;
+  border-radius: 2px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.35);
+}
+
+/* ==========================================================================
    CABECERA DEL COGITADOR (TOP BAR)
    ========================================================================== */
 .cogitator-header {
-  background: linear-gradient(180deg, #0f2217 0%, #09150e 100%);
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(20, 108, 54, 0.22), transparent 55%),
+    linear-gradient(180deg, #0d1f15 0%, #07110b 100%);
   border-bottom: 2px solid var(--border-gold);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(245, 158, 11, 0.25);
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+}
+
+.cogitator-header::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-primary) 25%, #fff3b0 50%, var(--gold-primary) 75%, transparent 100%);
+  opacity: 0.65;
+  pointer-events: none;
 }
 
 .header-inner {
@@ -104,36 +196,60 @@ body {
 }
 
 .chapter-badge {
-  width: 48px;
-  height: 48px;
-  background: var(--gold-gradient);
+  width: 54px;
+  height: 54px;
+  background: radial-gradient(circle at 30% 30%, #165b33 0%, #071f10 75%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
-  border: 2px solid #fff;
+  color: var(--gold-primary);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.35), inset 0 0 10px rgba(34, 197, 94, 0.3);
+  border: 2px solid var(--gold-primary);
+  outline: 1px dashed rgba(212, 175, 55, 0.45);
+  outline-offset: 3px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chapter-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.6), inset 0 0 14px rgba(34, 197, 94, 0.5);
+}
+
+.brand-super-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  color: var(--caliban-bright);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: -2px;
 }
 
 .brand-text h1 {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  color: var(--deathwing-bone);
-  text-shadow: 0 0 10px rgba(229, 222, 208, 0.3);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  background: linear-gradient(180deg, #ffffff 0%, #e5ded0 65%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
   text-transform: uppercase;
+  line-height: 1.15;
 }
 
 .brand-subtitle {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--gold-primary);
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
+  letter-spacing: 2.2px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 2px;
 }
 
 .status-dot {
@@ -154,11 +270,18 @@ body {
 .header-stats {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 8px 18px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  gap: 22px;
+  background: linear-gradient(180deg, rgba(5, 12, 8, 0.8) 0%, rgba(12, 26, 18, 0.85) 100%);
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-gold);
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.7), 0 4px 14px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.header-stats .stat-pill:not(:last-child) {
+  padding-right: 18px;
+  border-right: 1px solid rgba(201, 162, 75, 0.25);
 }
 
 .stat-pill {
@@ -167,16 +290,19 @@ body {
 }
 
 .stat-pill .label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 1px;
+  color: var(--deathwing-accent);
+  letter-spacing: 1.2px;
+  font-weight: 700;
 }
 
 .stat-pill .value {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 800;
   color: var(--gold-accent);
+  font-family: var(--font-serif);
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
 }
 
 /* ==========================================================================
@@ -237,13 +363,14 @@ body {
 }
 
 /* ==========================================================================
-   BARRA DE NAVEGACIÓN PRINCIPAL
+   BARRA DE NAVEGACIÓN PRINCIPAL (FORTALEZA-MONASTERIO NAV DECK)
    ========================================================================== */
 .main-nav {
-  background: rgba(10, 20, 14, 0.95);
-  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(8, 18, 12, 0.97) 0%, rgba(5, 11, 8, 0.99) 100%);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.65);
   position: sticky;
-  top: 73px;
+  top: 78px;
   z-index: 90;
 }
 
@@ -259,40 +386,201 @@ body {
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
   color: var(--text-muted);
-  padding: 14px 24px;
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
+  padding: 14px 22px;
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   white-space: nowrap;
+  position: relative;
 }
 
 .nav-tab-btn:hover {
-  color: var(--text-main);
-  background: rgba(21, 128, 61, 0.12);
+  color: var(--deathwing-bone);
+  background: linear-gradient(180deg, transparent 0%, rgba(20, 108, 54, 0.22) 100%);
 }
 
 .nav-tab-btn.active {
   color: var(--gold-primary);
   border-bottom-color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.08);
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.04) 0%, rgba(212, 175, 55, 0.16) 100%);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
+}
+
+.nav-tab-btn.active::after {
+  content: "❖";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  color: var(--gold-accent);
+  text-shadow: 0 0 6px #000;
+  pointer-events: none;
 }
 
 .nav-tab-badge {
-  background: var(--caliban-green);
+  background: linear-gradient(135deg, #146c36, #0a3d1f);
+  border: 1px solid var(--caliban-bright);
   color: #fff;
-  font-size: 0.75rem;
-  padding: 2px 7px;
-  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  padding: 1px 7px;
+  border-radius: 3px;
+  font-weight: 800;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+}
+
+/* ==========================================================================
+   HERÁLDICA DEL CÓDEX (LIBRARIUM TACTICA BANNER)
+   ========================================================================== */
+.codex-heraldry-banner {
+  background: 
+    radial-gradient(circle at 0% 50%, rgba(212, 175, 55, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 100% 50%, rgba(20, 108, 54, 0.22) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(14, 29, 20, 0.96) 0%, rgba(6, 14, 10, 0.98) 100%);
+  border: 1px solid var(--border-gold);
+  border-left: 5px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-gothic);
+  position: relative;
+  overflow: hidden;
+}
+
+.codex-heraldry-banner::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.heraldry-emblem-col {
+  flex-shrink: 0;
+}
+
+.heraldry-crest {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 108, 54, 0.45) 0%, rgba(5, 12, 8, 0.95) 75%);
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), inset 0 0 12px rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heraldry-text-col {
+  flex: 1;
+  min-width: 280px;
+}
+
+.heraldry-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+  text-transform: uppercase;
   font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.heraldry-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--deathwing-bone);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.heraldry-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.heraldry-wings-strip {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.wing-crest-pill {
+  background: rgba(5, 11, 8, 0.85);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-sm);
+  padding: 8px 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+}
+
+.wing-crest-pill strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.76rem;
+  letter-spacing: 0.8px;
+}
+
+.wing-crest-pill small {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.wing-crest-icon {
+  font-size: 1.25rem;
+}
+
+.wing-crest-pill.deathwing {
+  border-left: 3px solid var(--deathwing-bone);
+}
+.wing-crest-pill.deathwing:hover {
+  border-color: var(--deathwing-bone);
+  background: rgba(122, 106, 77, 0.28);
+  transform: translateY(-2px);
+}
+
+.wing-crest-pill.ravenwing {
+  border-left: 3px solid var(--ravenwing-accent);
+}
+.wing-crest-pill.ravenwing:hover {
+  border-color: var(--ravenwing-accent);
+  background: rgba(185, 28, 28, 0.25);
+  transform: translateY(-2px);
+}
+
+.wing-crest-pill.greenwing {
+  border-left: 3px solid var(--caliban-bright);
+}
+.wing-crest-pill.greenwing:hover {
+  border-color: var(--caliban-bright);
+  background: rgba(20, 108, 54, 0.3);
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -324,8 +612,9 @@ body {
    COMPONENTES COMUNES: TARJETAS, BOTONES, BARRAS DE HERRAMIENTAS
    ========================================================================== */
 .toolbar-panel {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(16, 33, 23, 0.94) 0%, rgba(10, 21, 15, 0.97) 100%);
+  border: 1px solid var(--border-bright);
+  border-top: 2px solid rgba(201, 162, 75, 0.55);
   border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 24px;
@@ -334,7 +623,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
 }
 
 .search-input-wrap {
@@ -345,7 +634,7 @@ body {
 
 .search-input-wrap input {
   width: 100%;
-  background: var(--bg-deep);
+  background: rgba(4, 9, 6, 0.9);
   border: 1px solid var(--border-bright);
   border-radius: var(--radius-sm);
   color: var(--text-main);
@@ -357,8 +646,8 @@ body {
 }
 
 .search-input-wrap input:focus {
-  border-color: var(--caliban-bright);
-  box-shadow: 0 0 10px var(--caliban-glow);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.28);
 }
 
 .search-icon {
@@ -366,7 +655,7 @@ body {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-muted);
+  color: var(--gold-primary);
   pointer-events: none;
 }
 
@@ -378,48 +667,53 @@ body {
 }
 
 .filter-btn {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(4, 9, 6, 0.65);
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   padding: 6px 14px;
   border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .filter-btn:hover {
-  border-color: var(--border-bright);
-  color: var(--text-main);
-}
-
-.filter-btn.active {
-  background: var(--caliban-green);
-  border-color: var(--caliban-bright);
-  color: #fff;
-  box-shadow: 0 0 10px var(--caliban-glow);
-}
-
-.filter-btn.wing-deathwing.active {
-  background: #736342;
-  border-color: var(--deathwing-bone);
+  border-color: var(--gold-primary);
   color: var(--deathwing-bone);
 }
 
-.filter-btn.wing-ravenwing.active {
-  background: #2b0c0c;
-  border-color: var(--ravenwing-accent);
+.filter-btn.active {
+  background: linear-gradient(135deg, #146c36, #0a3d1f);
+  border-color: var(--caliban-bright);
   color: #fff;
+  box-shadow: 0 0 12px var(--caliban-glow);
 }
 
-.btn-gothic {
+.filter-btn.wing-deathwing.active {
+  background: linear-gradient(135deg, #7a6a4d, #463c29);
+  border-color: var(--deathwing-bone);
+  color: var(--deathwing-bone);
+  box-shadow: 0 0 12px rgba(235, 228, 213, 0.3);
+}
+
+.filter-btn.wing-ravenwing.active {
+  background: linear-gradient(135deg, #7f1d1d, #2b0909);
+  border-color: var(--ravenwing-accent);
+  color: #fff;
+  box-shadow: 0 0 12px var(--ravenwing-glow);
+}
+
+.btn-gothic,
+.btn-gothic-primary {
   background: var(--gold-gradient);
-  border: 1px solid var(--gold-primary);
-  color: #1a0f00;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.95rem;
+  border: 1px solid #fde68a;
+  color: #160d00;
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 9px 18px;
@@ -428,48 +722,54 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
-  transition: all 0.2s;
+  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: all 0.2s ease;
 }
 
-.btn-gothic:hover {
+.btn-gothic:hover,
+.btn-gothic-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
-  filter: brightness(1.1);
+  box-shadow: 0 5px 18px rgba(245, 158, 11, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  filter: brightness(1.08);
 }
 
 .btn-gothic-secondary {
-  background: var(--bg-surface-elevated);
+  background: linear-gradient(180deg, #152d1f 0%, #0b1911 100%);
   border: 1px solid var(--border-bright);
-  color: var(--text-main);
+  color: var(--deathwing-bone);
   font-family: var(--font-sans);
-  font-weight: 600;
-  padding: 8px 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 8px 15px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .btn-gothic-secondary:hover {
   border-color: var(--gold-primary);
   color: var(--gold-accent);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
 /* ==========================================================================
-   MÓDULO 1: CATÁLOGO DE DATASHEETS (CODEX)
+   MÓDULO 1: CATÁLOGO DE DATASHEETS (CODEX — PERGAMINO TÁCTICO IMPERIAL)
    ========================================================================== */
 .datasheet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 22px;
 }
 
 .datasheet-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.07) 0%, transparent 45%),
+    linear-gradient(165deg, rgba(15, 31, 22, 0.96) 0%, rgba(7, 15, 11, 0.99) 100%);
+  border: 1px solid var(--border-bright);
+  border-top: 2px solid rgba(201, 162, 75, 0.5);
   border-radius: var(--radius-md);
   padding: 18px;
   display: flex;
@@ -477,21 +777,37 @@ body {
   gap: 14px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
   box-shadow: var(--shadow-gothic);
 }
 
+.datasheet-card::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
 .datasheet-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-bright);
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.92), 0 0 20px rgba(212, 175, 55, 0.22);
 }
 
 .datasheet-card.wing-deathwing {
-  border-left: 5px solid var(--deathwing-accent);
+  border-left: 5px solid var(--deathwing-bone);
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(235, 228, 213, 0.09) 0%, transparent 50%),
+    linear-gradient(165deg, rgba(28, 26, 20, 0.95) 0%, rgba(11, 14, 11, 0.99) 100%);
 }
 
 .datasheet-card.wing-ravenwing {
   border-left: 5px solid var(--ravenwing-accent);
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+    linear-gradient(165deg, rgba(22, 14, 16, 0.96) 0%, rgba(8, 10, 12, 0.99) 100%);
 }
 
 .datasheet-card.wing-green {
@@ -503,83 +819,110 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.22);
+  padding-bottom: 10px;
 }
 
 .card-title-group h3 {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  color: var(--text-main);
-  letter-spacing: 1px;
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--deathwing-bone);
+  letter-spacing: 0.8px;
+  line-height: 1.25;
 }
 
 .card-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
+  margin-top: 4px;
 }
 
 .wing-badge {
   padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 700;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
-.wing-badge.deathwing { background: #3d3423; color: var(--deathwing-bone); border: 1px solid #736342; }
-.wing-badge.ravenwing { background: #380d0d; color: #fca5a5; border: 1px solid #991b1b; }
-.wing-badge.green { background: #0c3319; color: #86efac; border: 1px solid #166534; }
+.wing-badge.deathwing { background: linear-gradient(135deg, #4b402b, #2b2418); color: var(--deathwing-bone); border: 1px solid #a38f68; }
+.wing-badge.ravenwing { background: linear-gradient(135deg, #521010, #240707); color: #fecaca; border: 1px solid #dc2626; }
+.wing-badge.green { background: linear-gradient(135deg, #0f4422, #072311); color: #86efac; border: 1px solid #22c55e; }
 
 .points-badge {
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(180deg, #1b1405 0%, #0c0902 100%);
   border: 1px solid var(--gold-primary);
   color: var(--gold-accent);
-  padding: 4px 10px;
+  padding: 5px 11px;
   border-radius: var(--radius-sm);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 0.92rem;
   white-space: nowrap;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.22);
 }
 
-/* Atributos Oficiales 10ª Edición (Hexágonos / Cajas) */
+/* Atributos Oficiales 11ª Edición (Escudos de Atributo Imperiales) */
 .statline-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 8px;
+  background: linear-gradient(180deg, rgba(4, 9, 6, 0.85) 0%, rgba(10, 22, 15, 0.9) 100%);
+  padding: 9px 8px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.75);
   text-align: center;
 }
 
 .stat-box {
   display: flex;
   flex-direction: column;
+  background: rgba(18, 36, 25, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 2px solid var(--gold-primary);
+  border-radius: 3px;
+  padding: 4px 2px;
 }
 
 .stat-box .stat-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: var(--gold-primary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .stat-box .stat-val {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--deathwing-bone);
+  color: #ffffff;
   font-family: var(--font-sans);
+  line-height: 1.15;
+  margin-top: 1px;
+}
+
+.stat-box.stat-co {
+  border-top-color: var(--gold-accent);
+  background: rgba(212, 175, 55, 0.1);
 }
 
 .stat-box.stat-co .stat-val {
   color: var(--gold-accent);
+}
+
+.stat-box.stat-inv {
+  border-top-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
 }
 
 .stat-box.stat-inv .stat-val {
@@ -591,32 +934,43 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.8rem;
-  margin: 6px 0;
+  margin: 4px 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .weapons-summary-table th {
-  background: rgba(0, 0, 0, 0.4);
-  color: var(--text-muted);
-  padding: 4px 6px;
+  background: linear-gradient(90deg, rgba(20, 42, 29, 0.95) 0%, rgba(10, 22, 15, 0.95) 100%);
+  color: var(--gold-primary);
+  font-family: var(--font-serif);
+  padding: 5px 6px;
   text-align: left;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.35);
 }
 
 .weapons-summary-table td {
   padding: 5px 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.weapons-summary-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .weapons-summary-table .w-name {
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--deathwing-bone);
 }
 
 .weapons-summary-table .w-keywords {
-  font-size: 0.7rem;
-  color: var(--gold-primary);
+  font-size: 0.68rem;
+  color: var(--gold-accent);
+  font-weight: 600;
   display: block;
 }
 
@@ -625,22 +979,26 @@ body {
   color: var(--text-muted);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .ability-tag {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 4px 8px;
-  border-radius: 4px;
-  border-left: 3px solid var(--caliban-bright);
+  background: linear-gradient(90deg, rgba(20, 108, 54, 0.16) 0%, rgba(0, 0, 0, 0.35) 100%);
+  color: #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border-left: 3px solid var(--gold-primary);
+  font-size: 0.78rem;
 }
 
 .card-actions-row {
   margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+  border-top: 1px solid rgba(201, 162, 75, 0.22);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -3667,8 +4025,147 @@ html, body {
   line-height: 1.35;
 }
 
+/* ==========================================================================
+   COLOFÓN IMPERIAL DE LA ROCA & ORNAMENTACIÓN GRIMDARK ADICIONAL
+   ========================================================================== */
+.cogitator-footer {
+  background: linear-gradient(180deg, #07120c 0%, #030705 100%);
+  border-top: 2px solid var(--border-gold);
+  padding: 18px 24px 24px;
+  margin-top: 40px;
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.75);
+}
+
+.footer-ornament-line {
+  max-width: 1500px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-ornament-line span:first-child,
+.footer-ornament-line span:last-child {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 75, 0.55), transparent);
+}
+
+.footer-skull-glyph {
+  font-size: 0.85rem;
+  letter-spacing: 6px;
+  color: var(--gold-primary);
+}
+
+.footer-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-col strong {
+  font-family: var(--font-serif);
+  color: var(--deathwing-bone);
+  letter-spacing: 1px;
+  font-size: 0.82rem;
+}
+
+.footer-right {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.footer-litany {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+
+/* Refinamiento de Paneles de Batalla, Modales y KPIs Grimdark */
+.kpi-card {
+  background: linear-gradient(145deg, rgba(16, 34, 24, 0.95) 0%, rgba(8, 17, 12, 0.98) 100%);
+  border: 1px solid var(--border-bright);
+  border-left: 4px solid var(--gold-primary);
+  position: relative;
+}
+
+.collection-card,
+.army-unit-card {
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+    linear-gradient(165deg, rgba(15, 31, 22, 0.95) 0%, rgba(7, 15, 11, 0.98) 100%);
+  border: 1px solid var(--border-bright);
+  border-top: 2px solid rgba(201, 162, 75, 0.45);
+}
+
+.army-unit-card.is-warlord {
+  border: 1px solid var(--gold-primary);
+  border-left: 5px solid var(--gold-accent);
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(245, 158, 11, 0.14) 0%, transparent 55%),
+    linear-gradient(165deg, rgba(22, 34, 24, 0.97) 0%, rgba(9, 17, 12, 0.99) 100%);
+}
+
+.battle-hud-panel {
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(20, 108, 54, 0.16) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(13, 28, 19, 0.96) 0%, rgba(6, 13, 9, 0.99) 100%);
+  border: 1px solid var(--border-gold);
+  border-top: 3px solid var(--gold-primary);
+}
+
+.modal-content-da {
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(20, 108, 54, 0.2) 0%, transparent 55%),
+    linear-gradient(180deg, #0f2217 0%, #060e09 100%);
+  border: 2px solid var(--border-gold);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.22);
+}
+
+@media (max-width: 768px) {
+  .vox-quote {
+    display: none;
+  }
+  .codex-heraldry-banner {
+    padding: 14px;
+    gap: 14px;
+  }
+  .heraldry-emblem-col {
+    display: none;
+  }
+  .heraldry-wings-strip {
+    width: 100%;
+  }
+  .wing-crest-pill {
+    flex: 1 1 140px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+  }
+}
+
 @media print {
-  .cogitator-header, .main-nav, .toolbar-panel, .btn-gothic, .card-actions-row, .comparator-panel {
+  .vox-telemetry-bar, .cogitator-header, .main-nav, .codex-heraldry-banner, .toolbar-panel, .btn-gothic, .card-actions-row, .comparator-panel, .cogitator-footer {
     display: none !important;
   }
   body {

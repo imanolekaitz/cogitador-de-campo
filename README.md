@@ -53,15 +53,25 @@ Luego abre tu navegador en: [http://localhost:3000](http://localhost:3000)
 ## 📁 Estructura del Repositorio
 
 ```text
-├── index.html          # Interfaz principal del Cogitador de Campo
+├── index.html                    # Interfaz principal del Cogitador de Campo (MK.XI)
+├── manifest.json                 # Manifiesto PWA para instalación en tablets y móviles
+├── sw.js                         # Service Worker para funcionamiento 100% offline
 ├── css/
-│   └── style.css       # Sistema de diseño, temas góticos y animaciones
+│   └── style.css                 # Sistema de diseño Grimdark Gótico, temas de las 3 Alas y responsive
 ├── js/
-│   ├── app.js          # Lógica interactiva, gestión de estado y componentes UI
-│   └── data.js         # Base de datos de datasheets, destacamentos y estratagemas
-├── Reglas/             # Documentos PDF y referencias de reglas
-├── server.js           # Servidor local HTTP básico
-└── README.md           # Documentación del proyecto
+│   ├── app.js                    # Controlador principal, gestión de estado, i18n y renderizado
+│   ├── data.js                   # Base de datos (113 datasheets, 21 destacamentos, 69 estratagemas)
+│   └── modules/
+│       ├── mathhammer_adv.js     # Motor analítico Mathhammer (Lethal, Sustained, Devastating, FnP)
+│       ├── army_validator.js     # Auditor y validador de listas (Reglas 11.ª Ed / WTC)
+│       ├── battle_enhancements.js# Historial Undo, Wake Lock y archivo de partidas
+│       ├── pariah_nexus_deck.js  # Mazo competitivo Pariah Nexus (primarias, secundarias y secretas)
+│       ├── army_importer.js      # Importador de listas (GW App/New Recruit) y enlaces Base64
+│       └── tactical_tools.js     # Reloj de ajedrez para torneos, dados rápidos y recetas de pintura
+├── icons/                        # Iconografía oficial de la PWA (SVG, 192px, 512px)
+├── Reglas/                       # Documentos PDF de referencia y actualizaciones oficiales
+├── server.js                     # Servidor HTTP local ligero (Node.js)
+└── README.md                     # Documentación del proyecto
 ```
 
 ---

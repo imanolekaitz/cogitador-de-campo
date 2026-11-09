@@ -28,17 +28,53 @@
 <body>
 
   <!-- ======================================================================
+       FRISO VOX-IMPERIAL & TELEMETRÍA NOOSFÉRICA (LA ROCA COMMAND DECK)
+       ====================================================================== -->
+  <div class="vox-telemetry-bar" role="status" aria-label="Telemetría Imperial de La Roca">
+    <div class="vox-inner">
+      <div class="vox-node">
+        <span class="vox-led"></span>
+        <span>NOOSPHERE LINK: <strong>CALIBAN-IX // THE ROCK</strong></span>
+      </div>
+      <div class="vox-quote" id="vox-litany-ticker">
+        «Arrepentíos, porque mañana moriréis» — Primera Legión • Ángeles Oscuros
+      </div>
+      <div class="vox-node vox-meta">
+        <span>COGITATOR REX: <strong>999.M41 // 11.ª ED</strong></span>
+        <span class="vox-sep">❖</span>
+        <span class="purity-seal-mini" title="Sello de Pureza Consagrado por el Interrogador-Capellán">💮 OATH SEALED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
        CABECERA DEL COGITADOR (THE ROCK FIELD INTERFACE)
        ====================================================================== -->
   <header class="cogitator-header">
     <div class="header-inner">
       <div class="header-brand">
-        <div class="chapter-badge" title="La Primera Legión — No Perdonados">⚔️</div>
+        <div class="chapter-badge" title="La Primera Legión — Los No Perdonados">
+          <svg class="da-winged-sword-svg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+            <!-- Halo Gótico Imperial -->
+            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.55"/>
+            <!-- Alas de Ángel Calibanita -->
+            <path d="M30 28 C20 14, 8 12, 4 16 C8 22, 14 25, 24 30 C14 29, 8 32, 6 37 C12 37, 20 35, 29 34 Z" fill="currentColor" opacity="0.9"/>
+            <path d="M34 28 C44 14, 56 12, 60 16 C56 22, 50 25, 40 30 C50 29, 56 32, 58 37 C52 37, 44 35, 35 34 Z" fill="currentColor" opacity="0.9"/>
+            <path d="M29 36 C21 38, 14 42, 12 47 C18 46, 24 42, 30 39 Z" fill="currentColor" opacity="0.75"/>
+            <path d="M35 36 C43 38, 50 42, 52 47 C46 46, 40 42, 34 39 Z" fill="currentColor" opacity="0.75"/>
+            <!-- Mandoble de los Secretos -->
+            <polygon points="32,4 35,14 34,44 30,44 29,14" fill="#fff"/>
+            <rect x="22" y="43" width="20" height="3.5" rx="1" fill="currentColor"/>
+            <rect x="30.5" y="46.5" width="3" height="9" fill="#e5ded0"/>
+            <circle cx="32" cy="57.5" r="3" fill="currentColor"/>
+          </svg>
+        </div>
         <div class="brand-text">
-          <h1>Cogitador de Campo</h1>
+          <div class="brand-super-tag">ADEPTUS ASTARTES • LEGIO I</div>
+          <h1 id="header-title">Cogitador de Campo</h1>
           <div class="brand-subtitle">
             <span class="status-dot"></span>
-            <span>Fortaleza-Monasterio La Roca • Ángeles Oscuros</span>
+            <span id="header-subtitle">Fortaleza-Monasterio La Roca • Ángeles Oscuros</span>
           </div>
         </div>
       </div>
@@ -112,6 +148,52 @@
          MÓDULO 1: CÓDEX Y CATÁLOGO DE LA FACCIÓN (11ª EDICIÓN)
          ==================================================================== -->
     <section class="tab-pane active" id="pane-codex">
+      <!-- HERÁLDICA DE CAPÍTULO Y TELEMETRÍA DEL CÓDEX -->
+      <div class="codex-heraldry-banner">
+        <div class="heraldry-emblem-col">
+          <div class="heraldry-crest">
+            <svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
+              <path d="M30 26 C19 12, 7 10, 3 15 C7 21, 13 24, 23 29 C13 28, 7 31, 5 36 C11 36, 19 34, 28 33 Z" fill="var(--gold-primary)"/>
+              <path d="M34 26 C45 12, 57 10, 61 15 C57 21, 51 24, 41 29 C51 28, 57 31, 59 36 C53 36, 45 34, 36 33 Z" fill="var(--gold-primary)"/>
+              <polygon points="32,3 35,13 34,45 30,45 29,13" fill="var(--deathwing-bone)"/>
+              <rect x="21" y="44" width="22" height="3.5" rx="1" fill="var(--gold-primary)"/>
+              <rect x="30.5" y="47.5" width="3" height="9" fill="var(--deathwing-bone)"/>
+              <circle cx="32" cy="58.5" r="3" fill="var(--gold-primary)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="heraldry-text-col">
+          <div class="heraldry-kicker">ARCHIVOS DEL CÍRCULO INTERIOR • WAHAPEDIA 11.ª EDICIÓN</div>
+          <h2 class="heraldry-title" id="codex-banner-title">Librarium Tactica: Los No Perdonados</h2>
+          <p class="heraldry-desc" id="codex-banner-desc">
+            Registro sagrado de las <strong>113 Hojas de Datos</strong> de la Primera Legión. Filtra rápidamente por las Tres Alas (<strong>Ala de Muerte</strong>, <strong>Ala de Cuervo</strong> y <strong>Compañía Verde</strong>), compara perfiles cara a cara o edita atributos y costes según el <em>Munitorum Field Manual</em>.
+          </p>
+        </div>
+        <div class="heraldry-wings-strip">
+          <button type="button" class="wing-crest-pill deathwing" onclick="setWingFilter('deathwing')" title="Filtrar unidades del Ala de Muerte (1.ª Compañía)">
+            <span class="wing-crest-icon">🛡️</span>
+            <div>
+              <strong>ALA DE MUERTE</strong>
+              <small>1.ª Cía • Exterminadores</small>
+            </div>
+          </button>
+          <button type="button" class="wing-crest-pill ravenwing" onclick="setWingFilter('ravenwing')" title="Filtrar unidades del Ala de Cuervo (2.ª Compañía)">
+            <span class="wing-crest-icon">🦅</span>
+            <div>
+              <strong>ALA DE CUERVO</strong>
+              <small>2.ª Cía • Caza Rápida</small>
+            </div>
+          </button>
+          <button type="button" class="wing-crest-pill greenwing" onclick="setWingFilter('green')" title="Filtrar unidades de la Compañía Verde (3.ª-10.ª Compañías)">
+            <span class="wing-crest-icon">⚔️</span>
+            <div>
+              <strong>COMPAÑÍA VERDE</strong>
+              <small>Línea de Batalla Caliban</small>
+            </div>
+          </button>
+        </div>
+      </div>
+
       <!-- COMPARADOR TÁCTICO DE UNIDADES (CARA A CARA) -->
       <div class="comparator-panel" id="unit-comparator-section" style="display: none;">
         <div class="comparator-header">
@@ -1090,6 +1172,30 @@
     </section>
 
   </main>
+
+  <!-- ======================================================================
+       COLOFÓN IMPERIAL DE LA ROCA (TERMINAL FOOTER)
+       ====================================================================== -->
+  <footer class="cogitator-footer" role="contentinfo">
+    <div class="footer-ornament-line">
+      <span></span>
+      <span class="footer-skull-glyph">⚜️ 💀 ⚔️ 💀 ⚜️</span>
+      <span></span>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <strong>COGITADOR DE CAMPO: LA ROCA // MK.XI</strong>
+        <span>Terminal Táctica del Capítulo de los Ángeles Oscuros • Adeptus Astartes</span>
+      </div>
+      <div class="footer-litany">
+        «El León camina entre nosotros. Ningún Caído escapará a la justicia de Caliban.»
+      </div>
+      <div class="footer-col footer-right">
+        <span>MEMORIA NOOSFÉRICA ACTIVA • 100% OFFLINE READY</span>
+        <span style="color: var(--gold-primary);">+ GLORIA IMPERATORIS +</span>
+      </div>
+    </div>
+  </footer>
 
   <!-- ======================================================================
        MODAL: AÑADIR / PERSONALIZAR MINIATURA EN LA COLECCIÓN

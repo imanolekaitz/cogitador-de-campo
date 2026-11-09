@@ -1,5 +1,5 @@
 // Service Worker para Cogitador de Campo: La Roca
-const CACHE_NAME = 'cogitador-la-roca-v1.2';
+const CACHE_NAME = 'cogitador-la-roca-v2.0';
 
 const ASSETS_TO_CACHE = [
   './',
