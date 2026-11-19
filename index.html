@@ -34,15 +34,15 @@
     <div class="vox-inner">
       <div class="vox-node">
         <span class="vox-led"></span>
-        <span>NOOSPHERE LINK: <strong>CALIBAN-IX // THE ROCK</strong></span>
+        <span>ENLACE NOOSFÉRICO: <strong>CALIBAN-IX // LA ROCA</strong></span>
       </div>
       <div class="vox-quote" id="vox-litany-ticker">
         «Arrepentíos, porque mañana moriréis» — Primera Legión • Ángeles Oscuros
       </div>
       <div class="vox-node vox-meta">
-        <span>COGITATOR REX: <strong>999.M41 // 11.ª ED</strong></span>
+        <span>COGITADOR REX: <strong>999.M41 // 11.ª ED</strong></span>
         <span class="vox-sep">❖</span>
-        <span class="purity-seal-mini" title="Sello de Pureza Consagrado por el Interrogador-Capellán">💮 OATH SEALED</span>
+        <span class="purity-seal-mini" title="Sello de Pureza Consagrado por el Interrogador-Capellán">💮 JURAMENTO SELLADO</span>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@
           </svg>
         </div>
         <div class="brand-text">
-          <div class="brand-super-tag">ADEPTUS ASTARTES • LEGIO I</div>
+          <div class="brand-super-tag">ADEPTUS ASTARTES • LEGIÓN I</div>
           <h1 id="header-title">Cogitador de Campo</h1>
           <div class="brand-subtitle">
             <span class="status-dot"></span>
@@ -90,18 +90,18 @@
           <span class="value" id="header-total-points">0 pts</span>
         </div>
         <div class="stat-pill">
-          <span class="label" id="header-lbl-painting">Pintadas (Battle Ready)</span>
+          <span class="label" id="header-lbl-painting">Pintadas (Listas para Mesa)</span>
           <span class="value" id="header-painting-ratio" style="color: var(--caliban-bright);">0%</span>
         </div>
       </div>
 
-      <!-- Selector de Idioma (Castellano / English) -->
-      <div class="lang-selector-container" role="group" aria-label="Selector de Idioma / Language Selector">
-        <button class="lang-btn active" id="lang-btn-es" onclick="setAppLanguage('es')" title="Cambiar interfaz y estratagemas a Castellano">
-          <span class="flag-icon">🇪🇸</span> <span class="lang-text">Castellano</span>
+      <!-- Acceso Rápido Wahapedia y Balance 11.ª Ed -->
+      <div class="header-quick-actions" role="group" aria-label="Accesos Rápidos Wahapedia">
+        <button type="button" class="btn-gothic-secondary" onclick="toggleWahapediaIndexPanel()" title="Abrir Índice Rápido de Unidades y Reglas del Ejército">
+          📖 Índice Wahapedia
         </button>
-        <button class="lang-btn" id="lang-btn-en" onclick="setAppLanguage('en')" title="Switch interface and stratagems to English">
-          <span class="flag-icon">🇬🇧</span> <span class="lang-text">English</span>
+        <button type="button" class="btn-gothic-secondary" onclick="openRulesUpdateModal()" style="border-color: var(--gold-primary); color: var(--gold-accent);" title="Consultar Reglas y Balance 11.ª Edición">
+          📜 Balance 11.ª Ed
         </button>
       </div>
     </div>
@@ -113,7 +113,7 @@
   <nav class="main-nav" aria-label="Navegación de módulos">
     <div class="nav-container">
       <button class="nav-tab-btn active" data-tab="codex" id="nav-btn-codex">
-        <span id="nav-text-codex">📜 Códex & Datasheets</span>
+        <span id="nav-text-codex">📜 Códex & Hojas de Datos</span>
       </button>
       <button class="nav-tab-btn" data-tab="detachments" id="nav-btn-detachments">
         <span id="nav-text-detachments">🦅 Destacamentos (11ª Ed)</span>
@@ -164,9 +164,9 @@
         </div>
         <div class="heraldry-text-col">
           <div class="heraldry-kicker">ARCHIVOS DEL CÍRCULO INTERIOR • WAHAPEDIA 11.ª EDICIÓN</div>
-          <h2 class="heraldry-title" id="codex-banner-title">Librarium Tactica: Los No Perdonados</h2>
+          <h2 class="heraldry-title" id="codex-banner-title">Librarium Táctico: Los No Perdonados</h2>
           <p class="heraldry-desc" id="codex-banner-desc">
-            Registro sagrado de las <strong>113 Hojas de Datos</strong> de la Primera Legión. Filtra rápidamente por las Tres Alas (<strong>Ala de Muerte</strong>, <strong>Ala de Cuervo</strong> y <strong>Compañía Verde</strong>), compara perfiles cara a cara o edita atributos y costes según el <em>Munitorum Field Manual</em>.
+            Transposición completa en castellano de las <strong>113 Hojas de Datos</strong> de la Primera Legión. Explora las Reglas de Ejército, navega por el Índice por Rol Táctico, compara perfiles cara a cara o consulta tablas de armamento y habilidades con reglas interactivas.
           </p>
         </div>
         <div class="heraldry-wings-strip">
@@ -192,6 +192,29 @@
             </div>
           </button>
         </div>
+      </div>
+
+      <!-- BARRA DE PANELES WAHAPEDIA: REGLAS DE EJÉRCITO E ÍNDICE POR ROL -->
+      <div class="wahapedia-top-accordions">
+        <details class="waha-accordion" id="waha-army-rules-details">
+          <summary class="waha-accordion-summary">
+            <span>📜 <strong>Reglas de Ejército y Capítulo</strong> (Juramento del Momento • Ala de Muerte • Ala de Cuervo)</span>
+            <span class="waha-chevron">▼</span>
+          </summary>
+          <div class="waha-accordion-body" id="wahapedia-army-rules-panel">
+            <!-- Renderizado dinámico desde renderWahapediaHeaderPanels() en js/app.js -->
+          </div>
+        </details>
+
+        <details class="waha-accordion" id="waha-quick-index-details" open>
+          <summary class="waha-accordion-summary">
+            <span>📖 <strong>Índice Rápido de Hojas de Datos por Rol Táctico</strong> (Directorio Wahapedia • 113 Unidades)</span>
+            <span class="waha-chevron">▼</span>
+          </summary>
+          <div class="waha-accordion-body" id="wahapedia-quick-index-panel">
+            <!-- Renderizado dinámico desde renderWahapediaHeaderPanels() en js/app.js -->
+          </div>
+        </details>
       </div>
 
       <!-- COMPARADOR TÁCTICO DE UNIDADES (CARA A CARA) -->
@@ -240,6 +263,7 @@
             <input type="text" id="codex-search" placeholder="Buscar unidad por nombre, rol, armas o palabras clave..." aria-label="Buscar hojas de datos">
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-gothic-secondary active" id="btn-toggle-codex-layout" onclick="toggleCodexLayoutMode()" title="Alternar entre Hoja de Datos Wahapedia Completa y Cuadrícula Compacta">📋 Vista: Hoja Wahapedia</button>
             <button class="btn-gothic" id="btn-toggle-unit-comparator" onclick="toggleUnitComparator()" style="background: linear-gradient(135deg, #1e3a8a, #0284c7); border-color: #38bdf8;" title="Comparar dos hojas de datos frente a frente">⚖️ Comparar Unidades</button>
             <button class="btn-gothic" onclick="openCreateDatasheetModal()">+ Nueva Hoja de Datos</button>
             <button class="btn-gothic-secondary" onclick="openRulesUpdateModal()" style="border-color: var(--gold-primary); color: var(--gold-accent);">📜 Reglas 11ª Ed</button>
@@ -280,7 +304,7 @@
           <div class="filter-group">
             <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Palabra Clave:</span>
             <select id="codex-keyword-filter" class="form-control-gothic" aria-label="Filtrar por palabra clave">
-              <option value="all">Todas las Keywords</option>
+              <option value="all">Todas las Palabras Clave</option>
             </select>
           </div>
 
@@ -292,9 +316,9 @@
               <option value="name_desc">Nombre (Z - A)</option>
               <option value="points_asc">Puntos (Menor a Mayor)</option>
               <option value="points_desc">Puntos (Mayor a Menor)</option>
-              <option value="t_desc">Resistencia (T: Mayor a Menor)</option>
-              <option value="sv_asc">Salvación (Sv: Mejor a Peor)</option>
-              <option value="w_desc">Heridas (W: Mayor a Menor)</option>
+              <option value="t_desc">Resistencia (R: Mayor a Menor)</option>
+              <option value="sv_asc">Salvación (SV: Mejor a Peor)</option>
+              <option value="w_desc">Heridas (H: Mayor a Menor)</option>
             </select>
           </div>
 
@@ -420,24 +444,24 @@
         <div class="summary-info">
           <h2 class="section-title" id="stratagems-banner-title">⚡ Compendio Táctico de Estratagemas (11ª Edición)</h2>
           <p class="section-desc" id="stratagems-banner-desc">
-            Base de datos completa de estratagemas oficiales según <strong>Wahapedia</strong>. Incluye las <strong>11 Estratagemas del Reglamento Básico</strong>, las <strong>24 Estratagemas exclusivas de los Ángeles Oscuros</strong> y las <strong>34 Estratagemas de Destacamentos Marines Espaciales</strong>. Clasificadas y filtrables por <strong>fase exacta</strong> (Mando, Movimiento, Disparo, Carga, Combate o Cualquier Fase), <strong>turno</strong> y <strong>destacamento</strong>.
+            Base de datos completa de estratagemas oficiales según <strong>Wahapedia</strong>. Incluye las <strong>11 Estratagemas del Reglamento Básico</strong>, las <strong>12 Estratagemas exclusivas de los Ángeles Oscuros</strong> y las <strong>73 Estratagemas de Destacamentos Marines Espaciales</strong>. Clasificadas y filtrables por <strong>fase exacta</strong> (Mando, Movimiento, Disparo, Carga, Combate o Cualquier Fase), <strong>turno</strong> y <strong>destacamento</strong>.
           </p>
         </div>
         <div class="summary-kpis">
           <div class="kpi-mini">
-            <span class="kpi-mini-val" id="kpi-strat-total">69</span>
+            <span class="kpi-mini-val" id="kpi-strat-total">96</span>
             <span class="kpi-mini-lbl" id="kpi-lbl-strat-total">Estratagemas</span>
           </div>
           <div class="kpi-mini">
-            <span class="kpi-mini-val" style="color: var(--gold-accent);">11</span>
+            <span class="kpi-mini-val" id="kpi-strat-core" style="color: var(--gold-accent);">11</span>
             <span class="kpi-mini-lbl" id="kpi-lbl-strat-core">Reglas Básicas</span>
           </div>
           <div class="kpi-mini">
-            <span class="kpi-mini-val" style="color: var(--caliban-bright);">24</span>
+            <span class="kpi-mini-val" id="kpi-strat-da" style="color: var(--caliban-bright);">12</span>
             <span class="kpi-mini-lbl" id="kpi-lbl-strat-da">Ángeles Oscuros</span>
           </div>
           <div class="kpi-mini">
-            <span class="kpi-mini-val" style="color: #38bdf8;">34</span>
+            <span class="kpi-mini-val" id="kpi-strat-sm" style="color: #38bdf8;">73</span>
             <span class="kpi-mini-lbl" id="kpi-lbl-strat-sm">Marines Astartes</span>
           </div>
         </div>
@@ -477,6 +501,7 @@
               </optgroup>
             </select>
 
+            <button class="btn-gothic-secondary active" id="btn-toggle-strat-grouping" onclick="toggleStratagemPhaseGrouping()" style="padding: 6px 14px; font-size: 0.85rem;" title="Agrupar estratagemas por Fase Táctica como en Wahapedia">📑 Agrupar por Fase</button>
             <button class="btn-gothic-secondary" id="btn-clear-strat-filters" onclick="clearStratagemFilters()" style="padding: 6px 14px; font-size: 0.85rem;" title="Restablecer todos los filtros de estratagemas">✕ Limpiar</button>
             <button class="btn-gothic-primary" id="btn-create-stratagem" onclick="openStratagemEditor(null)" style="padding: 6px 14px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;" title="Crear una estratagema personalizada"><span style="color: var(--gold-accent);">➕</span> <span id="txt-btn-new-strat">Nueva Estratagema</span></button>
             <button class="btn-gothic-secondary" id="btn-reset-all-stratagems" onclick="resetAllStratagemsToDefault()" style="display: none; padding: 6px 12px; font-size: 0.82rem; color: #f87171; border-color: rgba(239, 68, 68, 0.4);" title="Restablecer todas las estratagemas a valores oficiales de Wahapedia">🔄 <span id="txt-btn-reset-strats">Restaurar Wahapedia</span></button>
@@ -853,13 +878,13 @@
             </div>
           </div>
 
-          <!-- MAZO OFICIAL DE MISIONES PARIAH NEXUS (2024-2026/2027) -->
+          <!-- MAZO OFICIAL DE MISIONES NEXO PARIA (2026-2027) -->
           <div style="background: rgba(0,0,0,0.5); border: 1px solid var(--gold-primary); border-radius: var(--radius-sm); padding: 12px; margin-top: 6px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
               <div style="display: flex; align-items: center; gap: 6px;">
                 <span style="font-size: 1.1rem;">🎴</span>
                 <h4 style="margin: 0; font-family: var(--font-serif); font-size: 0.95rem; color: var(--gold-primary);">
-                  Mazo Oficial Pariah Nexus (2026-2027)
+                  Mazo Oficial Nexo Paria (2026-2027)
                 </h4>
               </div>
               <div style="display: flex; gap: 6px;">
@@ -882,9 +907,9 @@
             </div>
           </div>
 
-          <!-- Objetivo del Juramento de Momento (Oath of Moment) -->
+          <!-- Objetivo del Juramento del Momento -->
           <div class="oath-banner">
-            <h4>⚔️ Objetivo de Juramento de Momento (Oath of Moment)</h4>
+            <h4>⚔️ Objetivo del Juramento del Momento</h4>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">Todas tus unidades repiten las tiradas para impactar contra esta unidad enemiga:</p>
             <input type="text" id="hud-oath-target-input" placeholder="Nombre de la unidad enemiga designada este turno..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--caliban-bright); color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 0.95rem;">
           </div>
@@ -984,8 +1009,8 @@
     <section class="tab-pane" id="pane-mathhammer">
       <div class="mathhammer-card">
         <div style="text-align: center; margin-bottom: 20px;">
-          <h2 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.6rem; letter-spacing: 1px;">SIMULADOR TÁCTICO DE DAÑO (MATHHAMMER 11ª ED)</h2>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Calcula con precisión matemática el daño medio esperado, miniaturas eliminadas y reglas avanzadas (Lethal Hits, Sustained, Devastating Wounds, FnP).</p>
+          <h2 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.6rem; letter-spacing: 1px;">SIMULADOR TÁCTICO DE DAÑO (MATHHAMMER 11.ª ED)</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Calcula con precisión matemática el daño medio esperado, miniaturas eliminadas y reglas avanzadas (Impactos Letales, Sostenidos, Heridas Devastadoras, No Hay Dolor).</p>
         </div>
 
         <!-- Selector Rápido de Armas del Códex -->
@@ -1013,7 +1038,7 @@
               <label for="math-bsws">Habilidad HP / HA:</label>
               <select id="math-bsws" class="math-calc-trigger">
                 <option value="2">2+ (Maestros / Primarca)</option>
-                <option value="3" selected>3+ (Space Marines)</option>
+                <option value="3" selected>3+ (Marines Espaciales)</option>
                 <option value="4">4+ (Pesada / Apresurado)</option>
                 <option value="5">5+</option>
                 <option value="6">6+</option>
@@ -1024,7 +1049,7 @@
               <input type="number" id="math-strength" class="math-calc-trigger" value="6" min="1">
             </div>
             <div class="input-field-group">
-              <label for="math-ap">Penetración (FP / AP):</label>
+              <label for="math-ap">Penetración (FP):</label>
               <select id="math-ap" class="math-calc-trigger">
                 <option value="0">FP 0</option>
                 <option value="-1">FP -1</option>
@@ -1043,7 +1068,7 @@
           <!-- Reglas Especiales y Modificadores del Arma -->
           <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
             <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
-              <input type="checkbox" id="math-torrent" class="math-calc-trigger"> 🌊 Torrente (Auto-hit)
+              <input type="checkbox" id="math-torrent" class="math-calc-trigger"> 🌊 Torrente (Impacto automático)
             </label>
             <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
               <input type="checkbox" id="math-lethal" class="math-calc-trigger"> ⚡ Impactos Letales
@@ -1055,7 +1080,7 @@
               <input type="checkbox" id="math-twinlinked" class="math-calc-trigger"> 🔄 Acoplada (Repite herir)
             </label>
             <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #fff; cursor: pointer;">
-              <input type="checkbox" id="math-oath" class="math-calc-trigger" checked> ⚔️ Juramento de Momento (Repite impactar)
+              <input type="checkbox" id="math-oath" class="math-calc-trigger" checked> ⚔️ Juramento del Momento (Repite impactar)
             </label>
             <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted);">
               <span>Impactos Sostenidos:</span>
@@ -1086,17 +1111,17 @@
               <span style="font-size: 0.75rem; color: var(--gold-accent);">Perfil Preconfigurado:</span>
               <select id="math-preset-target-select" class="form-control-gothic" onchange="loadPresetTargetIntoMathhammer(this.value)" style="font-size: 0.78rem; padding: 3px 8px;">
                 <option value="custom">⚙️ Personalizado</option>
-                <option value="geq">Guarda / Cultista (R3 Sv5+ 1H)</option>
-                <option value="meq">Marine Intercesor (R4 Sv3+ 2H)</option>
-                <option value="teq" selected>Exterminador (R5 Sv2+ 4++ 3H)</option>
-                <option value="gravis">Marine Gravis (R6 Sv3+ 3H)</option>
-                <option value="dw_knights">Caballeros Deathwing (R6 Sv2+ 4++ 4H)</option>
-                <option value="custodes">Guardia Custode (R6 Sv2+ 4++ 3H)</option>
-                <option value="light_vehicle">Vehículo Ligero (R9 Sv3+ 10H)</option>
-                <option value="dreadnought">Redemptor Dread (R10 Sv2+ 12H)</option>
-                <option value="land_raider">Land Raider / Tanque (R12 Sv2+ 16H)</option>
-                <option value="monstrous_ctan">C'tan / Primarca (R11 Sv2+ 4++ 5+++ FnP)</option>
-                <option value="knight">Imperial Knight (R12 Sv3+ 5++ 22H)</option>
+                <option value="geq">Guarda / Cultista (R3 SV5+ 1H)</option>
+                <option value="meq">Marine Intercesor (R4 SV3+ 2H)</option>
+                <option value="teq" selected>Exterminador (R5 SV2+ 4++ 3H)</option>
+                <option value="gravis">Marine Gravis (R6 SV3+ 3H)</option>
+                <option value="dw_knights">Caballeros del Ala de Muerte (R6 SV2+ 4++ 4H)</option>
+                <option value="custodes">Guardia Custode (R6 SV2+ 4++ 3H)</option>
+                <option value="light_vehicle">Vehículo Ligero (R9 SV3+ 10H)</option>
+                <option value="dreadnought">Dreadnought Redemptor (R10 SV2+ 12H)</option>
+                <option value="land_raider">Land Raider / Tanque Pesado (R12 SV2+ 16H)</option>
+                <option value="monstrous_ctan">C'tan / Primarca (R11 SV2+ 4++ 5+++ NHD)</option>
+                <option value="knight">Caballero Imperial (R12 SV3+ 5++ 22H)</option>
               </select>
             </div>
           </div>
@@ -1107,7 +1132,7 @@
               <input type="number" id="math-target-t" class="math-calc-trigger" value="5" min="1">
             </div>
             <div class="input-field-group">
-              <label for="math-target-sv">Salvación Armadura (Sv):</label>
+              <label for="math-target-sv">Salvación Armadura (SV):</label>
               <select id="math-target-sv" class="math-calc-trigger">
                 <option value="2" selected>2+ (Exterminador / Tanque)</option>
                 <option value="3">3+ (Marine estándar)</option>
@@ -1117,7 +1142,7 @@
               </select>
             </div>
             <div class="input-field-group">
-              <label for="math-target-inv">Salvación Invulnerable (Inv):</label>
+              <label for="math-target-inv">Salvación Invulnerable (INV):</label>
               <select id="math-target-inv" class="math-calc-trigger">
                 <option value="0">Sin Invulnerable</option>
                 <option value="4" selected>4++ (Escudo de Tormenta)</option>
@@ -1130,12 +1155,12 @@
               <input type="number" id="math-target-w" class="math-calc-trigger" value="3" min="1">
             </div>
             <div class="input-field-group">
-              <label for="math-target-fnp">No Hay Dolor (Feel No Pain):</label>
+              <label for="math-target-fnp">No Hay Dolor:</label>
               <select id="math-target-fnp" class="math-calc-trigger">
-                <option value="0" selected>Sin FnP</option>
-                <option value="4">4+++ (FnP 4+)</option>
-                <option value="5">5+++ (FnP 5+)</option>
-                <option value="6">6+++ (FnP 6+)</option>
+                <option value="0" selected>Sin No Hay Dolor</option>
+                <option value="4">4+++ (No Hay Dolor 4+)</option>
+                <option value="5">5+++ (No Hay Dolor 5+)</option>
+                <option value="6">6+++ (No Hay Dolor 6+)</option>
               </select>
             </div>
           </div>
@@ -1191,8 +1216,8 @@
         «El León camina entre nosotros. Ningún Caído escapará a la justicia de Caliban.»
       </div>
       <div class="footer-col footer-right">
-        <span>MEMORIA NOOSFÉRICA ACTIVA • 100% OFFLINE READY</span>
-        <span style="color: var(--gold-primary);">+ GLORIA IMPERATORIS +</span>
+        <span>MEMORIA NOOSFÉRICA ACTIVA • 100% DISPONIBLE SIN CONEXIÓN</span>
+        <span style="color: var(--gold-primary);">+ GLORIA AL EMPERADOR +</span>
       </div>
     </div>
   </footer>
@@ -1317,7 +1342,7 @@
             <select id="edit-ds-role" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
               <option value="Héroe Épico">Héroe Épico</option>
               <option value="Líder / Personaje">Líder / Personaje</option>
-              <option value="Línea (Battleline)">Línea (Battleline)</option>
+              <option value="Línea de Batalla">Línea de Batalla</option>
               <option value="Línea / Infiltración">Línea / Infiltración</option>
               <option value="Élite">Élite</option>
               <option value="Élite / Mando">Élite / Mando</option>
@@ -1347,8 +1372,8 @@
         <!-- Fila 2: Palabras Clave y Héroe Épico -->
         <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 12px; align-items: start;">
           <div>
-            <label for="edit-ds-keywords" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Palabras Clave (Keywords):</label>
-            <input type="text" id="edit-ds-keywords" placeholder="INFANTERÍA, PERSONAJE, ALA DE MUERTE, IMPERIUM..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
+            <label for="edit-ds-keywords" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Palabras Clave:</label>
+            <input type="text" id="edit-ds-keywords" placeholder="INFANTERÍA, PERSONAJE, ALA DE MUERTE, IMPERIO..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 4px;">
             <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px;">
               <span class="kw-chip" onclick="addKeywordChip('ADEPTUS ASTARTES')">+ ADEPTUS ASTARTES</span>
               <span class="kw-chip" onclick="addKeywordChip('INFANTERÍA')">+ INFANTERÍA</span>
@@ -1434,7 +1459,7 @@
         <!-- Fila 5: Armas a Distancia (Celdas individuales en tabla) -->
         <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Armas a Distancia (Ranged Weapons):</h4>
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Armas a Distancia:</h4>
             <button type="button" class="btn-gothic-secondary" onclick="addRangedWeaponRow()" style="font-size: 0.75rem; padding: 4px 10px;">+ Añadir Arma a Distancia</button>
           </div>
           <div style="overflow-x: auto;">
@@ -1462,7 +1487,7 @@
         <!-- Fila 6: Armas Cuerpo a Cuerpo (Celdas individuales en tabla) -->
         <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Armas Cuerpo a Cuerpo (Melee Weapons):</h4>
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); margin: 0;">Armas de Combate Cuerpo a Cuerpo:</h4>
             <button type="button" class="btn-gothic-secondary" onclick="addMeleeWeaponRow()" style="font-size: 0.75rem; padding: 4px 10px;">+ Añadir Arma Cuerpo a Cuerpo</button>
           </div>
           <div style="overflow-x: auto;">
@@ -1593,45 +1618,38 @@
           <div>
             <label for="edit-strat-type" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Tipo de Estratagema:</label>
             <select id="edit-strat-type" class="form-control-gothic" style="width: 100%; margin-top: 4px;">
-              <option value="Táctica de Batalla">Táctica de Batalla (Battle Tactic)</option>
-              <option value="Treta Estratégica">Treta Estratégica (Strategic Ploy)</option>
-              <option value="Hazaña Épica">Hazaña Épica (Epic Deed)</option>
-              <option value="Equipo de Guerra">Equipo de Guerra (Wargear)</option>
+              <option value="Táctica de Batalla">Táctica de Batalla</option>
+              <option value="Treta Estratégica">Treta Estratégica</option>
+              <option value="Hazaña Épica">Hazaña Épica</option>
+              <option value="Equipo de Guerra">Equipo de Guerra</option>
             </select>
           </div>
           <div>
             <label for="edit-strat-phase" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Fase de Activación:</label>
             <select id="edit-strat-phase" class="form-control-gothic" style="width: 100%; margin-top: 4px;">
-              <option value="any">Cualquier Fase (Any)</option>
-              <option value="command">Fase de Mando (Command)</option>
-              <option value="movement">Fase de Movimiento (Movement)</option>
-              <option value="shooting">Fase de Disparo (Shooting)</option>
-              <option value="charge">Fase de Carga (Charge)</option>
-              <option value="fight">Fase de Combate (Fight)</option>
+              <option value="any">Cualquier Fase</option>
+              <option value="command">Fase de Mando</option>
+              <option value="movement">Fase de Movimiento</option>
+              <option value="shooting">Fase de Disparo</option>
+              <option value="charge">Fase de Carga</option>
+              <option value="fight">Fase de Combate</option>
             </select>
           </div>
           <div>
             <label for="edit-strat-turn" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Turno Aplicable:</label>
             <select id="edit-strat-turn" class="form-control-gothic" style="width: 100%; margin-top: 4px;">
-              <option value="either_turn">Cualquier Turno (Either Turn)</option>
-              <option value="your_turn">Tu Turno (Your Turn)</option>
-              <option value="opponent_turn">Turno Enemigo (Opponent's Turn)</option>
+              <option value="either_turn">Cualquier Turno</option>
+              <option value="your_turn">Tu Turno</option>
+              <option value="opponent_turn">Turno Enemigo</option>
             </select>
           </div>
         </div>
 
-        <!-- Pestañas de Idioma -->
+        <!-- Campos de Regla en Castellano -->
         <div style="margin-top: 4px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; background: rgba(0,0,0,0.2);">
-          <div style="display: flex; gap: 8px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; align-items: center;">
-            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Idioma de Regla:</span>
-            <button type="button" id="tab-strat-es" class="btn-gothic-secondary active" onclick="switchStratEditorTab('es')" style="padding: 4px 12px; font-size: 0.82rem;">🇪🇸 Castellano</button>
-            <button type="button" id="tab-strat-en" class="btn-gothic-secondary" onclick="switchStratEditorTab('en')" style="padding: 4px 12px; font-size: 0.82rem;">🇬🇧 English (Wahapedia)</button>
-          </div>
-
-          <!-- Pestaña Castellano -->
-          <div id="strat-editor-pane-es" style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+          <div id="strat-editor-pane-es" style="display: flex; flex-direction: column; gap: 10px;">
             <div>
-              <label for="edit-strat-name-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Nombre (Castellano):</label>
+              <label for="edit-strat-name-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Nombre de la Estratagema:</label>
               <input type="text" id="edit-strat-name-es" placeholder="ej. La Ira del León" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
             </div>
             <div>
@@ -1652,38 +1670,8 @@
                 <input type="text" id="edit-strat-restrictions-es" placeholder="ej. No se puede usar más de una vez por turno..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
               </div>
               <div>
-                <label for="edit-strat-fluff-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Ambientación / Fluff (Opcional):</label>
+                <label for="edit-strat-fluff-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Ambientación / Trasfondo (Opcional):</label>
                 <input type="text" id="edit-strat-fluff-es" placeholder="ej. Con férrea disciplina..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
-              </div>
-            </div>
-          </div>
-
-          <!-- Pestaña English -->
-          <div id="strat-editor-pane-en" style="display: none; flex-direction: column; gap: 10px; margin-top: 12px;">
-            <div>
-              <label for="edit-strat-name-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Name (English):</label>
-              <input type="text" id="edit-strat-name-en" placeholder="e.g. Wrath of the Lion" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
-            </div>
-            <div>
-              <label for="edit-strat-when-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">WHEN (Trigger):</label>
-              <textarea id="edit-strat-when-en" rows="2" placeholder="e.g. Your Charge phase, when a friendly..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
-            </div>
-            <div>
-              <label for="edit-strat-target-en" style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700;">TARGET (Eligible unit):</label>
-              <textarea id="edit-strat-target-en" rows="2" placeholder="e.g. That DEATHWING unit..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
-            </div>
-            <div>
-              <label for="edit-strat-effect-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--deathwing-bone); font-weight: 700;">EFFECT (Rules text):</label>
-              <textarea id="edit-strat-effect-en" rows="3" placeholder="e.g. Select one enemy unit engaged..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px; font-family: inherit; font-size: 0.85rem; resize: vertical;"></textarea>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-              <div>
-                <label for="edit-strat-restrictions-en" style="font-size: 0.75rem; text-transform: uppercase; color: #f87171; font-weight: 700;">Restrictions (Optional):</label>
-                <input type="text" id="edit-strat-restrictions-en" placeholder="e.g. You cannot use this Stratagem..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
-              </div>
-              <div>
-                <label for="edit-strat-fluff-en" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Lore / Fluff (Optional):</label>
-                <input type="text" id="edit-strat-fluff-en" placeholder="e.g. Channelling the strategic puissance..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px; margin-top: 3px;">
               </div>
             </div>
           </div>
@@ -1850,16 +1838,10 @@
           </div>
         </div>
 
-        <!-- Fila 2: Nombres (Castellano e Inglés) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div>
-            <label for="edit-det-name-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Nombre (Castellano):</label>
-            <input type="text" id="edit-det-name-es" placeholder="ej. Fuerza de Ataque del Círculo Interior" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
-          </div>
-          <div>
-            <label for="edit-det-name-en" style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700;">Nombre Original (English / Wahapedia):</label>
-            <input type="text" id="edit-det-name-en" placeholder="ej. Inner Circle Task Force" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
-          </div>
+        <!-- Fila 2: Nombre del Destacamento -->
+        <div>
+          <label for="edit-det-name-es" style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700;">Nombre del Destacamento:</label>
+          <input type="text" id="edit-det-name-es" placeholder="ej. Fuerza de Ataque del Círculo Interior" style="width: 100%; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 8px 12px; border-radius: 4px; margin-top: 3px;">
         </div>
 
         <!-- ¿Para qué sirve? -->
@@ -1901,7 +1883,7 @@
         <!-- Mejoras del Destacamento -->
         <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; background: rgba(0,0,0,0.2);">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
-            <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 700; text-transform: uppercase;">🛡️ Mejoras del Destacamento (Enhancements):</span>
+            <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 700; text-transform: uppercase;">🛡️ Mejoras del Destacamento:</span>
             <button type="button" class="btn-gothic-secondary" onclick="addEnhancementRowToEditor()" style="font-size: 0.78rem; padding: 4px 10px;">➕ Añadir Mejora</button>
           </div>
           <div id="det-editor-enhancements-list" style="display: flex; flex-direction: column; gap: 8px;">

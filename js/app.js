@@ -16,14 +16,19 @@ function normalizeText(str) {
 
 // ESTADO GLOBAL DE LA APLICACIÓN
 const AppState = {
-  currentLanguage: "es", // "es" (Castellano, predefinido) | "en" (English)
+  currentLanguage: "es", // Castellano exclusivo
   activeTab: "codex",
   searchQuery: "",
   wingFilter: "all",
   roleFilter: "all",
   keywordFilter: "all",
   sortBy: "name_asc",
-  
+
+  // Vista estilo Wahapedia en Códex
+  codexLayoutMode: "wahapedia", // "wahapedia" (hoja completa) | "compact" (cuadrícula rápida)
+  isWahapediaIndexOpen: true,
+  isArmyRulesOpen: false,
+
   // Estado de Destacamentos y Comparador Táctico
   detachmentSearch: "",
   detachmentFilter: "all", // "all", "exclusive", "astartes", "dp1", "dp2", "dp3"
@@ -36,6 +41,7 @@ const AppState = {
   stratagemPhaseFilter: "all", // "all", "command", "movement", "shooting", "charge", "fight", "any"
   stratagemTurnFilter: "all", // "all", "your_turn", "opponent_turn", "either_turn"
   stratagemDetachmentFilter: "all", // "all", "core", or detachmentId
+  stratagemGroupByPhase: true, // Agrupar estratagemas por fase estilo Wahapedia
 
   // Estado de Comparador de Unidades del Códex
   unitComparatorSlotA: "da_deathwing_knights",
@@ -44,14 +50,14 @@ const AppState = {
 
   collectionWingFilter: "all",
   collectionStatusFilter: "all",
-  
+
   // Colección del usuario
   collection: [],
-  
+
   // Listas de ejército
   armyLists: [],
   activeListId: null,
-  
+
   // Estado de la partida en vivo
   battle: {
     round: 1,
@@ -69,11 +75,11 @@ const AppState = {
 };
 
 // ==========================================================================
-// DICCIONARIO BILINGÜE (CASTELLANO / ENGLISH)
+// TEXTOS Y ETIQUETAS OFICIALES EN CASTELLANO
 // ==========================================================================
 const WH40K_I18N = {
   es: {
-    tabCodex: "📜 Códex & Datasheets",
+    tabCodex: "📜 Códex & Hojas de Datos",
     tabDetachments: "🦅 Destacamentos (11ª Ed)",
     tabStratagems: "⚡ Estratagemas",
     tabCollection: "🛡️ Mi Colección (Armería)",
@@ -84,9 +90,9 @@ const WH40K_I18N = {
     headerSubtitle: "Fortaleza-Monasterio La Roca • Ángeles Oscuros",
     statModels: "Miniaturas",
     statPoints: "Valor en Puntos (MFM)",
-    statPainting: "Pintadas (Battle Ready)",
-    stratBannerTitle: "⚡ Compendio Táctico de Estratagemas (11ª Edición)",
-    stratBannerDesc: "Base de datos completa de estratagemas oficiales según <strong>Wahapedia</strong>. Incluye las <strong>11 Estratagemas del Reglamento Básico</strong>, las <strong>24 Estratagemas exclusivas de los Ángeles Oscuros</strong> y las <strong>34 Estratagemas de Destacamentos Marines Espaciales</strong>. Clasificadas y filtrables por <strong>fase exacta</strong> (Mando, Movimiento, Disparo, Carga, Combate o Cualquier Fase), <strong>turno</strong> y <strong>destacamento</strong>.",
+    statPainting: "Pintadas (Listas para Mesa)",
+    stratBannerTitle: "⚡ Compendio Táctico de Estratagemas (11.ª Edición)",
+    stratBannerDesc: "Transposición fiel del compendio de estratagemas de <strong>Wahapedia</strong> en castellano, codificadas por <strong>color de turno</strong> (Azul: Tu Turno • Turquesa: Cualquier Turno • Rojo: Turno Enemigo) y <strong>agrupadas por fase táctica</strong>.",
     kpiStratTotal: "Estratagemas",
     kpiCoreRules: "Reglas Básicas",
     kpiDA: "Ángeles Oscuros",
@@ -97,9 +103,9 @@ const WH40K_I18N = {
     tacticalPhase: "Fase Táctica:",
     turnOfUse: "Turno de Uso:",
     allTurns: "Todos los Turnos",
-    turnPlayer: "🔵 Tu Turno (28)",
-    turnOpponent: "🔴 Turno Oponente (20)",
-    turnEither: "⚪ Cualquier Turno (21)",
+    turnPlayer: "🔵 Tu Turno",
+    turnOpponent: "🔴 Turno Enemigo",
+    turnEither: "🟢 Cualquier Turno",
     showingStrats: (count, total) => `Mostrando ${count} de ${total} estratagemas`,
     editStratBtn: "✏️ Editar",
     revertStratBtn: "🔄 Restaurar",
@@ -111,7 +117,7 @@ const WH40K_I18N = {
     noStratsFound: "No se encontraron estratagemas",
     noStratsDesc: "Prueba a cambiar el criterio de búsqueda, fase seleccionada o destacamento.",
     resetAllFilters: "↺ Restablecer Todos los Filtros",
-    coreBadge: "Reglamento",
+    coreBadge: "Reglas Básicas",
     whenLabel: "CUÁNDO:",
     targetLabel: "OBJETIVO:",
     effectLabel: "EFECTO:",
@@ -130,76 +136,421 @@ const WH40K_I18N = {
     battleViewAllForPhase: "Ver todas las del compendio para esta fase",
     battleToastActivated: (name, cp) => `⚡ ¡Estratagema activada: "${name}" (-${cp} CP)!`,
     battleToastNoCp: (name, cp, userCp) => `⚠️ Puntos de Mando insuficientes.\n\nTienes ${userCp} CP y "${name}" cuesta ${cp} CP.`
-  },
-  en: {
-    tabCodex: "📜 Codex & Datasheets",
-    tabDetachments: "🦅 Detachments (11th Ed)",
-    tabStratagems: "⚡ Stratagems",
-    tabCollection: "🛡️ My Collection (Armoury)",
-    tabArmy: "⚔️ Roster Forge",
-    tabBattle: "🎯 Battle Cogitator",
-    tabMathhammer: "🎲 Mathhammer",
-    headerTitle: "Field Cogitator",
-    headerSubtitle: "Fortress-Monastery The Rock • Dark Angels",
-    statModels: "Miniatures",
-    statPoints: "Points Value (MFM)",
-    statPainting: "Painted (Battle Ready)",
-    stratBannerTitle: "⚡ Tactical Compendium of Stratagems (11th Edition)",
-    stratBannerDesc: "Comprehensive database of official stratagems according to <strong>Wahapedia</strong>. Includes the <strong>11 Core Rules Stratagems</strong>, the <strong>24 Dark Angels exclusive Stratagems</strong> and the <strong>34 Space Marines Detachment Stratagems</strong>. Categorized and filterable by <strong>exact phase</strong> (Command, Movement, Shooting, Charge, Fight, or Any Phase), <strong>turn</strong> and <strong>detachment</strong>.",
-    kpiStratTotal: "Stratagems",
-    kpiCoreRules: "Core Rules",
-    kpiDA: "Dark Angels",
-    kpiSM: "Adeptus Astartes",
-    stratSearchPlaceholder: "🔍 Search stratagem (name, rule, effect...)...",
-    detachmentLabel: "Detachment:",
-    clearFilters: "✕ Clear",
-    tacticalPhase: "Tactical Phase:",
-    turnOfUse: "Turn of Use:",
-    allTurns: "All Turns",
-    turnPlayer: "🔵 Your Turn (28)",
-    turnOpponent: "🔴 Opponent Turn (20)",
-    turnEither: "⚪ Any Turn (21)",
-    showingStrats: (count, total) => `Showing ${count} of ${total} stratagems`,
-    editStratBtn: "✏️ Edit",
-    revertStratBtn: "🔄 Revert",
-    newStratBtn: "New Stratagem",
-    resetAllStratsBtn: "Reset Wahapedia",
-    customBadge: "Custom",
-    editedBadge: "Edited",
-    restrictionsLabel: "RESTRICTIONS:",
-    noStratsFound: "No stratagems found",
-    noStratsDesc: "Try changing your search terms, selected phase, or detachment filter.",
-    resetAllFilters: "↺ Reset All Filters",
-    coreBadge: "Core Rules",
-    whenLabel: "WHEN:",
-    targetLabel: "TARGET:",
-    effectLabel: "EFFECT:",
-    phaseAll: "All",
-    phaseCommand: "👑 Command",
-    phaseMovement: "🏃 Movement",
-    phaseShooting: "🎯 Shooting",
-    phaseCharge: "⚡ Charge",
-    phaseFight: "⚔️ Fight",
-    phaseAny: "🔄 Reaction / Any Phase",
-    battleOnlyArmy: "Only my Detachment + Core",
-    battleAvailable: "✓ Available",
-    battleRequires: (cp, userCp) => `Requires ${cp} CP (You have ${userCp})`,
-    battleUseBtn: (cp) => `⚡ Use (-${cp} CP)`,
-    battleNoStratsForPhase: (phase, turn) => `No stratagems available specifically in the <strong>${phase}</strong> during <strong>${turn}</strong> with current detachment filter.`,
-    battleViewAllForPhase: "View all compendium stratagems for this phase",
-    battleToastActivated: (name, cp) => `⚡ Stratagem activated: "${name}" (-${cp} CP)!`,
-    battleToastNoCp: (name, cp, userCp) => `⚠️ Insufficient Command Points.\n\nYou have ${userCp} CP and "${name}" costs ${cp} CP.`
   }
 };
 
+// ==========================================================================
+// SANITIZACIÓN A CASTELLANO PURO Y DICCIONARIO DE REGLAS WAHAPEDIA
+// ==========================================================================
+
+const SPANISH_PARENTHETICAL_WHITELIST = /^(co|cp|pd|fp|mfm|wtc|bcp|hp|ha|1\.ª\s*c[ií]a|b[aá]sicas|b[oó]lteres\s+pesados|rifles\s+de\s+fusi[oó]n|ala\s+de\s+cuervo|ala\s+de\s+muerte|todos|solo\s+.*|si\s+.*|1\s+vez\s+por.*|m[ií]nimo\s+.*|m[aá]ximo\s+.*|no\s+puede.*|sin\s+recibir.*|o\s+9.*|o\s+\d+.*|ver\s+.*|leyendas|cruzada|aura|ps[ií]quico.*|primaris|\+\d+.*|-\d+.*|\d+[\"+]?)$/i;
+
+function cleanSpanishLabel(str) {
+  if (!str || typeof str !== "string") return "";
+  let out = str;
+
+  // Traducir palabras o prefijos sueltos en inglés frecuentes en armas/habilidades
+  out = out
+    .replace(/\bAnti-Character\b/gi, "Anti-Personaje")
+    .replace(/\bAnti-Vehicle\b/gi, "Anti-Vehículo")
+    .replace(/\bAnti-Monster\b/gi, "Anti-Monstruo")
+    .replace(/\bAnti-Infantry\b/gi, "Anti-Infantería")
+    .replace(/\bAnti-Psyker\b/gi, "Anti-Psíquico")
+    .replace(/\bAnti-Fly\b/gi, "Anti-Aéreo")
+    .replace(/\bJuramento de Momento\b/gi, "Juramento del Momento")
+    .replace(/\bOath of Moment\b/gi, "Juramento del Momento")
+    .replace(/\[Stealth\]/gi, "")
+    .replace(/\[Precision\]/gi, "[Precisión]")
+    .replace(/\[PRECISION\]/g, "[PRECISIÓN]")
+    .replace(/\[Lethal Hits\]/gi, "[Golpes Letales]")
+    .replace(/\[Sustained Hits\s*(\d+|D3)?\]/gi, (_, n) => `[Impactos Sostenidos${n ? " " + n : ""}]`)
+    .replace(/\[Devastating Wounds\]/gi, "[Heridas Devastadoras]")
+    .replace(/\[Twin-linked\]/gi, "[Acoplada]")
+    .replace(/\[Ignores Cover\]/gi, "[Ignora Cobertura]")
+    .replace(/\bBattle-shocked\b/gi, "Acobardada")
+    .replace(/\bBattle-shock\b/gi, "Acobardamiento")
+    .replace(/\(OC\)/gi, "(CO)")
+    .replace(/\(Legends\)/gi, "(Leyendas)");
+
+  // Limpiar traducciones redundantes al inglés entre paréntesis conservando notas válidas en castellano
+  out = out.replace(/\s*\(([^()]{2,55})\)/g, (full, inner) => {
+    const trimmed = inner.trim();
+    if (SPANISH_PARENTHETICAL_WHITELIST.test(trimmed)) {
+      return ` (${trimmed})`;
+    }
+    // Si tiene tildes o eñe, casi seguro es aclaración en español
+    if (/[áéíóúüñÁÉÍÓÚÜÑ¡¿]/.test(trimmed)) {
+      return ` (${trimmed})`;
+    }
+    // Si es un paréntesis con palabras inglesas típicas de 40K o Title Case sin español
+    if (/^(the\s+|a\s+|twin\s+|heavy\s+|master-|hunter-|armour|close-quarters|rapid fire|devastating|lethal|sustained|ignores cover|extra attacks|indirect fire|one shot|melta|cleave|torrent|assault|hazardous|precision|psychic|storm bolter|bolt pistol|bolter|boltgun|lascannon|multi-melta|flamer|chainsword|power |thunder |crozius|force |relic |frag|krak|smite|overwatch|take and hold|deathwing|ravenwing|inner circle|bladeguard|sternguard|vanguard|intercessor|hellblaster|infernus|infiltrator|incursor|eliminator|aggressor|desolation|outrider|scout|terminator|company heroes|wolf guard|victrix|deathwatch|smoke|battleline|strike|sweep|plasma talon|corvus|onslaught|armoured|ceramite|combat knife|hurricane|laser destroyer|grav-pistol|las-talon|fragstorm|fire discipline|thundercowl|nightforged|dark talon|priority assets|relics of the dark age|defensive array|battle-shock)/i.test(trimmed)) {
+      return "";
+    }
+    // Si está compuesto exclusivamente de palabras ASCII en Title Case (p. ej. "(Bolt Rifle)")
+    if (/^[A-Z][a-zA-Z0-9\-\s'+]+$/.test(trimmed) && !/^(Combate|Asalto|Fusi[oó]n|Pesada|Torrente|Lanza|Mando|Imperio|Leyendas|Aura)$/.test(trimmed)) {
+      return "";
+    }
+    return ` (${trimmed})`;
+  });
+
+  return out.replace(/\s{2,}/g, " ").trim();
+}
+
+const KEYWORD_TRANSLATION_MAP = {
+  "ADEPTUS ASTARTES": "ADEPTUS ASTARTES",
+  "DARK ANGELS": "ÁNGELES OSCUROS",
+  "ÁNGELES OSCUROS": "ÁNGELES OSCUROS",
+  "DEATHWING": "ALA DE MUERTE",
+  "ALA DE MUERTE": "ALA DE MUERTE",
+  "RAVENWING": "ALA DE CUERVO",
+  "ALA DE CUERVO": "ALA DE CUERVO",
+  "IMPERIUM": "IMPERIO",
+  "IMPERIO": "IMPERIO",
+  "INFANTRY": "INFANTERÍA",
+  "INFANTERÍA": "INFANTERÍA",
+  "CHARACTER": "PERSONAJE",
+  "PERSONAJE": "PERSONAJE",
+  "EPIC HERO": "HÉROE ÉPICO",
+  "HÉROE ÉPICO": "HÉROE ÉPICO",
+  "PRIMARCH": "PRIMARCA",
+  "PRIMARCA": "PRIMARCA",
+  "CHAPTER MASTER": "GRAN MAESTRE",
+  "GRAN MAESTRE": "GRAN MAESTRE",
+  "CAPTAIN": "CAPITÁN",
+  "CAPITÁN": "CAPITÁN",
+  "CHAPLAIN": "CAPELLÁN",
+  "CAPELLÁN": "CAPELLÁN",
+  "LIBRARIAN": "BIBLIOTECARIO",
+  "BIBLIOTECARIO": "BIBLIOTECARIO",
+  "ANCIENT": "PORTAESTANDARTE",
+  "PORTAESTANDARTE": "PORTAESTANDARTE",
+  "APOTHECARY": "BOTICARIO",
+  "BOTICARIO": "BOTICARIO",
+  "LIEUTENANT": "TENIENTE",
+  "TENIENTE": "TENIENTE",
+  "TECHMARINE": "TECNOMARINE",
+  "TECNOMARINE": "TECNOMARINE",
+  "PSYKER": "PSÍQUICO",
+  "PSÍQUICO": "PSÍQUICO",
+  "TERMINATOR": "EXTERMINADOR",
+  "EXTERMINADOR": "EXTERMINADOR",
+  "TACTICUS": "TACTICUS",
+  "PHOBOS": "PHOBOS",
+  "GRAVIS": "GRAVIS",
+  "MOUNTED": "MONTADO",
+  "MONTADO": "MONTADO",
+  "VEHICLE": "VEHÍCULO",
+  "VEHÍCULO": "VEHÍCULO",
+  "WALKER": "BÍPODE",
+  "BÍPODE": "BÍPODE",
+  "DREADNOUGHT": "DREADNOUGHT",
+  "TRANSPORT": "TRANSPORTE",
+  "TRANSPORTE": "TRANSPORTE",
+  "DEDICATED TRANSPORT": "TRANSPORTE ASIGNADO",
+  "TRANSPORTE ASIGNADO": "TRANSPORTE ASIGNADO",
+  "FLY": "VOLAR",
+  "VOLAR": "VOLAR",
+  "AIRCRAFT": "AERONAVE",
+  "AERONAVE": "AERONAVE",
+  "SPEEDER": "DESLIZADOR",
+  "DESLIZADOR": "DESLIZADOR",
+  "SMOKE": "HUMO",
+  "HUMO": "HUMO",
+  "GRENADES": "GRANADAS",
+  "GRANADAS": "GRANADAS",
+  "EXPLOSIVOS": "EXPLOSIVOS",
+  "TITANIC": "TITÁNICO",
+  "TITÁNICO": "TITÁNICO",
+  "JUMP PACK": "PROPULSOR DE SALTO",
+  "PROPULSOR DE SALTO": "PROPULSOR DE SALTO",
+  "BATTLELINE": "LÍNEA DE BATALLA",
+  "LÍNEA": "LÍNEA DE BATALLA",
+  "LÍNEA DE BATALLA": "LÍNEA DE BATALLA",
+  "MONSTER": "MONSTRUO",
+  "MONSTRUO": "MONSTRUO",
+  "LEADER": "LÍDER",
+  "LÍDER": "LÍDER",
+  "SCOUT": "EXPLORADOR",
+  "EXPLORADOR": "EXPLORADOR",
+  "BLADEGUARD": "GUARDIA DE LA HOJA",
+  "FERREAGUARDIA": "FERREAGUARDIA",
+  "STERNGUARD": "GUARDIA DE RETAGUARDIA",
+  "RETAGUARDIA": "RETAGUARDIA",
+  "LEGENDS": "LEYENDAS",
+  "LEYENDAS": "LEYENDAS",
+  "COMMAND": "MANDO",
+  "MANDO": "MANDO"
+};
+
+function sanitizeKeywordsToSpanish(keywordsArr) {
+  if (!Array.isArray(keywordsArr)) return [];
+  const seen = new Set();
+  const result = [];
+  keywordsArr.forEach(raw => {
+    if (!raw) return;
+    const upper = raw.toString().trim().toUpperCase();
+    const mapped = KEYWORD_TRANSLATION_MAP[upper] || cleanSpanishLabel(raw).toUpperCase();
+    if (mapped && !seen.has(mapped)) {
+      seen.add(mapped);
+      result.push(mapped);
+    }
+  });
+  return result;
+}
+
+const FACTION_KEYWORDS_SET = new Set(["ADEPTUS ASTARTES", "ÁNGELES OSCUROS", "IMPERIO"]);
+
+function splitUnitAndFactionKeywords(keywordsArr) {
+  const cleaned = sanitizeKeywordsToSpanish(keywordsArr);
+  const unitKeywords = [];
+  const factionKeywords = [];
+  cleaned.forEach(k => {
+    if (FACTION_KEYWORDS_SET.has(k)) {
+      factionKeywords.push(k);
+    } else {
+      unitKeywords.push(k);
+    }
+  });
+  return { unitKeywords, factionKeywords };
+}
+
+function sanitizeDataToSpanish() {
+  if (typeof WH40K_DATA === "undefined") return;
+
+  if (Array.isArray(WH40K_DATA.datasheets)) {
+    WH40K_DATA.datasheets.forEach(ds => {
+      // Conservar originalName internamente para compatibilidad con ArmyListImporter, pero limpiar textos visibles
+      ds.name = cleanSpanishLabel(ds.name || "");
+      ds.role = cleanSpanishLabel(ds.role || "");
+      ds.keywords = sanitizeKeywordsToSpanish(ds.keywords || []);
+      ds.abilities = (ds.abilities || []).map(ab => cleanSpanishLabel(ab));
+      ds.leaderOf = (ds.leaderOf || []).map(l => cleanSpanishLabel(l));
+
+      (ds.rangedWeapons || []).forEach(w => {
+        w.name = cleanSpanishLabel(w.name || "");
+        w.keywords = (w.keywords || []).map(k => cleanSpanishLabel(k)).filter(Boolean);
+      });
+      (ds.meleeWeapons || []).forEach(w => {
+        w.name = cleanSpanishLabel(w.name || "");
+        w.keywords = (w.keywords || []).map(k => cleanSpanishLabel(k)).filter(Boolean);
+      });
+    });
+  }
+
+  if (Array.isArray(WH40K_DATA.detachments)) {
+    WH40K_DATA.detachments.forEach(det => {
+      det.name = cleanSpanishLabel(det.name || "");
+      det.ruleName = cleanSpanishLabel(det.ruleName || "");
+      if (Array.isArray(det.synergies)) {
+        det.synergies = det.synergies.map(s => cleanSpanishLabel(s));
+      }
+      if (Array.isArray(det.enhancements)) {
+        det.enhancements.forEach(enh => {
+          enh.name = cleanSpanishLabel(enh.name || "");
+        });
+      }
+      if (Array.isArray(det.stratagems)) {
+        det.stratagems.forEach(st => {
+          st.name = cleanSpanishLabel(st.name || "");
+        });
+      }
+    });
+  }
+
+  if (Array.isArray(WH40K_DATA.stratagems)) {
+    WH40K_DATA.stratagems.forEach(s => {
+      s.name = cleanSpanishLabel(s.name || "");
+      if (s.es) {
+        s.es.name = cleanSpanishLabel(s.es.name || s.name);
+        s.es.detachment = cleanSpanishLabel(s.es.detachment || s.detachment);
+      }
+      s.detachment = cleanSpanishLabel(s.detachment || "");
+    });
+  }
+
+  // Sincronizar armas seleccionadas en colección y listas para que sigan coincidiendo tras limpiar paréntesis
+  if (Array.isArray(AppState.collection)) {
+    AppState.collection.forEach(item => {
+      if (Array.isArray(item.selectedWeapons)) {
+        item.selectedWeapons = item.selectedWeapons.map(w => cleanSpanishLabel(w));
+      }
+    });
+  }
+  if (Array.isArray(AppState.armyLists)) {
+    AppState.armyLists.forEach(list => {
+      (list.units || []).forEach(u => {
+        if (Array.isArray(u.selectedWeapons)) {
+          u.selectedWeapons = u.selectedWeapons.map(w => cleanSpanishLabel(w));
+        }
+      });
+    });
+  }
+}
+
+// ==========================================================================
+// DICCIONARIO DE TOOLTIPS INTERACTIVOS PARA REGLAS WAHAPEDIA
+// ==========================================================================
+let _keywordTooltipIndex = null;
+
+function getKeywordTooltipIndex() {
+  if (_keywordTooltipIndex) return _keywordTooltipIndex;
+  const idx = new Map();
+
+  if (typeof WH40K_DATA !== "undefined" && WH40K_DATA.keywords) {
+    Object.entries(WH40K_DATA.keywords).forEach(([engKey, info]) => {
+      if (!info || !info.desc) return;
+      if (info.es) idx.set(normalizeText(info.es), info.desc);
+      idx.set(normalizeText(engKey), info.desc);
+    });
+  }
+
+  // Alias habituales usados en fichas y armas en castellano
+  const extraAliases = {
+    "disparo rapido": idx.get("fuego rapido") || "Añade ataques adicionales igual a X cuando el blanco está a la mitad o menos del alcance máximo del arma.",
+    "explosion": idx.get("area") || "Suma +1 ataque por cada 5 miniaturas en la unidad objetivo. No puede dispararse si estás trabado en combate.",
+    "acoplada": idx.get("doble enlace / acoplada") || "Puedes repetir todas las tiradas para herir realizadas con esta arma.",
+    "impactos letales": idx.get("golpes letales") || "Los impactos críticos (6 natural) hieren automáticamente sin necesidad de tirar para herir.",
+    "heridas letales": idx.get("golpes letales") || "Los impactos críticos (6 natural) hieren automáticamente sin necesidad de tirar para herir.",
+    "un solo uso": idx.get("un solo disparo") || "El arma solo puede dispararse una única vez durante toda la batalla.",
+    "combate cerrado": "Arma diseñada para disparos a quemarropa; permite disparar incluso si la unidad está trabada en combate cuerpo a cuerpo.",
+    "fuego indirecto": "Puede disparar contra objetivos fuera de línea de visión, sufriendo -1 a la tirada para impactar y fallando siempre con 1-3 natural si no hay visión directa.",
+    "ataques adicionales": "El portador realiza estos ataques además de los ataques de su arma cuerpo a cuerpo principal.",
+    "hendedura": "Cada ataque exitoso puede dañar o propagar impactos adicionales según el valor de Hendedura.",
+    "anti": "Una tirada para herir sin modificar igual o superior al umbral indicado logra una Herida Crítica contra el tipo de objetivo especificado.",
+    "lider": "Este personaje puede unirse al inicio de la batalla a una de sus escuadras escolta compatibles.",
+    "juramento del momento": "Al inicio de tu fase de mando, elige una unidad enemiga: tus miniaturas con esta regla repiten todas las tiradas para impactar contra ella.",
+    "juramento de momento": "Al inicio de tu fase de mando, elige una unidad enemiga: tus miniaturas con esta regla repiten todas las tiradas para impactar contra ella.",
+    "psiquica": idx.get("psiquico") || "Ataques canalizados mediante poderes psíquicos de la Disformidad."
+  };
+
+  Object.entries(extraAliases).forEach(([k, v]) => {
+    if (v && !idx.has(k)) idx.set(k, v);
+  });
+
+  _keywordTooltipIndex = idx;
+  return idx;
+}
+
+function getRuleTooltipText(ruleLabel) {
+  if (!ruleLabel) return "";
+  const index = getKeywordTooltipIndex();
+  const norm = normalizeText(ruleLabel.replace(/^\[|\]$/g, ""));
+
+  if (index.has(norm)) return index.get(norm);
+
+  // Coincidencia parcial por prefijo (ej: "Disparo Rápido 2", "Impactos Sostenidos 1", "Anti-Vehículo 2+", "Exploradores 6\"")
+  const stripped = norm.replace(/\s+(\d+\+?\"?|d\d+)$/i, "").trim();
+  if (index.has(stripped)) return index.get(stripped);
+
+  if (stripped.startsWith("anti-")) return index.get("anti") || "";
+  if (stripped.startsWith("fusion")) return index.get("fusion") || "";
+  if (stripped.startsWith("disparo rapido") || stripped.startsWith("fuego rapido")) return index.get("disparo rapido") || "";
+  if (stripped.startsWith("impactos sostenidos")) return index.get("impactos sostenidos") || "";
+  if (stripped.startsWith("exploradores")) return index.get("exploradores") || "";
+  if (stripped.startsWith("no hay dolor")) return index.get("no hay dolor") || "";
+  if (stripped.startsWith("final mortal")) return index.get("final mortal") || "";
+
+  for (const [key, desc] of index.entries()) {
+    if (key.length >= 4 && (norm === key || norm.startsWith(key + " ") || norm.includes(key))) {
+      return desc;
+    }
+  }
+  return "";
+}
+
+function formatKeywordWithTooltip(label, extraClass = "waha-kw-badge") {
+  const clean = cleanSpanishLabel(label);
+  const tip = getRuleTooltipText(clean);
+  if (tip) {
+    return `<span class="${extraClass} has-tooltip" data-tooltip="${escapeHtml(tip)}" tabindex="0">${escapeHtml(clean)}</span>`;
+  }
+  return `<span class="${extraClass}">${escapeHtml(clean)}</span>`;
+}
+
+function renderWeaponKeywordBadges(keywordsArray) {
+  if (!Array.isArray(keywordsArray) || keywordsArray.length === 0) return "";
+  return `<div class="waha-weapon-kws">${keywordsArray.map(k => formatKeywordWithTooltip(`[${cleanSpanishLabel(k)}]`, "waha-kw-badge")).join("")}</div>`;
+}
+
+function highlightBracketTags(text) {
+  const escaped = escapeHtml(text || "");
+  return escaped.replace(/\[([^\]]+)\]/g, (full, inner) => {
+    const tip = getRuleTooltipText(inner);
+    if (tip) {
+      return `<span class="waha-inline-tag has-tooltip" data-tooltip="${escapeHtml(tip)}" tabindex="0">[${inner}]</span>`;
+    }
+    return `<span class="waha-inline-tag">[${inner}]</span>`;
+  });
+}
+
+function initGlobalTooltips() {
+  if (document.getElementById("waha-floating-tooltip")) return;
+  const tipEl = document.createElement("div");
+  tipEl.id = "waha-floating-tooltip";
+  tipEl.className = "waha-floating-tooltip";
+  tipEl.setAttribute("role", "tooltip");
+  document.body.appendChild(tipEl);
+
+  let activeTarget = null;
+
+  const showTip = (target) => {
+    const text = target.getAttribute("data-tooltip");
+    if (!text) return;
+    activeTarget = target;
+    tipEl.textContent = text;
+    tipEl.classList.add("visible");
+
+    const rect = target.getBoundingClientRect();
+    const tipRect = tipEl.getBoundingClientRect();
+    let left = rect.left + (rect.width / 2) - (tipRect.width / 2);
+    let top = rect.top - tipRect.height - 10;
+
+    if (left < 10) left = 10;
+    if (left + tipRect.width > window.innerWidth - 10) {
+      left = window.innerWidth - tipRect.width - 10;
+    }
+    if (top < 10) {
+      top = rect.bottom + 10;
+    }
+
+    tipEl.style.left = `${left}px`;
+    tipEl.style.top = `${top}px`;
+  };
+
+  const hideTip = () => {
+    activeTarget = null;
+    tipEl.classList.remove("visible");
+  };
+
+  document.addEventListener("mouseover", (e) => {
+    const target = e.target.closest(".has-tooltip[data-tooltip]");
+    if (target) showTip(target);
+  });
+  document.addEventListener("mouseout", (e) => {
+    const target = e.target.closest(".has-tooltip[data-tooltip]");
+    if (target && target === activeTarget) hideTip();
+  });
+  document.addEventListener("click", (e) => {
+    const target = e.target.closest(".has-tooltip[data-tooltip]");
+    if (target) {
+      if (activeTarget === target && tipEl.classList.contains("visible")) {
+        hideTip();
+      } else {
+        showTip(target);
+      }
+    } else if (activeTarget) {
+      hideTip();
+    }
+  });
+  window.addEventListener("scroll", hideTip, { passive: true });
+}
+
 /**
- * Obtiene los textos de una estratagema según el idioma activo ("es" o "en").
+ * Obtiene los textos de una estratagema en castellano puro.
  */
-function getStratagemText(s, lang) {
+function getStratagemText(s) {
   if (!s) return {};
-  const currentLang = lang || AppState.currentLanguage || "es";
-  const isEn = currentLang === "en";
-  const sub = isEn && s.en ? s.en : (s.es || s);
+  const sub = s.es || s;
 
   const phaseLabelsEs = {
     command: "Fase de Mando",
@@ -209,34 +560,20 @@ function getStratagemText(s, lang) {
     fight: "Fase de Combate",
     any: "Cualquier Fase"
   };
-  const phaseLabelsEn = {
-    command: "Command Phase",
-    movement: "Movement Phase",
-    shooting: "Shooting Phase",
-    charge: "Charge Phase",
-    fight: "Fight Phase",
-    any: "Any Phase"
-  };
 
   const turnLabelsEs = {
     your_turn: "Tu Turno",
     opponent_turn: "Turno Enemigo",
     either_turn: "Cualquier Turno"
   };
-  const turnLabelsEn = {
-    your_turn: "Your Turn",
-    opponent_turn: "Opponent's Turn",
-    either_turn: "Either Player's Turn"
-  };
 
-  const defaultPhaseLabel = isEn ? (phaseLabelsEn[s.phase] || s.phase) : (phaseLabelsEs[s.phase] || s.phase);
-  const defaultTurnLabel = isEn ? (turnLabelsEn[s.turn] || s.turn) : (turnLabelsEs[s.turn] || s.turn);
+  const defaultPhaseLabel = phaseLabelsEs[s.phase] || s.phase;
+  const defaultTurnLabel = turnLabelsEs[s.turn] || s.turn;
 
   return {
-    name: sub.name || s.name,
-    originalName: isEn ? (s.originalName || s.name) : (s.originalName || ""),
+    name: cleanSpanishLabel(sub.name || s.name),
     cp: s.cp,
-    detachment: sub.detachment || s.detachment,
+    detachment: cleanSpanishLabel(sub.detachment || s.detachment),
     detachmentId: s.detachmentId,
     phase: s.phase,
     phases: s.phases || [s.phase],
@@ -244,10 +581,10 @@ function getStratagemText(s, lang) {
     turn: s.turn,
     turnLabel: sub.turnLabel || defaultTurnLabel,
     type: sub.type || s.type,
-    when: sub.when || s.when,
-    target: sub.target || s.target,
-    effect: sub.effect || s.effect,
-    restrictions: sub.restrictions || s.restrictions || "",
+    when: cleanSpanishLabel(sub.when || s.when),
+    target: cleanSpanishLabel(sub.target || s.target),
+    effect: cleanSpanishLabel(sub.effect || s.effect),
+    restrictions: cleanSpanishLabel(sub.restrictions || s.restrictions || ""),
     fluff: sub.fluff || s.fluff,
     isCustom: !!s.isCustom,
     isEdited: !!s.isEdited
@@ -255,20 +592,11 @@ function getStratagemText(s, lang) {
 }
 
 /**
- * Actualiza los textos de la interfaz según el idioma actual.
+ * Sincroniza los textos de la interfaz en castellano.
  */
 function updateAppTranslations() {
-  const currentLang = AppState.currentLanguage || "es";
-  const isEn = currentLang === "en";
-  const t = WH40K_I18N[currentLang] || WH40K_I18N.es;
+  const t = WH40K_I18N.es;
 
-  // Botones de selección de idioma
-  const btnEs = document.getElementById("lang-btn-es");
-  const btnEn = document.getElementById("lang-btn-en");
-  if (btnEs) btnEs.classList.toggle("active", !isEn);
-  if (btnEn) btnEn.classList.toggle("active", isEn);
-
-  // Cabecera
   const headTitle = document.getElementById("header-title");
   if (headTitle) headTitle.textContent = t.headerTitle;
   const headSub = document.getElementById("header-subtitle");
@@ -280,7 +608,6 @@ function updateAppTranslations() {
   const lblPainting = document.getElementById("header-lbl-painting");
   if (lblPainting) lblPainting.textContent = t.statPainting;
 
-  // Pestañas de Navegación
   const tabCodex = document.getElementById("nav-text-codex");
   if (tabCodex) tabCodex.textContent = t.tabCodex;
   const tabDet = document.getElementById("nav-text-detachments");
@@ -296,13 +623,11 @@ function updateAppTranslations() {
   const tabMath = document.getElementById("nav-text-mathhammer");
   if (tabMath) tabMath.textContent = t.tabMathhammer;
 
-  // Banner del Compendio de Estratagemas
   const bannerTitle = document.getElementById("stratagems-banner-title");
   if (bannerTitle) bannerTitle.textContent = t.stratBannerTitle;
   const bannerDesc = document.getElementById("stratagems-banner-desc");
   if (bannerDesc) bannerDesc.innerHTML = t.stratBannerDesc;
 
-  // KPIs de Estratagemas
   const lblKpiTotal = document.getElementById("kpi-lbl-strat-total");
   if (lblKpiTotal) lblKpiTotal.textContent = t.kpiStratTotal;
   const lblKpiCore = document.getElementById("kpi-lbl-strat-core");
@@ -312,19 +637,16 @@ function updateAppTranslations() {
   const lblKpiSm = document.getElementById("kpi-lbl-strat-sm");
   if (lblKpiSm) lblKpiSm.textContent = t.kpiSM;
 
-  // Barra de Búsqueda
   const searchInput = document.getElementById("stratagem-search-input");
   if (searchInput) searchInput.placeholder = t.stratSearchPlaceholder;
 
-  // Desplegable de Destacamento
   const lblDet = document.getElementById("lbl-strat-detachment");
   if (lblDet) lblDet.textContent = t.detachmentLabel;
-  updateStratagemDetachmentDropdown(currentLang);
+  updateStratagemDetachmentDropdown();
 
   const btnClear = document.getElementById("btn-clear-strat-filters");
   if (btnClear) btnClear.textContent = t.clearFilters;
 
-  // Filtros de Fase
   const lblPhase = document.getElementById("lbl-strat-phase");
   if (lblPhase) lblPhase.textContent = t.tacticalPhase;
   const txtPhaseAll = document.getElementById("txt-phase-all");
@@ -342,117 +664,16 @@ function updateAppTranslations() {
   const txtPhaseAny = document.getElementById("txt-phase-any");
   if (txtPhaseAny) txtPhaseAny.textContent = t.phaseAny;
 
-  // Filtros de Turno
   const lblTurn = document.getElementById("lbl-strat-turn");
   if (lblTurn) lblTurn.textContent = t.turnOfUse;
   const pillTurnAll = document.getElementById("pill-turn-all");
   if (pillTurnAll) pillTurnAll.textContent = t.allTurns;
-  const pillTurnPlayer = document.getElementById("pill-turn-player");
-  if (pillTurnPlayer) pillTurnPlayer.textContent = t.turnPlayer;
-  const pillTurnOpponent = document.getElementById("pill-turn-opponent");
-  if (pillTurnOpponent) pillTurnOpponent.textContent = t.turnOpponent;
-  const pillTurnEither = document.getElementById("pill-turn-either");
-  if (pillTurnEither) pillTurnEither.textContent = t.turnEither;
 
-  // HUD de Combate
   const hudStratTitle = document.getElementById("hud-stratagems-title-text");
-  if (hudStratTitle) hudStratTitle.textContent = isEn ? "⚡ Stratagems Available Right Now" : "⚡ Estratagemas Disponibles en este Momento";
+  if (hudStratTitle) hudStratTitle.textContent = "⚡ Estratagemas Disponibles en este Momento";
   const lblBattleScope = document.getElementById("lbl-battle-stratagems-scope");
   if (lblBattleScope) lblBattleScope.textContent = t.battleOnlyArmy;
 }
-
-/**
- * Regenera las opciones del selector de destacamento en el compendio de estratagemas.
- */
-function updateStratagemDetachmentDropdown(lang) {
-  const select = document.getElementById("stratagem-detachment-select");
-  if (!select) return;
-  const isEn = lang === "en";
-
-  const prev = select.value;
-
-  const optgroups = isEn ? {
-    all: "All Detachments (69)",
-    core: "Core Rules (11)",
-    daLabel: "Dark Angels (Exclusive)",
-    smLabel: "Space Marines (Compatible)",
-    darkflight_pursuit: "Darkflight Pursuit (3)",
-    inner_circle: "Inner Circle Task Force (3)",
-    wrath_of_the_rock: "Wrath of the Rock (6)",
-    gladius: "Gladius Strike Force (6)",
-    ironstorm: "Ironstorm Spearhead (3)",
-    stormlance: "Stormlance Task Force (3)",
-    ceramite_sentinels: "Ceramite Sentinels (6)",
-    boarding_strike: "Boarding Strike (4)",
-    terminator_assault: "Terminator Assault Force (4)",
-    shield_of_void: "Shield of the Void (4)",
-    pilum_strike: "Pilum Strike Team (4)",
-    tactical_brethren: "Tactical Brethren (3)",
-    assault_brethren: "Assault Brethren (3)",
-    devastator_brethren: "Devastator Brethren (3)",
-    phobos_shadow: "Phobos Strike Force (3)"
-  } : {
-    all: "Todos los Destacamentos (69)",
-    core: "Reglamento (Básicas del Core) (11)",
-    daLabel: "Ángeles Oscuros (Exclusivos)",
-    smLabel: "Marines Espaciales (Compatibles)",
-    darkflight_pursuit: "Persecución del Vuelo Oscuro (3)",
-    inner_circle: "Contingente del Círculo Interior (3)",
-    wrath_of_the_rock: "Ira de la Roca (6)",
-    gladius: "Contingente Gladius (6)",
-    ironstorm: "Punta de Lanza Ferrotormenta (3)",
-    stormlance: "Contingente Lanzatormenta (3)",
-    ceramite_sentinels: "Centinelas de Ceramita (6)",
-    boarding_strike: "Golpe de Abordaje (4)",
-    terminator_assault: "Asalto de Exterminadores (4)",
-    shield_of_void: "Escudo del Vacío (4)",
-    pilum_strike: "Equipo de Asalto Pilum (4)",
-    tactical_brethren: "Hermandad Táctica (3)",
-    assault_brethren: "Hermandad de Asalto (3)",
-    devastator_brethren: "Hermandad Devastadora (3)",
-    phobos_shadow: "Fuerza de Sombras Phobos (3)"
-  };
-
-  select.innerHTML = `
-    <option value="all">${optgroups.all}</option>
-    <option value="core">${optgroups.core}</option>
-    <optgroup label="${optgroups.daLabel}">
-      <option value="darkflight_pursuit">${optgroups.darkflight_pursuit}</option>
-      <option value="inner_circle">${optgroups.inner_circle}</option>
-      <option value="wrath_of_the_rock">${optgroups.wrath_of_the_rock}</option>
-    </optgroup>
-    <optgroup label="${optgroups.smLabel}">
-      <option value="gladius">${optgroups.gladius}</option>
-      <option value="ironstorm">${optgroups.ironstorm}</option>
-      <option value="stormlance">${optgroups.stormlance}</option>
-      <option value="ceramite_sentinels">${optgroups.ceramite_sentinels}</option>
-      <option value="boarding_strike">${optgroups.boarding_strike}</option>
-      <option value="terminator_assault">${optgroups.terminator_assault}</option>
-      <option value="shield_of_void">${optgroups.shield_of_void}</option>
-      <option value="pilum_strike">${optgroups.pilum_strike}</option>
-      <option value="tactical_brethren">${optgroups.tactical_brethren}</option>
-      <option value="assault_brethren">${optgroups.assault_brethren}</option>
-      <option value="devastator_brethren">${optgroups.devastator_brethren}</option>
-      <option value="phobos_shadow">${optgroups.phobos_shadow}</option>
-    </optgroup>
-  `;
-  select.value = prev || "all";
-}
-
-/**
- * Cambia el idioma de la aplicación y actualiza toda la interfaz.
- */
-function setAppLanguage(lang) {
-  if (lang !== "es" && lang !== "en") lang = "es";
-  AppState.currentLanguage = lang;
-  localStorage.setItem("cogitator_language", lang);
-
-  updateAppTranslations();
-  renderStratagems();
-  renderBattleStratagems();
-  updateStratagemPhaseBadges();
-}
-window.setAppLanguage = setAppLanguage;
 
 // ==========================================================================
 // INICIALIZACIÓN Y PERSISTENCIA (LOCALSTORAGE)
@@ -461,7 +682,11 @@ document.addEventListener("DOMContentLoaded", () => {
   loadFromStorage();
   initDefaultCollectionIfEmpty();
   initDefaultArmyListIfEmpty();
-  
+
+  // Sanitizar datos para garantizar castellano puro sin duplicidades en inglés
+  sanitizeDataToSpanish();
+  initGlobalTooltips();
+
   initTabNavigation();
   initCodexFilters();
   initUnitComparator();
@@ -471,8 +696,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initArmyBuilder();
   initBattleTracker();
   initMathhammer();
-  
+
   updateAppTranslations();
+  renderWahapediaHeaderPanels();
   renderCodex();
   renderUnitComparator();
   renderDetachments();
@@ -542,7 +768,7 @@ function loadFromStorage() {
         // Auto-saneamiento de caché: Si la caché antigua guardaba menos de 110 hojas de datos,
         // la purgamos para asegurar el catálogo íntegro oficial de 113 datasheets de 11ª Edición.
         if (parsedDS.length < 110) {
-          console.info("Cogitador: Actualizando caché local al catálogo oficial completo de 113 datasheets...");
+          console.info("Cogitador: Actualizando caché local al catálogo oficial completo de 113 hojas de datos...");
           localStorage.removeItem("cogitator_custom_datasheets");
         } else {
           // Si el usuario tenía datasheets personalizadas (isCustom), preservarlas
@@ -584,11 +810,13 @@ function loadFromStorage() {
       if (AppState.battle.stratagemScopeOnlyArmy === undefined) AppState.battle.stratagemScopeOnlyArmy = true;
     }
 
-    const savedLang = localStorage.getItem("cogitator_language");
-    if (savedLang === "es" || savedLang === "en") {
-      AppState.currentLanguage = savedLang;
-    } else {
-      AppState.currentLanguage = "es";
+    // Idioma único en Castellano
+    AppState.currentLanguage = "es";
+    localStorage.removeItem("cogitator_language");
+
+    const savedLayout = localStorage.getItem("cogitator_codex_layout");
+    if (savedLayout === "wahapedia" || savedLayout === "compact") {
+      AppState.codexLayoutMode = savedLayout;
     }
   } catch (err) {
     console.error("Error cargando datos de LocalStorage:", err);
@@ -607,8 +835,8 @@ function initDefaultCollectionIfEmpty() {
         wing: "Ala de Muerte",
         count: 1,
         status: "parade", // Nivel desfile
-        selectedWeapons: ["Arma de Fuego Artesanal – Damnatus", "La Espada de los Secretos (The Sword of Secrets)"],
-        loadoutNotes: "Ira del León, Espada de Secretos, Yelmo del León",
+        selectedWeapons: ["Arma de Fuego Artesanal – Damnatus", "La Espada de los Secretos"],
+        loadoutNotes: "Ira del León, La Espada de los Secretos, Yelmo del León",
         isMagnetized: false,
         addedDate: "2026-01-10"
       },
@@ -620,8 +848,8 @@ function initDefaultCollectionIfEmpty() {
         wing: "Ala de Muerte",
         count: 5,
         status: "battle", // Listo para combate
-        selectedWeapons: ["Maza de Absolución (Mace of Absolution)", "Gran Arma de los No Perdonados"],
-        loadoutNotes: "Maza de expiación x4, Gran Arma de los No Perdonados x1",
+        selectedWeapons: ["Maza de Absolución", "Gran Arma de los No Perdonados"],
+        loadoutNotes: "Maza de Absolución x4, Gran Arma de los No Perdonados x1",
         isMagnetized: true,
         addedDate: "2026-02-14"
       },
@@ -633,7 +861,7 @@ function initDefaultCollectionIfEmpty() {
         wing: "Ala de Muerte",
         count: 6,
         status: "base", // Color base
-        selectedWeapons: ["Mandoble Calibanita – Golpe (Strike)", "Mandoble Calibanita – Barrido (Sweep)"],
+        selectedWeapons: ["Mandoble Calibanita – Golpe", "Mandoble Calibanita – Barrido"],
         loadoutNotes: "Mandobles de Caliban",
         isMagnetized: false,
         addedDate: "2026-03-01"
@@ -646,7 +874,7 @@ function initDefaultCollectionIfEmpty() {
         wing: "Compañía Verde",
         count: 10,
         status: "built", // Montado
-        selectedWeapons: ["Incinerador de Plasma – Estándar", "Incinerador de Plasma – Sobrecarga", "Pistola Bólter (Bolt Pistol)"],
+        selectedWeapons: ["Incinerador de Plasma – Estándar", "Incinerador de Plasma – Sobrecarga", "Pistola Bólter"],
         loadoutNotes: "Incineradores de plasma",
         isMagnetized: false,
         addedDate: "2026-03-15"
@@ -659,7 +887,7 @@ function initDefaultCollectionIfEmpty() {
         wing: "Ala de Cuervo",
         count: 3,
         status: "box", // En caja / matriz
-        selectedWeapons: ["Garras de Plasma – Estándar (Plasma Talon)", "Martillos Corvus (Corvus Hammers)"],
+        selectedWeapons: ["Garras de Plasma – Estándar", "Martillos Corvus"],
         loadoutNotes: "Garras de plasma y Martillos Corvus",
         isMagnetized: true,
         addedDate: "2026-04-01"
@@ -672,7 +900,7 @@ function initDefaultCollectionIfEmpty() {
         wing: "Ala de Muerte",
         count: 1,
         status: "battle",
-        selectedWeapons: ["Macroincinerador de Plasma – Estándar", "Cañón Gatling Onslaught (Onslaught Gatling)", "Puño Redemptor (Redemptor Fist)"],
+        selectedWeapons: ["Macroincinerador de Plasma – Estándar", "Cañón Gatling Onslaught", "Puño Redemptor"],
         loadoutNotes: "Macroincinerador de Plasma, Cañón Gatling Onslaught, Puño Redemptor",
         isMagnetized: true,
         addedDate: "2026-02-20"
@@ -853,10 +1081,13 @@ function initCodexFilters() {
 
   const keywordFilterSelect = document.getElementById("codex-keyword-filter");
   if (keywordFilterSelect) {
-    // Poblar desplegable de palabras clave desde WH40K_DATA.keywords y datasheets
     const keywordSet = new Set();
     if (WH40K_DATA.keywords && typeof WH40K_DATA.keywords === "object") {
-      Object.keys(WH40K_DATA.keywords).forEach(k => keywordSet.add(k));
+      Object.values(WH40K_DATA.keywords).forEach(info => {
+        if (info && info.es && info.cat !== "Weapon Rule") {
+          keywordSet.add(cleanSpanishLabel(info.es).toUpperCase());
+        }
+      });
     }
     if (Array.isArray(WH40K_DATA.datasheets)) {
       WH40K_DATA.datasheets.forEach(ds => {
@@ -866,10 +1097,10 @@ function initCodexFilters() {
       });
     }
 
-    const sortedKeywords = Array.from(keywordSet).sort((a, b) => a.localeCompare(b, 'es'));
+    const sortedKeywords = Array.from(keywordSet).filter(Boolean).sort((a, b) => a.localeCompare(b, 'es'));
     keywordFilterSelect.innerHTML = `
-      <option value="all">Todas las Keywords (${sortedKeywords.length})</option>
-      ${sortedKeywords.map(kw => `<option value="${kw}">${kw}</option>`).join('')}
+      <option value="all">Todas las Palabras Clave (${sortedKeywords.length})</option>
+      ${sortedKeywords.map(kw => `<option value="${escapeHtml(kw)}">${escapeHtml(kw)}</option>`).join('')}
     `;
 
     keywordFilterSelect.addEventListener("change", (e) => {
@@ -890,6 +1121,227 @@ function initCodexFilters() {
   if (clearBtn) {
     clearBtn.addEventListener("click", () => clearCodexFilters());
   }
+
+  syncCodexLayoutButton();
+}
+
+function syncCodexLayoutButton() {
+  const btn = document.getElementById("btn-toggle-codex-layout");
+  if (!btn) return;
+  const isWaha = AppState.codexLayoutMode === "wahapedia";
+  btn.classList.toggle("active", isWaha);
+  btn.textContent = isWaha ? "📋 Vista: Hoja Wahapedia" : "▦ Vista: Compacta";
+}
+
+function toggleCodexLayoutMode() {
+  AppState.codexLayoutMode = AppState.codexLayoutMode === "wahapedia" ? "compact" : "wahapedia";
+  localStorage.setItem("cogitator_codex_layout", AppState.codexLayoutMode);
+  syncCodexLayoutButton();
+  renderCodex();
+}
+
+function toggleWahapediaIndexPanel() {
+  switchTab("codex");
+  const detailsEl = document.getElementById("waha-quick-index-details");
+  if (detailsEl) {
+    detailsEl.open = true;
+    detailsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function getDatasheetRoleIcon(ds) {
+  const normRole = normalizeText(ds.role || "");
+  const kws = (ds.keywords || []).map(k => normalizeText(k));
+  if (ds.isEpicHero || kws.includes("heroe epico")) return "⭐";
+  if (kws.includes("personaje") || normRole.includes("personaje") || normRole.includes("lider") || normRole.includes("cuartel")) return "👑";
+  if (kws.includes("aeronave") || normRole.includes("aeronave")) return "✈️";
+  if (kws.includes("transporte") || kws.includes("transporte asignado") || normRole.includes("transporte")) return "🚛";
+  if (kws.includes("dreadnought") || kws.includes("bipode") || normRole.includes("bipode")) return "🤖";
+  if (kws.includes("vehiculo") || normRole.includes("vehiculo") || normRole.includes("tanque") || normRole.includes("artilleria")) return "🛡️";
+  if (kws.includes("montado") || normRole.includes("montad") || kws.includes("deslizador")) return "🏍️";
+  if (kws.includes("linea de batalla") || normRole.includes("linea")) return "⚔️";
+  return "🗡️";
+}
+
+function getDatasheetIndexCategory(ds) {
+  const normRole = normalizeText(ds.role || "");
+  const kws = (ds.keywords || []).map(k => normalizeText(k));
+
+  if (ds.isEpicHero || kws.includes("heroe epico")) return "epic_heroes";
+  if (kws.includes("personaje") || normRole.includes("personaje") || normRole.includes("lider") || normRole.includes("cuartel") || normRole.includes("agente solitario")) return "characters";
+  if (kws.includes("linea de batalla") || normRole.includes("linea")) return "battleline";
+  if (kws.includes("transporte asignado") || kws.includes("transporte") || normRole.includes("transporte")) return "transports";
+  if (kws.includes("aeronave") || normRole.includes("aeronave")) return "aircraft";
+  if (kws.includes("dreadnought") || kws.includes("bipode") || normRole.includes("bipode")) return "walkers";
+  if (kws.includes("vehiculo") || normRole.includes("vehiculo") || normRole.includes("tanque") || normRole.includes("cazatanques") || normRole.includes("artilleria") || normRole.includes("fortificacion") || normRole.includes("defensa")) return "vehicles";
+  if (kws.includes("montado") || normRole.includes("montad")) return "mounted";
+  return "infantry";
+}
+
+function renderWahapediaHeaderPanels() {
+  // 1. Panel de Reglas de Ejército y Capítulo
+  const armyRulesContainer = document.getElementById("wahapedia-army-rules-panel");
+  if (armyRulesContainer && typeof WH40K_DATA !== "undefined") {
+    const fRule = WH40K_DATA.factionRule;
+    const cRules = Array.isArray(WH40K_DATA.chapterRules) ? WH40K_DATA.chapterRules : [];
+
+    armyRulesContainer.innerHTML = `
+      <div class="waha-army-rules-grid">
+        ${fRule ? `
+          <div class="waha-army-rule-card main-faction-rule">
+            <div class="waha-army-rule-header">
+              <span class="waha-rule-tag">REGLA DE EJÉRCITO • ADEPTUS ASTARTES</span>
+              <h4>⚔️ ${escapeHtml(cleanSpanishLabel(fRule.name))}</h4>
+            </div>
+            <p>${escapeHtml(cleanSpanishLabel(fRule.description))}</p>
+          </div>
+        ` : ''}
+        ${cRules.map(cr => `
+          <div class="waha-army-rule-card">
+            <div class="waha-army-rule-header">
+              <span class="waha-rule-tag">REGLA DE CAPÍTULO • ÁNGELES OSCUROS</span>
+              <h4>🛡️ ${escapeHtml(cleanSpanishLabel(cr.name))}</h4>
+            </div>
+            <p>${escapeHtml(cleanSpanishLabel(cr.description))}</p>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  // 2. Índice Rápido por Rol Táctico (Directorio estilo Wahapedia)
+  const indexContainer = document.getElementById("wahapedia-quick-index-panel");
+  if (indexContainer && Array.isArray(WH40K_DATA.datasheets)) {
+    const categories = [
+      { id: "epic_heroes", title: "⭐ Héroes Épicos", filterRole: "character" },
+      { id: "characters", title: "👑 Personajes y Líderes", filterRole: "character" },
+      { id: "battleline", title: "⚔️ Línea de Batalla", filterRole: "battleline" },
+      { id: "infantry", title: "🗡️ Infantería y Élite", filterRole: "infantry" },
+      { id: "mounted", title: "🏍️ Montados y Alas", filterRole: "mounted" },
+      { id: "walkers", title: "🤖 Dreadnoughts y Bípodes", filterRole: "vehicle" },
+      { id: "vehicles", title: "🛡️ Vehículos y Artillería", filterRole: "vehicle" },
+      { id: "transports", title: "🚛 Transportes Dedicados", filterRole: "transport" },
+      { id: "aircraft", title: "✈️ Aeronaves", filterRole: "aircraft" }
+    ];
+
+    const grouped = {};
+    categories.forEach(c => { grouped[c.id] = []; });
+    WH40K_DATA.datasheets.forEach(ds => {
+      const catId = getDatasheetIndexCategory(ds);
+      if (!grouped[catId]) grouped[catId] = [];
+      grouped[catId].push(ds);
+    });
+
+    indexContainer.innerHTML = `
+      <div class="waha-index-columns">
+        ${categories.map(cat => {
+          const units = (grouped[cat.id] || []).slice().sort((a, b) => a.name.localeCompare(b.name, 'es'));
+          if (units.length === 0) return '';
+          return `
+            <div class="waha-index-group">
+              <div class="waha-index-group-header">
+                <span>${cat.title}</span>
+                <span class="waha-index-count">${units.length}</span>
+              </div>
+              <div class="waha-index-links">
+                ${units.map(ds => {
+                  const wingDot = ds.wing === "Ala de Muerte" ? "dot-deathwing" : (ds.wing === "Ala de Cuervo" ? "dot-ravenwing" : "dot-green");
+                  const pts = ds.pointsOptions?.[0]?.points ?? 0;
+                  return `
+                    <button type="button" class="waha-index-unit-btn" onclick="openBattleUnitDatasheetModal('${ds.id}')" title="Abrir hoja de datos completa de ${escapeHtml(ds.name)}">
+                      <span class="waha-wing-dot ${wingDot}"></span>
+                      <span class="waha-index-unit-name">${escapeHtml(ds.name)}</span>
+                      <span class="waha-index-unit-pts">${pts}</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+}
+
+function getUnitLeadershipInfo(ds) {
+  if (!ds || !Array.isArray(WH40K_DATA.datasheets)) return { canLead: [], ledBy: [] };
+
+  const cleanUnitName = (n) => normalizeText(cleanSpanishLabel(n || "")).replace(/\([^)]*\)/g, "").trim();
+  const dsClean = cleanUnitName(ds.name);
+  const dsOrig = cleanUnitName(ds.originalName || "");
+
+  // 1. Unidades a las que puede liderar
+  const canLead = (ds.leaderOf || []).map(targetName => {
+    const cleanTarget = cleanUnitName(targetName);
+    const match = WH40K_DATA.datasheets.find(other => {
+      if (other.id === ds.id) return false;
+      const oName = cleanUnitName(other.name);
+      const oOrig = cleanUnitName(other.originalName || "");
+      return oName === cleanTarget || oName.includes(cleanTarget) || cleanTarget.includes(oName) || (oOrig && (oOrig === cleanTarget || cleanTarget.includes(oOrig)));
+    });
+    return {
+      label: cleanSpanishLabel(targetName),
+      datasheetId: match ? match.id : null
+    };
+  });
+
+  // 2. Personajes que pueden liderar a esta unidad ("Liderada por")
+  const ledBy = [];
+  const seenLeaders = new Set();
+  WH40K_DATA.datasheets.forEach(leader => {
+    if (leader.id === ds.id || !Array.isArray(leader.leaderOf) || leader.leaderOf.length === 0) return;
+    const matchesThis = leader.leaderOf.some(allowed => {
+      const cleanAllowed = cleanUnitName(allowed);
+      if (!cleanAllowed) return false;
+      return cleanAllowed === dsClean || cleanAllowed.includes(dsClean) || dsClean.includes(cleanAllowed) || (dsOrig && (cleanAllowed.includes(dsOrig) || dsOrig.includes(cleanAllowed)));
+    });
+    if (matchesThis && !seenLeaders.has(leader.id)) {
+      seenLeaders.add(leader.id);
+      ledBy.push({
+        label: leader.name,
+        datasheetId: leader.id,
+        wing: leader.wing
+      });
+    }
+  });
+
+  return { canLead, ledBy };
+}
+
+function splitAbilitiesWahapedia(abilities) {
+  const core = [];
+  const faction = [];
+  const unit = [];
+
+  (abilities || []).forEach(ab => {
+    const cleanAb = cleanSpanishLabel(ab);
+    if (/^Reglas?\s+B[aá]sicas?\s*:/i.test(cleanAb)) {
+      const listPart = cleanAb.replace(/^Reglas?\s+B[aá]sicas?\s*:\s*/i, "");
+      listPart.split(/,|•/).map(s => s.trim()).filter(Boolean).forEach(item => core.push(item));
+    } else if (/^Regla\s+de\s+Facci[oó]n\s*:/i.test(cleanAb)) {
+      const listPart = cleanAb.replace(/^Regla\s+de\s+Facci[oó]n\s*:\s*/i, "");
+      listPart.split(/,|•/).map(s => s.trim()).filter(Boolean).forEach(item => faction.push(item));
+    } else if (/^(Despliegue R[aá]pido|Infiltradores|Exploradores|Sigilo|Operativo Solitario|Combate Primero|No Hay Dolor|Final Mortal|L[ií]der)(\s+[\d\"+D]+)?$/i.test(cleanAb)) {
+      core.push(cleanAb);
+    } else if (/^Juramento\s+del?\s+Momento$/i.test(cleanAb)) {
+      faction.push("Juramento del Momento");
+    } else {
+      unit.push(cleanAb);
+    }
+  });
+
+  return { core, faction, unit };
+}
+
+function formatUnitAbilityHtml(abText) {
+  const colonIdx = abText.indexOf(":");
+  if (colonIdx > 0 && colonIdx < 55) {
+    const title = abText.slice(0, colonIdx).trim();
+    const desc = abText.slice(colonIdx + 1).trim();
+    return `<div class="waha-ability-item"><span class="waha-ability-name">${escapeHtml(title)}:</span> <span class="waha-ability-desc">${highlightBracketTags(desc)}</span></div>`;
+  }
+  return `<div class="waha-ability-item"><span class="waha-ability-desc">${highlightBracketTags(abText)}</span></div>`;
 }
 
 function clearCodexFilters() {
@@ -914,9 +1366,10 @@ function clearCodexFilters() {
 }
 
 function filterCodexBySynergy(unitName) {
-  AppState.searchQuery = unitName;
+  const clean = cleanSpanishLabel(unitName);
+  AppState.searchQuery = clean;
   const searchInput = document.getElementById("codex-search");
-  if (searchInput) searchInput.value = unitName;
+  if (searchInput) searchInput.value = clean;
   
   switchTab("codex");
   renderCodex();
@@ -928,11 +1381,15 @@ function filterCodexBySynergy(unitName) {
 function renderCodex() {
   const container = document.getElementById("codex-cards-container");
   if (!container) return;
-  
+
+  const isWahaLayout = AppState.codexLayoutMode === "wahapedia";
+  container.classList.toggle("wahapedia-sheet-list", isWahaLayout);
+  container.classList.toggle("datasheet-grid", !isWahaLayout);
+  syncCodexLayoutButton();
+
   const qNorm = normalizeText(AppState.searchQuery);
-  
+
   const filtered = WH40K_DATA.datasheets.filter(ds => {
-    // 1. Filtro de búsqueda textual normalizada
     if (qNorm) {
       const matchName = normalizeText(ds.name).includes(qNorm);
       const matchOrig = ds.originalName && normalizeText(ds.originalName).includes(qNorm);
@@ -948,17 +1405,10 @@ function renderCodex() {
       }
     }
 
-    // 2. Filtro de Ala (Con inclusión de palabras clave oficiales de 11ª Edición)
     if (AppState.wingFilter !== "all") {
       const normWing = normalizeText(ds.wing);
-      const hasDeathwingKw = ds.keywords && ds.keywords.some(k => {
-        const nk = normalizeText(k);
-        return nk.includes("deathwing") || nk.includes("ala de muerte");
-      });
-      const hasRavenwingKw = ds.keywords && ds.keywords.some(k => {
-        const nk = normalizeText(k);
-        return nk.includes("ravenwing") || nk.includes("ala de cuervo");
-      });
+      const hasDeathwingKw = ds.keywords && ds.keywords.some(k => normalizeText(k).includes("ala de muerte"));
+      const hasRavenwingKw = ds.keywords && ds.keywords.some(k => normalizeText(k).includes("ala de cuervo"));
 
       if (AppState.wingFilter === "deathwing") {
         if (normWing !== "ala de muerte" && !hasDeathwingKw) return false;
@@ -969,39 +1419,37 @@ function renderCodex() {
       }
     }
 
-    // 3. Filtro de Rol Táctico
     if (AppState.roleFilter !== "all") {
       const normRole = normalizeText(ds.role);
       const normKeywords = ds.keywords ? ds.keywords.map(k => normalizeText(k)) : [];
       
       if (AppState.roleFilter === "character") {
-        const isChar = normRole.includes("personaje") || normRole.includes("character") || normRole.includes("lider") || normRole.includes("leader") || normRole.includes("epico") || normKeywords.includes("character") || normKeywords.includes("personaje");
+        const isChar = normRole.includes("personaje") || normRole.includes("lider") || normRole.includes("epico") || normRole.includes("cuartel") || normKeywords.includes("personaje");
         if (!isChar) return false;
       } else if (AppState.roleFilter === "battleline") {
-        const isBattleline = normRole.includes("linea") || normRole.includes("battleline") || normKeywords.includes("linea de batalla") || normKeywords.includes("battleline");
+        const isBattleline = normRole.includes("linea") || normKeywords.includes("linea de batalla");
         if (!isBattleline) return false;
       } else if (AppState.roleFilter === "infantry") {
-        const isInfantry = normRole.includes("infanteria") || normKeywords.includes("infanteria") || normKeywords.includes("infantry");
+        const isInfantry = normRole.includes("infanteria") || normKeywords.includes("infanteria");
         if (!isInfantry) return false;
       } else if (AppState.roleFilter === "elite") {
-        const isElite = normRole.includes("elite") || normRole.includes("veteran") || normRole.includes("exterminador") || normRole.includes("camarada");
+        const isElite = normRole.includes("elite") || normRole.includes("veteran") || normRole.includes("exterminador") || normRole.includes("guardia");
         if (!isElite) return false;
       } else if (AppState.roleFilter === "mounted") {
-        const isMounted = normRole.includes("montad") || normRole.includes("bipede") || normKeywords.includes("montada") || normKeywords.includes("mounted") || normKeywords.includes("motocicleta") || normKeywords.includes("biker");
+        const isMounted = normRole.includes("montad") || normRole.includes("deslizador") || normKeywords.includes("montado");
         if (!isMounted) return false;
       } else if (AppState.roleFilter === "vehicle") {
-        const isVehicle = normRole.includes("vehiculo") || normRole.includes("vehicle") || normRole.includes("tanque") || normRole.includes("walker") || normRole.includes("dreadnought") || normKeywords.includes("vehiculo") || normKeywords.includes("vehicle");
+        const isVehicle = normRole.includes("vehiculo") || normRole.includes("tanque") || normRole.includes("bipode") || normRole.includes("dreadnought") || normKeywords.includes("vehiculo") || normKeywords.includes("dreadnought");
         if (!isVehicle) return false;
       } else if (AppState.roleFilter === "transport") {
-        const isTransport = normRole.includes("transporte") || normRole.includes("transport") || normKeywords.includes("transporte") || normKeywords.includes("transport");
+        const isTransport = normRole.includes("transporte") || normKeywords.includes("transporte") || normKeywords.includes("transporte asignado");
         if (!isTransport) return false;
       } else if (AppState.roleFilter === "aircraft") {
-        const isAircraft = normRole.includes("aeronave") || normRole.includes("aircraft") || normKeywords.includes("aeronave") || normKeywords.includes("aircraft");
+        const isAircraft = normRole.includes("aeronave") || normKeywords.includes("aeronave");
         if (!isAircraft) return false;
       }
     }
 
-    // 4. Filtro de Palabra Clave (Keyword)
     if (AppState.keywordFilter !== "all") {
       const targetKw = normalizeText(AppState.keywordFilter);
       const hasKw = ds.keywords && ds.keywords.some(k => normalizeText(k) === targetKw || normalizeText(k).includes(targetKw));
@@ -1011,37 +1459,25 @@ function renderCodex() {
     return true;
   });
 
-  // Ordenación de resultados
   filtered.sort((a, b) => {
-    if (AppState.sortBy === "name_asc") {
-      return a.name.localeCompare(b.name, 'es');
-    } else if (AppState.sortBy === "name_desc") {
-      return b.name.localeCompare(a.name, 'es');
-    } else if (AppState.sortBy === "points_asc") {
-      const ptsA = a.pointsOptions[0]?.points || 0;
-      const ptsB = b.pointsOptions[0]?.points || 0;
-      return ptsA - ptsB;
-    } else if (AppState.sortBy === "points_desc") {
-      const ptsA = a.pointsOptions[0]?.points || 0;
-      const ptsB = b.pointsOptions[0]?.points || 0;
-      return ptsB - ptsA;
-    } else if (AppState.sortBy === "t_desc") {
-      return (parseInt(b.stats.r) || 0) - (parseInt(a.stats.r) || 0);
-    } else if (AppState.sortBy === "sv_asc") {
+    if (AppState.sortBy === "name_asc") return a.name.localeCompare(b.name, 'es');
+    if (AppState.sortBy === "name_desc") return b.name.localeCompare(a.name, 'es');
+    if (AppState.sortBy === "points_asc") return (a.pointsOptions[0]?.points || 0) - (b.pointsOptions[0]?.points || 0);
+    if (AppState.sortBy === "points_desc") return (b.pointsOptions[0]?.points || 0) - (a.pointsOptions[0]?.points || 0);
+    if (AppState.sortBy === "t_desc") return (parseInt(b.stats.r) || 0) - (parseInt(a.stats.r) || 0);
+    if (AppState.sortBy === "sv_asc") {
       const parseSv = (s) => parseInt(String(s).replace('+', '')) || 9;
       return parseSv(a.stats.sv) - parseSv(b.stats.sv);
-    } else if (AppState.sortBy === "w_desc") {
-      return (parseInt(b.stats.h) || 0) - (parseInt(a.stats.h) || 0);
     }
+    if (AppState.sortBy === "w_desc") return (parseInt(b.stats.h) || 0) - (parseInt(a.stats.h) || 0);
     return 0;
   });
 
-  // Actualizar contador de resultados en la cabecera
   const countEl = document.getElementById("codex-results-count");
   if (countEl) {
     countEl.textContent = `Mostrando ${filtered.length} de ${WH40K_DATA.datasheets.length} hojas`;
   }
-  
+
   if (filtered.length === 0) {
     container.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 48px 24px; color: var(--text-muted); background: var(--bg-surface); border: 1px dashed var(--border-bright); border-radius: var(--radius-md);">
@@ -1051,128 +1487,271 @@ function renderCodex() {
       </div>`;
     return;
   }
-  
+
   container.innerHTML = filtered.map(ds => {
     const wingClass = ds.wing === "Ala de Muerte" ? "deathwing" : (ds.wing === "Ala de Cuervo" ? "ravenwing" : "green");
+    const roleIcon = getDatasheetRoleIcon(ds);
     const pointsOptions = Array.isArray(ds.pointsOptions) && ds.pointsOptions.length > 0 ? ds.pointsOptions : [{ models: 1, points: 0 }];
-    const pointsStr = pointsOptions.map(p => `${p.models} mini${p.models > 1 ? 's' : ''}: ${p.points} pts`).join(' | ');
     const firstPoints = pointsOptions[0]?.points ?? 0;
-    
-    // Tabla de armas a distancia
-    const rangedRows = (ds.rangedWeapons || []).map(w => `
-      <tr>
-        <td class="w-name">${w.name || '-'}<span class="w-keywords">${(w.keywords || []).join(', ') || '-'}</span></td>
-        <td>${w.range || '-'}</td>
-        <td>${w.a ?? '-'}</td>
-        <td>${w.bs || '-'}</td>
-        <td>${w.f ?? '-'}</td>
-        <td>${w.ap ?? '-'}</td>
-        <td>${w.d ?? '-'}</td>
-      </tr>
-    `).join('');
-    
-    // Tabla de armas de combate cuerpo a cuerpo
-    const meleeRows = (ds.meleeWeapons || []).map(w => `
-      <tr>
-        <td class="w-name">${w.name || '-'}<span class="w-keywords">${(w.keywords || []).join(', ') || '-'}</span></td>
-        <td>${w.range || 'Combate'}</td>
-        <td>${w.a ?? '-'}</td>
-        <td>${w.ws || '-'}</td>
-        <td>${w.f ?? '-'}</td>
-        <td>${w.ap ?? '-'}</td>
-        <td>${w.d ?? '-'}</td>
-      </tr>
-    `).join('');
-    
     const stats = ds.stats || { m: "-", r: "-", sv: "-", inv: "-", h: "-", l: "-", co: "-" };
-    
-    return `
-      <div class="datasheet-card wing-${wingClass}">
-        <div class="card-header-da">
-          <div class="card-title-group">
-            <h3>${ds.name}</h3>
-            <div class="card-subtitle">
-              <span class="wing-badge ${wingClass}">${ds.wing}</span>
-              <span>• ${ds.role}</span>
-              ${ds.isCustom ? '<span class="wing-badge" style="background: rgba(217, 119, 6, 0.25); border: 1px solid #d97706; color: #fbbf24; margin-left: 6px;">Personalizada</span>' : ''}
+    const hasInv = stats.inv && stats.inv !== "-" && stats.inv !== "none";
+
+    const rangedList = ds.rangedWeapons || [];
+    const meleeList = ds.meleeWeapons || [];
+
+    const buildWeaponRow = (w, isMelee) => `
+      <tr>
+        <td class="w-name">
+          <div class="waha-weapon-name">${escapeHtml(w.name || '-')}</div>
+          ${renderWeaponKeywordBadges(w.keywords)}
+        </td>
+        <td class="w-center">${escapeHtml(isMelee ? (w.range || 'Combate') : (w.range || '-'))}</td>
+        <td class="w-center w-bold">${escapeHtml(String(w.a ?? '-'))}</td>
+        <td class="w-center w-skill">${escapeHtml(String(isMelee ? (w.ws || '-') : (w.bs || '-')))}</td>
+        <td class="w-center">${escapeHtml(String(w.f ?? '-'))}</td>
+        <td class="w-center w-ap">${escapeHtml(String(w.ap ?? '-'))}</td>
+        <td class="w-center w-dmg">${escapeHtml(String(w.d ?? '-'))}</td>
+      </tr>
+    `;
+
+    const rangedSectionHtml = rangedList.length > 0 ? `
+      <div class="waha-weapons-block">
+        <div class="waha-block-bar ranged-bar">
+          <span>🎯 ARMAS A DISTANCIA</span>
+          <span class="waha-bar-sub">ALCANCE • A • HP • F • FP • D</span>
+        </div>
+        <table class="weapons-summary-table waha-weapons-table">
+          <thead>
+            <tr>
+              <th>Arma</th>
+              <th class="w-center">Alc</th>
+              <th class="w-center">A</th>
+              <th class="w-center">HP</th>
+              <th class="w-center">F</th>
+              <th class="w-center">FP</th>
+              <th class="w-center">D</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rangedList.map(w => buildWeaponRow(w, false)).join('')}
+          </tbody>
+        </table>
+      </div>
+    ` : '';
+
+    const meleeSectionHtml = meleeList.length > 0 ? `
+      <div class="waha-weapons-block">
+        <div class="waha-block-bar melee-bar">
+          <span>⚔️ ARMAS DE COMBATE</span>
+          <span class="waha-bar-sub">ALCANCE • A • HA • F • FP • D</span>
+        </div>
+        <table class="weapons-summary-table waha-weapons-table">
+          <thead>
+            <tr>
+              <th>Arma</th>
+              <th class="w-center">Alc</th>
+              <th class="w-center">A</th>
+              <th class="w-center">HA</th>
+              <th class="w-center">F</th>
+              <th class="w-center">FP</th>
+              <th class="w-center">D</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${meleeList.map(w => buildWeaponRow(w, true)).join('')}
+          </tbody>
+        </table>
+      </div>
+    ` : '';
+
+    const { core: coreAbs, faction: factionAbs, unit: unitAbs } = splitAbilitiesWahapedia(ds.abilities);
+    const leadership = getUnitLeadershipInfo(ds);
+    const { unitKeywords, factionKeywords } = splitUnitAndFactionKeywords(ds.keywords);
+
+    // MODO COMPACTO (tarjetas en cuadrícula densa)
+    if (!isWahaLayout) {
+      return `
+        <article class="datasheet-card wing-${wingClass}">
+          <div class="card-header-da">
+            <div class="card-title-group">
+              <h3>${roleIcon} ${escapeHtml(ds.name)}</h3>
+              <div class="card-subtitle">
+                <span class="wing-badge ${wingClass}">${escapeHtml(ds.wing)}</span>
+                <span>• ${escapeHtml(ds.role)}</span>
+                ${ds.isEpicHero ? '<span class="wing-badge epic-badge">★ Héroe Épico</span>' : ''}
+                ${ds.isCustom ? '<span class="wing-badge custom-ds-badge">Personalizada</span>' : ''}
+              </div>
+            </div>
+            <div class="points-badge">${firstPoints} pts</div>
+          </div>
+
+          <div class="waha-statline-row">
+            <div class="statline-container waha-stat-6">
+              <div class="stat-box"><span class="stat-label">M</span><span class="stat-val">${stats.m}</span></div>
+              <div class="stat-box"><span class="stat-label">R</span><span class="stat-val">${stats.r}</span></div>
+              <div class="stat-box"><span class="stat-label">SV</span><span class="stat-val">${stats.sv}</span></div>
+              <div class="stat-box"><span class="stat-label">H</span><span class="stat-val">${stats.h}</span></div>
+              <div class="stat-box"><span class="stat-label">L</span><span class="stat-val">${stats.l}</span></div>
+              <div class="stat-box stat-co"><span class="stat-label">CO</span><span class="stat-val">${stats.co}</span></div>
+            </div>
+            ${hasInv ? `
+              <div class="waha-invuln-shield" title="Salvación Invulnerable">
+                <span class="inv-label">INV</span>
+                <span class="inv-val">${stats.inv}</span>
+              </div>
+            ` : ''}
+          </div>
+
+          ${rangedSectionHtml}
+          ${meleeSectionHtml}
+
+          <div class="abilities-list">
+            ${unitAbs.slice(0, 3).map(ab => formatUnitAbilityHtml(ab)).join('')}
+          </div>
+
+          <div class="card-actions-row">
+            <button class="btn-gothic-secondary" onclick="openBattleUnitDatasheetModal('${ds.id}')" style="font-size: 0.78rem; padding: 5px 10px;">📜 Ficha</button>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button class="btn-gothic-secondary" onclick="sendUnitToComparator('${ds.id}')" style="font-size: 0.78rem; padding: 5px 10px; border-color: #38bdf8; color: #38bdf8;" title="Comparar frente a otra unidad">⚖️</button>
+              <button class="btn-gothic-secondary" onclick="openEditDatasheetModal('${ds.id}')" style="font-size: 0.78rem; padding: 5px 10px;" title="Editar hoja de datos">✏️</button>
+              <button class="btn-gothic" onclick="addDatasheetToCollection('${ds.id}')" style="font-size: 0.78rem; padding: 5px 10px;">+ Armería</button>
             </div>
           </div>
-          <div class="points-badge">${firstPoints} pts</div>
-        </div>
-        
-        <!-- ATRIBUTOS OFICIALES DE 11ª EDICIÓN -->
-        <div class="statline-container">
-          <div class="stat-box">
-            <span class="stat-label">M</span>
-            <span class="stat-val">${stats.m}</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-label">R</span>
-            <span class="stat-val">${stats.r}</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-label">SV</span>
-            <span class="stat-val">${stats.sv}</span>
-          </div>
-          <div class="stat-box stat-inv">
-            <span class="stat-label">INV</span>
-            <span class="stat-val">${stats.inv}</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-label">H</span>
-            <span class="stat-val">${stats.h}</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-label">L</span>
-            <span class="stat-val">${stats.l}</span>
-          </div>
-          <div class="stat-box stat-co">
-            <span class="stat-label">CO</span>
-            <span class="stat-val">${stats.co}</span>
-          </div>
-        </div>
-        
-        <!-- RESUMEN DE ARMAS -->
-        <div>
-          <table class="weapons-summary-table">
-            <thead>
-              <tr>
-                <th>Arma</th>
-                <th>Alc</th>
-                <th>A</th>
-                <th>HP/HA</th>
-                <th>F</th>
-                <th>FP</th>
-                <th>D</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${rangedRows}
-              ${meleeRows}
-            </tbody>
-          </table>
-        </div>
-        
-        <!-- HABILIDADES -->
-        <div class="abilities-list">
-          ${(ds.abilities || []).map(ab => `<div class="ability-tag">${ab}</div>`).join('')}
-        </div>
-        
-        <div class="card-actions-row">
-          <span style="font-size: 0.8rem; color: var(--gold-primary); align-self: center;">${pointsStr}</span>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-            <button class="btn-gothic-secondary" onclick="sendUnitToComparator('${ds.id}')" style="font-size: 0.8rem; padding: 6px 10px; border-color: #38bdf8; color: #38bdf8;" title="Comparar frente a otra unidad">
-              ⚖️ Comparar
-            </button>
-            <button class="btn-gothic-secondary" onclick="openEditDatasheetModal('${ds.id}')" style="font-size: 0.8rem; padding: 6px 10px;" title="Editar parámetros de esta hoja de datos">
-              ✏️ Editar
-            </button>
-            <button class="btn-gothic" onclick="addDatasheetToCollection('${ds.id}')" style="font-size: 0.8rem; padding: 6px 12px;">
-              + A mi Colección
-            </button>
-          </div>
+        </article>
+      `;
+    }
+
+    // MODO WAHAPEDIA COMPLETO (Transposición fiel de hoja de datos oficial en 2 columnas)
+    const canLeadHtml = leadership.canLead.length > 0 ? `
+      <div class="waha-section-box">
+        <div class="waha-section-bar">👑 LÍDER — PUEDE UNIRSE A</div>
+        <div class="waha-leader-chips">
+          ${leadership.canLead.map(item => item.datasheetId
+            ? `<button type="button" class="waha-leader-link" onclick="openBattleUnitDatasheetModal('${item.datasheetId}')" title="Abrir hoja de datos de ${escapeHtml(item.label)}">🛡️ ${escapeHtml(item.label)}</button>`
+            : `<span class="waha-leader-static">🛡️ ${escapeHtml(item.label)}</span>`
+          ).join('')}
         </div>
       </div>
+    ` : '';
+
+    const ledByHtml = leadership.ledBy.length > 0 ? `
+      <div class="waha-section-box">
+        <div class="waha-section-bar">🛡️ LIDERADA POR (PERSONAJES COMPATIBLES)</div>
+        <div class="waha-leader-chips">
+          ${leadership.ledBy.map(item => `
+            <button type="button" class="waha-leader-link led-by" onclick="openBattleUnitDatasheetModal('${item.datasheetId}')" title="Ver ficha del líder ${escapeHtml(item.label)}">
+              👑 ${escapeHtml(item.label)}
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    ` : '';
+
+    return `
+      <article class="waha-datasheet wing-${wingClass}" id="ds-card-${ds.id}">
+        <!-- CABECERA OFICIAL WAHAPEDIA -->
+        <header class="waha-ds-header">
+          <div class="waha-ds-header-main">
+            <div class="waha-ds-title-row">
+              <span class="waha-role-emblem" title="${escapeHtml(ds.role)}">${roleIcon}</span>
+              <div>
+                <h3 class="waha-ds-title">${escapeHtml(ds.name)}</h3>
+                <div class="waha-ds-meta">
+                  <span class="wing-badge ${wingClass}">${escapeHtml(ds.wing)}</span>
+                  <span class="waha-role-text">${escapeHtml(ds.role)}</span>
+                  ${ds.isEpicHero ? '<span class="wing-badge epic-badge">★ Héroe Épico</span>' : ''}
+                  ${ds.isCustom ? '<span class="wing-badge custom-ds-badge">Personalizada</span>' : ''}
+                </div>
+              </div>
+            </div>
+
+            <!-- BANDA DE ATRIBUTOS + ESCUDO INVULNERABLE -->
+            <div class="waha-statline-row">
+              <div class="statline-container waha-stat-6">
+                <div class="stat-box" title="Movimiento"><span class="stat-label">M</span><span class="stat-val">${stats.m}</span></div>
+                <div class="stat-box" title="Resistencia"><span class="stat-label">R</span><span class="stat-val">${stats.r}</span></div>
+                <div class="stat-box" title="Salvación"><span class="stat-label">SV</span><span class="stat-val">${stats.sv}</span></div>
+                <div class="stat-box" title="Heridas"><span class="stat-label">H</span><span class="stat-val">${stats.h}</span></div>
+                <div class="stat-box" title="Liderazgo"><span class="stat-label">L</span><span class="stat-val">${stats.l}</span></div>
+                <div class="stat-box stat-co" title="Control de Objetivo"><span class="stat-label">CO</span><span class="stat-val">${stats.co}</span></div>
+              </div>
+              ${hasInv ? `
+                <div class="waha-invuln-shield" title="Salvación Invulnerable">
+                  <span class="inv-label">INV</span>
+                  <span class="inv-val">${stats.inv}</span>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+
+          <div class="waha-ds-header-actions">
+            <div class="points-badge">${firstPoints} pts</div>
+            <div class="waha-ds-btns">
+              <button type="button" class="btn-gothic-secondary" onclick="sendUnitToComparator('${ds.id}')" style="font-size: 0.76rem; padding: 5px 10px; border-color: #38bdf8; color: #38bdf8;" title="Comparar frente a otra unidad">⚖️ Comparar</button>
+              <button type="button" class="btn-gothic-secondary" onclick="openEditDatasheetModal('${ds.id}')" style="font-size: 0.76rem; padding: 5px 10px;" title="Editar hoja de datos">✏️ Editar</button>
+              <button type="button" class="btn-gothic" onclick="addDatasheetToCollection('${ds.id}')" style="font-size: 0.76rem; padding: 5px 12px;">+ A mi Colección</button>
+            </div>
+          </div>
+        </header>
+
+        <!-- CUERPO 2 COLUMNAS ESTILO WAHAPEDIA -->
+        <div class="waha-ds-body">
+          <!-- COLUMNA IZQUIERDA: ARMAMENTO -->
+          <div class="waha-ds-col-weapons">
+            ${rangedSectionHtml}
+            ${meleeSectionHtml}
+            ${!rangedSectionHtml && !meleeSectionHtml ? '<div class="waha-empty-weapons">Sin armamento ofensivo registrado en el perfil.</div>' : ''}
+          </div>
+
+          <!-- COLUMNA DERECHA: HABILIDADES, LÍDERES Y COMPOSICIÓN -->
+          <div class="waha-ds-col-rules">
+            <div class="waha-section-box">
+              <div class="waha-section-bar">⚡ HABILIDADES</div>
+              ${(coreAbs.length > 0 || factionAbs.length > 0) ? `
+                <div class="waha-core-abilities-strip">
+                  ${coreAbs.map(c => formatKeywordWithTooltip(c, "waha-core-pill")).join('')}
+                  ${factionAbs.map(f => formatKeywordWithTooltip(f, "waha-faction-pill")).join('')}
+                </div>
+              ` : ''}
+              <div class="waha-unit-abilities-list">
+                ${unitAbs.length > 0 ? unitAbs.map(ab => formatUnitAbilityHtml(ab)).join('') : '<div class="waha-ability-item" style="color: var(--text-muted);">Sin habilidades adicionales de unidad.</div>'}
+              </div>
+            </div>
+
+            ${canLeadHtml}
+            ${ledByHtml}
+
+            <div class="waha-section-box">
+              <div class="waha-section-bar">💰 COMPOSICIÓN DE UNIDAD Y PUNTOS (MFM)</div>
+              <div class="waha-points-pills">
+                ${pointsOptions.map(opt => `
+                  <div class="waha-pts-pill">
+                    <span>${opt.models} miniatura${opt.models > 1 ? 's' : ''}</span>
+                    <strong>${opt.points} pts</strong>
+                  </div>
+                `).join('')}
+              </div>
+              ${ds.notes ? `<p class="waha-unit-notes">📜 ${escapeHtml(cleanSpanishLabel(ds.notes))}</p>` : ''}
+            </div>
+          </div>
+        </div>
+
+        <!-- PIE DE HOJA DE DATOS WAHAPEDIA: PALABRAS CLAVE Y FACCIÓN -->
+        <footer class="waha-ds-footer">
+          <div class="waha-footer-kw-block">
+            <span class="waha-footer-label">PALABRAS CLAVE:</span>
+            <div class="waha-footer-chips">
+              ${unitKeywords.map(kw => formatKeywordWithTooltip(kw, "waha-unit-kw")).join('')}
+            </div>
+          </div>
+          <div class="waha-footer-faction-block">
+            <span class="waha-footer-label">CLAVES DE FACCIÓN:</span>
+            <div class="waha-footer-chips">
+              ${(factionKeywords.length > 0 ? factionKeywords : ["ADEPTUS ASTARTES", "ÁNGELES OSCUROS"]).map(fk => `<span class="waha-faction-kw">${escapeHtml(fk)}</span>`).join('')}
+            </div>
+          </div>
+        </footer>
+      </article>
     `;
   }).join('');
 }
@@ -1192,14 +1771,14 @@ function initUnitComparator() {
 
   const makeOptgroup = (label, list) => `
     <optgroup label="${label} (${list.length})">
-      ${list.map(d => `<option value="${d.id}">${d.name} [${d.pointsOptions?.[0]?.points || 0} pts]</option>`).join('')}
+      ${list.map(d => `<option value="${d.id}">${escapeHtml(d.name)} [${d.pointsOptions?.[0]?.points || 0} pts]</option>`).join('')}
     </optgroup>
   `;
 
   const optionsHtml = `
-    ${makeOptgroup("🗡️ Ala de Muerte (Deathwing)", deathwing)}
-    ${makeOptgroup("🦅 Ala de Cuervo (Ravenwing)", ravenwing)}
-    ${makeOptgroup("⚔️ Compañía Verde / Astartes", green)}
+    ${makeOptgroup("🗡️ Ala de Muerte", deathwing)}
+    ${makeOptgroup("🦅 Ala de Cuervo", ravenwing)}
+    ${makeOptgroup("⚔️ Compañía Verde", green)}
   `;
 
   selectA.innerHTML = optionsHtml;
@@ -1301,7 +1880,6 @@ function renderUnitComparator() {
     return;
   }
 
-  // Comparación matemática de estadísticas de 11ª Edición
   const compareStat = (valA, valB, key) => {
     if (key === "m" || key === "r" || key === "h" || key === "co") {
       const nA = parseInt(valA) || 0;
@@ -1339,7 +1917,6 @@ function renderUnitComparator() {
 
     const pointsStr = pointsOptions.map(p => `${p.models} mini${p.models > 1 ? 's' : ''}: ${p.points} pts`).join(' | ');
 
-    // Statline con evaluación de ventajas
     const statsList = [
       { key: "m", label: "M", val: ds.stats?.m ?? "-" },
       { key: "r", label: "R", val: ds.stats?.r ?? "-" },
@@ -1364,10 +1941,9 @@ function renderUnitComparator() {
       `;
     }).join('');
 
-    // Ranged weapons
     const rangedRows = (ds.rangedWeapons || []).map(w => `
       <tr>
-        <td class="w-name">${w.name || '-'}<span class="w-keywords">${(w.keywords || []).join(', ') || '-'}</span></td>
+        <td class="w-name">${escapeHtml(w.name || '-')}${renderWeaponKeywordBadges(w.keywords)}</td>
         <td>${w.range || '-'}</td>
         <td>${w.a ?? '-'}</td>
         <td>${w.bs || '-'}</td>
@@ -1377,10 +1953,9 @@ function renderUnitComparator() {
       </tr>
     `).join('');
 
-    // Melee weapons
     const meleeRows = (ds.meleeWeapons || []).map(w => `
       <tr>
-        <td class="w-name">${w.name || '-'}<span class="w-keywords">${(w.keywords || []).join(', ') || '-'}</span></td>
+        <td class="w-name">${escapeHtml(w.name || '-')}${renderWeaponKeywordBadges(w.keywords)}</td>
         <td>${w.range || 'Combate'}</td>
         <td>${w.a ?? '-'}</td>
         <td>${w.ws || '-'}</td>
@@ -1390,23 +1965,19 @@ function renderUnitComparator() {
       </tr>
     `).join('');
 
-    const abilitiesHtml = (ds.abilities || []).map(ab => `
-      <div class="ability-tag" style="background: rgba(0, 0, 0, 0.45); border: 1px solid var(--border-subtle); padding: 6px 10px; margin-bottom: 4px; border-radius: var(--radius-sm);">
-        ⚔️ ${ab}
-      </div>
-    `).join('') || '<p style="color: var(--text-muted); font-size: 0.8rem;">Sin habilidades especiales.</p>';
+    const abilitiesHtml = (ds.abilities || []).map(ab => formatUnitAbilityHtml(ab)).join('') || '<p style="color: var(--text-muted); font-size: 0.8rem;">Sin habilidades especiales.</p>';
 
-    const keywordsHtml = (ds.keywords || []).map(kw => `
-      <span class="det-badge" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: var(--text-muted);">
-        ${kw}
-      </span>
-    `).join('');
+    const keywordsHtml = (ds.keywords || []).map(kw => formatKeywordWithTooltip(kw, "waha-unit-kw")).join('');
 
-    const leaderHtml = Array.isArray(ds.leaderOf) && ds.leaderOf.length > 0 ? `
+    const leadership = getUnitLeadershipInfo(ds);
+    const leaderHtml = leadership.canLead.length > 0 ? `
       <div class="comp-section-box">
         <div class="comp-section-title">👑 Puede liderar las unidades:</div>
-        <div style="font-size: 0.85rem; color: var(--gold-accent);">
-          ${ds.leaderOf.join(", ")}
+        <div class="waha-leader-chips">
+          ${leadership.canLead.map(item => item.datasheetId
+            ? `<button type="button" class="waha-leader-link" onclick="openBattleUnitDatasheetModal('${item.datasheetId}')">🛡️ ${escapeHtml(item.label)}</button>`
+            : `<span class="waha-leader-static">🛡️ ${escapeHtml(item.label)}</span>`
+          ).join('')}
         </div>
       </div>
     ` : '';
@@ -1415,24 +1986,22 @@ function renderUnitComparator() {
       <div class="comparator-col ${colClass}">
         <div class="col-header">
           <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: ${colColor}; margin-bottom: 4px;">${colLabel}</div>
-          <h4 class="col-title">${ds.name}</h4>
-          <div class="col-subtitle">${ds.originalName ? ds.originalName + ' • ' : ''}<em>${ds.role}</em></div>
+          <h4 class="col-title">${escapeHtml(ds.name)}</h4>
+          <div class="col-subtitle"><em>${escapeHtml(ds.role)}</em></div>
           <div class="col-badges">
-            <span class="wing-badge ${wingClass}">${ds.wing}</span>
+            <span class="wing-badge ${wingClass}">${escapeHtml(ds.wing)}</span>
             <span class="points-badge">${firstOption.points} pts</span>
             ${ds.isEpicHero ? '<span class="det-badge da-exclusive">Héroe Épico</span>' : ''}
           </div>
         </div>
 
-        <!-- Atributos Básicos 11ª Edición -->
         <div class="comp-section-box">
-          <div class="comp-section-title">🛡️ Perfil de Atributos (Statline)</div>
+          <div class="comp-section-title">🛡️ Perfil de Atributos</div>
           <div class="statline-container" style="grid-template-columns: repeat(7, 1fr); gap: 6px;">
             ${statsHtml}
           </div>
         </div>
 
-        <!-- Eficiencia en Puntos y Tamaño de Escuadra -->
         <div class="comp-section-box">
           <div class="comp-section-title">💰 Opciones de Puntos y Eficiencia</div>
           <div style="font-size: 0.85rem; color: var(--gold-primary); margin-bottom: 6px;">${pointsStr}</div>
@@ -1452,7 +2021,6 @@ function renderUnitComparator() {
           </div>
         </div>
 
-        <!-- Armas de Combate y Disparo -->
         <div class="comp-section-box">
           <div class="comp-section-title">💥 Arsenal de Armamento</div>
           <table class="weapons-summary-table" style="font-size: 0.78rem;">
@@ -1474,25 +2042,22 @@ function renderUnitComparator() {
           </table>
         </div>
 
-        <!-- Habilidades -->
         <div class="comp-section-box">
           <div class="comp-section-title">⚡ Habilidades de Unidad</div>
-          <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div class="waha-unit-abilities-list">
             ${abilitiesHtml}
           </div>
         </div>
 
         ${leaderHtml}
 
-        <!-- Palabras Clave -->
         <div class="comp-section-box">
-          <div class="comp-section-title">🏷️ Palabras Clave (Keywords)</div>
-          <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+          <div class="comp-section-title">🏷️ Palabras Clave</div>
+          <div class="waha-footer-chips">
             ${keywordsHtml}
           </div>
         </div>
 
-        <!-- Acciones Rápidas -->
         <div style="display: flex; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap;">
           <button class="btn-gothic" onclick="addDatasheetToCollection('${ds.id}')" style="font-size: 0.8rem; padding: 6px 12px;">
             + A mi Colección
@@ -1517,6 +2082,9 @@ if (typeof window !== "undefined") {
   window.swapUnitComparator = swapUnitComparator;
   window.sendUnitToComparator = sendUnitToComparator;
   window.renderUnitComparator = renderUnitComparator;
+  window.toggleCodexLayoutMode = toggleCodexLayoutMode;
+  window.toggleWahapediaIndexPanel = toggleWahapediaIndexPanel;
+  window.renderWahapediaHeaderPanels = renderWahapediaHeaderPanels;
 }
 
 // ==========================================================================
@@ -1582,10 +2150,10 @@ function populateComparatorSelectOptions() {
 
   const makeOptionsHtml = () => `
     <optgroup label="★ Exclusivos de los Ángeles Oscuros (${daExclusive.length})">
-      ${daExclusive.map(d => `<option value="${d.id}">${d.name} (${d.originalName}) [${d.commandPoints || (d.dp + ' PD')}]${d.isCustom ? ' [Personalizado]' : d.isEdited ? ' [Modificado]' : ''}</option>`).join('')}
+      ${daExclusive.map(d => `<option value="${d.id}">${escapeHtml(d.name)} [${d.commandPoints || (d.dp + ' PD')}]${d.isCustom ? ' [Personalizado]' : d.isEdited ? ' [Modificado]' : ''}</option>`).join('')}
     </optgroup>
     <optgroup label="Doctrinas Astartes Compatibles (${astartes.length})">
-      ${astartes.map(d => `<option value="${d.id}">${d.name} (${d.originalName}) [${d.commandPoints || (d.dp + ' PD')}]${d.isCustom ? ' [Personalizado]' : d.isEdited ? ' [Modificado]' : ''}</option>`).join('')}
+      ${astartes.map(d => `<option value="${d.id}">${escapeHtml(d.name)} [${d.commandPoints || (d.dp + ' PD')}]${d.isCustom ? ' [Personalizado]' : d.isEdited ? ' [Modificado]' : ''}</option>`).join('')}
     </optgroup>
   `;
 
@@ -1596,7 +2164,7 @@ function populateComparatorSelectOptions() {
     AppState.comparatorSlotA = WH40K_DATA.detachments[0]?.id || "inner_circle";
   }
   if (!WH40K_DATA.detachments.some(d => d.id === AppState.comparatorSlotB)) {
-    AppState.comparatorSlotB = WH40K_DATA.detachments[1]?.id || "gladius_task_force";
+    AppState.comparatorSlotB = WH40K_DATA.detachments[1]?.id || "gladius";
   }
 
   selectA.value = AppState.comparatorSlotA;
@@ -1647,6 +2215,66 @@ function initDetachments() {
   checkCustomDetachmentsStatus();
 }
 
+function getStratagemTurnClass(turn) {
+  if (turn === "your_turn") return "turn-color-player";
+  if (turn === "opponent_turn") return "turn-color-opponent";
+  return "turn-color-either";
+}
+
+function renderDetachmentStratagemsWahapedia(det) {
+  if (!det) return { count: 0, html: '<p style="font-size: 0.8rem; color: var(--text-muted);">Sin estratagemas registradas.</p>' };
+  const linked = (WH40K_DATA.stratagems || []).filter(s => s.detachmentId === det.id);
+  const turnLabels = {
+    your_turn: "🔵 Tu Turno",
+    opponent_turn: "🔴 Turno Enemigo",
+    either_turn: "🟢 Cualquier Turno"
+  };
+
+  if (linked.length > 0) {
+    const html = linked.map(raw => {
+      const s = getStratagemText(raw);
+      const turnClass = getStratagemTurnClass(s.turn);
+      const turnLabel = turnLabels[s.turn] || s.turnLabel || "🟢 Cualquier Turno";
+      return `
+        <div class="strat-card waha-det-strat ${turnClass}">
+          <div class="strat-card-header">
+            <span class="strat-title">${escapeHtml(s.name)}</span>
+            <span class="strat-cp">${s.cp} CP</span>
+          </div>
+          <div class="waha-det-strat-meta">
+            <span>${escapeHtml(s.phaseLabel || "")}</span>
+            <span>•</span>
+            <span>${turnLabel}</span>
+            ${s.type ? `<span>•</span><span>${escapeHtml(s.type)}</span>` : ""}
+          </div>
+          ${s.when ? `<div class="waha-det-strat-line"><strong>CUÁNDO:</strong> ${highlightBracketTags(s.when)}</div>` : ""}
+          ${s.target ? `<div class="waha-det-strat-line"><strong>OBJETIVO:</strong> ${highlightBracketTags(s.target)}</div>` : ""}
+          ${s.effect ? `<div class="waha-det-strat-line"><strong>EFECTO:</strong> ${highlightBracketTags(s.effect)}</div>` : ""}
+          ${s.restrictions ? `<div class="waha-det-strat-line waha-det-strat-rest"><strong>RESTRICCIONES:</strong> ${highlightBracketTags(s.restrictions)}</div>` : ""}
+        </div>
+      `;
+    }).join('');
+    return { count: linked.length, html };
+  }
+
+  const fallback = det.stratagems || [];
+  if (fallback.length === 0) {
+    return { count: 0, html: '<p style="font-size: 0.8rem; color: var(--text-muted);">Sin estratagemas registradas.</p>' };
+  }
+
+  const html = fallback.map(st => `
+    <div class="strat-card">
+      <div class="strat-card-header">
+        <span class="strat-title">${escapeHtml(st.name)}</span>
+        <span class="strat-cp">${st.cp} CP</span>
+      </div>
+      <div style="font-size: 0.72rem; color: var(--gold-primary); margin-bottom: 2px;">${escapeHtml(st.type || 'Estratagema')}</div>
+      <p class="strat-desc">${highlightBracketTags(st.desc || '')}</p>
+    </div>
+  `).join('');
+  return { count: fallback.length, html };
+}
+
 function renderDetachmentComparator() {
   const container = document.getElementById("comparator-content-grid");
   if (!container) return;
@@ -1661,42 +2289,33 @@ function renderDetachmentComparator() {
       : `<span class="det-badge astartes">Adeptus Astartes</span>`;
     const dpBadge = `<span class="det-badge dp-badge">${det.commandPoints || (det.dp + ' PD')}</span>`;
 
-    const prosHtml = (det.pros || []).map(p => `<div class="pro-item"><span>✔</span><span>${p}</span></div>`).join('');
-    const consHtml = (det.cons || []).map(c => `<div class="con-item"><span>✖</span><span>${c}</span></div>`).join('');
+    const prosHtml = (det.pros || []).map(p => `<div class="pro-item"><span>✔</span><span>${escapeHtml(p)}</span></div>`).join('');
+    const consHtml = (det.cons || []).map(c => `<div class="con-item"><span>✖</span><span>${escapeHtml(c)}</span></div>`).join('');
     
     const synergiesHtml = (det.synergies || []).map(syn => `
-      <button class="synergy-chip" onclick="filterCodexBySynergy('${syn}')" title="Buscar '${syn}' en el Códex">
-        ⚔️ ${syn}
+      <button class="synergy-chip" onclick="filterCodexBySynergy('${escapeHtml(syn).replace(/'/g, "\\'")}')" title="Buscar '${escapeHtml(syn)}' en el Códex">
+        ⚔️ ${escapeHtml(syn)}
       </button>
     `).join('');
 
     const enhancementsHtml = (det.enhancements || []).map(enh => `
       <div class="enh-card">
         <div class="enh-card-header">
-          <span class="enh-title">${enh.name}</span>
+          <span class="enh-title">${escapeHtml(enh.name)}</span>
           <span class="enh-pts">${enh.points} pts</span>
         </div>
-        <p class="enh-desc">${enh.description}</p>
+        <p class="enh-desc">${highlightBracketTags(enh.description || '')}</p>
       </div>
     `).join('') || '<p style="font-size: 0.8rem; color: var(--text-muted);">Sin mejoras registradas.</p>';
 
-    const stratagemsHtml = (det.stratagems || []).map(st => `
-      <div class="strat-card">
-        <div class="strat-card-header">
-          <span class="strat-title">${st.name}</span>
-          <span class="strat-cp">${st.cp} PC</span>
-        </div>
-        <div style="font-size: 0.72rem; color: var(--gold-primary); margin-bottom: 2px;">${st.type || 'Estratagema'}</div>
-        <p class="strat-desc">${st.desc}</p>
-      </div>
-    `).join('') || '<p style="font-size: 0.8rem; color: var(--text-muted);">Sin estratagemas registradas.</p>';
+    const stratData = renderDetachmentStratagemsWahapedia(det);
 
     return `
       <div class="comparator-col ${colClass}">
         <div class="col-header">
           <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: ${borderAccent}; margin-bottom: 4px;">${colLabel}</div>
-          <h4 class="col-title">${det.name}</h4>
-          <div class="col-subtitle">${det.originalName} • <em>${det.type || 'Doctrina de Combate'}</em></div>
+          <h4 class="col-title">${escapeHtml(det.name)}</h4>
+          <div class="col-subtitle"><em>${escapeHtml(det.type || 'Doctrina de Combate')}</em></div>
           <div class="col-badges">
             ${badgeType}
             ${dpBadge}
@@ -1706,15 +2325,15 @@ function renderDetachmentComparator() {
         <!-- ¿Para qué sirve? (Propósito Táctico) -->
         <div class="comp-section-box">
           <div class="comp-section-title">🎯 ¿Para qué sirve esta doctrina?</div>
-          <p class="comp-purpose-text">${det.purpose || 'Destacamento de combate táctico para fuerzas de choque del Adeptus Astartes.'}</p>
+          <p class="comp-purpose-text">${escapeHtml(det.purpose || 'Destacamento de combate táctico para fuerzas de choque del Adeptus Astartes.')}</p>
         </div>
 
         <!-- Regla del Destacamento -->
         <div class="comp-section-box">
           <div class="comp-section-title">📜 Regla de Destacamento</div>
           <div class="comp-rule-box">
-            <div class="comp-rule-name">${det.ruleName}</div>
-            <div class="comp-rule-desc">${det.ruleDesc}</div>
+            <div class="comp-rule-name">${escapeHtml(det.ruleName || '')}</div>
+            <div class="comp-rule-desc">${highlightBracketTags(det.ruleDesc || '')}</div>
           </div>
         </div>
 
@@ -1751,9 +2370,9 @@ function renderDetachmentComparator() {
 
         <!-- Estratagemas -->
         <div class="comp-section-box">
-          <div class="comp-section-title">⚡ Estratagemas Clave (${(det.stratagems || []).length})</div>
+          <div class="comp-section-title">⚡ Estratagemas del Destacamento (${stratData.count})</div>
           <div class="stratagems-list">
-            ${stratagemsHtml}
+            ${stratData.html}
           </div>
         </div>
 
@@ -1837,42 +2456,33 @@ function renderDetachments() {
       ? `<span class="stratagem-tag tag-custom" style="font-size: 0.72rem;">✨ Personalizado</span>`
       : (d.isEdited ? `<span class="stratagem-tag tag-edited" style="font-size: 0.72rem;">✏️ Modificado</span>` : '');
 
-    const prosHtml = (d.pros || []).map(p => `<div class="pro-item"><span>✔</span><span>${p}</span></div>`).join('');
-    const consHtml = (d.cons || []).map(c => `<div class="con-item"><span>✖</span><span>${c}</span></div>`).join('');
+    const prosHtml = (d.pros || []).map(p => `<div class="pro-item"><span>✔</span><span>${escapeHtml(p)}</span></div>`).join('');
+    const consHtml = (d.cons || []).map(c => `<div class="con-item"><span>✖</span><span>${escapeHtml(c)}</span></div>`).join('');
     
     const synergiesHtml = (d.synergies || []).map(syn => `
-      <button class="synergy-chip" onclick="filterCodexBySynergy('${syn}')" title="Filtrar '${syn}' en el Códex">
-        ⚔️ ${syn}
+      <button class="synergy-chip" onclick="filterCodexBySynergy('${escapeHtml(syn).replace(/'/g, "\\'")}')" title="Filtrar '${escapeHtml(syn)}' en el Códex">
+        ⚔️ ${escapeHtml(syn)}
       </button>
     `).join('');
 
     const enhancementsHtml = (d.enhancements || []).map(enh => `
       <div class="enh-card">
         <div class="enh-card-header">
-          <span class="enh-title">${enh.name}</span>
+          <span class="enh-title">${escapeHtml(enh.name)}</span>
           <span class="enh-pts">${enh.points} pts</span>
         </div>
-        <p class="enh-desc">${enh.description}</p>
+        <p class="enh-desc">${highlightBracketTags(enh.description || '')}</p>
       </div>
     `).join('') || '<p style="font-size: 0.8rem; color: var(--text-muted);">Sin mejoras particulares.</p>';
 
-    const stratagemsHtml = (d.stratagems || []).map(st => `
-      <div class="strat-card">
-        <div class="strat-card-header">
-          <span class="strat-title">${st.name}</span>
-          <span class="strat-cp">${st.cp} PC</span>
-        </div>
-        <div style="font-size: 0.72rem; color: var(--gold-primary); margin-bottom: 2px;">${st.type || 'Estratagema'}</div>
-        <p class="strat-desc">${st.desc}</p>
-      </div>
-    `).join('') || '<p style="font-size: 0.8rem; color: var(--text-muted);">Sin estratagemas particulares.</p>';
+    const stratData = renderDetachmentStratagemsWahapedia(d);
 
     return `
       <div class="detachment-card ${isDA ? 'exclusive-da' : ''}">
         <div class="detachment-card-header">
           <div class="detachment-card-title">
-            <h3>${d.name}</h3>
-            <div class="orig-name">${d.originalName} • <em>${d.type || 'Doctrina de Combate'}</em></div>
+            <h3>${escapeHtml(d.name)}</h3>
+            <div class="orig-name"><em>${escapeHtml(d.type || 'Doctrina de Combate')}</em></div>
           </div>
           <div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
             ${statusPill}
@@ -1885,13 +2495,13 @@ function renderDetachments() {
           <!-- ¿Para qué sirve? -->
           <div class="comp-section-box">
             <div class="comp-section-title">🎯 ¿Para qué sirve este destacamento?</div>
-            <p class="comp-purpose-text">${d.purpose}</p>
+            <p class="comp-purpose-text">${escapeHtml(d.purpose || '')}</p>
           </div>
 
           <!-- Regla del Destacamento -->
           <div class="comp-section-box">
-            <div class="comp-section-title">📜 Regla de Destacamento: ${d.ruleName}</div>
-            <p class="comp-rule-desc">${d.ruleDesc}</p>
+            <div class="comp-section-title">📜 Regla de Destacamento: ${escapeHtml(d.ruleName || '')}</div>
+            <p class="comp-rule-desc">${highlightBracketTags(d.ruleDesc || '')}</p>
           </div>
 
           <!-- Pros y Contras -->
@@ -1931,11 +2541,11 @@ function renderDetachments() {
           <!-- Estratagemas Acordeón -->
           <details class="detachment-collapsible">
             <summary class="detachment-collapsible-summary">
-              <span>⚡ Estratagemas de Combate (${(d.stratagems || []).length})</span>
+              <span>⚡ Estratagemas de Combate (${stratData.count})</span>
               <span>▼</span>
             </summary>
             <div class="detachment-collapsible-content">
-              ${stratagemsHtml}
+              ${stratData.html}
             </div>
           </details>
         </div>
@@ -2058,7 +2668,6 @@ function openDetachmentEditor(detId) {
     document.getElementById("edit-det-exclusive").value = "da";
     document.getElementById("edit-det-type").value = "Doctrina de Combate";
     document.getElementById("edit-det-name-es").value = "";
-    document.getElementById("edit-det-name-en").value = "";
     document.getElementById("edit-det-purpose").value = "";
     document.getElementById("edit-det-rule-name").value = "";
     document.getElementById("edit-det-rule-desc").value = "";
@@ -2102,7 +2711,6 @@ function openDetachmentEditor(detId) {
     document.getElementById("edit-det-exclusive").value = raw.isExclusiveDA ? "da" : "astartes";
     document.getElementById("edit-det-type").value = raw.type || "Doctrina de Combate";
     document.getElementById("edit-det-name-es").value = raw.name || "";
-    document.getElementById("edit-det-name-en").value = raw.originalName || raw.name || "";
     document.getElementById("edit-det-purpose").value = raw.purpose || "";
     document.getElementById("edit-det-rule-name").value = raw.ruleName || "";
     document.getElementById("edit-det-rule-desc").value = raw.ruleDesc || "";
@@ -2138,13 +2746,10 @@ function saveDetachmentFromEditor() {
   const isExclusiveDA = document.getElementById("edit-det-exclusive").value === "da";
   const type = document.getElementById("edit-det-type").value.trim() || "Doctrina de Combate";
   
-  let nameEs = document.getElementById("edit-det-name-es").value.trim();
-  let nameEn = document.getElementById("edit-det-name-en").value.trim();
-  if (!nameEs && nameEn) nameEs = nameEn;
-  if (!nameEn && nameEs) nameEn = nameEs;
+  const nameEs = document.getElementById("edit-det-name-es").value.trim();
 
   if (!nameEs) {
-    alert("Por favor, introduce al menos un nombre para el destacamento.");
+    alert("Por favor, introduce un nombre para el destacamento.");
     return;
   }
 
@@ -2192,7 +2797,7 @@ function saveDetachmentFromEditor() {
   const updatedItem = {
     id,
     name: nameEs,
-    originalName: nameEn,
+    originalName: existing?.originalName || nameEs,
     type,
     isExclusiveDA,
     category: isExclusiveDA ? "dark_angels" : "adeptus_astartes",
@@ -2466,7 +3071,7 @@ function initStratagems() {
   });
 
   populateEditorDetachmentSelect();
-  updateStratagemDetachmentDropdown(AppState.currentLanguage || "es");
+  updateStratagemDetachmentDropdown();
   updateStratagemPhaseBadges();
   checkCustomStratagemsStatus();
 }
@@ -2523,6 +3128,11 @@ function updateStratagemPhaseBadges() {
   const stratagems = WH40K_DATA.stratagems || [];
   const counts = { all: stratagems.length, command: 0, movement: 0, shooting: 0, charge: 0, fight: 0, any: 0 };
   const turnCounts = { all: stratagems.length, your_turn: 0, opponent_turn: 0, either_turn: 0 };
+  const daDetIds = ['darkflight_pursuit', 'inner_circle', 'wrath_of_the_rock', 'company_of_hunters', 'unforgiven_task_force'];
+
+  let coreCount = 0;
+  let daCount = 0;
+  let smCount = 0;
 
   stratagems.forEach(s => {
     const pList = s.phases || [s.phase];
@@ -2532,6 +3142,9 @@ function updateStratagemPhaseBadges() {
     if (turnCounts[s.turn] !== undefined) {
       turnCounts[s.turn]++;
     }
+    if (s.detachmentId === "core") coreCount++;
+    else if (daDetIds.includes(s.detachmentId)) daCount++;
+    else smCount++;
   });
 
   Object.keys(counts).forEach(phase => {
@@ -2539,18 +3152,23 @@ function updateStratagemPhaseBadges() {
     if (el) el.textContent = counts[phase];
   });
 
-  const isEn = AppState.currentLanguage === "en";
   const pillPlayer = document.getElementById("pill-turn-player");
-  if (pillPlayer) pillPlayer.textContent = isEn ? `🔵 Your Turn (${turnCounts.your_turn})` : `🔵 Tu Turno (${turnCounts.your_turn})`;
+  if (pillPlayer) pillPlayer.textContent = `🔵 Tu Turno (${turnCounts.your_turn})`;
   const pillOpponent = document.getElementById("pill-turn-opponent");
-  if (pillOpponent) pillOpponent.textContent = isEn ? `🔴 Opponent's Turn (${turnCounts.opponent_turn})` : `🔴 Turno Oponente (${turnCounts.opponent_turn})`;
+  if (pillOpponent) pillOpponent.textContent = `🔴 Turno Enemigo (${turnCounts.opponent_turn})`;
   const pillEither = document.getElementById("pill-turn-either");
-  if (pillEither) pillEither.textContent = isEn ? `⚪ Either Turn (${turnCounts.either_turn})` : `⚪ Cualquier Turno (${turnCounts.either_turn})`;
+  if (pillEither) pillEither.textContent = `🟢 Cualquier Turno (${turnCounts.either_turn})`;
 
   const navBadge = document.getElementById("nav-badge-stratagems");
   if (navBadge) navBadge.textContent = stratagems.length;
   const kpiTotal = document.getElementById("kpi-strat-total");
   if (kpiTotal) kpiTotal.textContent = stratagems.length;
+  const kpiCore = document.getElementById("kpi-strat-core");
+  if (kpiCore) kpiCore.textContent = coreCount;
+  const kpiDa = document.getElementById("kpi-strat-da");
+  if (kpiDa) kpiDa.textContent = daCount;
+  const kpiSm = document.getElementById("kpi-strat-sm");
+  if (kpiSm) kpiSm.textContent = smCount;
 
   checkCustomStratagemsStatus();
 }
@@ -2561,49 +3179,47 @@ function updateStratagemPhaseBadges() {
 function populateEditorDetachmentSelect() {
   const sel = document.getElementById("edit-strat-detachment");
   if (!sel) return;
-  const isEn = AppState.currentLanguage === "en";
 
   const detachmentsList = [
-    { id: "core", name_es: "Reglamento (Básicas del Core)", name_en: "Core Rules" },
-    { id: "inner_circle", name_es: "Contingente del Círculo Interior", name_en: "Inner Circle Task Force" },
-    { id: "wrath_of_the_rock", name_es: "Ira de la Roca", name_en: "Wrath of the Rock" },
-    { id: "darkflight_pursuit", name_es: "Persecución del Vuelo Oscuro", name_en: "Darkflight Pursuit" },
-    { id: "company_of_hunters", name_es: "Compañía de Cazadores", name_en: "Company of Hunters" },
-    { id: "unforgiven_task_force", name_es: "Fuerza de Asedio de los No Perdonados", name_en: "Unforgiven Task Force" },
-    { id: "gladius", name_es: "Contingente Gladius", name_en: "Gladius Task Force" },
-    { id: "ironstorm", name_es: "Punta de Lanza Ferrotormenta", name_en: "Ironstorm Spearhead" },
-    { id: "stormlance", name_es: "Contingente Lanzatormenta", name_en: "Stormlance Task Force" },
-    { id: "deathwing_storm", name_es: "Fuerza Tormenta Exterminadora (1.ª Cía)", name_en: "Terminator Storm Force" },
-    { id: "assault_brethren", name_es: "Hermandad de Asalto", name_en: "Assault Brethren" },
-    { id: "tactical_brethren", name_es: "Hermandad Táctica", name_en: "Tactical Brethren" },
-    { id: "devastator_brethren", name_es: "Hermandad Devastadora", name_en: "Devastator Brethren" },
-    { id: "tacticus_attack", name_es: "Fuerza de Ataque Tacticus", name_en: "Tacticus Attack Force" },
-    { id: "tacticus_firestorm", name_es: "Fuerza Tacticus Tormenta de Fuego", name_en: "Tacticus Firestorm Force" },
-    { id: "phobos_shadow", name_es: "Fuerza Oculta Phobos", name_en: "Phobos Shadow Force" },
-    { id: "phobos_shock", name_es: "Fuerza de Choque Phobos", name_en: "Phobos Shock Force" },
-    { id: "gravis_linebreaker", name_es: "Fuerza Rompelíneas Gravis", name_en: "Gravis Linebreaker Force" },
-    { id: "gravis_siege", name_es: "Fuerza de Asedio Gravis", name_en: "Gravis Siege Force" },
-    { id: "ironclad_champions", name_es: "Campeones Férreos (Dreadnoughts)", name_en: "Ironclad Champions" },
-    { id: "gauntlet", name_es: "Contingente Guantelete", name_en: "Gauntlet Task Force" },
-    { id: "deathwatch_support", name_es: "Apoyo a los Vigías de la Muerte", name_en: "Deathwatch Support" },
-    { id: "ceramite_sentinels", name_es: "Centinelas de Ceramita", name_en: "Ceramite Sentinels" },
-    { id: "boarding_strike", name_es: "Golpe de Abordaje", name_en: "Boarding Strike" },
-    { id: "terminator_assault", name_es: "Asalto de Exterminadores", name_en: "Terminator Assault" },
-    { id: "shield_of_void", name_es: "Escudo del Vacío", name_en: "Shield of the Void" },
-    { id: "pilum_strike", name_es: "Equipo de Asalto Pilum", name_en: "Pilum Strike Team" },
-    { id: "custom", name_es: "Personalizada / Cruzada", name_en: "Custom / Crusade" }
+    { id: "core", name: "Reglamento (Básicas del Core)" },
+    { id: "inner_circle", name: "Contingente del Círculo Interior" },
+    { id: "wrath_of_the_rock", name: "Ira de la Roca" },
+    { id: "darkflight_pursuit", name: "Persecución del Vuelo Oscuro" },
+    { id: "company_of_hunters", name: "Compañía de Cazadores" },
+    { id: "unforgiven_task_force", name: "Fuerza de Asedio de los No Perdonados" },
+    { id: "gladius", name: "Contingente Gladius" },
+    { id: "ironstorm", name: "Punta de Lanza Ferrotormenta" },
+    { id: "stormlance", name: "Contingente Lanzatormenta" },
+    { id: "deathwing_storm", name: "Fuerza Tormenta Exterminadora (1.ª Cía)" },
+    { id: "assault_brethren", name: "Hermandad de Asalto" },
+    { id: "tactical_brethren", name: "Hermandad Táctica" },
+    { id: "devastator_brethren", name: "Hermandad Devastadora" },
+    { id: "tacticus_attack", name: "Fuerza de Ataque Tacticus" },
+    { id: "tacticus_firestorm", name: "Fuerza Tacticus Tormenta de Fuego" },
+    { id: "phobos_shadow", name: "Fuerza Oculta Phobos" },
+    { id: "phobos_shock", name: "Fuerza de Choque Phobos" },
+    { id: "gravis_linebreaker", name: "Fuerza Rompelíneas Gravis" },
+    { id: "gravis_siege", name: "Fuerza de Asedio Gravis" },
+    { id: "ironclad_champions", name: "Campeones Férreos (Dreadnoughts)" },
+    { id: "gauntlet", name: "Contingente Guantelete" },
+    { id: "deathwatch_support", name: "Apoyo a los Vigías de la Muerte" },
+    { id: "ceramite_sentinels", name: "Centinelas de Ceramita" },
+    { id: "boarding_strike", name: "Golpe de Abordaje" },
+    { id: "terminator_assault", name: "Asalto de Exterminadores" },
+    { id: "shield_of_void", name: "Escudo del Vacío" },
+    { id: "pilum_strike", name: "Equipo de Asalto Pilum" },
+    { id: "custom", name: "Personalizada / Cruzada" }
   ];
 
-  sel.innerHTML = detachmentsList.map(d => `<option value="${d.id}">${isEn ? d.name_en : d.name_es}</option>`).join("");
+  sel.innerHTML = detachmentsList.map(d => `<option value="${d.id}">${d.name}</option>`).join("");
 }
 
 /**
  * Regenera dinámicamente las opciones del selector de destacamento con conteos actualizados
  */
-function updateStratagemDetachmentDropdown(lang) {
+function updateStratagemDetachmentDropdown() {
   const select = document.getElementById("stratagem-detachment-select");
   if (!select) return;
-  const isEn = lang === "en";
   const prev = select.value;
 
   const stratagems = WH40K_DATA.stratagems || [];
@@ -2645,68 +3261,45 @@ function updateStratagemDetachmentDropdown(lang) {
     custom: "Personalizadas / Cruzada"
   };
 
-  const detNamesEn = {
-    core: "Core Rules",
-    darkflight_pursuit: "Darkflight Pursuit",
-    inner_circle: "Inner Circle Task Force",
-    wrath_of_the_rock: "Wrath of the Rock",
-    company_of_hunters: "Company of Hunters",
-    unforgiven_task_force: "Unforgiven Task Force",
-    gladius: "Gladius Task Force",
-    ironstorm: "Ironstorm Spearhead",
-    stormlance: "Stormlance Task Force",
-    deathwing_storm: "Terminator Storm Force",
-    assault_brethren: "Assault Brethren",
-    tactical_brethren: "Tactical Brethren",
-    devastator_brethren: "Devastator Brethren",
-    tacticus_attack: "Tacticus Attack Force",
-    tacticus_firestorm: "Tacticus Firestorm Force",
-    phobos_shadow: "Phobos Shadow Force",
-    phobos_shock: "Phobos Shock Force",
-    gravis_linebreaker: "Gravis Linebreaker Force",
-    gravis_siege: "Gravis Siege Force",
-    ironclad_champions: "Ironclad Champions",
-    gauntlet: "Gauntlet Task Force",
-    deathwatch_support: "Deathwatch Support",
-    ceramite_sentinels: "Ceramite Sentinels",
-    boarding_strike: "Boarding Strike",
-    terminator_assault: "Terminator Assault Force",
-    shield_of_void: "Shield of the Void",
-    pilum_strike: "Pilum Strike Team",
-    custom: "Custom / Crusade"
-  };
-
-  const detNames = isEn ? detNamesEn : detNamesEs;
-
   let daOptionsHtml = '';
   daDetIds.forEach(id => {
     const c = detCounts[id] || 0;
     if (c > 0) {
-      daOptionsHtml += `<option value="${id}">${detNames[id] || id} (${c})</option>`;
+      daOptionsHtml += `<option value="${id}">${detNamesEs[id] || id} (${c})</option>`;
     }
   });
 
   let smOptionsHtml = '';
   Object.keys(detCounts).forEach(id => {
     if (id !== 'core' && !daDetIds.includes(id) && id !== 'custom') {
-      smOptionsHtml += `<option value="${id}">${detNames[id] || id} (${detCounts[id]})</option>`;
+      smOptionsHtml += `<option value="${id}">${detNamesEs[id] || id} (${detCounts[id]})</option>`;
     }
   });
 
   let customHtml = '';
   if (detCounts['custom']) {
-    customHtml = `<option value="custom">${detNames.custom} (${detCounts.custom})</option>`;
+    customHtml = `<option value="custom">${detNamesEs.custom} (${detCounts.custom})</option>`;
   }
 
   select.innerHTML = `
-    <option value="all">${isEn ? `All Detachments (${stratagems.length})` : `Todos los Destacamentos (${stratagems.length})`}</option>
-    <option value="core">${detNames.core} (${detCounts['core'] || 0})</option>
-    ${daOptionsHtml ? `<optgroup label="${isEn ? 'Dark Angels (Exclusive)' : 'Ángeles Oscuros (Exclusivos)'}">${daOptionsHtml}</optgroup>` : ''}
-    ${smOptionsHtml ? `<optgroup label="${isEn ? 'Space Marines (Compatible)' : 'Marines Espaciales (Compatibles)'}">${smOptionsHtml}</optgroup>` : ''}
+    <option value="all">Todos los Destacamentos (${stratagems.length})</option>
+    <option value="core">${detNamesEs.core} (${detCounts['core'] || 0})</option>
+    ${daOptionsHtml ? `<optgroup label="Ángeles Oscuros (Exclusivos)">${daOptionsHtml}</optgroup>` : ''}
+    ${smOptionsHtml ? `<optgroup label="Marines Espaciales (Compatibles)">${smOptionsHtml}</optgroup>` : ''}
     ${customHtml}
   `;
 
   select.value = prev && select.querySelector(`option[value="${prev}"]`) ? prev : "all";
+}
+
+function toggleStratagemPhaseGrouping() {
+  AppState.stratagemGroupByPhase = !AppState.stratagemGroupByPhase;
+  const btn = document.getElementById("btn-toggle-strat-grouping");
+  if (btn) {
+    btn.classList.toggle("active", AppState.stratagemGroupByPhase);
+    btn.textContent = AppState.stratagemGroupByPhase ? "📑 Agrupar por Fase" : "📋 Vista Continua";
+  }
+  renderStratagems();
 }
 
 function setStratagemPhaseFilter(phase) {
@@ -2756,23 +3349,25 @@ function renderStratagems() {
   const statusEl = document.getElementById("stratagems-filter-status");
   if (!container) return;
 
-  const currentLang = AppState.currentLanguage || "es";
-  const isEn = currentLang === "en";
-  const t = WH40K_I18N[currentLang] || WH40K_I18N.es;
-
+  const t = WH40K_I18N.es;
   const stratagems = WH40K_DATA.stratagems || [];
   const q = normalizeText(AppState.stratagemSearch);
   const phaseFilter = AppState.stratagemPhaseFilter;
   const turnFilter = AppState.stratagemTurnFilter;
   const detFilter = AppState.stratagemDetachmentFilter;
 
-  const filtered = stratagems.filter(raw => {
-    const s = getStratagemText(raw, currentLang);
+  const btnGrouping = document.getElementById("btn-toggle-strat-grouping");
+  if (btnGrouping) {
+    btnGrouping.classList.toggle("active", AppState.stratagemGroupByPhase);
+    btnGrouping.textContent = AppState.stratagemGroupByPhase ? "📑 Agrupar por Fase" : "📋 Vista Continua";
+  }
 
-    // Filtro por texto (busca en español, inglés original y campos de regla)
+  const filtered = stratagems.filter(raw => {
+    const s = getStratagemText(raw);
+
     if (q) {
       const matchName = normalizeText(s.name).includes(q);
-      const matchOrig = normalizeText(raw.originalName).includes(q) || (raw.en && normalizeText(raw.en.name).includes(q));
+      const matchOrig = normalizeText(raw.originalName).includes(q);
       const matchDet = normalizeText(s.detachment).includes(q);
       const matchWhen = normalizeText(s.when).includes(q);
       const matchTarget = normalizeText(s.target).includes(q);
@@ -2784,20 +3379,17 @@ function renderStratagems() {
       }
     }
 
-    // Filtro por fase
     if (phaseFilter !== "all") {
       const pList = raw.phases || [raw.phase];
       if (!pList.includes(phaseFilter)) return false;
     }
 
-    // Filtro por turno
     if (turnFilter !== "all") {
       if (raw.turn !== turnFilter && raw.turn !== "either_turn") {
         return false;
       }
     }
 
-    // Filtro por destacamento
     if (detFilter !== "all") {
       if (detFilter === "core") {
         if (raw.detachmentId !== "core") return false;
@@ -2833,76 +3425,102 @@ function renderStratagems() {
     any: "🔄"
   };
 
-  const turnIconsEs = {
+  const turnIcons = {
     your_turn: "🔵 Tu Turno",
     opponent_turn: "🔴 Turno Enemigo",
-    either_turn: "⚪ Cualquier Turno"
+    either_turn: "🟢 Cualquier Turno"
   };
-  const turnIconsEn = {
-    your_turn: "🔵 Your Turn",
-    opponent_turn: "🔴 Opponent's Turn",
-    either_turn: "⚪ Either Player's Turn"
-  };
-  const turnIcons = isEn ? turnIconsEn : turnIconsEs;
 
-  container.innerHTML = filtered.map(raw => {
-    const s = getStratagemText(raw, currentLang);
+  const renderStratagemCard = (raw) => {
+    const s = getStratagemText(raw);
     const icon = phaseIcons[s.phase] || "⚡";
     const turnText = turnIcons[s.turn] || s.turnLabel;
+    const turnColorClass = getStratagemTurnClass(s.turn);
     const isCore = s.detachmentId === "core";
     const detachmentBadge = isCore ? t.coreBadge : s.detachment;
     const isCustom = raw.isCustom || s.isCustom;
     const isEdited = raw.isEdited || s.isEdited;
 
     return `
-      <article class="stratagem-card phase-accent-${s.phase}" data-id="${raw.id}">
+      <article class="stratagem-card phase-accent-${s.phase} ${turnColorClass}" data-id="${raw.id}">
         <div class="stratagem-header-top">
           <div class="stratagem-title-group">
             <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-              <h3 class="stratagem-name">${s.name}</h3>
-              ${isCustom ? `<span class="stratagem-tag tag-custom" title="Estratagema creada por el usuario">✨ ${isEn ? 'Custom' : 'Personalizada'}</span>` : ''}
-              ${!isCustom && isEdited ? `<span class="stratagem-tag tag-edited" title="Modificada respecto al original de Wahapedia">✏️ ${isEn ? 'Edited' : 'Modificada'}</span>` : ''}
+              <h3 class="stratagem-name">${escapeHtml(s.name)}</h3>
+              ${isCustom ? `<span class="stratagem-tag tag-custom" title="Estratagema creada por el usuario">✨ Personalizada</span>` : ''}
+              ${!isCustom && isEdited ? `<span class="stratagem-tag tag-edited" title="Modificada respecto al original de Wahapedia">✏️ Modificada</span>` : ''}
             </div>
-            ${!isEn && s.originalName && s.originalName !== s.name ? `<div class="stratagem-orig-name">${s.originalName}</div>` : ''}
           </div>
           <div style="display: flex; align-items: center; gap: 6px;">
-            <button class="btn-strat-action btn-strat-edit" onclick="openStratagemEditor('${raw.id}')" title="${isEn ? 'Edit stratagem' : 'Editar estratagema'}">✏️ ${isEn ? 'Edit' : 'Editar'}</button>
-            ${!isCustom && isEdited ? `<button class="btn-strat-action btn-strat-revert" onclick="revertSingleStratagem('${raw.id}')" title="${isEn ? 'Revert to Wahapedia default' : 'Restablecer a valores de Wahapedia'}">🔄</button>` : ''}
+            <button class="btn-strat-action btn-strat-edit" onclick="openStratagemEditor('${raw.id}')" title="Editar estratagema">✏️ Editar</button>
+            ${!isCustom && isEdited ? `<button class="btn-strat-action btn-strat-revert" onclick="revertSingleStratagem('${raw.id}')" title="Restablecer a valores de Wahapedia">🔄</button>` : ''}
             <div class="stratagem-cp-badge">${s.cp} CP</div>
           </div>
         </div>
 
         <div class="stratagem-tags-row">
-          <span class="stratagem-tag tag-phase phase-${s.phase}">${icon} ${s.phaseLabel}</span>
+          <span class="stratagem-tag tag-phase phase-${s.phase}">${icon} ${escapeHtml(s.phaseLabel)}</span>
           <span class="stratagem-tag tag-turn turn-${s.turn === 'your_turn' ? 'player' : (s.turn === 'opponent_turn' ? 'opponent' : 'either')}">${turnText}</span>
-          <span class="stratagem-tag tag-detachment">${detachmentBadge}</span>
-          ${s.type ? `<span class="stratagem-tag tag-type">${s.type}</span>` : ''}
+          <span class="stratagem-tag tag-detachment">${escapeHtml(detachmentBadge)}</span>
+          ${s.type ? `<span class="stratagem-tag tag-type">${escapeHtml(s.type)}</span>` : ''}
         </div>
 
-        ${s.fluff ? `<div class="stratagem-fluff">"${s.fluff}"</div>` : ''}
+        ${s.fluff ? `<div class="stratagem-fluff">"${escapeHtml(s.fluff)}"</div>` : ''}
 
         <div class="stratagem-body">
           <div class="stratagem-rule-block">
             <span class="stratagem-rule-label label-when">${t.whenLabel}</span>
-            <span>${escapeHtml(s.when)}</span>
+            <span>${highlightBracketTags(s.when)}</span>
           </div>
           <div class="stratagem-rule-block">
             <span class="stratagem-rule-label label-target">${t.targetLabel}</span>
-            <span>${escapeHtml(s.target)}</span>
+            <span>${highlightBracketTags(s.target)}</span>
           </div>
           <div class="stratagem-rule-block">
             <span class="stratagem-rule-label label-effect">${t.effectLabel}</span>
-            <span>${escapeHtml(s.effect)}</span>
+            <span>${highlightBracketTags(s.effect)}</span>
           </div>
           ${s.restrictions ? `
           <div class="stratagem-rule-block rule-restrictions">
-            <span class="stratagem-rule-label label-restrictions">${isEn ? 'RESTRICTIONS:' : 'RESTRICCIONES:'}</span>
-            <span>${escapeHtml(s.restrictions)}</span>
+            <span class="stratagem-rule-label label-restrictions">RESTRICCIONES:</span>
+            <span>${highlightBracketTags(s.restrictions)}</span>
           </div>` : ''}
         </div>
       </article>
     `;
-  }).join("");
+  };
+
+  if (AppState.stratagemGroupByPhase && phaseFilter === "all") {
+    const phaseGroups = [
+      { key: "any", label: "🔄 Reacción / Cualquier Fase" },
+      { key: "command", label: "👑 Fase de Mando" },
+      { key: "movement", label: "🏃 Fase de Movimiento" },
+      { key: "shooting", label: "🎯 Fase de Disparo" },
+      { key: "charge", label: "⚡ Fase de Carga" },
+      { key: "fight", label: "⚔️ Fase de Combate" }
+    ];
+
+    container.innerHTML = phaseGroups.map(pg => {
+      const items = filtered.filter(raw => {
+        const p = raw.phase || (raw.phases && raw.phases[0]) || "any";
+        return p === pg.key;
+      });
+      if (items.length === 0) return "";
+      return `
+        <div class="waha-strat-phase-group">
+          <div class="waha-strat-phase-header">
+            <span>${pg.label}</span>
+            <span class="waha-strat-phase-count">${items.length}</span>
+          </div>
+          <div class="waha-strat-phase-grid">
+            ${items.map(renderStratagemCard).join("")}
+          </div>
+        </div>
+      `;
+    }).join("");
+  } else {
+    container.innerHTML = filtered.map(renderStratagemCard).join("");
+  }
 
   checkCustomStratagemsStatus();
 }
@@ -2917,7 +3535,6 @@ function renderStratagems() {
 function openStratagemEditor(stratId) {
   const modal = document.getElementById("edit-stratagem-modal");
   if (!modal) return;
-  const isEn = AppState.currentLanguage === "en";
 
   populateEditorDetachmentSelect();
 
@@ -2928,16 +3545,14 @@ function openStratagemEditor(stratId) {
   const btnRevert = document.getElementById("btn-revert-stratagem");
   const btnDelete = document.getElementById("btn-delete-stratagem");
 
-  switchStratEditorTab(isEn ? "en" : "es");
-
   if (!stratId) {
     // Modo Creación Nueva
     idInput.value = `strat_custom_${Date.now()}`;
     isNewInput.value = "true";
-    titleEl.textContent = isEn ? "New Custom Stratagem" : "Nueva Estratagema Personalizada";
+    titleEl.textContent = "Nueva Estratagema Personalizada";
     pillEl.style.display = "inline-block";
     pillEl.className = "stratagem-tag tag-custom";
-    pillEl.textContent = isEn ? "✨ New Custom" : "✨ Nueva";
+    pillEl.textContent = "✨ Nueva";
     btnRevert.style.display = "none";
     btnDelete.style.display = "none";
 
@@ -2947,21 +3562,12 @@ function openStratagemEditor(stratId) {
     document.getElementById("edit-strat-phase").value = "any";
     document.getElementById("edit-strat-turn").value = "either_turn";
 
-    // Campos ES
     document.getElementById("edit-strat-name-es").value = "";
     document.getElementById("edit-strat-when-es").value = "";
     document.getElementById("edit-strat-target-es").value = "";
     document.getElementById("edit-strat-effect-es").value = "";
     document.getElementById("edit-strat-restrictions-es").value = "";
     document.getElementById("edit-strat-fluff-es").value = "";
-
-    // Campos EN
-    document.getElementById("edit-strat-name-en").value = "";
-    document.getElementById("edit-strat-when-en").value = "";
-    document.getElementById("edit-strat-target-en").value = "";
-    document.getElementById("edit-strat-effect-en").value = "";
-    document.getElementById("edit-strat-restrictions-en").value = "";
-    document.getElementById("edit-strat-fluff-en").value = "";
   } else {
     // Modo Edición Existente
     const raw = (WH40K_DATA.stratagems || []).find(s => s.id === stratId);
@@ -2969,7 +3575,7 @@ function openStratagemEditor(stratId) {
 
     idInput.value = raw.id;
     isNewInput.value = "false";
-    titleEl.textContent = isEn ? `Edit: ${raw.en?.name || raw.name}` : `Editar: ${raw.es?.name || raw.name}`;
+    titleEl.textContent = `Editar: ${raw.es?.name || raw.name}`;
 
     const isCustom = !!raw.isCustom;
     const isEdited = !!raw.isEdited;
@@ -2977,13 +3583,13 @@ function openStratagemEditor(stratId) {
     if (isCustom) {
       pillEl.style.display = "inline-block";
       pillEl.className = "stratagem-tag tag-custom";
-      pillEl.textContent = isEn ? "✨ Custom" : "✨ Personalizada";
+      pillEl.textContent = "✨ Personalizada";
       btnRevert.style.display = "none";
       btnDelete.style.display = "inline-flex";
     } else if (isEdited) {
       pillEl.style.display = "inline-block";
       pillEl.className = "stratagem-tag tag-edited";
-      pillEl.textContent = isEn ? "✏️ Modified" : "✏️ Modificada";
+      pillEl.textContent = "✏️ Modificada";
       btnRevert.style.display = "inline-flex";
       btnDelete.style.display = "none";
     } else {
@@ -2998,7 +3604,6 @@ function openStratagemEditor(stratId) {
     document.getElementById("edit-strat-phase").value = raw.phase || "any";
     document.getElementById("edit-strat-turn").value = raw.turn || "either_turn";
 
-    // ES fields
     const es = raw.es || raw;
     document.getElementById("edit-strat-name-es").value = es.name || raw.name || "";
     document.getElementById("edit-strat-when-es").value = es.when || raw.when || "";
@@ -3006,15 +3611,6 @@ function openStratagemEditor(stratId) {
     document.getElementById("edit-strat-effect-es").value = es.effect || raw.effect || "";
     document.getElementById("edit-strat-restrictions-es").value = es.restrictions || raw.restrictions || "";
     document.getElementById("edit-strat-fluff-es").value = es.fluff || raw.fluff || "";
-
-    // EN fields
-    const en = raw.en || raw;
-    document.getElementById("edit-strat-name-en").value = en.name || raw.originalName || raw.name || "";
-    document.getElementById("edit-strat-when-en").value = en.when || raw.when || "";
-    document.getElementById("edit-strat-target-en").value = en.target || raw.target || "";
-    document.getElementById("edit-strat-effect-en").value = en.effect || raw.effect || "";
-    document.getElementById("edit-strat-restrictions-en").value = en.restrictions || raw.restrictions || "";
-    document.getElementById("edit-strat-fluff-en").value = en.fluff || raw.fluff || "";
   }
 
   modal.classList.add("active");
@@ -3042,26 +3638,8 @@ function setEditorCP(val) {
   });
 }
 
-/**
- * Cambia entre la pestaña en Castellano y la pestaña en Inglés del editor
- */
-function switchStratEditorTab(lang) {
-  const tabEs = document.getElementById("tab-strat-es");
-  const tabEn = document.getElementById("tab-strat-en");
-  const paneEs = document.getElementById("strat-editor-pane-es");
-  const paneEn = document.getElementById("strat-editor-pane-en");
-
-  if (lang === "es") {
-    if (tabEs) tabEs.classList.add("active");
-    if (tabEn) tabEn.classList.remove("active");
-    if (paneEs) paneEs.style.display = "flex";
-    if (paneEn) paneEn.style.display = "none";
-  } else {
-    if (tabEs) tabEs.classList.remove("active");
-    if (tabEn) tabEn.classList.add("active");
-    if (paneEs) paneEs.style.display = "none";
-    if (paneEn) paneEn.style.display = "flex";
-  }
+function switchStratEditorTab() {
+  // Editor simplificado exclusivamente en castellano
 }
 
 /**
@@ -3084,36 +3662,15 @@ function saveStratagemFromEditor() {
   const detSelect = document.getElementById("edit-strat-detachment");
   const detachmentLabel = detSelect.options[detSelect.selectedIndex]?.text || detachmentId;
 
-  // Campos ES
-  let nameEs = document.getElementById("edit-strat-name-es").value.trim();
-  let whenEs = document.getElementById("edit-strat-when-es").value.trim();
-  let targetEs = document.getElementById("edit-strat-target-es").value.trim();
-  let effectEs = document.getElementById("edit-strat-effect-es").value.trim();
-  let restrictionsEs = document.getElementById("edit-strat-restrictions-es").value.trim();
-  let fluffEs = document.getElementById("edit-strat-fluff-es").value.trim();
+  const nameEs = document.getElementById("edit-strat-name-es").value.trim();
+  const whenEs = document.getElementById("edit-strat-when-es").value.trim();
+  const targetEs = document.getElementById("edit-strat-target-es").value.trim();
+  const effectEs = document.getElementById("edit-strat-effect-es").value.trim();
+  const restrictionsEs = document.getElementById("edit-strat-restrictions-es").value.trim();
+  const fluffEs = document.getElementById("edit-strat-fluff-es").value.trim();
 
-  // Campos EN
-  let nameEn = document.getElementById("edit-strat-name-en").value.trim();
-  let whenEn = document.getElementById("edit-strat-when-en").value.trim();
-  let targetEn = document.getElementById("edit-strat-target-en").value.trim();
-  let effectEn = document.getElementById("edit-strat-effect-en").value.trim();
-  let restrictionsEn = document.getElementById("edit-strat-restrictions-en").value.trim();
-  let fluffEn = document.getElementById("edit-strat-fluff-en").value.trim();
-
-  // Autocompletar el idioma secundario si se dejó vacío
-  if (!nameEs && nameEn) nameEs = nameEn;
-  if (!nameEn && nameEs) nameEn = nameEs;
-  if (!whenEs && whenEn) whenEs = whenEn;
-  if (!whenEn && whenEs) whenEn = whenEs;
-  if (!targetEs && targetEn) targetEs = targetEn;
-  if (!targetEn && targetEs) targetEn = targetEs;
-  if (!effectEs && effectEn) effectEs = effectEn;
-  if (!effectEn && effectEs) effectEn = effectEs;
-  if (!restrictionsEs && restrictionsEn) restrictionsEs = restrictionsEn;
-  if (!restrictionsEn && restrictionsEs) restrictionsEn = restrictionsEs;
-
-  if (!nameEs && !nameEn) {
-    alert("Por favor, introduce al menos un nombre para la estratagema.");
+  if (!nameEs) {
+    alert("Por favor, introduce un nombre para la estratagema.");
     return;
   }
 
@@ -3125,25 +3682,15 @@ function saveStratagemFromEditor() {
     fight: "Fase de Combate",
     any: "Cualquier Fase"
   };
-  const phaseLabelsEn = {
-    command: "Command Phase",
-    movement: "Movement Phase",
-    shooting: "Shooting Phase",
-    charge: "Charge Phase",
-    fight: "Fight Phase",
-    any: "Any Phase"
-  };
 
   const turnLabelsEs = {
     your_turn: "Tu Turno",
     opponent_turn: "Turno Enemigo",
     either_turn: "Cualquier Turno"
   };
-  const turnLabelsEn = {
-    your_turn: "Your Turn",
-    opponent_turn: "Opponent's Turn",
-    either_turn: "Either Player's Turn"
-  };
+
+  const existing = (WH40K_DATA.stratagems || []).find(s => s.id === id);
+  const origName = existing?.originalName || nameEs;
 
   const updatedItem = {
     id,
@@ -3153,7 +3700,7 @@ function saveStratagemFromEditor() {
     turn,
     detachmentId,
     name: nameEs,
-    originalName: nameEn,
+    originalName: origName,
     type,
     detachment: detachmentLabel,
     phaseLabel: phaseLabelsEs[phase] || phase,
@@ -3167,7 +3714,7 @@ function saveStratagemFromEditor() {
     isCustom: isNew,
     es: {
       name: nameEs,
-      originalName: nameEn,
+      originalName: origName,
       type,
       detachment: detachmentLabel,
       phaseLabel: phaseLabelsEs[phase] || phase,
@@ -3177,19 +3724,6 @@ function saveStratagemFromEditor() {
       effect: effectEs,
       restrictions: restrictionsEs,
       fluff: fluffEs
-    },
-    en: {
-      name: nameEn,
-      originalName: nameEn,
-      type: type === "Táctica de Batalla" ? "Battle Tactic" : (type === "Treta Estratégica" ? "Strategic Ploy" : (type === "Hazaña Épica" ? "Epic Deed" : "Wargear")),
-      detachment: detachmentLabel,
-      phaseLabel: phaseLabelsEn[phase] || phase,
-      turnLabel: turnLabelsEn[turn] || turn,
-      when: whenEn,
-      target: targetEn,
-      effect: effectEn,
-      restrictions: restrictionsEn,
-      fluff: fluffEn
     }
   };
 
@@ -3211,7 +3745,7 @@ function saveStratagemFromEditor() {
   saveCustomStratagemsMap(customMap);
 
   closeStratagemEditorModal();
-  updateStratagemDetachmentDropdown(AppState.currentLanguage || "es");
+  updateStratagemDetachmentDropdown();
   updateStratagemPhaseBadges();
   renderStratagems();
   if (typeof renderBattleStratagems === "function") {
@@ -3254,7 +3788,7 @@ function revertSingleStratagem(stratId) {
     }
   } catch (e) {}
 
-  updateStratagemDetachmentDropdown(AppState.currentLanguage || "es");
+  updateStratagemDetachmentDropdown();
   updateStratagemPhaseBadges();
   renderStratagems();
   if (typeof renderBattleStratagems === "function") {
@@ -3291,7 +3825,7 @@ function deleteCurrentEditorStratagem() {
   } catch (e) {}
 
   closeStratagemEditorModal();
-  updateStratagemDetachmentDropdown(AppState.currentLanguage || "es");
+  updateStratagemDetachmentDropdown();
   updateStratagemPhaseBadges();
   renderStratagems();
   if (typeof renderBattleStratagems === "function") {
@@ -3314,7 +3848,7 @@ function resetAllStratagemsToDefault() {
   }
   localStorage.removeItem("cogitator_custom_stratagems");
 
-  updateStratagemDetachmentDropdown(AppState.currentLanguage || "es");
+  updateStratagemDetachmentDropdown();
   updateStratagemPhaseBadges();
   renderStratagems();
   if (typeof renderBattleStratagems === "function") {
@@ -3343,6 +3877,7 @@ function showTacticalNotification(msg) {
 }
 
 // Exportación explícita al objeto global window para asegurar compatibilidad total
+window.toggleStratagemPhaseGrouping = toggleStratagemPhaseGrouping;
 window.openStratagemEditor = openStratagemEditor;
 window.closeStratagemEditorModal = closeStratagemEditorModal;
 window.setEditorCP = setEditorCP;
@@ -3714,13 +4249,13 @@ function renderWargearOptionsInModal(datasheetId, selectedWeaponsList = null) {
           <div class="col-wargear-list">
             ${ranged.map((w, idx) => {
               const checked = selectedSet.has(w.name);
-              const kwHtml = (w.keywords || []).map(k => `<span class="col-wargear-kw-badge">${escapeHtml(k)}</span>`).join('');
+              const kwHtml = (w.keywords || []).map(k => `<span class="col-wargear-kw-badge">${escapeHtml(cleanSpanishLabel(k))}</span>`).join('');
               return `
                 <label class="col-wargear-card ${checked ? 'selected' : ''}" for="w_r_${idx}">
                   <input type="checkbox" id="w_r_${idx}" class="col-weapon-checkbox" data-weapon-type="ranged" value="${escapeHtml(w.name)}" ${checked ? 'checked' : ''} onchange="toggleWargearCardSelection(this)">
                   <div class="col-wargear-info">
                     <span class="col-wargear-name">${escapeHtml(w.name)}</span>
-                    <span class="col-wargear-stats">Alcance: ${w.range} | A: ${w.a} | HP: ${w.bs} | F: ${w.s} | FP: ${w.ap} | D: ${w.d}</span>
+                    <span class="col-wargear-stats">Alcance: ${w.range} | A: ${w.a} | HP: ${w.bs} | F: ${w.f ?? w.s ?? '-'} | FP: ${w.ap} | D: ${w.d}</span>
                     ${kwHtml ? `<div class="col-wargear-kw">${kwHtml}</div>` : ''}
                   </div>
                 </label>
@@ -3741,13 +4276,13 @@ function renderWargearOptionsInModal(datasheetId, selectedWeaponsList = null) {
           <div class="col-wargear-list">
             ${melee.map((w, idx) => {
               const checked = selectedSet.has(w.name);
-              const kwHtml = (w.keywords || []).map(k => `<span class="col-wargear-kw-badge">${escapeHtml(k)}</span>`).join('');
+              const kwHtml = (w.keywords || []).map(k => `<span class="col-wargear-kw-badge">${escapeHtml(cleanSpanishLabel(k))}</span>`).join('');
               return `
                 <label class="col-wargear-card ${checked ? 'selected' : ''}" for="w_m_${idx}">
                   <input type="checkbox" id="w_m_${idx}" class="col-weapon-checkbox" data-weapon-type="melee" value="${escapeHtml(w.name)}" ${checked ? 'checked' : ''} onchange="toggleWargearCardSelection(this)">
                   <div class="col-wargear-info">
                     <span class="col-wargear-name">${escapeHtml(w.name)}</span>
-                    <span class="col-wargear-stats">Alcance: ${w.range} | A: ${w.a} | HA: ${w.ws} | F: ${w.s} | FP: ${w.ap} | D: ${w.d}</span>
+                    <span class="col-wargear-stats">Alcance: ${w.range} | A: ${w.a} | HA: ${w.ws} | F: ${w.f ?? w.s ?? '-'} | FP: ${w.ap} | D: ${w.d}</span>
                     ${kwHtml ? `<div class="col-wargear-kw">${kwHtml}</div>` : ''}
                   </div>
                 </label>
@@ -3943,7 +4478,7 @@ function initArmyBuilder() {
   const selectDetachment = document.getElementById("army-detachment-select");
   if (selectDetachment) {
     selectDetachment.innerHTML = WH40K_DATA.detachments.map(det => `
-      <option value="${det.id}">${det.name} (${det.originalName}) - [${det.commandPoints || det.dp + ' PD'}]</option>
+      <option value="${det.id}">${escapeHtml(det.name)} - [${det.commandPoints || det.dp + ' PD'}]</option>
     `).join('');
     
     selectDetachment.addEventListener("change", (e) => {
@@ -4185,10 +4720,9 @@ function renderManageDetachmentsModalContent() {
           <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
             <div style="display: flex; align-items: center; gap: 8px;">
               <strong style="color: ${isSelected ? 'var(--gold-accent)' : 'var(--text-main)'}; font-size: 0.95rem;">
-                ${det.name}
+                ${escapeHtml(det.name)}
               </strong>
               <button type="button" class="btn-gothic-secondary" onclick="event.stopPropagation(); openDetachmentEditor('${det.id}')" style="padding: 1px 5px; font-size: 0.72rem; color: var(--gold-accent);" title="Editar reglas y mejoras de este destacamento">✏️</button>
-              <span style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;">(${det.originalName})</span>
             </div>
             <div style="display: flex; align-items: center; gap: 6px;">
               <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(0,0,0,0.4); color: ${isDA ? 'var(--caliban-bright)' : '#93c5fd'}; border: 1px solid rgba(255,255,255,0.1);">
@@ -4200,7 +4734,7 @@ function renderManageDetachmentsModalContent() {
             </div>
           </div>
           <div style="font-size: 0.8rem; color: var(--deathwing-bone); margin-top: 6px; line-height: 1.35;">
-            <strong style="color: #fff;">${det.ruleName}:</strong> ${det.ruleDesc}
+            <strong style="color: #fff;">${escapeHtml(det.ruleName || '')}:</strong> ${highlightBracketTags(det.ruleDesc || '')}
           </div>
           <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 5px; display: flex; gap: 12px;">
             <span>🛡️ ${det.enhancements ? det.enhancements.length : 0} mejoras</span>
@@ -4229,7 +4763,7 @@ function renderArmyValidationBanner(activeList) {
           <span style="font-size: 1.2rem;">🛡️</span>
           <div>
             <strong style="color: var(--caliban-bright); font-size: 0.85rem;">Lista 100% Válida para Torneo (11ª Edición / WTC)</strong>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">Cumple todas las restricciones: Warlord, Héroes Épicos únicos, regla de 3 y mejoras.</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Cumple todas las restricciones: Señor de la Guerra, Héroes Épicos únicos, regla de 3 y mejoras.</div>
           </div>
         </div>
         <span style="font-size: 0.72rem; color: var(--caliban-bright); font-weight: 700; background: rgba(34, 197, 94, 0.2); padding: 2px 8px; border-radius: 4px;">OK</span>
@@ -4314,7 +4848,7 @@ function renderArmyBuilder() {
         <div class="detachment-chip" data-id="${det.id}">
           <div style="display: flex; align-items: center; gap: 6px; overflow: hidden; min-width: 0;">
             <span style="font-size: 0.85rem;">🦅</span>
-            <span class="detachment-chip-name" title="${det.name} (${det.originalName})">${det.name}</span>
+            <span class="detachment-chip-name" title="${escapeHtml(det.name)}">${escapeHtml(det.name)}</span>
           </div>
           <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
             <span class="det-badge dp-badge" style="font-size: 0.7rem; padding: 2px 6px;">${det.commandPoints || getDetachmentPD(det) + ' PD'}</span>
@@ -4330,7 +4864,7 @@ function renderArmyBuilder() {
   if (addSelect) {
     const unselected = WH40K_DATA.detachments.filter(d => !(activeList.detachmentIds || []).includes(d.id));
     addSelect.innerHTML = `<option value="">+ Añadir otro destacamento...</option>` +
-      unselected.map(d => `<option value="${d.id}">${d.name} [${d.commandPoints || getDetachmentPD(d) + ' PD'}]</option>`).join('');
+      unselected.map(d => `<option value="${d.id}">${escapeHtml(d.name)} [${d.commandPoints || getDetachmentPD(d) + ' PD'}]</option>`).join('');
   }
 
   // Actualizar medidor de Puntos de Destacamento (PD)
@@ -4370,12 +4904,12 @@ function renderArmyBuilder() {
         <div class="detachment-rule-card">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
             <h5 style="margin: 0; font-family: var(--font-serif); font-size: 0.95rem; color: var(--gold-primary);">
-              🦅 ${det.name} <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">(${det.originalName})</span>
+              🦅 ${escapeHtml(det.name)}
             </h5>
             <span class="det-badge dp-badge" style="font-size: 0.72rem; padding: 2px 7px;">${det.commandPoints || getDetachmentPD(det) + ' PD'}</span>
           </div>
           <div style="font-size: 0.82rem; color: var(--deathwing-bone); margin-top: 4px; line-height: 1.35;">
-            <strong style="color: #fff;">${det.ruleName}:</strong> ${det.ruleDesc}
+            <strong style="color: #fff;">${escapeHtml(det.ruleName || '')}:</strong> ${highlightBracketTags(det.ruleDesc || '')}
           </div>
         </div>
       `).join('');
@@ -4550,7 +5084,7 @@ function renderArmyBuilder() {
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 4px;">
           ${ds.keywords.includes("PERSONAJE") ? `
             <button class="warlord-toggle-btn ${unitInstance.isWarlord ? 'active' : ''}" onclick="setUnitAsWarlord('${unitInstance.instanceId}')">
-              👑 ${unitInstance.isWarlord ? 'Señor de la Guerra (Warlord)' : 'Designar Warlord'}
+              👑 ${unitInstance.isWarlord ? 'Señor de la Guerra' : 'Designar Señor de la Guerra'}
             </button>
           ` : ''}
           <span style="font-size: 0.75rem; color: var(--text-muted);">${ds.role} • ${ds.wing}</span>
@@ -4680,7 +5214,7 @@ function exportActiveListTournamentText() {
   activeDets.forEach(d => {
     text += `   • Regla "${d.ruleName}": ${d.ruleDesc}\n`;
   });
-  text += `REGLA DE FACCIÓN: Juramento de Momento (Oath of Moment)\n`;
+  text += `REGLA DE FACCIÓN: Juramento del Momento\n`;
   text += `========================================================\n\n`;
   
   text += `--- UNIDADES Y PERSONAJES ---\n`;
@@ -4710,7 +5244,7 @@ function exportActiveListTournamentText() {
     }
     
     text += `${i + 1}. ${ds.name} (${u.modelsCount} miniaturas) - ${unitPts} pts\n`;
-    if (u.isWarlord) text += `   • SEÑOR DE LA GUERRA (WARLORD)\n`;
+    if (u.isWarlord) text += `   • SEÑOR DE LA GUERRA\n`;
     if (enhText) text += `   • ${enhText}\n`;
     if (leaderText) text += `   • ${leaderText}\n`;
     text += `   • Atributos: M:${ds.stats.m} R:${ds.stats.r} Sv:${ds.stats.sv} Inv:${ds.stats.inv} H:${ds.stats.h} L:${ds.stats.l} CO:${ds.stats.co}\n\n`;
@@ -5209,7 +5743,7 @@ function renderBattleUnitCardHtml(u, activeList, attachedInfo) {
             <div class="battle-unit-sub" style="margin-top: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
               <span class="wing-badge ${wingClass}" style="font-size: 0.68rem; padding: 1px 6px;">${ds.wing}</span>
               <span>• ${ds.role}</span>
-              ${u.isWarlord ? '<span style="color: var(--gold-primary); font-weight: 700; font-size: 0.72rem;">👑 Warlord</span>' : ''}
+              ${u.isWarlord ? '<span style="color: var(--gold-primary); font-weight: 700; font-size: 0.72rem;">👑 Señor de la Guerra</span>' : ''}
               ${enhBadge}
             </div>
           </div>
@@ -5231,7 +5765,7 @@ function renderBattleUnitCardHtml(u, activeList, attachedInfo) {
       
       ${isBattleShocked ? `
         <div class="alert-battleshocked">
-          ⚡ ACOBARDADA / BATTLE-SHOCKED: Su Control de Objetivo cae a 0 y no puede usar Estratagemas
+          ⚡ ACOBARDADA: Su Control de Objetivo cae a 0 y no puede usar Estratagemas
         </div>
       ` : ''}
       
@@ -5416,8 +5950,7 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
   }
 
   if (subEl) {
-    const orig = ds.originalName && ds.originalName !== ds.name ? ` (${ds.originalName})` : "";
-    subEl.textContent = `${ds.role} • ${ds.wing}${orig} • Cogitador de Batalla`;
+    subEl.textContent = `${ds.role} • ${ds.wing} • Cogitador de Batalla`;
   }
 
   if (wingBadgeEl) {
@@ -5449,7 +5982,7 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
     if (isDestroyed) {
       statusPill = `<span style="color: #f87171; font-weight: 700;">💀 Destruida / Bajas Totales</span>`;
     } else if (isBattleShocked) {
-      statusPill = `<span style="color: #fbbf24; font-weight: 700;">⚡ Acobardada (Battle-Shocked)</span>`;
+      statusPill = `<span style="color: #fbbf24; font-weight: 700;">⚡ Acobardada</span>`;
     }
 
     battleStatusHtml = `
@@ -5536,40 +6069,27 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
     }
   }
 
-  // 4. Atributos (Statline)
+  // 4. Atributos (Perfil estilo Wahapedia + Escudo INV)
   const stats = ds.stats || { m: "-", r: "-", sv: "-", inv: "-", h: "-", l: "-", co: "-" };
+  const hasInv = stats.inv && stats.inv !== "-" && stats.inv !== "N/A";
   const statlineHtml = `
     <div>
-      <h4 class="battle-ds-section-title">⚔️ Atributos Principales (Perfil Oficial 11ª Edición)</h4>
-      <div class="statline-container">
-        <div class="stat-box" title="Movimiento">
-          <span class="stat-label">M</span>
-          <span class="stat-val">${stats.m}</span>
+      <h4 class="battle-ds-section-title">⚔️ Perfil Oficial de Atributos</h4>
+      <div class="waha-stat-bar-row">
+        <div class="waha-stat-bar">
+          <div class="waha-stat-cell" title="Movimiento"><span class="waha-stat-lbl">M</span><span class="waha-stat-val">${stats.m}</span></div>
+          <div class="waha-stat-cell" title="Resistencia"><span class="waha-stat-lbl">R</span><span class="waha-stat-val">${stats.r}</span></div>
+          <div class="waha-stat-cell" title="Salvación por Armadura"><span class="waha-stat-lbl">SV</span><span class="waha-stat-val">${stats.sv}</span></div>
+          <div class="waha-stat-cell" title="Heridas"><span class="waha-stat-lbl">H</span><span class="waha-stat-val">${stats.h}</span></div>
+          <div class="waha-stat-cell" title="Liderazgo"><span class="waha-stat-lbl">L</span><span class="waha-stat-val">${stats.l}</span></div>
+          <div class="waha-stat-cell" title="Control de Objetivo"><span class="waha-stat-lbl">CO</span><span class="waha-stat-val">${stats.co}</span></div>
         </div>
-        <div class="stat-box" title="Resistencia">
-          <span class="stat-label">R</span>
-          <span class="stat-val">${stats.r}</span>
-        </div>
-        <div class="stat-box" title="Salvación por Armadura">
-          <span class="stat-label">SV</span>
-          <span class="stat-val">${stats.sv}</span>
-        </div>
-        <div class="stat-box stat-inv" title="Salvación Invulnerable">
-          <span class="stat-label">INV</span>
-          <span class="stat-val">${stats.inv}</span>
-        </div>
-        <div class="stat-box" title="Heridas por Miniatura">
-          <span class="stat-label">H</span>
-          <span class="stat-val">${stats.h}</span>
-        </div>
-        <div class="stat-box" title="Liderazgo">
-          <span class="stat-label">L</span>
-          <span class="stat-val">${stats.l}</span>
-        </div>
-        <div class="stat-box stat-co" title="Control de Objetivo">
-          <span class="stat-label">CO</span>
-          <span class="stat-val">${stats.co}</span>
-        </div>
+        ${hasInv ? `
+          <div class="waha-invuln-shield" title="Salvación Invulnerable">
+            <span class="waha-inv-lbl">INV</span>
+            <span class="waha-inv-val">${stats.inv}</span>
+          </div>
+        ` : ''}
       </div>
     </div>
   `;
@@ -5580,8 +6100,8 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
     const rows = ds.rangedWeapons.map(w => `
       <tr>
         <td class="w-name">
-          ${w.name || '-'}
-          ${w.keywords && w.keywords.length > 0 ? `<span class="w-keywords">[${w.keywords.join(', ')}]</span>` : ''}
+          <strong>${escapeHtml(w.name || '-')}</strong>
+          ${renderWeaponKeywordBadges(w.keywords)}
         </td>
         <td style="text-align: center;">${w.range || '-'}</td>
         <td style="text-align: center;">${w.a ?? '-'}</td>
@@ -5594,11 +6114,11 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
 
     rangedWeaponsHtml = `
       <div>
-        <h4 class="battle-ds-section-title">🎯 Armas a Distancia (Ranged Weapons)</h4>
+        <h4 class="battle-ds-section-title">🎯 Armas a Distancia</h4>
         <table class="weapons-summary-table">
           <thead>
             <tr>
-              <th>Arma & Reglas Especiales</th>
+              <th>Arma y Reglas</th>
               <th style="text-align: center;">Alcance</th>
               <th style="text-align: center;">A</th>
               <th style="text-align: center;">HP</th>
@@ -5621,8 +6141,8 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
     const rows = ds.meleeWeapons.map(w => `
       <tr>
         <td class="w-name">
-          ${w.name || '-'}
-          ${w.keywords && w.keywords.length > 0 ? `<span class="w-keywords">[${w.keywords.join(', ')}]</span>` : ''}
+          <strong>${escapeHtml(w.name || '-')}</strong>
+          ${renderWeaponKeywordBadges(w.keywords)}
         </td>
         <td style="text-align: center;">${w.range || 'Combate'}</td>
         <td style="text-align: center;">${w.a ?? '-'}</td>
@@ -5635,11 +6155,11 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
 
     meleeWeaponsHtml = `
       <div>
-        <h4 class="battle-ds-section-title">⚔️ Armas de Combate Cuerpo a Cuerpo (Melee Weapons)</h4>
+        <h4 class="battle-ds-section-title">⚔️ Armas de Combate</h4>
         <table class="weapons-summary-table">
           <thead>
             <tr>
-              <th>Arma & Reglas Especiales</th>
+              <th>Arma y Reglas</th>
               <th style="text-align: center;">Alcance</th>
               <th style="text-align: center;">A</th>
               <th style="text-align: center;">HA</th>
@@ -5709,53 +6229,79 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
     }
   }
 
-  // 8. Habilidades de la Unidad
-  const abilitiesList = Array.isArray(ds.abilities) ? ds.abilities : [];
+  // 8. Habilidades de la Unidad (Separadas al estilo Wahapedia)
+  const abSplit = splitAbilitiesWahapedia(ds.abilities || []);
+  const corePillsHtml = abSplit.core.map(c => formatKeywordWithTooltip(c, "waha-core-pill")).join("");
+  const factionList = abSplit.faction.length > 0 ? abSplit.faction : ["Juramento del Momento"];
+  const factionPillsHtml = factionList.map(f => formatKeywordWithTooltip(f, "waha-faction-pill")).join("");
+
   const abilitiesHtml = `
     <div>
-      <h4 class="battle-ds-section-title">📜 Habilidades & Reglas Especiales</h4>
-      <div style="display: flex; flex-direction: column; gap: 6px;">
-        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem; line-height: 1.4;">
-          <strong style="color: var(--gold-accent);">Juramento de Momento (Oath of Moment):</strong>
-          <span style="color: var(--deathwing-bone);"> Regla de facción del Adeptus Astartes. Al inicio de tu Fase de Mando, selecciona una unidad enemiga como objetivo del juramento; las unidades amigas repiten las tiradas para impactar contra ese objetivo.</span>
-        </div>
-        ${abilitiesList.map(ab => `
-          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem; line-height: 1.4; color: var(--deathwing-bone);">
-            ${ab}
+      <h4 class="battle-ds-section-title">📜 Reglas y Habilidades de Hoja de Datos</h4>
+      <div class="waha-ability-block">
+        ${corePillsHtml ? `
+          <div class="waha-sub-row">
+            <span class="waha-sub-lbl">REGLAS BÁSICAS:</span>
+            <div class="waha-pills-wrap">${corePillsHtml}</div>
           </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
-
-  // 9. Palabras Clave (Keywords)
-  const keywordsList = Array.isArray(ds.keywords) ? ds.keywords : [];
-  const keywordsHtml = `
-    <div>
-      <h4 style="color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; margin: 0 0 6px 0; font-weight: 700;">
-        🏷️ Palabras Clave (Keywords)
-      </h4>
-      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-        ${keywordsList.map(k => `
-          <span style="font-size: 0.72rem; padding: 2px 8px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; color: var(--text-main);">
-            ${k}
-          </span>
-        `).join('')}
-      </div>
-    </div>
-  `;
-
-  // 10. Líder de (si es Personaje con líder de)
-  let leaderOfHtml = "";
-  if (Array.isArray(ds.leaderOf) && ds.leaderOf.length > 0) {
-    leaderOfHtml = `
-      <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 8px 12px;">
-        <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 4px;">
-          🛡️ Puede unirse como Líder a las siguientes escuadras:
-        </span>
-        <div style="font-size: 0.8rem; color: var(--deathwing-bone); line-height: 1.4;">
-          ${ds.leaderOf.join(' • ')}
+        ` : ''}
+        <div class="waha-sub-row">
+          <span class="waha-sub-lbl">FACCIÓN:</span>
+          <div class="waha-pills-wrap">${factionPillsHtml}</div>
         </div>
+        <div class="waha-unit-abilities-list">
+          ${abSplit.unit.length > 0
+            ? abSplit.unit.map(ab => formatUnitAbilityHtml(ab)).join("")
+            : '<div class="waha-ability-item" style="color: var(--text-muted); font-style: italic;">Regla de facción: Al inicio de tu Fase de Mando, elige una unidad enemiga como objetivo del Juramento del Momento para repetir tiradas para impactar.</div>'}
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 9. Palabras Clave y Claves de Facción
+  const kwSplit = splitUnitAndFactionKeywords(ds.keywords || []);
+  const keywordsHtml = `
+    <div class="waha-ds-footer">
+      <div class="waha-kw-box waha-unit-kw">
+        <span class="waha-kw-box-lbl">PALABRAS CLAVE:</span>
+        <div class="waha-pills-wrap">${kwSplit.unitKeywords.map(k => formatKeywordWithTooltip(k, "waha-kw-chip")).join("")}</div>
+      </div>
+      <div class="waha-kw-box waha-faction-kw">
+        <span class="waha-kw-box-lbl">CLAVES DE FACCIÓN:</span>
+        <div class="waha-pills-wrap">${kwSplit.factionKeywords.map(k => formatKeywordWithTooltip(k, "waha-kw-chip faction-chip")).join("")}</div>
+      </div>
+    </div>
+  `;
+
+  // 10. Liderazgo Bidireccional (Líder / Liderado por)
+  const leadership = getUnitLeadershipInfo(ds);
+  let leaderOfHtml = "";
+  if (leadership.canLead.length > 0 || leadership.ledBy.length > 0) {
+    leaderOfHtml = `
+      <div class="waha-leader-section">
+        ${leadership.canLead.length > 0 ? `
+          <div class="waha-leader-block">
+            <div class="waha-block-bar dark-subbar">🛡️ LÍDER — PUEDE UNIRSE A ESTAS UNIDADES</div>
+            <div class="waha-leader-chips">
+              ${leadership.canLead.map(target => target.datasheetId
+                ? `<button type="button" class="waha-leader-chip clickable" onclick="openBattleUnitDatasheetModal('${target.datasheetId}', '')" title="Ver ficha de ${escapeHtml(target.label)}">${escapeHtml(target.label)}</button>`
+                : `<span class="waha-leader-chip">${escapeHtml(target.label)}</span>`
+              ).join("")}
+            </div>
+          </div>
+        ` : ''}
+        ${leadership.ledBy.length > 0 ? `
+          <div class="waha-leader-block">
+            <div class="waha-block-bar dark-subbar">👑 LIDERADO POR — PERSONAJES COMPATIBLES</div>
+            <div class="waha-leader-chips">
+              ${leadership.ledBy.map(ldr => `
+                <button type="button" class="waha-leader-chip clickable" onclick="openBattleUnitDatasheetModal('${ldr.datasheetId}', '')" title="Ver ficha del líder ${escapeHtml(ldr.label)}">
+                  ${escapeHtml(ldr.label)}
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        ` : ''}
       </div>
     `;
   }
@@ -5836,11 +6382,10 @@ function toggleBattleStratagemsScope() {
 }
 
 function useBattleStratagem(stratId) {
-  const currentLang = AppState.currentLanguage || "es";
-  const t = WH40K_I18N[currentLang] || WH40K_I18N.es;
+  const t = WH40K_I18N.es;
   const raw = (WH40K_DATA.stratagems || []).find(s => s.id === stratId);
   if (!raw) return;
-  const s = getStratagemText(raw, currentLang);
+  const s = getStratagemText(raw);
 
   if (AppState.battle.commandPoints < s.cp) {
     alert(t.battleToastNoCp(s.name, s.cp, AppState.battle.commandPoints));
@@ -5895,41 +6440,25 @@ function renderBattleStratagems() {
 
   if (!grid) return;
 
-  const currentLang = AppState.currentLanguage || "es";
-  const isEn = currentLang === "en";
-  const t = WH40K_I18N[currentLang] || WH40K_I18N.es;
-
+  const t = WH40K_I18N.es;
   const currentTurn = AppState.battle.turn || "player";
   const currentPhase = AppState.battle.phase || "command";
   const onlyArmy = AppState.battle.stratagemScopeOnlyArmy !== false;
 
   if (scopeCheckbox) scopeCheckbox.checked = onlyArmy;
 
-  const phaseLabelsEs = {
+  const phaseLabels = {
     command: "Fase de Mando",
     movement: "Fase de Movimiento",
     shooting: "Fase de Disparo",
     charge: "Fase de Carga",
     fight: "Fase de Combate"
   };
-  const phaseLabelsEn = {
-    command: "Command Phase",
-    movement: "Movement Phase",
-    shooting: "Shooting Phase",
-    charge: "Charge Phase",
-    fight: "Fight Phase"
-  };
-  const phaseLabels = isEn ? phaseLabelsEn : phaseLabelsEs;
 
-  const turnLabelsEs = {
+  const turnLabels = {
     player: "Mi Turno (Jugador)",
     opponent: "Turno Enemigo (Oponente)"
   };
-  const turnLabelsEn = {
-    player: "My Turn (Player)",
-    opponent: "Opponent's Turn"
-  };
-  const turnLabels = isEn ? turnLabelsEn : turnLabelsEs;
 
   if (subtitleEl) {
     subtitleEl.textContent = `${phaseLabels[currentPhase] || currentPhase} • ${turnLabels[currentTurn] || currentTurn}`;
@@ -5941,17 +6470,14 @@ function renderBattleStratagems() {
 
   // Filtrar según fase y turno actual
   const eligible = stratagems.filter(raw => {
-    // Fase: coincide o es aplicable en cualquier fase
     const phaseMatch = (raw.phases ? raw.phases.includes(currentPhase) : raw.phase === currentPhase) || raw.phase === "any";
     if (!phaseMatch) return false;
 
-    // Turno: coincide o es aplicable en cualquier turno
     const turnMatch = currentTurn === "player" 
       ? (raw.turn === "your_turn" || raw.turn === "either_turn")
       : (raw.turn === "opponent_turn" || raw.turn === "either_turn");
     if (!turnMatch) return false;
 
-    // Alcance: solo destacamentos activos de la fuerza + básicas
     if (onlyArmy) {
       if (raw.detachmentId === "core") return true;
       const activeDetIds = (activeList && activeList.detachmentIds && activeList.detachmentIds.length > 0)
@@ -5960,7 +6486,6 @@ function renderBattleStratagems() {
       if (activeDetIds.length > 0) {
         return activeDetIds.includes(raw.detachmentId);
       }
-      // Si la lista no tiene destacamentos asignados todavía, mostrar básicas y de Ángeles Oscuros
       if (raw.detachmentId === "inner_circle" || raw.detachmentId === "darkflight_pursuit" || raw.detachmentId === "wrath_of_the_rock") return true;
       return false;
     }
@@ -5989,36 +6514,37 @@ function renderBattleStratagems() {
   const userCP = AppState.battle.commandPoints || 0;
 
   grid.innerHTML = eligible.map(raw => {
-    const s = getStratagemText(raw, currentLang);
+    const s = getStratagemText(raw);
+    const turnColorClass = getStratagemTurnClass(s.turn);
     const canAfford = userCP >= s.cp;
     const isCore = s.detachmentId === "core";
-    const detachmentTag = isCore ? (isEn ? "Core" : "Básica") : s.detachment;
+    const detachmentTag = isCore ? "Básica" : s.detachment;
 
     return `
-      <div class="battle-stratagem-card phase-accent-${s.phase}">
+      <div class="battle-stratagem-card phase-accent-${s.phase} ${turnColorClass}">
         <div class="battle-stratagem-top">
           <div>
             <div style="display: flex; align-items: center; gap: 6px;">
               <h5 style="margin: 0; font-family: var(--font-serif); font-size: 0.95rem; color: var(--deathwing-bone);">
-                ${s.name}
+                ${escapeHtml(s.name)}
               </h5>
-              <button class="btn-strat-action" onclick="openStratagemEditor('${raw.id}')" style="padding: 1px 5px; font-size: 0.68rem;" title="${isEn ? 'Edit stratagem' : 'Editar estratagema'}">✏️</button>
+              <button class="btn-strat-action" onclick="openStratagemEditor('${raw.id}')" style="padding: 1px 5px; font-size: 0.68rem;" title="Editar estratagema">✏️</button>
             </div>
             <div style="display: flex; gap: 6px; align-items: center; margin-top: 2px;">
               <span class="stratagem-tag tag-detachment" style="font-size: 0.68rem; padding: 1px 6px;">
-                ${detachmentTag}
+                ${escapeHtml(detachmentTag)}
               </span>
-              <span style="font-size: 0.72rem; color: var(--text-muted);">${s.type || ''}</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">${escapeHtml(s.type || '')}</span>
             </div>
           </div>
           <span class="stratagem-cp-badge" style="font-size: 0.8rem; padding: 2px 7px;">${s.cp} CP</span>
         </div>
 
         <div style="font-size: 0.78rem; line-height: 1.35; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px;">
-          <div><strong style="color: var(--gold-accent);">${t.whenLabel}</strong> ${escapeHtml(s.when)}</div>
-          <div><strong style="color: #38bdf8;">${t.targetLabel}</strong> ${escapeHtml(s.target)}</div>
-          <div><strong style="color: var(--deathwing-bone);">${t.effectLabel}</strong> ${escapeHtml(s.effect)}</div>
-          ${s.restrictions ? `<div style="color: #fca5a5;"><strong style="color: #f87171;">${isEn ? 'RESTRICTIONS:' : 'RESTRICCIONES:'}</strong> ${escapeHtml(s.restrictions)}</div>` : ''}
+          <div><strong style="color: var(--gold-accent);">${t.whenLabel}</strong> ${highlightBracketTags(s.when)}</div>
+          <div><strong style="color: #38bdf8;">${t.targetLabel}</strong> ${highlightBracketTags(s.target)}</div>
+          <div><strong style="color: var(--deathwing-bone);">${t.effectLabel}</strong> ${highlightBracketTags(s.effect)}</div>
+          ${s.restrictions ? `<div style="color: #fca5a5;"><strong style="color: #f87171;">RESTRICCIONES:</strong> ${highlightBracketTags(s.restrictions)}</div>` : ''}
         </div>
 
         <div class="battle-stratagem-action-row">
@@ -6214,10 +6740,10 @@ function calculateMathhammer() {
     const specialRulesActive = [];
     if (isTorrent) specialRulesActive.push("Torrente");
     if (lethalHits) specialRulesActive.push(`Impactos Letales (${res.autoWounds.toFixed(1)} aut.)`);
-    if (sustainedHits > 0) specialRulesActive.push(`Sostenidos ${sustainedHits}`);
-    if (devastatingWounds) specialRulesActive.push(`Devastadoras (${res.devWounds.toFixed(1)} mortales)`);
-    if (twinLinked) specialRulesActive.push("Acoplada");
-    if (isOath) specialRulesActive.push("Juramento (Oath)");
+    if (sustainedHits > 0) specialRulesActive.push(`Impactos Sostenidos ${sustainedHits}`);
+    if (devastatingWounds) specialRulesActive.push(`Heridas Devastadoras (${res.devWounds.toFixed(1)} mortales)`);
+    if (twinLinked) specialRulesActive.push("Acoplado");
+    if (isOath) specialRulesActive.push("Juramento del Momento");
 
     const rulesStr = specialRulesActive.length > 0 ? ` • [${specialRulesActive.join(", ")}]` : "";
 

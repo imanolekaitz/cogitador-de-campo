@@ -4164,15 +4164,1019 @@ html, body {
   }
 }
 
+/* ==========================================================================
+   MÓDULO WAHAPEDIA ES: CABECERA, ACORDEONES, ÍNDICE Y HOJAS DE DATOS
+   ========================================================================== */
+.header-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wahapedia-top-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.waha-accordion {
+  background: linear-gradient(160deg, rgba(14, 29, 20, 0.94), rgba(7, 14, 10, 0.98));
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+}
+
+.waha-accordion-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(20, 48, 32, 0.9), rgba(11, 23, 16, 0.95));
+  color: var(--deathwing-bone);
+  font-size: 0.92rem;
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.waha-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.waha-accordion[open] > .waha-accordion-summary {
+  border-bottom-color: var(--border-gold);
+}
+
+.waha-accordion-summary:hover {
+  background: linear-gradient(90deg, rgba(26, 62, 41, 0.95), rgba(14, 30, 20, 0.98));
+}
+
+.waha-chevron {
+  font-size: 0.75rem;
+  color: var(--gold-primary);
+  transition: transform 0.2s ease;
+}
+
+.waha-accordion[open] > .waha-accordion-summary .waha-chevron {
+  transform: rotate(180deg);
+}
+
+.waha-accordion-body {
+  padding: 14px 16px;
+}
+
+/* Reglas de Ejército y Capítulo */
+.waha-army-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.waha-army-rule-card {
+  background: rgba(5, 11, 8, 0.72);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--caliban-bright);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--deathwing-bone);
+}
+
+.waha-army-rule-card.main-faction-rule {
+  border-left-color: var(--gold-primary);
+  background: radial-gradient(circle at 0% 0%, rgba(201, 162, 75, 0.08), transparent 60%), rgba(5, 11, 8, 0.78);
+}
+
+.waha-army-rule-header {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--gold-accent);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+/* Índice Rápido de Hojas de Datos por Rol Táctico (Directorio estilo Wahapedia) */
+.waha-index-columns {
+  column-count: 3;
+  column-gap: 16px;
+}
+
+.waha-index-group {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  background: rgba(5, 11, 8, 0.65);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.waha-index-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 11px;
+  background: linear-gradient(90deg, #1b3626, #0d1d14);
+  border-bottom: 1px solid var(--border-gold);
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.waha-index-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--deathwing-bone);
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.waha-index-links {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+}
+
+.waha-index-unit-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.waha-index-unit-btn:last-child {
+  border-bottom: none;
+}
+
+.waha-index-unit-btn:hover {
+  background: rgba(201, 162, 75, 0.14);
+  color: var(--gold-accent);
+}
+
+.waha-wing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.waha-wing-dot.deathwing {
+  background: #e5d7b5;
+  box-shadow: 0 0 6px rgba(229, 215, 181, 0.5);
+}
+
+.waha-wing-dot.ravenwing {
+  background: #94a3b8;
+  box-shadow: 0 0 6px rgba(148, 163, 184, 0.45);
+}
+
+.waha-index-unit-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.waha-index-unit-pts {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   HOJA DE DATOS WAHAPEDIA (VISTA COMPLETA A 2 COLUMNAS)
+   ========================================================================== */
+.waha-datasheet {
+  grid-column: 1 / -1;
+  background: linear-gradient(175deg, rgba(13, 25, 18, 0.97) 0%, rgba(6, 12, 9, 0.99) 100%);
+  border: 1px solid var(--border-bright);
+  border-top: 3px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
+}
+
+.waha-datasheet.wing-deathwing {
+  border-top-color: #d6c396;
+}
+
+.waha-datasheet.wing-ravenwing {
+  border-top-color: #94a3b8;
+}
+
+.waha-ds-header {
+  background:
+    linear-gradient(90deg, rgba(8, 28, 18, 0.98) 0%, rgba(16, 42, 28, 0.95) 55%, rgba(9, 19, 13, 0.98) 100%);
+  border-bottom: 2px solid var(--border-gold);
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.waha-ds-header-main {
+  flex: 1 1 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.waha-ds-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.waha-role-emblem {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.waha-ds-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.32rem;
+  letter-spacing: 0.4px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.waha-ds-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.waha-role-text {
+  font-size: 0.78rem;
+  color: var(--deathwing-bone);
+  font-weight: 600;
+}
+
+.wing-badge.epic-badge {
+  background: rgba(217, 119, 6, 0.22);
+  color: #fcd34d;
+  border: 1px solid rgba(251, 191, 36, 0.45);
+}
+
+.wing-badge.custom-ds-badge {
+  background: rgba(168, 85, 247, 0.2);
+  color: #e9d5ff;
+  border: 1px solid rgba(192, 132, 252, 0.45);
+}
+
+.waha-ds-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.waha-ds-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Barra de 6 atributos + Escudo Invulnerable (Codex & Modal Batalla) */
+.waha-statline-row,
+.waha-stat-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statline-container.waha-stat-6 {
+  grid-template-columns: repeat(6, minmax(48px, 66px));
+  padding: 6px 8px;
+  gap: 6px;
+  width: fit-content;
+}
+
+.waha-stat-bar {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(50px, 68px));
+  gap: 6px;
+  background: linear-gradient(180deg, rgba(4, 9, 6, 0.85) 0%, rgba(10, 22, 15, 0.9) 100%);
+  padding: 7px 9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(201, 162, 75, 0.35);
+}
+
+.waha-stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.waha-stat-lbl {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.waha-stat-val {
+  font-family: var(--font-mono);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.waha-invuln-shield {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 6px 12px;
+  background: linear-gradient(160deg, rgba(30, 64, 175, 0.38), rgba(15, 23, 42, 0.92));
+  border: 2px solid #38bdf8;
+  border-radius: 6px 6px 16px 16px;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+}
+
+.waha-invuln-shield .inv-label,
+.waha-inv-lbl {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  color: #7dd3fc;
+  text-transform: uppercase;
+}
+
+.waha-invuln-shield .inv-val,
+.waha-inv-val {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+}
+
+/* Cuerpo 2 columnas estilo Wahapedia */
+.waha-ds-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 18px;
+  align-items: start;
+}
+
+.waha-ds-col-weapons,
+.waha-ds-col-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.waha-weapons-block,
+.waha-section-box {
+  background: rgba(4, 10, 7, 0.68);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.waha-section-bar,
+.waha-block-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  background: linear-gradient(90deg, #1b3626, #0d1d14);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.35);
+  color: var(--gold-accent);
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.waha-section-bar.ranged-bar {
+  background: linear-gradient(90deg, rgba(12, 74, 110, 0.88), rgba(15, 23, 42, 0.95));
+  color: #bae6fd;
+  border-bottom-color: rgba(56, 189, 248, 0.4);
+}
+
+.waha-section-bar.melee-bar {
+  background: linear-gradient(90deg, rgba(127, 29, 29, 0.88), rgba(24, 12, 12, 0.95));
+  color: #fecaca;
+  border-bottom-color: rgba(248, 113, 113, 0.4);
+}
+
+.waha-block-bar.dark-subbar {
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.96));
+  color: #93c5fd;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.waha-bar-sub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+.waha-weapons-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.waha-weapons-table th {
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--deathwing-bone);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.waha-weapons-table td {
+  padding: 7px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+  color: var(--text-main);
+}
+
+.waha-weapons-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.waha-weapons-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.waha-weapons-table th.w-center,
+.waha-weapons-table td.w-center {
+  text-align: center;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.waha-weapons-table td.w-bold {
+  font-weight: 700;
+  color: #fff;
+}
+
+.waha-weapons-table td.w-skill {
+  color: var(--caliban-bright);
+  font-weight: 700;
+}
+
+.waha-weapons-table td.w-ap {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.waha-weapons-table td.w-dmg {
+  color: var(--gold-accent);
+  font-weight: 800;
+}
+
+.waha-weapon-name {
+  font-weight: 700;
+  color: var(--deathwing-bone);
+}
+
+.waha-weapon-kws {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.waha-empty-weapons {
+  padding: 18px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-style: italic;
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+/* Badges de Reglas Especiales + Tooltips Wahapedia */
+.waha-kw-badge,
+.waha-inline-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.69rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(20, 108, 54, 0.22);
+  color: #86efac;
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.waha-inline-tag {
+  background: rgba(201, 162, 75, 0.16);
+  color: var(--gold-accent);
+  border-color: rgba(201, 162, 75, 0.42);
+  font-size: 0.74rem;
+}
+
+.has-tooltip {
+  cursor: help;
+  text-decoration: underline dotted rgba(255, 255, 255, 0.45);
+  text-underline-offset: 2px;
+}
+
+.has-tooltip:hover,
+.has-tooltip:focus-visible {
+  filter: brightness(1.18);
+  outline: none;
+}
+
+.waha-floating-tooltip {
+  position: fixed;
+  z-index: 12000;
+  max-width: 340px;
+  padding: 10px 13px;
+  background: linear-gradient(160deg, rgba(9, 20, 14, 0.98), rgba(4, 9, 6, 0.99));
+  border: 1px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.85), 0 0 14px rgba(201, 162, 75, 0.25);
+  color: var(--deathwing-bone);
+  font-size: 0.78rem;
+  line-height: 1.42;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.waha-floating-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bloque de Habilidades y Reglas (Codex y Modal Batalla) */
+.waha-core-abilities-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.waha-ability-block {
+  background: rgba(4, 10, 7, 0.65);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.waha-sub-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 7px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.waha-sub-lbl {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.6px;
+}
+
+.waha-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.waha-core-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: rgba(30, 58, 138, 0.35);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.waha-faction-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: rgba(180, 120, 30, 0.25);
+  color: var(--gold-accent);
+  border: 1px solid rgba(201, 162, 75, 0.45);
+}
+
+.waha-rule-tag {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(201, 162, 75, 0.16);
+  color: var(--gold-accent);
+  border: 1px solid rgba(201, 162, 75, 0.38);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.waha-unit-abilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.waha-ability-item {
+  font-size: 0.8rem;
+  line-height: 1.42;
+  color: var(--deathwing-bone);
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+}
+
+.waha-ability-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.waha-ability-name {
+  color: var(--gold-accent);
+  font-weight: 700;
+}
+
+.waha-ability-desc {
+  color: var(--text-main);
+}
+
+/* Liderazgo Bidireccional (Líder / Liderado por) */
+.waha-leader-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.waha-leader-block {
+  background: rgba(4, 10, 7, 0.68);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.waha-leader-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px;
+}
+
+.waha-leader-link,
+.waha-leader-static,
+.waha-leader-chip {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(20, 42, 29, 0.72);
+  color: var(--deathwing-bone);
+  border: 1px solid var(--border-gold);
+}
+
+.waha-leader-link,
+.waha-leader-chip.clickable {
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.waha-leader-link:hover,
+.waha-leader-chip.clickable:hover {
+  background: rgba(201, 162, 75, 0.22);
+  border-color: var(--gold-accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.waha-leader-link.led-by {
+  background: rgba(15, 36, 56, 0.72);
+  border-color: rgba(56, 189, 248, 0.45);
+  color: #bae6fd;
+}
+
+.waha-leader-link.led-by:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+}
+
+.waha-leader-static {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+}
+
+/* Composición de Unidad y Puntos */
+.waha-points-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.waha-pts-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: var(--text-main);
+}
+
+.waha-pts-pill strong {
+  color: var(--gold-accent);
+  font-family: var(--font-mono);
+}
+
+.waha-unit-notes {
+  margin: 0 12px 10px 12px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Pie de Hoja de Datos Wahapedia: Palabras Clave vs Facción */
+.waha-ds-footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 12px;
+  padding: 10px 18px;
+  background: rgba(3, 8, 5, 0.88);
+  border-top: 1px solid var(--border-gold);
+}
+
+.waha-footer-kw-block,
+.waha-footer-faction-block,
+.waha-kw-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.waha-kw-box.waha-unit-kw,
+.waha-kw-box.waha-faction-kw {
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.waha-footer-label,
+.waha-kw-box-lbl {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.waha-footer-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.waha-unit-kw,
+.waha-kw-chip {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.waha-faction-kw,
+.waha-kw-chip.faction-chip {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  background: rgba(20, 108, 54, 0.28);
+  border: 1px solid var(--caliban-bright);
+  border-radius: 3px;
+  color: #a7f3d0;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ESTRATAGEMAS POR FASE Y COLORES WAHAPEDIA POR TURNO
+   ========================================================================== */
+.waha-strat-phase-group {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.waha-strat-phase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  background: linear-gradient(90deg, rgba(20, 48, 32, 0.94), rgba(8, 17, 12, 0.96));
+  border: 1px solid var(--border-gold);
+  border-left: 4px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.waha-strat-phase-count {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--deathwing-bone);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 162, 75, 0.35);
+}
+
+.waha-strat-phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 18px;
+}
+
+/* Código cromático oficial de Wahapedia por Turno de uso:
+   - Azul (#1d4ed8 / #38bdf8): Tu Turno (your_turn)
+   - Verde Azulado (#0f766e / #2dd4bf): Cualquier Turno (either_turn)
+   - Rojo Carmesí (#b91c1c / #f87171): Turno del Oponente (opponent_turn) */
+.stratagem-card.turn-color-player,
+.battle-stratagem-card.turn-color-player,
+.waha-det-strat.turn-color-player {
+  border-top: 3px solid #38bdf8;
+  background-image: linear-gradient(180deg, rgba(29, 78, 216, 0.14) 0%, transparent 90px);
+}
+
+.stratagem-card.turn-color-either,
+.battle-stratagem-card.turn-color-either,
+.waha-det-strat.turn-color-either {
+  border-top: 3px solid #2dd4bf;
+  background-image: linear-gradient(180deg, rgba(15, 118, 110, 0.16) 0%, transparent 90px);
+}
+
+.stratagem-card.turn-color-opponent,
+.battle-stratagem-card.turn-color-opponent,
+.waha-det-strat.turn-color-opponent {
+  border-top: 3px solid #f87171;
+  background-image: linear-gradient(180deg, rgba(185, 28, 28, 0.15) 0%, transparent 90px);
+}
+
+.waha-det-strat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 12px;
+}
+
+.waha-det-strat-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.waha-det-strat-line {
+  font-size: 0.77rem;
+  line-height: 1.38;
+  color: var(--deathwing-bone);
+}
+
+.waha-det-strat-line strong {
+  color: var(--gold-accent);
+  font-size: 0.71rem;
+  letter-spacing: 0.4px;
+}
+
+.waha-det-strat-rest {
+  color: #fca5a5;
+}
+
+.waha-det-strat-rest strong {
+  color: #f87171;
+}
+
+@media (max-width: 960px) {
+  .waha-index-columns {
+    column-count: 2;
+  }
+  .waha-ds-body,
+  .waha-ds-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .waha-index-columns {
+    column-count: 1;
+  }
+  .waha-ds-header {
+    padding: 12px;
+  }
+  .waha-ds-header-actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .statline-container.waha-stat-6,
+  .waha-stat-bar {
+    grid-template-columns: repeat(3, minmax(54px, 1fr));
+  }
+  .waha-ds-body,
+  .waha-ds-footer {
+    padding: 12px;
+  }
+  .waha-strat-phase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media print {
-  .vox-telemetry-bar, .cogitator-header, .main-nav, .codex-heraldry-banner, .toolbar-panel, .btn-gothic, .card-actions-row, .comparator-panel, .cogitator-footer {
+  .vox-telemetry-bar, .cogitator-header, .main-nav, .codex-heraldry-banner, .wahapedia-top-accordions, .toolbar-panel, .btn-gothic, .card-actions-row, .comparator-panel, .cogitator-footer {
     display: none !important;
   }
   body {
     background: #fff !important;
     color: #000 !important;
   }
-  .datasheet-card, .army-unit-card, .detachment-card {
+  .datasheet-card, .waha-datasheet, .army-unit-card, .detachment-card {
     border: 1px solid #ccc !important;
     background: #fff !important;
     box-shadow: none !important;
