@@ -316,6 +316,15 @@ function splitUnitAndFactionKeywords(keywordsArr) {
   return { unitKeywords, factionKeywords };
 }
 
+const TRANSHUMAN_STRATEGIST_IDS = new Set([
+  "da_lion", "da_azrael", "da_belial", "da_sammael", "da_asmodai", "da_lazarus",
+  "sm_captain", "sm_captain_terminator", "sm_captain_in_gravis_armour",
+  "sm_captain_in_phobos_armour", "sm_captain_with_jump_pack", "sm_captain_bike"
+]);
+const LIBRARIUS_IDS = new Set([
+  "sm_librarian", "sm_librarian_terminator", "sm_librarian_in_phobos_armour"
+]);
+
 function sanitizeDataToSpanish() {
   if (typeof WH40K_DATA === "undefined") return;
 
@@ -330,6 +339,22 @@ function sanitizeDataToSpanish() {
           .replace(/^(Regla\s+de\s+Facci[oó]n\s*:\s*)?Juramento\s+del?\s+Momento$/i, "Regla de Facción: Doctrinas de Combate")
           .replace(/(Regla\s+de\s+Facci[oó]n\s*:\s*)Juramento\s+del?\s+Momento/gi, "$1Doctrinas de Combate")
       );
+      if (TRANSHUMAN_STRATEGIST_IDS.has(ds.id)) {
+        const idx = ds.abilities.findIndex(a => /^Regla\s+de\s+Facci[oó]n\s*:/i.test(a));
+        if (idx !== -1 && !/Estratega Transhumano/i.test(ds.abilities[idx])) {
+          ds.abilities[idx] = "Regla de Facción: Doctrinas de Combate, Estratega Transhumano";
+        } else if (idx === -1) {
+          ds.abilities.unshift("Regla de Facción: Doctrinas de Combate, Estratega Transhumano");
+        }
+      }
+      if (LIBRARIUS_IDS.has(ds.id)) {
+        const idx = ds.abilities.findIndex(a => /^Regla\s+de\s+Facci[oó]n\s*:/i.test(a));
+        if (idx !== -1 && !/Librarius/i.test(ds.abilities[idx])) {
+          ds.abilities[idx] = "Regla de Facción: Doctrinas de Combate, Librarius";
+        } else if (idx === -1) {
+          ds.abilities.unshift("Regla de Facción: Doctrinas de Combate, Librarius");
+        }
+      }
       ds.leaderOf = (ds.leaderOf || []).map(l => cleanSpanishLabel(l));
 
       (ds.rangedWeapons || []).forEach(w => {
@@ -429,6 +454,8 @@ function getKeywordTooltipIndex() {
     "doctrina tactica": "Doctrina de Combate (11.ª Ed): La unidad es elegible para disparar y declarar una carga en un turno en el que haya Retrocedido.",
     "doctrina de asalto": "Doctrina de Combate (11.ª Ed): La unidad es elegible para declarar una carga en un turno en el que haya Avanzado.",
     "disciplina del codex": "Regla del Contingente Gladius (11.ª Ed): Puedes seleccionar una Doctrina de Combate una vez adicional por batalla.",
+    "estratega transhumano": "Regla de Ejército (11.ª Ed): Al inicio de la ronda de batalla, si una miniatura con esta habilidad es tu Señor de la Guerra, ganas 1 CP.",
+    "librarius": "Regla de Ejército (11.ª Ed): Las unidades ADEPTUS ASTARTES PSÍQUICO tienen un Nivel Psíquico de 1 o superior y pueden lanzar habilidades psíquicas cuya suma de niveles no exceda su Nivel Psíquico por ronda.",
     "juramento del momento": "Regla de 10.ª Ed (sustituida en 11.ª Ed por Doctrinas de Combate): permitía repetir tiradas para impactar contra una unidad objetivo.",
     "juramento de momento": "Regla de 10.ª Ed (sustituida en 11.ª Ed por Doctrinas de Combate): permitía repetir tiradas para impactar contra una unidad objetivo.",
     "psiquica": idx.get("psiquico") || "Ataques canalizados mediante poderes psíquicos de la Disformidad."
@@ -1210,7 +1237,7 @@ function renderWahapediaHeaderPanels() {
         ${cRules.map(cr => `
           <div class="waha-army-rule-card">
             <div class="waha-army-rule-header">
-              <span class="waha-rule-tag">REGLA DE CAPÍTULO • ÁNGELES OSCUROS</span>
+              <span class="waha-rule-tag">${escapeHtml(cr.tag || "REGLA DE CAPÍTULO • ÁNGELES OSCUROS")}</span>
               <h4>🛡️ ${escapeHtml(cleanSpanishLabel(cr.name))}</h4>
             </div>
             <p>${escapeHtml(cleanSpanishLabel(cr.description))}</p>
@@ -1340,6 +1367,10 @@ function splitAbilitiesWahapedia(abilities) {
       core.push(cleanAb);
     } else if (/^(Juramento\s+del?\s+Momento|Doctrinas\s+de\s+Combate)$/i.test(cleanAb)) {
       if (!faction.includes("Doctrinas de Combate")) faction.push("Doctrinas de Combate");
+    } else if (/^Estratega\s+Transhumano$/i.test(cleanAb)) {
+      if (!faction.includes("Estratega Transhumano")) faction.push("Estratega Transhumano");
+    } else if (/^Librarius$/i.test(cleanAb)) {
+      if (!faction.includes("Librarius")) faction.push("Librarius");
     } else {
       unit.push(cleanAb);
     }

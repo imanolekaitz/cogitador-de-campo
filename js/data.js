@@ -17,22 +17,37 @@ const WH40K_DATA = {
     description: "Al inicio de tu Fase de Mando, puedes seleccionar una de las tres Doctrinas de Combate; permanece activa para todas las unidades amigas ADEPTUS ASTARTES con esta habilidad hasta el inicio de tu siguiente Fase de Mando (salvo que se indique lo contrario, solo puedes activar cada doctrina una vez por batalla y solo una puede estar activa por unidad a la vez): • Doctrina Devastadora: Las armas a distancia de la unidad obtienen la habilidad [ASALTO] (elegible para disparar tras Avanzar). • Doctrina Táctica: Si la unidad realiza un movimiento de Retroceder, sigue siendo elegible para disparar y declarar una carga en ese turno. • Doctrina de Asalto: Si la unidad realiza un movimiento de Avanzar, sigue siendo elegible para declarar una carga en ese turno."
   },
   
-  // REGLAS ESPECÍFICAS DE CAPÍTULO DE LOS ÁNGELES OSCUROS
+  // REGLAS OFICIALES DE EJÉRCITO Y CAPÍTULO (11.ª EDICIÓN / WAHAPEDIA)
   chapterRules: [
     {
-      name: "Capítulos: Los No Perdonados",
+      name: "Estratega Transhumano",
+      originalName: "Transhuman Strategist",
+      tag: "REGLA DE EJÉRCITO • MANDOS ASTARTES",
+      description: "Al inicio de la ronda de batalla, si una miniatura con esta habilidad es tu SEÑOR DE LA GUERRA, ganas 1 CP. (Presente en Lion El'Jonson, Azrael, Belial, Sammael, Asmodai, Lazarus y todos los Capitanes)."
+    },
+    {
+      name: "Librarius",
+      originalName: "Librarius",
+      tag: "REGLA DE EJÉRCITO • PSÍQUICOS ASTARTES",
+      description: "Las unidades ADEPTUS ASTARTES PSÍQUICO con esta habilidad tienen un Nivel Psíquico de 1 o superior (indicado en su hoja de datos), y cada habilidad psíquica tiene un nivel psíquico de 1 o superior. En cada ronda de batalla, la unidad puede usar un número de habilidades psíquicas cuya suma de niveles no supere su Nivel Psíquico."
+    },
+    {
+      name: "Capítulos de Marines Espaciales",
       originalName: "Chapters",
-      description: "Si tu ejército incluye una o más unidades con la clave ÁNGELES OSCUROS, no puedes incluir unidades de ningún otro Capítulo divergente de los Adeptus Astartes."
+      tag: "REGLA DE CAPÍTULO • LOS NO PERDONADOS",
+      description: "Si una unidad ADEPTUS ASTARTES tiene una segunda clave de Facción en su hoja de datos, esa clave es el nombre de su Capítulo (ÁNGELES OSCUROS). No puedes incluir unidades de más de un Capítulo en tu ejército."
     },
     {
       name: "El Ala de Muerte",
       originalName: "The Deathwing",
-      description: "Las siguientes unidades ADEPTUS ASTARTES adquieren la clave ALA DE MUERTE: unidades EXTERMINADOR, Guardia Veterana de Hojas, Portaestandarte de Guardia de Hojas, Veteranos de la Guardia, Veteranos de Vanguardia con Propulsores de Salto, Dreadnoughts, Land Raiders, Repulsor y Repulsor Executioner, además de las unidades exclusivas de los Ángeles Oscuros que ya la poseen."
+      tag: "REGLA DE CAPÍTULO • 1.ª COMPAÑÍA",
+      description: "Las siguientes unidades amigas ADEPTUS ASTARTES tienen la clave ALA DE MUERTE: • Unidades EXTERMINADOR. • Unidades PORTAESTANDARTE DE GUARDIA DE HOJAS, GUARDIA VETERANA DE HOJAS, VETERANOS DE LA GUARDIA y VETERANOS DE VANGUARDIA CON PROPULSORES DE SALTO. • Unidades LAND RAIDER, LAND RAIDER CRUSADER, LAND RAIDER REDEEMER, REPULSOR y REPULSOR EXECUTIONER. • Unidades DREADNOUGHT."
     },
     {
       name: "El Ala de Cuervo",
       originalName: "The Ravenwing",
-      description: "Las unidades ADEPTUS ASTARTES MONTADAS y las unidades de VEHÍCULOS que tienen la clave VOLAR adquieren automáticamente la clave ALA DE CUERVO."
+      tag: "REGLA DE CAPÍTULO • 2.ª COMPAÑÍA",
+      description: "Las siguientes unidades amigas ADEPTUS ASTARTES tienen la clave ALA DE CUERVO: • Unidades MONTADAS. • Unidades VEHÍCULO con la clave VOLAR."
     }
   ],
 
@@ -11485,12 +11500,13 @@ const WH40K_DATA = {
     "name": "Tanque Repulsor",
     "originalName": "Repulsor",
     "role": "Vehículo / Transporte Pesado",
-    "wing": "Compañía Verde",
+    "wing": "Ala de Muerte",
     "isEpicHero": false,
     "keywords": [
       "VEHÍCULO",
       "TRANSPORTE",
       "DESLIZADOR",
+      "DEATHWING",
       "VEHICLE",
       "TRANSPORT",
       "ADEPTUS ASTARTES",
@@ -11623,12 +11639,13 @@ const WH40K_DATA = {
     "name": "Repulsor Ejecutor",
     "originalName": "Repulsor Executioner",
     "role": "Vehículo / Cazador de Tanques Pesado",
-    "wing": "Compañía Verde",
+    "wing": "Ala de Muerte",
     "isEpicHero": false,
     "keywords": [
       "VEHÍCULO",
       "TRANSPORTE",
       "DESLIZADOR",
+      "DEATHWING",
       "VEHICLE",
       "TRANSPORT",
       "ADEPTUS ASTARTES",
