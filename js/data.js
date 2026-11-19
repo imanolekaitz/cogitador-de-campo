@@ -12,22 +12,27 @@ const WH40K_DATA = {
   originalFaction: "Dark Angels",
   superFaction: "Imperium",
   factionRule: {
-    name: "Juramento de Momento (Oath of Moment)",
-    originalName: "Oath of Moment",
-    description: "Al principio de tu fase de mando, selecciona una unidad del ejército de tu oponente. Hasta el principio de tu siguiente fase de mando, cada vez que una miniatura de tu ejército con esta habilidad realice un ataque dirigido a esa unidad objetivo, puedes repetir la tirada para impactar."
+    name: "Doctrinas de Combate",
+    originalName: "Combat Doctrines",
+    description: "Al inicio de tu Fase de Mando, puedes seleccionar una de las tres Doctrinas de Combate; permanece activa para todas las unidades amigas ADEPTUS ASTARTES con esta habilidad hasta el inicio de tu siguiente Fase de Mando (salvo que se indique lo contrario, solo puedes activar cada doctrina una vez por batalla y solo una puede estar activa por unidad a la vez): • Doctrina Devastadora: Las armas a distancia de la unidad obtienen la habilidad [ASALTO] (elegible para disparar tras Avanzar). • Doctrina Táctica: Si la unidad realiza un movimiento de Retroceder, sigue siendo elegible para disparar y declarar una carga en ese turno. • Doctrina de Asalto: Si la unidad realiza un movimiento de Avanzar, sigue siendo elegible para declarar una carga en ese turno."
   },
   
   // REGLAS ESPECÍFICAS DE CAPÍTULO DE LOS ÁNGELES OSCUROS
   chapterRules: [
     {
-      name: "El Ala de Muerte (The Deathwing)",
-      originalName: "The Deathwing",
-      description: "Veteranos de la 1.ª Compañía. Obtienen la clave ALA DE MUERTE (DEATHWING). Se benefician de reglas especiales en destacamentos del Círculo Interior e inmunidad o bonificaciones contra acobardamiento y heridas."
+      name: "Capítulos: Los No Perdonados",
+      originalName: "Chapters",
+      description: "Si tu ejército incluye una o más unidades con la clave ÁNGELES OSCUROS, no puedes incluir unidades de ningún otro Capítulo divergente de los Adeptus Astartes."
     },
     {
-      name: "El Ala de Cuervo (The Ravenwing)",
+      name: "El Ala de Muerte",
+      originalName: "The Deathwing",
+      description: "Las siguientes unidades ADEPTUS ASTARTES adquieren la clave ALA DE MUERTE: unidades EXTERMINADOR, Guardia Veterana de Hojas, Portaestandarte de Guardia de Hojas, Veteranos de la Guardia, Veteranos de Vanguardia con Propulsores de Salto, Dreadnoughts, Land Raiders, Repulsor y Repulsor Executioner, además de las unidades exclusivas de los Ángeles Oscuros que ya la poseen."
+    },
+    {
+      name: "El Ala de Cuervo",
       originalName: "The Ravenwing",
-      description: "Especialistas móviles de la 2.ª Compañía. Obtienen la clave ALA DE CUERVO (RAVENWING). Unidades con Propulsores, Motos, Deslizadores y Aeronaves adquieren movilidad implacable y opciones de Avanzar y Disparar o Cargar."
+      description: "Las unidades ADEPTUS ASTARTES MONTADAS y las unidades de VEHÍCULOS que tienen la clave VOLAR adquieren automáticamente la clave ALA DE CUERVO."
     }
   ],
 
@@ -828,9 +833,9 @@ const WH40K_DATA = {
     "isExclusiveDA": false,
     "dp": 3,
     "commandPoints": "3 PD",
-    "purpose": "El destacamento de armas combinadas más equilibrado del juego. Permite activar una Doctrina de Combate distinta por ronda (Devastadora para avanzar y disparar, Táctica para retirarse y disparar/cargar, Asalto para avanzar y cargar).",
-    "ruleName": "Doctrinas de Combate (Combat Doctrines)",
-    "ruleDesc": "Al inicio de tu Fase de Mando, selecciona una doctrina de combate activa (Devastadora: avanzar y disparar; Táctica: disparar y cargar tras retroceder; Asalto: avanzar y declarar cargas). Puedes activar cada una una vez por batalla.",
+    "purpose": "El destacamento arquetípico del Códex Astartes (3 PD). Potencia la regla de ejército Doctrinas de Combate permitiendo reactivar una doctrina clave una segunda vez durante la batalla y desbloqueando estratagemas tácticas adaptativas.",
+    "ruleName": "Disciplina del Códex",
+    "ruleDesc": "Puedes seleccionar una Doctrina de Combate de tu elección una vez adicional por batalla (permitiendo activar por segunda vez la Doctrina Devastadora, Táctica o de Asalto en otra ronda de mando).",
     "synergies": [
       "Listas mixtas equilibradas de Infantería, Blindados y Asalto",
       "Azrael",

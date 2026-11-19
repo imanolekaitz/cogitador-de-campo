@@ -69,6 +69,8 @@ const AppState = {
     opponentVPPrimary: 0,
     opponentVPSecondary: 0,
     oathTarget: "No designado",
+    activeDoctrine: "none",
+    usedDoctrines: [],
     unitStates: {}, // instanceId -> { modelsAlive, currentModelWounds, isBattleShocked }
     stratagemScopeOnlyArmy: true // Si true, filtra solo básicas + destacamento de tu lista en combate
   }
@@ -323,7 +325,11 @@ function sanitizeDataToSpanish() {
       ds.name = cleanSpanishLabel(ds.name || "");
       ds.role = cleanSpanishLabel(ds.role || "");
       ds.keywords = sanitizeKeywordsToSpanish(ds.keywords || []);
-      ds.abilities = (ds.abilities || []).map(ab => cleanSpanishLabel(ab));
+      ds.abilities = (ds.abilities || []).map(ab =>
+        cleanSpanishLabel(ab)
+          .replace(/^(Regla\s+de\s+Facci[oó]n\s*:\s*)?Juramento\s+del?\s+Momento$/i, "Regla de Facción: Doctrinas de Combate")
+          .replace(/(Regla\s+de\s+Facci[oó]n\s*:\s*)Juramento\s+del?\s+Momento/gi, "$1Doctrinas de Combate")
+      );
       ds.leaderOf = (ds.leaderOf || []).map(l => cleanSpanishLabel(l));
 
       (ds.rangedWeapons || []).forEach(w => {
@@ -418,8 +424,13 @@ function getKeywordTooltipIndex() {
     "hendedura": "Cada ataque exitoso puede dañar o propagar impactos adicionales según el valor de Hendedura.",
     "anti": "Una tirada para herir sin modificar igual o superior al umbral indicado logra una Herida Crítica contra el tipo de objetivo especificado.",
     "lider": "Este personaje puede unirse al inicio de la batalla a una de sus escuadras escolta compatibles.",
-    "juramento del momento": "Al inicio de tu fase de mando, elige una unidad enemiga: tus miniaturas con esta regla repiten todas las tiradas para impactar contra ella.",
-    "juramento de momento": "Al inicio de tu fase de mando, elige una unidad enemiga: tus miniaturas con esta regla repiten todas las tiradas para impactar contra ella.",
+    "doctrinas de combate": "Regla de Ejército Adeptus Astartes (11.ª Ed). Al inicio de tu Fase de Mando puedes activar 1 vez por batalla: Doctrina Devastadora (armas a distancia ganan [ASALTO]), Doctrina Táctica (Retroceder, disparar y cargar) o Doctrina de Asalto (Avanzar y cargar).",
+    "doctrina devastadora": "Doctrina de Combate (11.ª Ed): Las armas a distancia de la unidad tienen la habilidad [ASALTO] (pueden disparar tras Avanzar).",
+    "doctrina tactica": "Doctrina de Combate (11.ª Ed): La unidad es elegible para disparar y declarar una carga en un turno en el que haya Retrocedido.",
+    "doctrina de asalto": "Doctrina de Combate (11.ª Ed): La unidad es elegible para declarar una carga en un turno en el que haya Avanzado.",
+    "disciplina del codex": "Regla del Contingente Gladius (11.ª Ed): Puedes seleccionar una Doctrina de Combate una vez adicional por batalla.",
+    "juramento del momento": "Regla de 10.ª Ed (sustituida en 11.ª Ed por Doctrinas de Combate): permitía repetir tiradas para impactar contra una unidad objetivo.",
+    "juramento de momento": "Regla de 10.ª Ed (sustituida en 11.ª Ed por Doctrinas de Combate): permitía repetir tiradas para impactar contra una unidad objetivo.",
     "psiquica": idx.get("psiquico") || "Ataques canalizados mediante poderes psíquicos de la Disformidad."
   };
 
@@ -1321,11 +1332,14 @@ function splitAbilitiesWahapedia(abilities) {
       listPart.split(/,|•/).map(s => s.trim()).filter(Boolean).forEach(item => core.push(item));
     } else if (/^Regla\s+de\s+Facci[oó]n\s*:/i.test(cleanAb)) {
       const listPart = cleanAb.replace(/^Regla\s+de\s+Facci[oó]n\s*:\s*/i, "");
-      listPart.split(/,|•/).map(s => s.trim()).filter(Boolean).forEach(item => faction.push(item));
+      listPart.split(/,|•/).map(s => s.trim()).filter(Boolean).forEach(item => {
+        const normalizedItem = /^Juramento\s+del?\s+Momento$/i.test(item) ? "Doctrinas de Combate" : item;
+        if (!faction.includes(normalizedItem)) faction.push(normalizedItem);
+      });
     } else if (/^(Despliegue R[aá]pido|Infiltradores|Exploradores|Sigilo|Operativo Solitario|Combate Primero|No Hay Dolor|Final Mortal|L[ií]der)(\s+[\d\"+D]+)?$/i.test(cleanAb)) {
       core.push(cleanAb);
-    } else if (/^Juramento\s+del?\s+Momento$/i.test(cleanAb)) {
-      faction.push("Juramento del Momento");
+    } else if (/^(Juramento\s+del?\s+Momento|Doctrinas\s+de\s+Combate)$/i.test(cleanAb)) {
+      if (!faction.includes("Doctrinas de Combate")) faction.push("Doctrinas de Combate");
     } else {
       unit.push(cleanAb);
     }
@@ -5214,7 +5228,7 @@ function exportActiveListTournamentText() {
   activeDets.forEach(d => {
     text += `   • Regla "${d.ruleName}": ${d.ruleDesc}\n`;
   });
-  text += `REGLA DE FACCIÓN: Juramento del Momento\n`;
+  text += `REGLA DE EJÉRCITO (11.ª ED): Doctrinas de Combate\n`;
   text += `========================================================\n\n`;
   
   text += `--- UNIDADES Y PERSONAJES ---\n`;
@@ -5346,6 +5360,9 @@ function renderBattleTracker() {
   phaseBtns.forEach(btn => {
     btn.classList.toggle("active", btn.getAttribute("data-bphase") === currentPhase);
   });
+
+  // Sincronizar selector de Doctrina de Combate Activa (11.ª Ed)
+  syncBattleDoctrineUI();
 
   // Renderizar estratagemas disponibles en esta fase y turno
   renderBattleStratagems();
@@ -6232,7 +6249,7 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
   // 8. Habilidades de la Unidad (Separadas al estilo Wahapedia)
   const abSplit = splitAbilitiesWahapedia(ds.abilities || []);
   const corePillsHtml = abSplit.core.map(c => formatKeywordWithTooltip(c, "waha-core-pill")).join("");
-  const factionList = abSplit.faction.length > 0 ? abSplit.faction : ["Juramento del Momento"];
+  const factionList = abSplit.faction.length > 0 ? abSplit.faction : ["Doctrinas de Combate"];
   const factionPillsHtml = factionList.map(f => formatKeywordWithTooltip(f, "waha-faction-pill")).join("");
 
   const abilitiesHtml = `
@@ -6252,7 +6269,7 @@ function renderBattleUnitDatasheetModalContent(ds, unitInstance, uState) {
         <div class="waha-unit-abilities-list">
           ${abSplit.unit.length > 0
             ? abSplit.unit.map(ab => formatUnitAbilityHtml(ab)).join("")
-            : '<div class="waha-ability-item" style="color: var(--text-muted); font-style: italic;">Regla de facción: Al inicio de tu Fase de Mando, elige una unidad enemiga como objetivo del Juramento del Momento para repetir tiradas para impactar.</div>'}
+            : '<div class="waha-ability-item" style="color: var(--text-muted); font-style: italic;">Regla de Ejército (11.ª Ed): Doctrinas de Combate — al inicio de tu Fase de Mando puedes activar una doctrina (Devastadora: armas a distancia ganan [ASALTO]; Táctica: Retroceder + Disparar/Cargar; Asalto: Avanzar + Cargar).</div>'}
         </div>
       </div>
     </div>
@@ -6340,6 +6357,42 @@ function setBattlePhase(phase) {
   AppState.battle.phase = phase;
   saveToStorage();
   renderBattleTracker();
+}
+
+const COMBAT_DOCTRINES_INFO = {
+  none: "Sin Doctrina de Combate activa en este turno. Elige una Doctrina al inicio de tu Fase de Mando (1 uso por batalla cada una).",
+  devastator: "🎯 Doctrina Devastadora activa: Las armas a distancia de tus unidades ADEPTUS ASTARTES obtienen la habilidad [ASALTO] (elegibles para disparar tras Avanzar).",
+  tactical: "🔄 Doctrina Táctica activa: Tus unidades ADEPTUS ASTARTES siguen siendo elegibles para disparar y declarar una carga en un turno en el que hayan Retrocedido.",
+  assault: "⚔️ Doctrina de Asalto activa: Tus unidades ADEPTUS ASTARTES siguen siendo elegibles para declarar una carga en un turno en el que hayan Avanzado."
+};
+
+function syncBattleDoctrineUI() {
+  const active = (AppState.battle && AppState.battle.activeDoctrine) || "none";
+  const used = Array.isArray(AppState.battle?.usedDoctrines) ? AppState.battle.usedDoctrines : [];
+  const btns = document.querySelectorAll("#battle-doctrines-btn-group .battle-doctrine-btn");
+  btns.forEach(btn => {
+    const docId = btn.getAttribute("data-doctrine");
+    btn.classList.toggle("active", docId === active);
+    btn.style.opacity = (docId !== "none" && used.includes(docId) && docId !== active) ? "0.65" : "1";
+  });
+  const descEl = document.getElementById("hud-active-doctrine-desc");
+  if (descEl) {
+    descEl.textContent = COMBAT_DOCTRINES_INFO[active] || COMBAT_DOCTRINES_INFO.none;
+  }
+}
+
+function setBattleCombatDoctrine(doctrineId) {
+  if (!AppState.battle) return;
+  const normalized = COMBAT_DOCTRINES_INFO[doctrineId] ? doctrineId : "none";
+  AppState.battle.activeDoctrine = normalized;
+  if (!Array.isArray(AppState.battle.usedDoctrines)) {
+    AppState.battle.usedDoctrines = [];
+  }
+  if (normalized !== "none" && !AppState.battle.usedDoctrines.includes(normalized)) {
+    AppState.battle.usedDoctrines.push(normalized);
+  }
+  saveToStorage();
+  syncBattleDoctrineUI();
 }
 
 function nextBattlePhase() {
@@ -6883,7 +6936,7 @@ function addAbilityRow(abilityText = '') {
   div.className = "ability-edit-row";
   div.style.cssText = "display: flex; gap: 8px; align-items: center;";
   div.innerHTML = `
-    <input type="text" class="ability-val-input" value="${escapeHtml(abilityText)}" placeholder="Nombre o regla de la habilidad (ej: Juramento de Momento, Rampa de Asalto...)" style="flex: 1; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px;">
+    <input type="text" class="ability-val-input" value="${escapeHtml(abilityText)}" placeholder="Nombre o regla de la habilidad (ej: Doctrinas de Combate, Rampa de Asalto...)" style="flex: 1; background: var(--bg-deep); border: 1px solid var(--border-bright); color: #fff; padding: 6px 10px; border-radius: 4px;">
     <button type="button" class="btn-table-del" onclick="this.closest('.ability-edit-row').remove()" title="Eliminar habilidad">🗑️</button>
   `;
   container.appendChild(div);
@@ -6979,7 +7032,7 @@ function openEditDatasheetModal(id) {
     if (ds.abilities && ds.abilities.length > 0) {
       ds.abilities.forEach(ab => addAbilityRow(ab));
     } else {
-      addAbilityRow("Juramento de Momento");
+      addAbilityRow("Regla de Facción: Doctrinas de Combate");
     }
   }
   
@@ -7044,7 +7097,7 @@ function openCreateDatasheetModal() {
   const containerAbilities = document.getElementById("container-abilities-rows");
   if (containerAbilities) {
     containerAbilities.innerHTML = "";
-    addAbilityRow("Juramento de Momento");
+    addAbilityRow("Regla de Facción: Doctrinas de Combate");
   }
   
   document.getElementById("edit-ds-leader").value = "";
@@ -7303,6 +7356,7 @@ function closeRulesUpdateModal() {
 if (typeof window !== "undefined") {
   window.setBattleTurn = setBattleTurn;
   window.setBattlePhase = setBattlePhase;
+  window.setBattleCombatDoctrine = setBattleCombatDoctrine;
   window.nextBattlePhase = nextBattlePhase;
   window.toggleBattleStratagemsScope = toggleBattleStratagemsScope;
   window.useBattleStratagem = useBattleStratagem;

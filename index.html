@@ -198,7 +198,7 @@
       <div class="wahapedia-top-accordions">
         <details class="waha-accordion" id="waha-army-rules-details">
           <summary class="waha-accordion-summary">
-            <span>📜 <strong>Reglas de Ejército y Capítulo</strong> (Juramento del Momento • Ala de Muerte • Ala de Cuervo)</span>
+            <span>📜 <strong>Reglas de Ejército y Capítulo (11.ª Edición)</strong> (Doctrinas de Combate • Los No Perdonados • Ala de Muerte • Ala de Cuervo)</span>
             <span class="waha-chevron">▼</span>
           </summary>
           <div class="waha-accordion-body" id="wahapedia-army-rules-panel">
@@ -907,11 +907,22 @@
             </div>
           </div>
 
-          <!-- Objetivo del Juramento del Momento -->
+          <!-- Doctrina de Combate Activa (11.ª Ed) y Objetivo Jurado -->
           <div class="oath-banner">
-            <h4>⚔️ Objetivo del Juramento del Momento</h4>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">Todas tus unidades repiten las tiradas para impactar contra esta unidad enemiga:</p>
-            <input type="text" id="hud-oath-target-input" placeholder="Nombre de la unidad enemiga designada este turno..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--caliban-bright); color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 0.95rem;">
+            <h4>⚔️ Doctrina de Combate Activa (Regla de Ejército 11.ª Ed) y Objetivo Jurado</h4>
+            <div id="battle-doctrines-btn-group" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px;">
+              <button type="button" class="battle-phase-btn battle-doctrine-btn active" data-doctrine="none" onclick="setBattleCombatDoctrine('none')" style="font-size: 0.78rem; padding: 5px 10px;">Sin Doctrina</button>
+              <button type="button" class="battle-phase-btn battle-doctrine-btn" data-doctrine="devastator" onclick="setBattleCombatDoctrine('devastator')" style="font-size: 0.78rem; padding: 5px 10px;">🎯 Devastadora ([Asalto])</button>
+              <button type="button" class="battle-phase-btn battle-doctrine-btn" data-doctrine="tactical" onclick="setBattleCombatDoctrine('tactical')" style="font-size: 0.78rem; padding: 5px 10px;">🔄 Táctica (Retroceder + Disparar/Cargar)</button>
+              <button type="button" class="battle-phase-btn battle-doctrine-btn" data-doctrine="assault" onclick="setBattleCombatDoctrine('assault')" style="font-size: 0.78rem; padding: 5px 10px;">⚔️ Asalto (Avanzar + Cargar)</button>
+            </div>
+            <div id="hud-active-doctrine-desc" style="font-size: 0.78rem; color: var(--deathwing-bone); margin-bottom: 10px; line-height: 1.4;">
+              Sin Doctrina de Combate activa en este turno. Elige una Doctrina al inicio de tu Fase de Mando (1 uso por batalla cada una).
+            </div>
+            <label for="hud-oath-target-input" style="font-size: 0.78rem; color: var(--text-muted); display: block; margin-bottom: 4px; font-weight: 600;">
+              🎯 Objetivo Jurado / Blanco Prioritario del Turno:
+            </label>
+            <input type="text" id="hud-oath-target-input" placeholder="Unidad enemiga o marcador de objetivo designado este turno..." style="width: 100%; background: var(--bg-deep); border: 1px solid var(--caliban-bright); color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 0.92rem;">
           </div>
 
           <!-- Marcadores de Puntos de Victoria (VP) -->
